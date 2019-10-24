@@ -107,28 +107,37 @@ Installing JDK 8
   
   The actual command to enter is what comes after the ``$`` character
 
-  Each line that begins with a ``$`` denotes a distinct command to enter
+  Each line that begins with a ``$`` denotes a single (distinct) command to enter
+
+  Lines beginning with ``#`` are comments
+
+  Lines beginning with neither ``$`` nor ``#`` are outputs from the previous command
 
 
 .. code-block:: bash
 
   $ which java
+
+  # should output the following
+  /usr/bin/java
 ..
 
-  should output: ``/usr/bin/java``
 
 .. code-block:: bash
 
   $ java -version
+
+  # expect the following output, the minor version is arbitrary
+  java version "1.8.X"
 ..
 
-  should output: ``java version "1.8.X" (X can be anything)``
+  should ``
 
 Installing IntelliJ
 -------------------
 
 - Installs the Intellij IDEA CE (Community Edition) Java IDE
-- `Download the installer <https://www.jetbrains.com/idea/download/#section=mac>`_
+- `Download the IntelliJ installer <https://www.jetbrains.com/idea/download/#section=mac>`_
 - Open (double click) the ``.dmg`` file
 - Drag the Intellij IDEA icon into your Applications folder
 - Go to your desktop and right click the disk image of the installer to remove it
@@ -141,10 +150,10 @@ Installing IntelliJ
   - Once opened right click the icon in your dock and select ``options > keep in dock`` for easy access later 
 
 Installing VSCode
-----------
+-----------------
 
 - Installs the VSC (Visual Studio Code) text/code editor
-- `Download the installer <https://code.visualstudio.com/docs/setup/mac>`_
+- `Download the VSC installer <https://code.visualstudio.com/docs/setup/mac>`_
 - Open (double click) the ``.dmg`` file
 - Drag the Visual Studio Code icon into your Applications folder
 - Go to your desktop and right click the disk image of the installer to remove it
@@ -157,7 +166,7 @@ Installing VSCode
   - Once opened right click the icon in your dock and select ``options > keep in dock`` for easy access later 
 
 Installing Docker for Mac
-----------
+-------------------------
 
 - First you need to create a Docker Hub account (like GitHub but for Docker)
 
@@ -190,12 +199,15 @@ Installing Docker for Mac
 .. code-block:: bash
 
   $ docker --version
+
+  # expect the following output, the minor and build details are arbitrary
+  Docker version 19.XX.X, build X
 ..
 
-  should output: ``Docker version 19.XX.X, build X``, the minor and build details are arbitrary
+  should 
 
 Installing NodeJS
-----------
+-----------------
 
 - NodeJS can be installed directly or through a tool called NVM
 - NVM (Node Version Manager) is a virtual environment manager for NodeJS
@@ -265,8 +277,9 @@ Installing NodeJS
 
 .. code-block:: bash
 
-  # curl is a CLI tool for issuing network requests
-  # here it is used to download the installer and then run it using the bash interpreter
+  # curl is a CLI tool for making network requests
+  # here it is used to download the installer script
+  # the script is then piped (|) to the bash interpreter for execution
 
   $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh | bash
 ..
@@ -278,6 +291,9 @@ Installing NodeJS
 .. code-block:: bash
   
   $ nvm --version
+
+  # expect the following output, the version may be different
+  0.35.0
 ..
 
   If you receive an error call over your instructor to sort you out
@@ -291,11 +307,8 @@ Installing NodeJS
   # the --lts flag instructs NVM to install the latest long term support version
 
   $ nvm install --lts
-..
 
-  You should receive the following output (note the versions may be slightly different)
-
-.. code-block:: bash
+  # expect the following output, the versions may change as the LTS version changes
 
   Installing latest LTS version.
   Downloading and installing node v12.13.0...
@@ -312,20 +325,22 @@ Installing NodeJS
 
 .. code-block:: bash
 
-  node --version
-..
+  $ node --version
 
-  should output: ``v12.13.0``
+  # expect the following output, the version is arbitrary and may change as LTS version changes
+  v12.13.0
+..
 
 .. code-block:: bash
 
-  npm --version
+  $ npm --version
+
+  # expect the following output, the version is arbitrary and depends on the current Node LTS 
+  6.12.0
 ..
 
-  should output: ``6.12.0``
-
 Installing Python 3.X
-----------
+---------------------
 
 - `Download the Python installer <https://www.python.org/downloads/>`_
 - Open (double click) the ``.pkg`` icon to run the installer
@@ -362,13 +377,56 @@ Installing Python 3.X
   $ source ~/.bashrc
 
   $ python --version
+
+  # expect the following output, the minor version is arbitrary
+  Python 3.X.X
 ..
 
-  should output: ``Python 3.X.X``, the minor version is arbitrary
+Installing HomeBrew
+-------------------
+
+- Installing HomeBrew is as easy as using it
+- Enter the following command in your ``Terminal`` then accept all defaults while following the instructions
+
+.. code-block:: bash
+
+  $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+..
+
+- Confirm the installation was successful by entering
+
+.. code-block:: bash
+
+  $ brew --version
+
+  # expect the following output (2.X.X, minor versions and commits are arbitrary)
+  Homebrew 2.1.15
+  Homebrew/homebrew-core (git revision 66ea9; last commit 2019-10-22)
+  Homebrew/homebrew-cask (git revision 43442; last commit 2019-10-23)
+..
 
 Installing PostgreSQL
-----------
+---------------------
 
-- Our final installation will bring the PostgreSQL DBMS onto our machines
-- We will 
+- Our final installation will be a breeze using HomeBrew
+- Enter the following into your ``Terminal``
 
+.. code-block:: bash
+
+  $ brew install postgresql
+..
+
+- Confirm the installation was successful by entering
+
+.. code-block:: bash
+
+  $ which psql
+
+  # should output the following, the minor version is arbitrary
+  /usr/local/bin/psql
+
+  $ psql --version
+
+  # should output the following, the versions may be different
+  psql (PostgreSQL) 10.1
+..
