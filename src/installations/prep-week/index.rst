@@ -131,8 +131,6 @@ Installing JDK 8
   java version "1.8.X"
 ..
 
-  should ``
-
 Installing IntelliJ
 -------------------
 
@@ -204,8 +202,6 @@ Installing Docker for Mac
   Docker version 19.XX.X, build X
 ..
 
-  should 
-
 Installing NodeJS
 -----------------
 
@@ -227,9 +223,10 @@ Installing NodeJS
   # here we are saying "print out the path to my active shell"
 
   $ echo $SHELL
-..
 
-  should output: ``/bin/bash``.
+  # should output
+  /bin/bash
+..
   
   If it outputs ``/bin/zsh`` then you are using the ZShell
   
@@ -353,27 +350,30 @@ Installing Python 3.X
 .. code-block:: bash
 
   $ which python3
+
+  # should output
+  /usr/local/bin/python3
 ..
 
-  should output: ``/usr/local/bin/python3``
-
-- We will now set up an ``alias`` for our shell so that we can use ``python`` without having to use the name ``python3``
+- We will now set up an ``alias`` for our shell so that we can use the command ``python`` instead of having to use the name ``python3``
 
   - There will be almost no cases where you will have to use the OSX system (2.7) version of Python
-  - By setting up an alias we can ensure that all of our Python commands will use the 3.X version
+  - By setting up an alias we can ensure that all of our Python commands will use the 3.X version whenever we use the command ``python``
 
 - In your Terminal enter the following commands
 
 .. code-block:: bash
 
+
+  # the next command will enter some new configurations into your shell profile file
+  # aliases are like shortcuts or nicknames for the shell
+
   # if you are on ZShell use ~/.zshrc instead of ~/.bashrc
-
-  # this command will enter some new configurations into your shell profile file
-  # aliases are like shortcuts for the shell
-
   $ printf "# alias 3.X python over system version\nalias python=python3\nalias pip=pip3" >> ~/.bashrc
 
-  # this command will tell the shell to reload using the updated configuration
+  # the next command will tell the shell to reload using the updated configuration
+
+  # if you are on ZShell use ~/.zshrc instead of ~/.bashrc
   $ source ~/.bashrc
 
   $ python --version
@@ -430,3 +430,8 @@ Installing PostgreSQL
   # should output the following, the versions may be different
   psql (PostgreSQL) 10.1
 ..
+
+Congratulations!
+----------------
+
+You made it through the installation and configuration. Most of the tedious and frustrating aspects of the course are now behind you. From this point forward you can focus on learning how to use these technologies to build solutions instead of tearing your hair out! 
