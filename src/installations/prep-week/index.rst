@@ -1,6 +1,6 @@
-.. _prep-week-installation:
-
 :orphan:
+
+.. _prep-week-installation:
 
 ====================================
 Tooling Installation & Configuration
