@@ -40,18 +40,20 @@ Below you will find a brief overview of each of the tools. Exploring these techn
 
 - **Visual Studio Code: the TE (text/code editor) we will use to write client-side code like HTML, CSS and JavaScript**
   
-  - Aa lightweight text editor but through free extensions can be customized to rival the capabilities of a full-blown IDE (without any bloat from unused features)
+  - A lightweight text / code editor
+  - Using free extensions it can be customized to rival the capabilities of a full-blown IDE (without any bloat from unused features)
   - It shines as a code editor for working with JavaScript due to the large community of JavaScript developers that use and develop extensions for it
   - *Interesting bit: VSC is actually written in JavaScript using a cross-platoform desktop framework called Electron!*
 
 - **Docker For Mac: a set of tools for working with Docker containers**
 
   - Docker Machine: a Linux virtual machine that runs the Docker Engine
-  - Docker Engine: the CLI tool used to provision and manage Docker containers running on a Docker Machine
+  - Docker Engine: the program used to provision and manage Docker containers running on a Docker Machine
+  - Docker CLI: the command line program used issue commands to the Docker Engine 
 
 - **Node[JS]: Node is a JavaScript runtime for executing JavaScript outside of the browser**
 
-  - Node is a CLI tool that we can use to execute JavaScript code or as a REPL shell (like the Bash or Python shell)
+  - Node is a runtime that includes a CLI tool we can use to execute JavaScript code or as a REPL shell (like the Bash or Python shell)
   - It is considered “headless” in that it runs outside of the browser 
   - It shares all of the JavaScript standard library besides those APIs that are browser based (like ``window`` and ``document``) while adding some that would not be accessible by the browser (like ``http`` and ``fs`` for file system access)
   - It comes with the Node Package Manager (NPM) which we will use to search and install packages (libraries and frameworks) for JavaScript
