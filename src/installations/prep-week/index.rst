@@ -12,7 +12,7 @@ In these instructions we will install and configure the many different tools use
 
 Do not worry about feeling overwhelmed during these steps. Take your time and follow the directions step-by-step as your instructor guides you. Do not be embarassed to ask questions at any time if you are confused or want more information. 
 
-  **Please do not skip ahead or rush on any section or step**
+  **Do not skip ahead or rush on any section or step**
 
   Rushing will likely result in mistakes that delay the entire class
 
@@ -24,6 +24,31 @@ Tools of the Trade
 ------------------
 
 Below you will find a brief overview of each of the tools. Exploring these technologies from a high level will build a foundation for understanding them later in the course when they are used.
+
+- **HomeBrew: a package manager for OSX (Mac) developer tools**
+  
+  - Installing system-wide tools is often a tedious process of downloading, unpacking, installing and configuring
+  - HomeBrew makes this process easy and consistent for nearly all packages that you would need on your Mac
+  - If you are familiar with Linux this is similar to the ``yum`` (RedHat based), ``apt/apt-get`` (Debian based) or ``pacman`` (Arch based) package managers
+
+- **PostgreSQL: A database management system (DBMS) for relational data**
+
+  - Includes the core DBMS and the ``psql`` CLI tool
+  - The ``psql`` CLI tool allows us to connect to and manage databases using its SQL REPL interface
+  - It can also be used to execute SQL commands directly from the command line
+
+- **Python 3.X: the latest version of Python**
+
+  - OSX comes pre-installed with a system version of Python 2.7 (2.X) that it uses for internal operations
+  - Python 2 is a legacy version of Python that was replaced by Python 3
+  - For the examples in this course we will be using modern Python libraries that require a 3.x version to execute
+  - We will install the latest (3.X) version of Python alongside the system version so they can both be used for their respective cases
+
+- **Docker For Mac: a set of tools for working with Docker containers**
+
+  - Docker Machine: a Linux virtual machine that runs the Docker Engine
+  - Docker Engine: the program used to provision and manage Docker containers running on a Docker Machine
+  - Docker CLI: the command line program used issue commands to the Docker Engine
 
 - **JDK 8: the Java Development Kit (version 8) includes all of the tools we need to write and execute Java code on our machine**
 
@@ -38,19 +63,6 @@ Below you will find a brief overview of each of the tools. Exploring these techn
   - IDEs are “heavier” in consuming resources (CPU/RAM) because they have to support so many more features
   - In exchange for the higher consumption they are better at handling large code bases, have integrated debugging, and other conveniences 
 
-- **Visual Studio Code: the TE (text/code editor) we will use to write client-side code like HTML, CSS and JavaScript**
-  
-  - A lightweight text / code editor
-  - Using free extensions it can be customized to rival the capabilities of a full-blown IDE (without any bloat from unused features)
-  - It shines as a code editor for working with JavaScript due to the large community of JavaScript developers that use and develop extensions for it
-  - *Interesting bit: VSC is actually written in JavaScript using a cross-platoform desktop framework called Electron!*
-
-- **Docker For Mac: a set of tools for working with Docker containers**
-
-  - Docker Machine: a Linux virtual machine that runs the Docker Engine
-  - Docker Engine: the program used to provision and manage Docker containers running on a Docker Machine
-  - Docker CLI: the command line program used issue commands to the Docker Engine 
-
 - **Node[JS]: Node is a JavaScript runtime for executing JavaScript outside of the browser**
 
   - Node is a runtime that includes a CLI tool we can use to execute JavaScript code or as a REPL shell (like the Bash or Python shell)
@@ -58,23 +70,121 @@ Below you will find a brief overview of each of the tools. Exploring these techn
   - It shares all of the JavaScript standard library besides those APIs that are browser based (like ``window`` and ``document``) while adding some that would not be accessible by the browser (like ``http`` and ``fs`` for file system access)
   - It comes with the Node Package Manager (NPM) which we will use to search and install packages (libraries and frameworks) for JavaScript
 
-- **Python 3.7: the latest version of Python**
-
-  - OSX comes pre-installed with a system version of Python 2.7
-  - For some examples in this course we will be using modern Python libraries that require a 3.x version to execute
-  - We will install the latest (3.7) version of Python alongside the system version so they can both be used for their respective cases
-
-- **HomeBrew: a package manager for OSX (Mac) applications**
+- **Visual Studio Code: the TE (text/code editor) we will use to write client-side code like HTML, CSS and JavaScript**
   
-  - Installing packages used by an operating system is often a tedious process of downloading, unpacking, installing and configuring
-  - HomeBrew makes this process easy and consistent for nearly all packages that you would need on your Mac
-  - If you are familiar with Linux this is similar to the ``yum`` (RedHat based), ``apt/apt-get`` (Debian based) or ``pacman`` (Arch based) package managers
+  - A lightweight text / code editor
+  - Using free extensions it can be customized to rival the capabilities of a full-blown IDE (without any bloat from unused features)
+  - It shines as a code editor for working with JavaScript due to the large community of JavaScript developers that use and develop extensions for it
+  - *Interesting bit: VSC is actually written in JavaScript using a cross-platoform desktop framework called Electron!*
 
-- **PostgreSQL: A database management system (DBMS) for relational data**
+Installing HomeBrew
+-------------------
 
-  - Includes the core DBMS and the ``psql`` CLI tool
-  - The ``psql`` CLI tool allows us to connect to and manage databases using its SQL REPL interface
-  - It can also be used to execute SQL commands directly from the command line
+- Installing HomeBrew is as easy as using it
+- Enter the following command in your ``Terminal`` then accept all defaults while following the instructions
+
+.. code-block:: bash
+
+  $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+..
+
+- Confirm the installation was successful by entering
+
+.. code-block:: bash
+
+  $ brew --version
+
+  # expect the following output (2.X.X, minor versions and commits are arbitrary)
+  Homebrew 2.1.15
+  Homebrew/homebrew-core (git revision 66ea9; last commit 2019-10-22)
+  Homebrew/homebrew-cask (git revision 43442; last commit 2019-10-23)
+..
+
+Installing PostgreSQL
+---------------------
+
+- Now that we have installed HomeBrew the installation of PostgreSQL will be a breeze
+- Enter the following into your ``Terminal``
+
+.. code-block:: bash
+
+  $ brew install postgresql
+..
+
+- Confirm the installation was successful by entering
+
+.. code-block:: bash
+
+  $ which psql
+
+  # should output the following path
+  /usr/local/bin/psql
+
+  $ psql --version
+
+  # should output the following, the versions may be different
+  psql (PostgreSQL) 10.1
+..
+
+Installing Python 3.X
+---------------------
+
+- We will install the 3.X version of Python using HomeBrew as well
+- Enter the following command in your ``Terminal``
+
+.. code-block:: bash
+
+  $ brew install python
+..
+
+- Enter the following commands in your ``Terminal`` to confirm the installation was successful
+
+.. code-block:: bash
+
+  $ which python
+
+  # should output
+  /usr/local/bin/python3
+..
+
+Installing Docker for Mac
+-------------------------
+
+- First you need to create a Docker Hub account (like GitHub but for Docker)
+
+  - `Sign up for Docker Hub <https://hub.docker.com/signup>`_
+
+- Next `install Docker for Mac <https://hub.docker.com/?overlay=onboarding>`_ and follow the instructional walkthrough
+- Go to your desktop and right click the disk image of the installer to remove it
+
+  - You can discard the ``.dmg`` file at this point
+
+- Confirm the installation was successful by opening the Docker app
+
+  - You can find it under Finder (file explorer) > Applications > Docker or through Spotlight
+
+- When Docker is first opened you will have to do some initial configuration
+
+  - On the ``Docker Desktop needs privileged access`` prompt select ``OK`` and enter your password
+  - Next enter your Docker Hub credentials to log in
+
+- Now select the Docker icon in your status bar
+
+  - Click ``Preferences``
+  - Click the ``Advanced`` tab
+  - for ``CPUs`` ensure at least ``3`` cores are allocated
+  - for ``Memory`` ensure at least ``5GiB`` are allocated
+  - for ``Swap`` ensure at least ``1 GiB`` are allocated 
+
+- Confirm that Docker is available on your machine by entering the following command in your ``Terminal``
+
+.. code-block:: bash
+
+  $ docker --version
+
+  # expect the following output, the minor and build details are arbitrary
+  Docker version 19.XX.X, build X
+..
 
 Installing JDK 8
 ----------------
@@ -148,61 +258,6 @@ Installing IntelliJ
 
   - You can find it under Finder (file explorer) > Applications > Intellij IDEA CE
   - Once opened right click the icon in your dock and select ``options > keep in dock`` for easy access later 
-
-Installing VSCode
------------------
-
-- Installs the VSC (Visual Studio Code) text/code editor
-- `Download the VSC installer <https://code.visualstudio.com/docs/setup/mac>`_
-- Open (double click) the ``.dmg`` file
-- Drag the Visual Studio Code icon into your Applications folder
-- Go to your desktop and right click the disk image of the installer to remove it
-
-  - You can discard the ``.dmg`` file at this point
-
-- Confirm the installation was successful by opening the VSC app
-
-  - You can find it under Finder (file explorer) > Applications > Code
-  - Once opened right click the icon in your dock and select ``options > keep in dock`` for easy access later 
-
-Installing Docker for Mac
--------------------------
-
-- First you need to create a Docker Hub account (like GitHub but for Docker)
-
-  - `Sign up for Docker Hub <https://hub.docker.com/signup>`_
-
-- Next `install Docker for Mac <https://hub.docker.com/?overlay=onboarding>`_ and follow the instructional walkthrough
-- Go to your desktop and right click the disk image of the installer to remove it
-
-  - You can discard the ``.dmg`` file at this point
-
-- Confirm the installation was successful by opening the Docker app
-
-  - You can find it under Finder (file explorer) > Applications > Docker or through Spotlight
-
-- When Docker is first opened you will have to do some initial configuration
-
-  - On the ``Docker Desktop needs privileged access`` prompt select ``OK`` and enter your password
-  - Next enter your Docker Hub credentials to log in
-
-- Now select the Docker icon in your status bar
-
-  - Click ``Preferences``
-  - Click the ``Advanced`` tab
-  - for ``CPUs`` ensure at least ``3`` cores are allocated
-  - for ``Memory`` ensure at least ``5GiB`` are allocated
-  - for ``Swap`` ensure at least ``1 GiB`` are allocated 
-
-- Confirm that Docker is available on your machine by entering the following command in your ``Terminal``
-
-.. code-block:: bash
-
-  $ docker --version
-
-  # expect the following output, the minor and build details are arbitrary
-  Docker version 19.XX.X, build X
-..
 
 Installing NodeJS
 -----------------
@@ -338,100 +393,21 @@ Installing NodeJS
   6.12.0
 ..
 
-Installing Python 3.X
----------------------
+Installing VSCode
+-----------------
 
-- `Download the Python installer <https://www.python.org/downloads/>`_
-- Open (double click) the ``.pkg`` icon to run the installer
-  
-  - Follow all instructions during installation and accept all the defaults
-  - If you are confused at any point call over your instructor to sort you out
+- Installs the VSC (Visual Studio Code) text/code editor
+- `Download the VSC installer <https://code.visualstudio.com/docs/setup/mac>`_
+- Open (double click) the ``.dmg`` file
+- Drag the Visual Studio Code icon into your Applications folder
+- Go to your desktop and right click the disk image of the installer to remove it
 
-- Enter the following commands in your ``Terminal`` to confirm the installation was successful
+  - You can discard the ``.dmg`` file at this point
 
-.. code-block:: bash
+- Confirm the installation was successful by opening the VSC app
 
-  $ which python3
-
-  # should output
-  /usr/local/bin/python3
-..
-
-- We will now set up an ``alias`` for our shell so that we can use the command ``python`` instead of having to use the name ``python3``
-
-  - There will be almost no cases where you will have to use the OSX system (2.7) version of Python
-  - By setting up an alias we can ensure that all of our Python commands will use the 3.X version whenever we use the command ``python``
-
-- In your Terminal enter the following commands
-
-.. code-block:: bash
-
-
-  # the next command will enter some new configurations into your shell profile file
-  # aliases are like shortcuts or nicknames for the shell
-
-  # if you are on ZShell use ~/.zshrc instead of ~/.bashrc
-  $ printf "# alias 3.X python over system version\nalias python=python3\nalias pip=pip3" >> ~/.bashrc
-
-  # the next command will tell the shell to reload using the updated configuration
-
-  # if you are on ZShell use ~/.zshrc instead of ~/.bashrc
-  $ source ~/.bashrc
-
-  $ python --version
-
-  # expect the following output, the minor version is arbitrary
-  Python 3.X.X
-..
-
-Installing HomeBrew
--------------------
-
-- Installing HomeBrew is as easy as using it
-- Enter the following command in your ``Terminal`` then accept all defaults while following the instructions
-
-.. code-block:: bash
-
-  $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-..
-
-- Confirm the installation was successful by entering
-
-.. code-block:: bash
-
-  $ brew --version
-
-  # expect the following output (2.X.X, minor versions and commits are arbitrary)
-  Homebrew 2.1.15
-  Homebrew/homebrew-core (git revision 66ea9; last commit 2019-10-22)
-  Homebrew/homebrew-cask (git revision 43442; last commit 2019-10-23)
-..
-
-Installing PostgreSQL
----------------------
-
-- Our final installation will be a breeze using HomeBrew
-- Enter the following into your ``Terminal``
-
-.. code-block:: bash
-
-  $ brew install postgresql
-..
-
-- Confirm the installation was successful by entering
-
-.. code-block:: bash
-
-  $ which psql
-
-  # should output the following, the minor version is arbitrary
-  /usr/local/bin/psql
-
-  $ psql --version
-
-  # should output the following, the versions may be different
-  psql (PostgreSQL) 10.1
-..
+  - You can find it under Finder (file explorer) > Applications > Code
+  - Once opened right click the icon in your dock and select ``options > keep in dock`` for easy access later 
 
 Congratulations!
 ----------------
