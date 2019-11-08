@@ -55,12 +55,43 @@ Create Unit
 
 After you move your JAR to the correct location, give it permission to run and set it's user you can create a Systemd Unit file and start your application as a service.
 
-Create your Unit File at this location: 
+Create your Unit File at this location: ``/etc/systemd/system/zika.service``
+
+.. sourcecode:: bash
+   
+   [Unit]
+   Description=Zika Dashboard
+   After=syslog.target
+   
+   [Service]
+   User=zika
+   EnvironmentFile=/etc/opt/zika/zika.config
+   ExecStart=/usr/bin/java -jar /opt/zika/app.jar SuccessExitStatus=143
+   Restart=always
+
+   [Install]
+   WantedBy=multi-user.target
+
 
 Create Unit Configuration
 -------------------------
 
 Since we are using Environment Variables we will have to provide them in a unit configuration file.
+
+Create your Unit File at this location: ``/etc/opt/zika/zika.config``
+
+.. sourcecode:: bash
+
+   APP_PORT=8080
+   APP_DB_HOST=zika-example-db.cq2s2klvmrfq.us-west-2.rds.amazonaws.com
+   APP_DB_PORT=5432
+   APP_DB_NAME=zika
+   APP_DB_USER=zika_app_user
+   APP_DB_PASS=verysecurepassword
+   ES_CLUSTER_URL=10.0.0.237
+   ES_CLUSTER_NAME=docker-cluster
+  ES_CLUSTER_PORT=9300
+
 
 Start Unit
 ----------
