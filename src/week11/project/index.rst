@@ -183,9 +183,15 @@ One you have a shell within the VM, run ``netstat -rn``. You will see something 
 
 Look for the row with ``0.0.0.0`` in the Destination column. The Gateway value of that row (in this case, ``10.0.2.2``) is the IP address that you would use to communicate with the host machine from within the virtual machine. Make a note of the IP. We'll use it shortly.
 
-* Create a workspace in GeoServer (we recommend ``lc/https://launchcode.org``)
-* Create a PostGIS data store
+  Create a workspace in the Geoserver sidebar under data > workspaces > add new workspace
+  
+  ``name``: ``zika``
+  
+  ``namespace URI``: ``https://zika.devops.launchcode.org``
+  
+  you do not need to check either of the boxes (default, isolated)
 
+* Create a PostGIS data store
   * Use ``zika`` as the database name and the host IP that you looked up a few minutes ago (``10.0.2.2`` in our example) as the hostname
 
 * Create a new layer from the ``states_with_cases_by_date`` table
