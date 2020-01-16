@@ -49,9 +49,6 @@ To install and configure Jenkins for use checkout the :ref:`docker-jenkins` arti
 Create a Jenkins User
 =====================
 
-Create & Login with User
-------------------------
-
 * This will be how you login to jenkins going forward
 * Be sure to remember the username and password
 * All fields are required
@@ -63,10 +60,12 @@ Create & Login with User
 
 Login to Jenkins by providing the username and password you just created.
 
+After you have installed, configured, and logged in you should see:
+
+  .. image:: /_static/images/jenkins/jenkins-welcome.png
+
 Install Plugin - Parameterized Trigger
 ======================================
-
-#. 
 
 Create Empty Projects
 =====================
@@ -306,20 +305,20 @@ Configure Test Project
 * In **General** select **This project is parameterized**
   String Parameter
 
-  .. image:: /_static/images/parameter-project-1.png
+  .. image:: /_static/images/jenkins/parameter-project-1.png
 
 * Paste this ``AIRWAZE_WORKSPACE`` into **name** input
 
 Enter parameter name
 
-  .. image:: /_static/images/parameter-project-2.png
+  .. image:: /_static/images/jenkins/parameter-project-2.png
 
 * Click **Advanced** button and select **Custom Workspace**
 * Enter ``${AIRWAZE_WORKSPACE}`` in the input
 
 Custom Workspace Direstory
 
-  .. image:: /_static/images/parameter-project-3.png
+  .. image:: /_static/images/jenkins/parameter-project-3.png
 
 * Go to the **Build** section
 * Click **Add build step**

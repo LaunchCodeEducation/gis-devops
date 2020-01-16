@@ -180,20 +180,20 @@ Configure Test Project
 * In **General** select **This project is parameterized**
   String Parameter
 
-  .. image:: /_static/images/parameter-project-1.png
+  .. image:: /_static/images/jenkins/parameter-project-1.png
 
 * Paste this ``AIRWAZE_WORKSPACE`` into **name** input
 
 Enter parameter name
 
-  .. image:: /_static/images/parameter-project-2.png
+  .. image:: /_static/images/jenkins/parameter-project-2.png
 
 * Click **Advanced** button and select **Custom Workspace**
 * Enter ``${AIRWAZE_WORKSPACE}`` in the input
 
 Custom Workspace Direstory
 
-  .. image:: /_static/images/parameter-project-3.png
+  .. image:: /_static/images/jenkins/parameter-project-3.png
 
 * Go to the **Build** section
 * Click **Add build step**
