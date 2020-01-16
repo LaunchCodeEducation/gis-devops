@@ -108,6 +108,22 @@ For each project:
 - Click OK
 - On the configure project screen click Save
 
+Following is a walkthrough for the first project Airwaze Compile. You will need to do this four times for all of the projects we need for this pipeline.
+
+From the Jenkins Homepage click ``New Item`` on the menu on the left side of your screen. This will take you to a page like this:
+
+  .. image:: /_static/images/jenkins/new-item.png
+
+Put in the Item name: ``Airwaze Compile``, click ``Freestyle project``, and then click the OK button. This should take you to the Configure Project screen:
+
+  .. image:: /_static/images/jenkins/configure-new-item.png
+
+For now we aren't going to configure anything, so just click the Save button.
+
+Repeat the Create new Item steps for all four of our projects: Airwaze Compile, Airwaze Test, Airwaze CreateJar, and Airwaze Deliver and then return to the Jenkins Homepage which should look like this:
+
+  .. image:: /_static/images/jenkins/empty-items.png
+
 Link Projects Together
 ======================
 
