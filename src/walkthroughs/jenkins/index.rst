@@ -49,16 +49,19 @@ To install and configure Jenkins for use checkout the :ref:`docker-jenkins` arti
 Create a Jenkins User
 =====================
 
+After installing, and unlocking Jenkins with the admin password (you can find access to both in the article linked above) we need to create our first admin Jenkins User.
+
+You should see a pretty standard web form like this:
+
+  .. image:: /_static/images/jenkins/create-user.png
+
+Fill out this form, all fields are required.
+
 * This will be how you login to jenkins going forward
 * Be sure to remember the username and password
-* All fields are required
 * Click **Save and Continue**
-* Click **Save**
+* Click **Save and Finish**
 * Click **Start using Jenkins**
-
-  * You may have to stop Jenkins and restart it
-
-Login to Jenkins by providing the username and password you just created.
 
 After you have installed, configured, and logged in you should see:
 
@@ -66,6 +69,26 @@ After you have installed, configured, and logged in you should see:
 
 Install Plugin - Parameterized Trigger
 ======================================
+
+Before we get started in creating our Jenkins Projects we are going to install the ``Parameterized Trigger`` plugin. This plugin will allow us to link Jenkins Projects together (trigger), and have all the projects share the same workspace (parameters).
+
+On the left hand side of the Jenkins Home page you should see a button labeled ``Manage Jenkins`` click it now. You should see the Manage Jenkins page that looks something like this:
+
+  .. image:: /_static/images/jenkins/manage-jenkins.png
+
+Click the Manage Plugins button (it looks like a loose puzzle piece).
+
+That should take you to this page:
+
+  .. image:: /_static/images/jenkins/plugin-manager.png
+
+Select the ``Available`` tab and then use the ``Filter`` box to search for ``Parameterized Trigger`` which should look like this:
+
+  .. image:: /_static/images/jenkins/search-parameterized-trigger.png
+
+Select the checkbox for this plugin and click the ``Install without restart`` button. This will take you to a new page and may take a couple of minutes to completely install.
+
+After the plugin is installed completely return to the Jenkins Home Page, by clicking the Jenkins Icon in the top left of your browser.
 
 Create Empty Projects
 =====================
