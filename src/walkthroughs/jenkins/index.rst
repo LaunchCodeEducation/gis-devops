@@ -205,127 +205,98 @@ Now that all of our projects are in an automated pipeline let's start adding som
 Configure Airwaze Compile
 =========================
 
-Our first project is to 
-#. Create & Name New Item
-#. Configure Compile Project
-#. Git Integration
-#. Add Action -- Create Gradle Task
-#. Try It Out
-#. Console Output
-#. Workspace
-#. Trigger Next Project when Compile Project is Successful
+Our first project is to compile our code. In order to do this we will first need to get our code into the hands of Jenkins. We will do this within our first project ``Airwaze Compile``. Go to the Configure project screen for ``Airwaze Compile`` and select the ``Source Code Management`` header, or scroll to that section:
 
-Create & Name New Item
-----------------------
+  .. image:: /_static/images/jenkins/source-control.png
 
-Configure Compile Project
--------------------------
+Select ``Git``. From here you will need to provide the URL to your git repository, and which branch for it to pull from. It should looks something like this:
 
-Git Integration
----------------
+  .. image:: /_static/images/jenkins/source-control-completed.png
 
-Add Action
-----------
+.. note::
 
-Try it Out
-----------
+   If you are attempting to pull from a private git repository you will have to give Jenkins the proper credentials. In GitLab the easiest way is to create a ``Deploy Token`` and paste the token information into the credentials section of the repository. You can find ``Deploy Tokens`` under ``Settings->Repository`` from the GitLab web interface.
 
-Console Output
---------------
+This will give this Jenkins project the ability to pull from your Git repository and to store the files it pulls into it's workspace. Let's try it out! 
 
-Workspace
----------
+Click Save, and then build now. 
 
-Trigger Next Project on Success
--------------------------------
+After the build finishes click on ``Workspace``. You should notice now that it pulled all your files from Git:
 
-* Click **New Item**
-* Enter name ``Airwaze Compile``
-* Click **Freestyle Project**
-* Click **Ok** at bottom
+  .. image:: /_static/images/jenkins/workspace-from-git.png
 
-Configure the Compile Project
------------------------------
+.. tip::
 
-* In **Source Code Management** click **Git**
-* Post your SSH gitlab repo url into **Repository URL**. Example: git@gitlab.com:welzie/airwaze-studio.git
-* Make sure you the branch you want to compile is in the **Branch Specifier** field
-* Go to the **Build Triggers** section
-* Select **Poll SCM** and enter ``H/5 * * * *`` into the **Schedule** input
-* Go to the **Build** section
-* Click **Add build step**
-* Click **Invoke Gradle script**
-* Select **Use Graddle Wrapper**
-* Enter ``clean compileJava`` into the **Tasks** input
-* Click **Save**
+   You may also want to checkout the ``Console Output`` for this specific build, it is showing us the output from the actual commands run by Jenkins. You will probably see some information about Git connecting to and pulling down files from the referenced Git URL.
 
-  * You will be taken to the **Project Airwaze Compile** page
+Now that we have the files from GitLab we can compile them! We will do that with a Gradle Task. Configure ``Airwaze Compile`` one last time. This time navigate to the ``Build`` section and ``Add a build step`` which ``Invoke Gradle script``:
 
-Let's Build It and See What Happens
------------------------------------
+  .. image:: /_static/images/jenkins/invoke-gradle-compile.png
 
-* Can we build it? Yes we can!
-* Click **Build Now** in the left menu
+We want to select ``Use Gradle Wrapper``, and then we need to include the gradle tasks we want to run. Let's run ``clean`` and ``compileJava``.
 
-  * The #1 build can be seen running in the build window
+Now the Jenkins project ``Airwaze Compile`` will pull down our code from GitLab, run the Gradle tasks ``clean`` and ``compileJava`` and if all three of those things are successful it will trigger the next Jenkins project ``Airwaze Test``.
 
-* Click on the **#1** in the **Build History** when the build has finished
+Run this project again and make sure it is still successful letting us know the code that was pulled from GitLab was compiled successfully.
 
-  * You will be taken to the **Build #1** page
-  * This page has all the details for what happened on this build
+.. Tip::
 
-* Click on **Console Output** in the left menu
-
-  * Here you can see exactly what commands were executed
-
-* Click **Airwaze Compile** in the top menu under the Jenkins logo
-
-  * This will take you back to the Project page
-  * On the project page you can run another build or see the history for other builds
-
-We Need to Install a Plugin
----------------------------
-
-* Click **Jenkins** in the top menu, the menu below the Jenkins logo
-* Click **Manage Jenkins** on the left
-* Click **Manage Plugins** on the right
-* Click **Available**
-* Enter **Parameterized Trigger** in search box
-* Check the checkbox next to the one result that matches
-* Click Install **Parameterized Trigger plugin** without restarting
-* Click **Back to Dashboard**
+   After running ``Build Now`` again checkout the ``Console Output`` of this Jenkins project Build. We now see some familiar Gradle messages about running tasks and if they were successful or not. The ``Console Output`` is a very beneficial tool for troubleshooting your Jenkins projects.
 
 Configure Airwaze Test
 ======================
 
-#. Create & Name New Item
-#. Configure Test Project
-#. Add Action -- Trigger Gradle Task
-#. Environment Variables
-#. DB Access
-#. Try It Out
-#. Trigger Next Project when Test Project is Successful
+In our pipe we have pulled down our code from GitLab, and we have successfully compiled it. Since we are sharing one workspace between all of our Jenkins Projects we simply need to run a Gradle ``test`` script to verify all of our tests pass.
 
-Create & Name New Item
-----------------------
+Before we re-configure ``Airwaze Test`` by invoking a ``test`` gradle script, let's make sure we understand the dependencies of our tests. Looking at ``airwaze-jenkins/src/test/resources/application-test.properties``:
 
-Configure Test Project
-----------------------
+  .. image:: /_static/images/jenkins/application-test-properties.png
 
-Add Action
-----------
+We can see that we are connecting to a Test DB using some environment variables. We will need to make sure we provide Jenkins the proper environment variables. We will also have to make sure our Gradle ``test`` task has access to the environment variables.
 
-Environment Variables
----------------------
+Let's also take a look at ``airwaze-jenkins/build.gradle``:
 
-Database Access
----------------
+  .. image:: /_static/images/jenkins/build-gradle.png
 
-Try it Out
-----------
+Whoever wrote this file provided us with a new Gradle task named ``jenkinsTest``. This task simply loads in some environment variables in a new way and then calls the Gradle ``test`` task. Now when ``jenkinsTest`` is run it will first set the environment variables from the server via the listed properties. This is how we will pass environment variables inside of our Jenkins Project to our Gradle ``test`` task.
 
-Trigger Next Project
---------------------
+Let's create that task now. ``Configure`` your ``Airwaze Test`` project. Go to the ``Build`` section and click ``Add build step`` and click ``Invoke Gradle script``. 
+
+From here we want to select the Gradle Wrapper, and run the Gradle Task available to us in the build.gradle file named ``jenkinsTest``:
+
+  .. image:: /_static/images/jenkins/invoke-gradle-jenkins-test.png
+
+We need to add the environment variables to this Jenkins build step so that it can pass them to Gradle. Click ``Advanced`` scroll down to ``Project Properties`` and add:
+
+  .. sourcecode:: java
+
+     test_db_user=airwaze_test_user
+     test_db_pass=airwazepass
+     test_db_name=airwaze_test
+     test_db_port=5432
+     test_db_host=172.17.0.2
+
+Hold up! Why are we not using 127.0.0.1 as the address of our database? Because Jenkins lives in it's own Docker Container. To our Jenkins container 127.0.0.1 refers to the Jenkins container. We need to provide the internal IP address of our airwaze database. You can find this by running ``docker inspect [name_of_airwaze_database_container]``:
+
+Note the output when I run ``docker inspect postgis-airwaze``:
+
+  .. image:: /_static/images/jenkins/docker-inspect.png
+
+So in my case I need to use ``172.17.0.2`` as the address of my test database.
+
+In the end my Jenkins Build Action looks like this:
+
+  .. image:: /_static/images/jenkins/invoke-gradle-jenkins-test-final.png
+
+.. note::
+
+   Note the difference between what we gave Jenkins (test_db_user) and what is an environment variable in Gradle (TEST_DB_USER). You could use the same case however we chose to write one in upper case, and one in lower case to help illustrate where they are being used.
+
+Finally Let's save this Jenkins project, and run ``Build Now`` on our ``Airwaze Compile`` project to see if ``Airwaze Test`` passes.
+
+.. tip::
+
+   If your tests fail look at the ``Console Output`` to figure out what is going on. Double check this section to ensure you've set the fields properly, and compare what you have with fellow students, and the instructor.
 
 Configure Airwaze CreateJar
 ===========================
