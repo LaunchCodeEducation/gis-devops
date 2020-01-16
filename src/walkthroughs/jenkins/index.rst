@@ -23,9 +23,10 @@ Our Continous Integration Goals
 
 After a branch/story is merged into our ``master`` branch. We want...
 
-1. Make sure the master branch still compiles after the merge
-2. Make sure the tests still pass
-3. Deliver a ``.jar`` file that is ready to be deployed
+#. Make sure the master branch still compiles after the merge
+#. Make sure the tests still pass
+#. Create a ``.jar`` file
+#. Deliver the ``.jar`` file to expedite deployment
 
 To accomplish these goals we will need to...
 
@@ -48,14 +49,8 @@ To install and configure Jenkins for use checkout the :ref:`docker-jenkins` arti
 Create a Jenkins User
 =====================
 
-#. Create User
-#. Login with User
-
-Create User
------------
-
-Login with User
----------------
+Create & Login with User
+------------------------
 
 * This will be how you login to jenkins going forward
 * Be sure to remember the username and password
@@ -66,10 +61,7 @@ Login with User
 
   * You may have to stop Jenkins and restart it
 
-Login to Jenkins
-----------------
-
-* Enter the username and password you just created
+Login to Jenkins by providing the username and password you just created.
 
 Install Plugin - Parameterized Trigger
 ======================================
@@ -79,7 +71,20 @@ Install Plugin - Parameterized Trigger
 Create Empty Projects
 =====================
 
-We want a successful project to trigger another project and to continue triggering projects until our pipe is done. A quirk with Jenkins is you cannot trigger another project until the project exists. So the first thing we are going to do is create all of our projects, and trigger them to run one after another.
+We need to create 4 projects in Jenkins, for now we just want to name them and save them.
+
+The projects we want to create are:
+- Airwaze Compile
+- Airwaze Test
+- Airwaze CreateJar
+- Airwaze Deliver
+
+For each project:
+- Click New Item
+- Enter in the Project Name
+- Click Freestyle Project
+- Click OK
+- On the configure project screen click Save
 
 Link Projects Together
 ======================
