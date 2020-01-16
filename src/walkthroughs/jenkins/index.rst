@@ -124,12 +124,88 @@ Repeat the Create new Item steps for all four of our projects: Airwaze Compile, 
 
   .. image:: /_static/images/jenkins/empty-items.png
 
+Build Airwaze Compile
+=====================
+
+To familiarize ourselves with how Jenkins works let's try building one of our projects. We haven't added any actions to our project yet, but Jenkins will still run it for us. From your Jenkins dashboard click on your ``Airwaze Compile`` project. This takes you to the homepage for this specific project and looks like:
+
+  .. image:: /_static/images/jenkins/project-homepage.png
+
+From here click on the ``Build Now`` button on the left-hand menu. This will schedule a build that should start immediately. You should see that your build history has changed and now has one build in it like the following image:
+
+  .. image:: /_static/images/jenkins/build-history.png
+
+Let's click on that build (it should be a link) and look at the page for this specific build:
+
+  .. image:: /_static/images/jenkins/build-page.png
+
+From here click on ``Console Output`` so we can see what came out of the terminal when this build was run in our Jenkins Container:
+
+  .. image:: /_static/images/jenkins/console-output.png
+
+The Console Output is pretty sparse, which makes sense we haven't told Jenkins to do anything for us in this build yet! The output is just letting us know where this project's workspace is, and that this build was successful. The workspace is where all of the files for this project would live. Any built artifacts, or .jar files, test results, etc.
+
+However, we don't want to manually trigger all of these individual projects manually. In the next section we will add some configurations to our existing projects so they will automatically build when a previous project was successful.
+
 Link Projects Together
 ======================
+
+We know the order of our projects:
+  #. Airwaze Compile
+  #. Airwaze Test
+  #. Airwaze CreateJar
+  #. Airwaze Deliver
+
+So let's use the parameterized trigger plugin we installed earlier to run our projects in this order. Navigate to the ``Airwaze Compile`` homepage and click ``Configure`` which should take you back to the project configuration screen:
+
+  .. image:: /_static/images/jenkins/configure-new-item.png
+
+From here we want to add a ``Post build Action`` so click the tab or scroll towards the bottom of this page until you see:
+
+  .. image:: /_static/images/jenkins/post-build-action.png
+
+Click the drop-down menu and select ``Trigger parameterized build on other projects``:
+
+  .. image:: /_static/images/jenkins/trigger-parameterized-build.png
+
+This will create a new section in which you will need to enter the next project to build ``Airwaze Test``, and then you will have to add two parameters using the ``Add Parameters`` drop-down box: ``build on the same node`` and ``Predefined parameters``. In the Predefined parameters section add: ``AIRWAZE_WORKSPACE=${WORKSPACE}`` and click the ``Save`` button.
+
+  .. image:: /_static/images/jenkins/post-build-action-2.png
+
+We have told Jenkins that when the ``Airwaze Compile`` project is successful that it should automatically schedule and run ``Airwaze Test``. We have instructed Jenkins to run the next project on the same node, and that we will be passing it one parameter. The parameter key is ``AIRWAZE_WORKSPACE`` and the value is ``${WORKSPACE}``. This is how we share the same workspace between the two projects.
+
+Our workspace is what contains our built artifacts, and all of the files of our project. We want this to be used by all projects so that we don't have to keep pulling these files into each individual project.
+
+Now we will need to configure our ``Airwaze Test`` project to receive this parameter, and to use the workspace that is being passed in. Open the ``Airwaze Test`` project, and click configure:
+
+  .. image:: /_static/images/jenkins/configure-general.png
+
+In the ``General`` section we need to select the ``This project is parameterized`` checkbox and we need to add a new ``String Parameter`` from the ``Add Parameter`` drop-down menu. In the ``String Parameter`` section add ``AIRWAZE_WORKSPACE`` to the Name field. This is our way of letting this project know the previous project will be passing in one parameter, and we should name it AIRWAZE_WORKSPACE.
+
+We now need to configure a custom workspace for this project. At the bottom of the ``General`` section you should see a button labeled ``Advanced`` click that button to see more options including ``Use custom workspace``. Check the ``Use custom workspace`` checkbox and enter ``${AIRWAZE_WORKSPACE}`` we are using the parameter passed in from the previous section here:
+
+  .. image:: /_static/images/jenkins/custom-workspace.png
+
+Double check that you have selected ``This project is parameterized``, you added the new ``String Parameter`` that represents our workspace, and added the ``Use custom workspace`` and set it's directory to the parameter that was passed in and click ``Save``.
+
+Let's try it out to make sure it worked. Navigate to your ``Airwaze Compile`` project, and click ``Build now``. When it's completed it should automatically fire your next project ``Airwaze Test``.
+
+Now we will need to add the conditions to continue passing the workspace and triggering the next builds. Using the steps we followed above you will need to:
+  - Add a post build action to ``Airwaze Test``
+  - Add parameters, and custom workspace to ``Airwaze CreateJar``
+  - Add a post build action to ``Airwaze CreateJar``
+  - Add parameters, and custom workspace to ``Airwaze Deliver``
+
+After making the additional amendments to ``Airwaze Test``, ``Airwaze CreateJar``, and ``Airwaze Deliver`` build ``Airwaze Compile`` and watch Jenkins run through all four of our projects. Your dashboard should look like this:
+
+  .. image:: /_static/images/jenkins/all-projects-build.png
+
+Now that all of our projects are in an automated pipeline let's start adding some actual build actions to our projects!
 
 Configure Airwaze Compile
 =========================
 
+Our first project is to 
 #. Create & Name New Item
 #. Configure Compile Project
 #. Git Integration
