@@ -31,10 +31,13 @@ To accomplish these goals we will need to...
 
 #. Install & Configure Jenkins
 #. Create a Jenkins user
-#. Create a Compile Project
-#. Create a Test Project
-#. Create a Create Jar Project
-#. Create a Deliver Jar Project
+#. Install Plugin
+#. Create Empty Projects
+#. Link Projects Together
+#. Configure Compile Project
+#. Configure Test Project
+#. Configure Create Jar Project
+#. Configure Deliver Jar Project
 #. Tryout the Whole Pipe
 
 Install and Configure Jenkins
@@ -68,8 +71,21 @@ Login to Jenkins
 
 * Enter the username and password you just created
 
-Create Project to Compile Airwaze
-=================================
+Install Plugin - Parameterized Trigger
+======================================
+
+#. 
+
+Create Empty Projects
+=====================
+
+We want a successful project to trigger another project and to continue triggering projects until our pipe is done. A quirk with Jenkins is you cannot trigger another project until the project exists. So the first thing we are going to do is create all of our projects, and trigger them to run one after another.
+
+Link Projects Together
+======================
+
+Configure Airwaze Compile
+=========================
 
 #. Create & Name New Item
 #. Configure Compile Project
@@ -160,8 +176,8 @@ We Need to Install a Plugin
 * Click Install **Parameterized Trigger plugin** without restarting
 * Click **Back to Dashboard**
 
-Create Test Project
-===================
+Configure Airwaze Test
+======================
 
 #. Create & Name New Item
 #. Configure Test Project
@@ -192,8 +208,8 @@ Try it Out
 Trigger Next Project
 --------------------
 
-Create CreateJar Project
-========================
+Configure Airwaze CreateJar
+===========================
 
 #. Create & Name New Item
 #. Configure Create Jar Project
@@ -216,8 +232,8 @@ Try it Out
 Trigger Next Project
 --------------------
 
-Create Deliver Jar Project
-==========================
+Configure Airwaze Deliver
+=========================
 
 #. Create & Name New Item
 #. Configure Deliver Jar Project
