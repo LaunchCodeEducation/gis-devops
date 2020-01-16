@@ -1,6 +1,6 @@
 :orphan:
 
-.. _walkthrough-jenkins:
+.. _walkthrough-jenkins-old:
 
 ====================
 Walkthrough: Jenkins
@@ -10,8 +10,6 @@ Follow along with the instructor as we configure Jenkins.
 
 Setup
 =====
-
-For this example we will be using the same project. Fork and Clone `this repository <https://gitlab.com/LaunchCodeTraining/airwaze-jenkins>`_.
 
 For this to work your Airwaze tests need to pass.
 
@@ -30,7 +28,46 @@ After a branch/story is merged into our ``master`` branch. We want...
 Install and Configure Jenkins
 =============================
 
-To install and configure Jenkins for use checkout the :ref:`docker-jenkins` article.
+* Go to `jenkins home page <https://jenkins.io/download/>`_
+* Download jenkins war from  by clicking **Generic Java War**  (note: scroll to the bottom of the page)
+
+   .. image:: /_static/images/download-jenkins.png
+
+* Move ``jenkins.war`` to folder ``~/jenkins``
+
+::
+
+  $ mkdir ~/jenkins
+  $ mv ~/Downloads/jenkins.war ~/jenkins
+
+* Now start jenkins via terminal
+
+::
+
+  $ java -jar ~/jenkins/jenkins.war --httpPort=9090
+
+
+.. note::
+
+  Normally you would not install jenkins on your dev machine. You would isntall it on a server that would be continsouly running so that it could react to a commit at anytime.
+
+
+Configure Jenkins
+-----------------
+
+* Copy the password or access the file listed in the terminal and copy the password inside it
+
+.. image:: /_static/images/jenkins-password.png
+
+
+* Go to `http://localhost:9090 <http://localhost:9090>`_
+* You should see screen asking for an admin key
+* Paste that key into the input box
+
+Install Plugins
+---------------
+
+* Click install suggested plugins (this will take a couple minutes)
 
 Create a Jenkins User
 ---------------------
