@@ -34,12 +34,12 @@ To accomplish these goals we will need to...
 #. Create a Jenkins user
 #. Install Plugin
 #. Create Empty Projects
+#. Build Airwaze Compile
 #. Link Projects Together
-#. Configure Compile Project
-#. Configure Test Project
-#. Configure Create Jar Project
-#. Configure Deliver Jar Project
-#. Tryout the Whole Pipe
+#. Configure Airwaze Compile
+#. Configure Airwaze Test
+#. Configure Airwaze CreateJar
+#. Configure Airwaze Deliver
 
 Install and Configure Jenkins
 =============================
