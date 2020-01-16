@@ -301,192 +301,69 @@ Finally Let's save this Jenkins project, and run ``Build Now`` on our ``Airwaze 
 Configure Airwaze CreateJar
 ===========================
 
-#. Create & Name New Item
-#. Configure Create Jar Project
-#. Add Action -- Trigger Gradle Task
-#. Try It Out
-#. Trigger Next Project when Test Project is Successful
+Now that we have compiled our code, and passed all of our tests, let's create a ``.jar`` file that can be deployed on a server.
 
-Create & Name New Item
-----------------------
+These steps may be familiar ``Configure`` your ``Airwaze CreateJar`` project. Select, or scroll down to the ``Build`` section. ``Add build step`` and ``Invoke Gradle script``, select ``Use Gradle Wrapper`` and enter ``bootRepackage`` as our Gradle task:
 
-Configure Create Jar Project
-----------------------------
+  .. image:: /_static/images/jenkins/create-jar.png
 
-Add Action
-----------
+.. tip::
 
-Try it Out
-----------
+   We are currently using Gradle 4.4 for this Airwaze project. However, you may be using a completely different version of Gradle which has renamed some tasks. ``bootRepackage`` may not be available to you. In newer versions of Gradle it has been renamed ``bootJar``.
 
-Trigger Next Project
---------------------
+If you look in the current workspace of ``Airwaze CreateJar``, or either of the other projects we have configured you will notice we don't have a ``build/libs/`` directory, after we run this task we should.
+
+That's all we need to do for this Jenkins project. So let's kick the whole pipe off by running ``Build Now`` on ``Airwaze Compile``.
+
+If it worked successfully you should now find a ``build/libs/app.jar`` file that was created by this project. Thanks Jenkins!
 
 Configure Airwaze Deliver
 =========================
 
-#. Create & Name New Item
-#. Configure Deliver Jar Project
-#. Add Action -- Trigger Shell Script
-#. AWSCLI From Docker Container
-#. Try It Out
+Our final step for today will be delivering our newly minted ``build/libs/app.jar`` file to an AWS S3 bucket that can be incorporated in our deployment process.
 
-Create & Name New Item
-----------------------
+Before we can deliver this new file to an S3 bucket we will need to create an S3 bucket, and we should probably check that our Jenkins container has the AWSCLI, and the proper credentials.
 
-Configure Deliver Jar Project
+Check that Jenkins has AWS Dependencies
+---------------------------------------
+
+If you have worked through the rest of this class you probably already have AWS credentials stored on your computer. You can view them with: ``cat ~/.aws/credentials``. If nothing happens you will need to download AWS credentials, let the instructor know if you have forgotten how.
+
+If you have AWS credentials, and the AWSCLI you can now run: ``aws s3 ls`` to view all the S3 buckets associated with this account. Let the instructor know if you don't have AWSCLI installed.
+
+It's great that our laptop has AWS credentials and access to the AWSCLI, but what really needs them right now is our Jenkins container. Let's access a bash terminal in our Jenkins container and make sure it has what it needs: ``docker exec -u jenkins -it jenkins bash`` should get you into a bash terminal in your jenkins container. Let the instructor know if you can't get in.
+
+From a bash terminal inside your jenkins container run ``aws s3 ls`` and see if you get the same output you got earlier when you ran that command from your computer. If so Jenkins has everything it needs, if not let the instructor know and they can help you troubleshoot. You probably need to run ``aws configure`` and give it the AWS credentials.
+
+Create an S3 bucket
+-------------------
+
+Once you have AWS credentials and the AWSCLI you can create a new bucket with: ``aws s3 mb s3://launchcode-devops-[some_unique_name]``
+
+.. note::
+
+   *Every* S3 bucket has to have a unique URL, so you may have to get creative with naming your bucket adding ``launchcode-devops`` as a prefix will help tremendously.
+
+You can check the contents of your bucket with ``aws s3 ls s3://launchcode-devops-[some_unique_name]`` granted it will be empty since we haven't delivered our ``.jar`` yet.
+
+Configure ``Airwaze Deliver``
 -----------------------------
 
-Add Action
-----------
+Now that we know our Jenkins container has AWS credentials and the AWSCLI we can have it execute a shell script for us. ``Configure`` your ``Airwaze Deliver`` project. Scroll down, or select ``Build``, ``Add build step`` ``Execute shell`` and paste in ``aws s3 cp build/libs/app.jar s3://launchcode-devops-[some_unique_name]``:
 
-AWSCLI From Jenkins Container
------------------------------
+  .. image:: /_static/images/jenkins/airwaze-deliver.png
 
-Try it Out
-----------
+Finally, build your ``Airwaze Compile`` project again. After all four of our projects have run successfully re-run ``aws s3 ls s3://launchcode-devops-[some_unique_name]`` and you should see that it has a new file named ``app.jar``!
 
-Tryout the Whole Pipe
-=====================
+  .. image:: /_static/images/jenkins/jar-in-s3.png
+
 
 Next Steps
 ==========
 
-#. Deploy API
-#. CI/CD for Client App
-#. See the same Process using a different tool (GitLabCI, Travis, etc)
+Our Jenkins pipeline only takes us through Delivery, but doesn't automatically Deploy our jar file. Looking into AWS Code PipeLine could help us take this pipe all the way to deployment.
 
-Create Test, CreateJar, and Deliver Projects
-===============================================
-
-* Create three more **Freestyle** projects
-* ``Airwaze Test``
-* ``Airwaze CreateJar``
-* ``Airwaze Deliver``
-* Don't do anything but give these a name and click **Save**
-
-  * We will configure them next
-
-Edit the Compile Project
-========================
-
-We need the **Compile Project** to kick off the **Test Project** when it's done. We also want the two projects to share the same work space, so that the repo doesn't have to be checked out again.
-
-* Go back to the **Dashboard**
-* Click the **Airwaze Compile** Project
-* Click **Configure**
-* Go to **Post Build Actions**
-* Select **Trigger parameterized build on other projects** from the select box
-* Enter ``Airwaze Test`` as the project to build
-* Click **Add Parameters** and select **Build on the same node**
-* Click **Add Parameters** again and select **Predefined parameters**
-* Enter this ``AIRWAZE_WORKSPACE=${WORKSPACE}`` into input
-* Click save
-
-Configure Test Project
-----------------------
-
-* Navigate to project ``http://localhost:9090/job/Airwaze%20Test/``
-* Click **Configure**
-* In **General** select **This project is parameterized**
-  String Parameter
-
-  .. image:: /_static/images/jenkins/parameter-project-1.png
-
-* Paste this ``AIRWAZE_WORKSPACE`` into **name** input
-
-Enter parameter name
-
-  .. image:: /_static/images/jenkins/parameter-project-2.png
-
-* Click **Advanced** button and select **Custom Workspace**
-* Enter ``${AIRWAZE_WORKSPACE}`` in the input
-
-Custom Workspace Direstory
-
-  .. image:: /_static/images/jenkins/parameter-project-3.png
-
-* Go to the **Build** section
-* Click **Add build step**
-* Click **Invoke Gradle script**
-* Select **Use Graddle Wrapper**
-* Enter ``clean test`` into the **Tasks** input
-
-Now we need to kick off the **CreateJar Project**
-
-* Go to **Post Build Actions**
-* Enter ``Airwaze CreateJar`` as the project to build
-* Click **Add Parameters** and select **Build on the same node**
-* Click **Add Parameters** again and select **Predefined parameters**
-* Enter this ``AIRWAZE_WORKSPACE=${WORKSPACE}`` into input
-* Click save
-
-Run the Compile Project, which runs the Test Project
-----------------------------------------------------
-
-* Run the Compile Project
-
-  * Go to the **Dashboard**
-  * Click the **Compile Project**
-  * Click **Build Now**
-  
-* After both the Compile Project and Test Project have finished
-* You can view the tests by finding the test results in the project work space
-* Naviage to project works space by clicking **Work Space** in the left menu of a project. Example: http://localhost:9090/job/Airwaze%20Test/ws/
-* Once on the **Work Space** page click on the folder names and navigate to ``/build/reports/tests/test/index.html``
-* Clicking on ``index.html`` should open up the junit test results. Example: http://localhost:9090/job/Airwaze%20Test/ws/build/reports/tests/test/index.html
-
-Configure the Tests Results to be Published Automatically
----------------------------------------------------------
-
-* We can configure the tests results to be pushlised on the project results after every run
-* Go to the **Post build actions** for the **Test Project**
-* Select **Publish JUnit test result report** and input this ``build/test-results/test/*.xml`` into input
-* Run the project again and you will see a link named **Latest Test Results** on the project page
-* You can also click on a specific build and see a link named **Test Results**
-* NOTE: a graph will appear on the project page that shows a history of test results
-
-Configure CreateJar Project
----------------------------
-
-* Same configuration as the **Test Project**, with these exceptions
-* In the **Build** section 
-* Enter this gradle command ``bootRepackage`` into **Tasks** input
-* Select **Use Graddle Wrapper**
-* Go to **Post Build Actions**
-* Select **Trigger parameterized build on other projects** from the select box
-* Enter ``Airwaze Deliver`` as the project to build
-* Click **Add Parameters** and select **Build on the same node**
-* Click **Add Parameters** again and select **Predefined parameters**
-* Enter this ``AIRWAZE_WORKSPACE=${WORKSPACE}`` into input
-* Click save
-
-Setup S3 Bucket (Needed so we can configure the next project)
--------------------------------------------------------------
-
-* If you haven't already, you need to install ``awscli``. Instructions can be found in the `AWS3 Studio <https://education.launchcode.org/gis-devops/studios/AWS3/>`_
-* Create a new S3 bucket that will be used for the ``.jar`` files your jenkins builds produce
-
-::
-
-  $ aws s3 mb s3://launchcode-gis-c3-blake-airwaze
-
-* Go to the AWS website and enable **VERSIONING**
-
-Make sure your s3 bucket shows up when you run this command in terminal::
-
-  $ aws s3 ls
-
-
-Configure Deliver Project
--------------------------
-
-* Same configuration as **CreateJar Project**, with these two exceptions
-* In the *Build* section select **Execute shell**
-* Enter this into input ``aws s3 cp build/libs/app-0.0.1-SNAPSHOT.jar s3://YOUR-S3-BUCKET/``
-* There are NO **Post Build Actions**
-
-That's It!
-==========
-
-Now run the **Airwaze Compile** project now and watch it kick off the other projects automatically!
+Other ideas:
+  #. Trigger ``Airwaze Compile`` on GitLab merge
+  #. CI/CD for Client App
+  #. See the same Process using a different tool (GitLabCI, Travis, etc)
