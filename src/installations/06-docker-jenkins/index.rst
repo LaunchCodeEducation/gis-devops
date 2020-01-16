@@ -43,9 +43,11 @@ You are looking for a line like this:
 
 .. image:: /_static/images/docker-jenkins/jenkins-config.png
 
-Enter that password into the Unlock Jenkins page, and hit continue.
+Enter that password into the Unlock Jenkins page you can find at ``localhost:7070``.
 
-On the next page select ``Install suggested plugins`` and give it a few minutes to install everything Jenkins needs.
+.. image:: /_static/images/docker-jenkins/unlock-jenkins.png
+
+Click continue. On the next page select ``Install suggested plugins`` and give it a few minutes to install everything Jenkins needs.
 
 Additional Information
 ----------------------
