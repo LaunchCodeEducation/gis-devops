@@ -27,13 +27,25 @@ After a branch/story is merged into our ``master`` branch. We want...
 2. Make sure the tests still pass
 3. Deliver a ``.jar`` file that is ready to be deployed
 
+To accomplish these goals we will need to...
+
+#. Install & Configure Jenkins
+#. Create a Jenkins user
+#. Create a Compile Project
+#. Create a Test Project
+#. Create a Create Jar Project
+#. Create a Deliver Jar Project
+
 Install and Configure Jenkins
 =============================
 
 To install and configure Jenkins for use checkout the :ref:`docker-jenkins` article.
 
 Create a Jenkins User
----------------------
+=====================
+
+#. Create User
+#. Login with User
 
 * This will be how you login to jenkins going forward
 * Be sure to remember the username and password
@@ -51,6 +63,15 @@ Login to Jenkins
 
 Create Project to Compile Airwaze
 =================================
+
+#. Create & Name New Item
+#. Configure Compile Project
+#. Git Integration
+#. Add Action -- Create Gradle Task
+#. Try It Out
+#. Console Output
+#. Workspace
+#. Trigger Next Project when Compile Project is Successful
 
 * Click **New Item**
 * Enter name ``Airwaze Compile``
@@ -107,6 +128,42 @@ We Need to Install a Plugin
 * Check the checkbox next to the one result that matches
 * Click Install **Parameterized Trigger plugin** without restarting
 * Click **Back to Dashboard**
+
+Create Test Project
+===================
+
+#. Create & Name New Item
+#. Configure Test Project
+#. Add Action -- Trigger Gradle Task
+#. Environment Variables
+#. DB Access
+#. Try It Out
+#. Trigger Next Project when Test Project is Successful
+
+Create CreateJar Project
+========================
+
+#. Create & Name New Item
+#. Configure Create Jar Project
+#. Add Action -- Trigger Gradle Task
+#. Try It Out
+#. Trigger Next Project when Test Project is Successful
+
+Create Deliver Jar Project
+==========================
+
+#. Create & Name New Item
+#. Configure Deliver Jar Project
+#. Add Action -- Trigger Shell Script
+#. AWSCLI From Docker Container
+#. Try It Out
+
+Next Steps
+==========
+
+#. Deploy API
+#. CI/CD for Client App
+#. See the same Process using a different tool (GitLabCI, Travis, etc)
 
 Create Test, CreateJar, and Deliver Projects
 ===============================================
