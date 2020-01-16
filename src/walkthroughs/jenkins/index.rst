@@ -35,6 +35,7 @@ To accomplish these goals we will need to...
 #. Create a Test Project
 #. Create a Create Jar Project
 #. Create a Deliver Jar Project
+#. Tryout the Whole Pipe
 
 Install and Configure Jenkins
 =============================
@@ -46,6 +47,12 @@ Create a Jenkins User
 
 #. Create User
 #. Login with User
+
+Create User
+-----------
+
+Login with User
+---------------
 
 * This will be how you login to jenkins going forward
 * Be sure to remember the username and password
@@ -72,6 +79,30 @@ Create Project to Compile Airwaze
 #. Console Output
 #. Workspace
 #. Trigger Next Project when Compile Project is Successful
+
+Create & Name New Item
+----------------------
+
+Configure Compile Project
+-------------------------
+
+Git Integration
+---------------
+
+Add Action
+----------
+
+Try it Out
+----------
+
+Console Output
+--------------
+
+Workspace
+---------
+
+Trigger Next Project on Success
+-------------------------------
 
 * Click **New Item**
 * Enter name ``Airwaze Compile``
@@ -140,6 +171,27 @@ Create Test Project
 #. Try It Out
 #. Trigger Next Project when Test Project is Successful
 
+Create & Name New Item
+----------------------
+
+Configure Test Project
+----------------------
+
+Add Action
+----------
+
+Environment Variables
+---------------------
+
+Database Access
+---------------
+
+Try it Out
+----------
+
+Trigger Next Project
+--------------------
+
 Create CreateJar Project
 ========================
 
@@ -149,6 +201,21 @@ Create CreateJar Project
 #. Try It Out
 #. Trigger Next Project when Test Project is Successful
 
+Create & Name New Item
+----------------------
+
+Configure Create Jar Project
+----------------------------
+
+Add Action
+----------
+
+Try it Out
+----------
+
+Trigger Next Project
+--------------------
+
 Create Deliver Jar Project
 ==========================
 
@@ -157,6 +224,24 @@ Create Deliver Jar Project
 #. Add Action -- Trigger Shell Script
 #. AWSCLI From Docker Container
 #. Try It Out
+
+Create & Name New Item
+----------------------
+
+Configure Deliver Jar Project
+-----------------------------
+
+Add Action
+----------
+
+AWSCLI From Jenkins Container
+-----------------------------
+
+Try it Out
+----------
+
+Tryout the Whole Pipe
+=====================
 
 Next Steps
 ==========
