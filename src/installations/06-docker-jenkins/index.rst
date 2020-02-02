@@ -282,27 +282,50 @@ Once we are in the container we will command AWS to list the S3 buckets for the 
 
 Everything is ready to go! You can return to the :ref:`walkthrough-jenkins` page now. The section below is for more advanced usage. When dealing with complex topics you will find more value exploring them when you have a need for the information (like later in your pipeline development). 
 
-Connecting Jenkins to Other containers
---------------------------------------
+Networking Between Containers
+-----------------------------
 
-When setting up Jenkins pipelines you will often require access to other services. For example, you may want to run code quality analysis using ``Sonarqube`` or run *integration* tests using test databases. Naturally you would run these services as containers! So far we have already learned how to run a PostGIS database container which we have used for local development and testing on the host machine. Ideally we could let Jenkins connect to and use the same container to complete its testing stage. 
+When setting up Jenkins pipelines you will often require access to other services. For example, you may want to run code quality analysis using ``Sonarqube`` or run *integration* tests that rely on test databases. Naturally you would run these services as containers! So far we have already learned how to run a PostGIS database container which we have used for local development and testing. We have been connecting to this database using ``localhost`` and ``5432``, the published port of the container. Ideally we could let Jenkins connect to and use the same container to complete its testing stage. 
 
-But how do we connect two or more containers? The simple, but less manageable, solution is to use a custom network. The more complex, but more scalable, solution is to use ``docker-compose``. You will learn more about ``docker-compose`` later in the course. For now we will focus on using custom networks.
+You are able to connect to your containers through ``localhost:PORT`` because that process "originates" from the local machine itself. Technically the process originates from the container but we publish, or bind, a host port to a container with ``docker run -p <host>:<container>``.
+
+
+.. tip::
+
+  You can't use ``localhost`` in a container to network with anything but processes running **inside it**. Because containers behave like their own host machines that runs their respective process. Other services (processes) are in *their own* containers [machines], each with their own ``localhost`` resolution. 
+
+So how do we connect two or more containers? Generally speaking this is a question about **networking between machines [containers] on a network**. There are three options to consider:
+
+* The simplest, but least reliable, solution is to use the default container network
+* The simpler, but less scalable, solution is to use a custom network
+* A more complex, but more scalable, solution is to use ``docker-compose`` 
+
+You will learn more about ``docker-compose`` later in the course. For now we will find a balance between the two by creating our own custom network to **bridge** the gap between our containers.
 
 Custom Docker Networks
 ++++++++++++++++++++++
 
-By default all new containers are connected to the ``default bridge`` network. This network (along with two others) are all created automatically when the Docker daemon starts up. Within the ``default bridge`` network every container is assigned a private (internal) IP address. Containers can connect to each other using these private IP addresses. However, these IP addresses are dynamically assigned as containers are created / destroyed or assigned / unassigned from the default network.
+By default all new containers are connected to the ``default bridge`` network. This network (along with two others) are all created automatically when the Docker daemon starts up. Within the ``default bridge`` network every container is assigned a private (internal) IP address. 
 
-This means that while we could connect from one container to another their addresses will only be constant for as long as they both exist on the network. If we "hard-code" the use of a container's private IP address there is no guarantee that it will remain constant. 
+Containers can connect to each other using these private IP addresses. However, these IP addresses are dynamically assigned as containers are created and destroyed or assigned and unassigned from the network.
 
-Fortunately Docker lets us create *custom user-defined networks* that support networking between containers using aliases instead of addresses. In these custom networks the aliases remain constant and are resolved into their current IP address by an internal DNS. So instead of hard-coding an IP address we can refer to a container by an alias and its internal IP will be resolved to the correct address - even if that address changes in the future.
+.. warning::
+
+  We could connect from one container to another using their default bridge IP addresses. **But these addresses will only be constant for as long as they both exist on the network**. If we "hard-code" the use of a container's private IP address there is no guarantee that it will remain constant in the future. 
+
+Fortunately Docker lets us create *custom user-defined networks* that support networking between containers using aliases, or **hostnames**, instead of addresses. In these custom networks the **aliases remain constant** and are resolved into the current IP address of their assigned container. The hostname resolution is handled by a network DNS that Docker manages. 
+
+So instead of hard-coding an IP address we can refer to a container by an alias and its internal IP will be resolved to the correct address. Even if that address changes in the future due to replacing the container (so long as we give it the same alias).
+
+.. note::
+
+  Using an alias for a container's internal IP address on a network is no different than using ``localhost`` as an alias for ``127.0.0.1`` on your laptop. Because ``localhost`` is just that - the **local host[name]** of your machine. 
 
 .. tip::
 
-  **Aliases are just host names for "machines" (containers) on a network**. Think of these aliases like host names on the public internet. We don't memorize IP addresses to access websites, we just remember a host name (plus a TLD like ``.com``) and let the public DNS resolve the correct IP to form a connection.
-
-Docker networking is a pretty complicated topic. `There are a lot of different network types <https://docs.docker.com/network/>`_ (including custom drivers). For the purposes of networking between containers **on the same host machine** we can create a custom **bridge network**. This happens to be the default network driver when using the ``network create`` command: 
+  Docker networking is a pretty complicated topic. `There are a lot of different network types <https://docs.docker.com/network/>`_ (including custom drivers). Each has pros and cons depending on the context of your system.
+  
+For our purposes we are only concerned with networking between containers **on the same host machine**. In this case we can use a custom **bridge network**. The bridge driver happens to be the default when using the ``network create`` command: 
 
 .. code:: bash
 
@@ -314,6 +337,7 @@ Docker networking is a pretty complicated topic. `There are a lot of different n
 
   # inspect a network to see its configuration including assigned containers and aliases
   $ docker network inspect <network name>
+
 
 Connecting Containers
 +++++++++++++++++++++
@@ -340,24 +364,26 @@ Once you have created a network you can start adding containers to it. Container
 
   # connect to a network AND give the container alias(es) on that network
   $ docker run --network <network name> --network-alias <alias name>[,<other alias name(s)>] ...
-
+ 
 .. tip::
+  
+  When networking between containers you would replace any intuitive usage of ``localhost`` with the alias, or hostname, of the container [another machine] you want to connect to.  **As long as both those containers [machines] are on the same network**.
 
-  Using an alias is no different than using ``localhost`` as an alias for ``127.0.0.1``. This is something you should be comfortable doing by now. Anywhere you would normally use ``localhost`` can be replaced with the alias of the container you want to connect to. **As long as both containers are on the same network**.
+Two Containers and a Network
+++++++++++++++++++++++++++++
 
-
-From inside a container you can connect to any other using its alias. Let's look at an example with two containers and a custom network:
+From inside a container you can connect to any other using its alias. Let's look at an example with two containers and a custom network. The ``service`` container needs to connect to the ``database`` container:
 
 .. code:: bash
 
   # create the network first (for simplicity)
-  $ docker network create jenkins-network
+  $ docker network create my-network
 
   # create the containers
-  $ docker run --name jenkins --network jenkins-network ...
-  $ docker run --name test-database --network jenkins-network ...
+  $ docker run --name service --network my-network ...
+  $ docker run --name database --network my-network ...
 
-Now within the ``jenkins`` container we can connect to the database by its by its container name ``test-database`` and vice-versa! You can see how the aliases get resolved to the private IP address by issuing a curl request from within the container and using the *verbose* option ``-v`` to see the connection steps in detail:
+Now within the ``service`` container we can connect to the ``database`` by its by its container name ``database`` (instead of ``localhost``)! You can test how the aliases get resolved to the private IP address by issuing a ``curl`` request from within one of the containers and using the *verbose* option ``-v`` to see the connection steps in detail:
 
 .. code:: bash
 
@@ -370,3 +396,6 @@ Now within the ``jenkins`` container we can connect to the database by its by it
   * Connected to <container alias> (172.X.X.X) port <port> (#0)
   > GET / HTTP/1.1
   > Host: <alias>:<port>
+
+Connecting Jenkins to the Test Database
+---------------------------------------
