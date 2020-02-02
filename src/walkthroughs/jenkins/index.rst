@@ -2,9 +2,9 @@
 
 .. _walkthrough-jenkins:
 
-====================
-Walkthrough: Jenkins
-====================
+===============================
+Walkthrough: CI/CD With Jenkins
+===============================
 
 Follow along with the instructor as we configure Jenkins.
 
@@ -18,8 +18,8 @@ For this to work your Airwaze tests need to pass.
 * Open your Airwaze project and run the tests
 * If they don't pass, then fix them ;)
 
-Our Continous Integration Goals
-===============================
+Our Continous Integration & Delivery Goals
+==========================================
 
 After a branch/story is merged into our ``master`` branch. We want...
 
@@ -44,28 +44,7 @@ To accomplish these goals we will need to...
 Install and Configure Jenkins
 =============================
 
-To install and configure Jenkins for use checkout the :ref:`docker-jenkins` article.
-
-Create a Jenkins User
-=====================
-
-After installing, and unlocking Jenkins with the admin password (you can find access to both in the article linked above) we need to create our first admin Jenkins User.
-
-You should see a pretty standard web form like this:
-
-  .. image:: /_static/images/jenkins/create-user.png
-
-Fill out this form, all fields are required.
-
-* This will be how you login to jenkins going forward
-* Be sure to remember the username and password
-* Click **Save and Continue**
-* Click **Save and Finish**
-* Click **Start using Jenkins**
-
-After you have installed, configured, and logged in you should see:
-
-  .. image:: /_static/images/jenkins/jenkins-welcome.png
+To install and configure Jenkins check out the :ref:`docker-jenkins` article.
 
 Install Plugin - Parameterized Trigger
 ======================================
@@ -243,6 +222,8 @@ Run this project again and make sure it is still successful letting us know the 
 
    After running ``Build Now`` again checkout the ``Console Output`` of this Jenkins project Build. We now see some familiar Gradle messages about running tasks and if they were successful or not. The ``Console Output`` is a very beneficial tool for troubleshooting your Jenkins projects.
 
+.. TODO: refactor section 
+
 Configure Airwaze Test
 ======================
 
@@ -268,21 +249,25 @@ From here we want to select the Gradle Wrapper, and run the Gradle Task availabl
 
 We need to add the environment variables to this Jenkins build step so that it can pass them to Gradle. Click ``Advanced`` scroll down to ``Project Properties`` and add:
 
-  .. sourcecode:: java
+.. sourcecode:: java
 
-     test_db_user=airwaze_test_user
-     test_db_pass=airwazepass
-     test_db_name=airwaze_test
-     test_db_port=5432
-     test_db_host=172.17.0.2
+    test_db_user=airwaze_test_user
+    test_db_pass=airwazepass
+    test_db_name=airwaze_test
+    test_db_port=5432
+    test_db_host=172.17.0.2
 
-Hold up! Why are we not using 127.0.0.1 as the address of our database? Because Jenkins lives in it's own Docker Container. To our Jenkins container 127.0.0.1 refers to the Jenkins container. We need to provide the internal IP address of our airwaze database. You can find this by running ``docker inspect [name_of_airwaze_database_container]``:
+Hold up! Why are we not using ``127.0.0.1`` as the address of our database? Because Jenkins lives in it's own Docker Container. To our Jenkins container 127.0.0.1 refers to the Jenkins container. We need to provide the internal IP address of our airwaze database. You can find this by running ``docker inspect [name_of_airwaze_database_container]``:
 
 Note the output when I run ``docker inspect postgis-airwaze``:
 
   .. image:: /_static/images/jenkins/docker-inspect.png
 
 So in my case I need to use ``172.17.0.2`` as the address of my test database.
+
+.. note::
+
+  You can read more about how this, and other networking mechanisms, work in the :ref:`docker-networking` article. 
 
 In the end my Jenkins Build Action looks like this:
 
@@ -324,46 +309,64 @@ Our final step for today will be delivering our newly minted ``build/libs/app.ja
 
 Before we can deliver this new file to an S3 bucket we will need to create an S3 bucket, and we should probably check that our Jenkins container has the AWSCLI, and the proper credentials.
 
-Check that Jenkins has AWS Dependencies
----------------------------------------
+Check that the AWS CLI Is Configured
+------------------------------------
 
-If you have worked through the rest of this class you probably already have AWS credentials stored on your computer. You can view them with: ``cat ~/.aws/credentials``. If nothing happens you will need to download AWS credentials, let the instructor know if you have forgotten how.
+You can confirm the AWS CLI in the container is working by entering the following command:
 
-If you have AWS credentials, and the AWSCLI you can now run: ``aws s3 ls`` to view all the S3 buckets associated with this account. Let the instructor know if you don't have AWSCLI installed.
+.. code:: bash
 
-It's great that our laptop has AWS credentials and access to the AWSCLI, but what really needs them right now is our Jenkins container. Let's access a bash terminal in our Jenkins container and make sure it has what it needs: ``docker exec -u jenkins -it jenkins bash`` should get you into a bash terminal in your jenkins container. Let the instructor know if you can't get in.
+  $ docker exec jenkins aws s3 ls
 
-From a bash terminal inside your jenkins container run ``aws s3 ls`` and see if you get the same output you got earlier when you ran that command from your computer. If so Jenkins has everything it needs, if not let the instructor know and they can help you troubleshoot. You probably need to run ``aws configure`` and give it the AWS credentials.
+  # expected output is the list of buckets
+
+.. note::
+
+  If this command doesn't work you likely missed the :ref:`docker-jenkins-setup-aws` section.
 
 Create an S3 bucket
 -------------------
 
-Once you have AWS credentials and the AWSCLI you can create a new bucket with: ``aws s3 mb s3://launchcode-devops-[some_unique_name]``
+Once you have AWS credentials and the AWSCLI you can create a new bucket with:
+
+.. code:: bash
+
+  $ aws s3 mb s3://launchcode-devops-airwaze-<your name>
 
 .. note::
 
-   *Every* S3 bucket has to have a unique URL, so you may have to get creative with naming your bucket adding ``launchcode-devops`` as a prefix will help tremendously.
-
-You can check the contents of your bucket with ``aws s3 ls s3://launchcode-devops-[some_unique_name]`` granted it will be empty since we haven't delivered our ``.jar`` yet.
+   *Every* S3 bucket has to have a unique URL. If the bucket name is taken due to a common name just add a digit to the end (or something else you won't forget).
+   
+We will use this bucket to deliver our ``.jar`` file after it has been packaged.
 
 Configure ``Airwaze Deliver``
 -----------------------------
 
-Now that we know our Jenkins container has AWS credentials and the AWSCLI we can have it execute a shell script for us. ``Configure`` your ``Airwaze Deliver`` project. Scroll down, or select ``Build``, ``Add build step`` ``Execute shell`` and paste in ``aws s3 cp build/libs/app.jar s3://launchcode-devops-[some_unique_name]``:
+Now that we know our Jenkins container has its AWS CLI set up we can have it execute a shell script for us. ``Configure`` your ``Airwaze Deliver`` project. Scroll down, or select ``Build``, ``Add build step`` ``Execute shell`` and paste in:
 
-  .. image:: /_static/images/jenkins/airwaze-deliver.png
+.. TODO: check if build/libs/app.jar is correct (is build gradle configured for this naming?)
 
-Finally, build your ``Airwaze Compile`` project again. After all four of our projects have run successfully re-run ``aws s3 ls s3://launchcode-devops-[some_unique_name]`` and you should see that it has a new file named ``app.jar``!
+.. code:: bash
 
-  .. image:: /_static/images/jenkins/jar-in-s3.png
+  aws s3 cp build/libs/app.jar s3://launchcode-devops-airwaze-<your name>
+
+.. image:: /_static/images/jenkins/airwaze-deliver.png
+
+Finally, build your ``Airwaze Compile`` project again. After all four of our projects have run you can list the contents of the bucket to see the ``app.jar`` file was delivered successfully.
+
+.. code:: bash
+
+  $ aws s3 ls s3://launchcode-devops-airwaze-<your name>
+
+.. image:: /_static/images/jenkins/jar-in-s3.png
 
 
 Next Steps
 ==========
 
-Our Jenkins pipeline only takes us through Delivery, but doesn't automatically Deploy our jar file. Looking into AWS Code PipeLine could help us take this pipe all the way to deployment.
+Our Jenkins pipeline only takes us through Delivery, but doesn't automatically Deploy our ``jar`` file. Looking into AWS Code PipeLine could help us take this pipe all the way to deployment...
 
-Other ideas:
-  #. Trigger ``Airwaze Compile`` on GitLab merge
-  #. CI/CD for Client App
-  #. See the same Process using a different tool (GitLabCI, Travis, etc)
+Other ideas to implement:
+  #. Trigger ``Airwaze Compile`` on GitLab merge to your forked repo
+  #. CI/CD for your Zika Client
+  #. Try setting up a pipeline with the same stages using a different tool (GitLabCI, Travis, etc)
