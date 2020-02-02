@@ -147,3 +147,12 @@ Configurations
   :maxdepth: 1
 
   configurations/*/index
+
+Notes
+-----
+
+.. toctree::
+  :glob:
+  :maxdepth: 2
+
+  notes/index
