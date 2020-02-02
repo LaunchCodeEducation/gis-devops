@@ -161,6 +161,6 @@ Notes
 
 .. toctree::
   :glob:
-  :maxdepth: 2
+  :maxdepth: 1
 
-  notes/index
+  notes/*/index

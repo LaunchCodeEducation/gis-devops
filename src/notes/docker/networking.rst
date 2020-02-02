@@ -1,6 +1,5 @@
 .. _docker-networking:
 
-=============================
 Networking Between Containers
 =============================
 
