@@ -138,6 +138,8 @@ You will then be asked about the ``Jenkins URL``. For now we will leave this wit
 
   In the future if you deploy Jenkins to the cloud don't forget to update this setting to reference the ``Public DNS Name`` of your instance running the Jenkins container. This can be found in the sidebar under ``Manage Jenkins > Configure System > Jenkins Location > Jenkins URL``.
 
+.. _docker-jenkins-setup-aws:
+
 
 Setting Up The AWS CLI Inside Jenkins
 -------------------------------------
