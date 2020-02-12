@@ -4,6 +4,10 @@
 Learning Objectives
 ===================
 
+**Conceptual Objectives**: concepts you should be comfortable defining and discussing
+
+**Practical Objectives**: abilities, syntax, or commands you should be capable of using
+
 Week 4
 ======
 
@@ -12,17 +16,35 @@ Week 4
 Day 1
 -----
 
-* Use Git for version control
-* Navigate and use GitLab
-* Effectively use IntelliJ to streamline Java application development
+Conceptual
+^^^^^^^^^^
 
-  * Configure IntelliJ projects, including assigning the right JDK
-  * Run console and web projects in IntelliJ
-  * Understand Java project structure
+- What are build tools?
+- What are dependencies?
+- What are dependency repositories?
+- What is Semantic Versioning (SemVer)?
+- What are dependency environment managers?
+- What is Gradle?
+- What is the Gradle wrapper?
+- What are Gradle tasks?
+- What is NPM?
+- What is NVM?
+- What are NPM scripts?
+- What is a coding style guide?
+- What is code linting?
+- What is CheckStyle?
+- What is ESLint?
+- When should you lint your code?
 
-* Improve applications by refactoring code
-* Describe the purpose of unit testing, and the qualities of a good unit test
-* Create unit tests in Java using JUnit
+Practical
+^^^^^^^^^
+- Search for dependencies in the Maven and NPM repositories
+- Define dependencies in ``build.gradle``
+- Define dependencies in ``package.json``
+- Categorize production and development dependencies in Gradle or NPM
+- Execute Gradle tasks from Intellij and the CLI
+- Execute NPM scripts from the CLI
+- Use code linters
 
 .. _week-code-quality-day2-objectives:
 
