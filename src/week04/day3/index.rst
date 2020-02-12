@@ -4,7 +4,7 @@
 Week 4 - Day 3: Integration testing, dependency injection
 =========================================================
 
-Learning objectives for this module :ref:`week01-day3-objectives`
+Learning objectives for this module :ref:`week-code-quality-day3-objectives`
 
 Lesson Content
 --------------

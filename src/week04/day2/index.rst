@@ -4,7 +4,7 @@
 Week 4 - Day 2: Security, Test-driven development
 =================================================
 
-Learning objectives for this module :ref:`week01-day2-objectives`
+Learning objectives for this module :ref:`week-code-quality-day2-objectives`
 
 Lesson Content
 --------------

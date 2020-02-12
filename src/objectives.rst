@@ -7,7 +7,7 @@ Learning Objectives
 Week 4
 ======
 
-.. _week01-day1-objectives:
+.. _week-code-quality-day1-objectives:
 
 Day 1
 -----
@@ -24,7 +24,7 @@ Day 1
 * Describe the purpose of unit testing, and the qualities of a good unit test
 * Create unit tests in Java using JUnit
 
-.. _week01-day2-objectives:
+.. _week-code-quality-day2-objectives:
 
 Day 2
 -----
@@ -36,7 +36,7 @@ Day 2
 - Use TDD to write Java methods
 - Follow the Red-Green-Refactor workflow to improve test-driven coding
 
-.. _week01-day3-objectives:
+.. _week-code-quality-day3-objectives:
 
 Day 3
 -----
@@ -47,7 +47,7 @@ Day 3
 - Understand how dependency injection works within Spring Boot
 - Use @Autowired along with Spring component annotations (@Controller, @Repository, etc) to enable management and injection of components
 
-.. _week01-day4-objectives:
+.. _week-code-quality-day4-objectives:
 
 Day 4
 -----
@@ -60,7 +60,7 @@ Day 4
 - Understand how Spring Data, JPA, and Hibernate relate to each other
 - Awareness of Injection attacks and how to prevent them
 
-.. _week01-day5-objectives:
+.. _week-code-quality-day5-objectives:
 
 Day 5
 -----

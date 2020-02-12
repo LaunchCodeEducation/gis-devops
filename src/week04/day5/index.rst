@@ -4,7 +4,7 @@
 Week 4 - Day 5: AJAX, Open Layers
 =================================
 
-Learning objectives for this module :ref:`week01-day5-objectives`
+Learning objectives for this module :ref:`week-code-quality-day5-objectives`
 
 Lesson Content
 --------------

@@ -4,7 +4,7 @@
 Week 4 - Day 4: Postgres, Spring Data, JPA, Hibernate
 =====================================================
 
-Learning objectives for this module :ref:`week01-day4-objectives`
+Learning objectives for this module :ref:`week-code-quality-day4-objectives`
 
 Lesson Content
 --------------

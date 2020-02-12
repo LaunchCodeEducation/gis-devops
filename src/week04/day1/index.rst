@@ -4,7 +4,7 @@
 Week 4 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing
 ================================================================
 
-Objectives for :ref:`week01-day1-objectives`
+Objectives for :ref:`week-code-quality-day1-objectives`
 
 
 
