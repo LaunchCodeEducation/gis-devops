@@ -175,16 +175,31 @@ Practical
 Day 5
 -----
 
-- Understand the structure of HTTP requests and responses, including differences based on request type (GET, PUT, POST, HEAD, DELETE)
-- Understand common HTTP status codes
-- Understand JSON syntax
-- User cURL to make HTTP requests
-- Understand what an API is, and how they are commonly used
-- Understand the structure of GeoJSON
-- Understand geometry types: Point, LineString, Polygon, MultiPolygon
-- Understand the data provided by a WMS service using GetCapabilities and GetMap
-- Create map and layer objects in OpenLayers
-- Make AJAX HTTP requests using jQuery
+Conceptual
+^^^^^^^^^^
+
+- What is modular programming?
+- How can writing modular code improve testing, readability, and portability?
+- How do ES6 modules differ from traditional script files?
+- What are namespaces?
+- What are global and module scopes?
+- What are the differences between ES6 default and named exports?
+
+Practical
+^^^^^^^^^
+
+- Write ES6 modules
+- Link ES6 modules to HTML documents
+- Expose named and default exports
+- Import named and default exports
+
+.. 
+  TODO: move to w1d3
+  - Understand the structure of HTTP requests and responses, including differences based on request type (GET, PUT, POST, HEAD, DELETE)
+  - Understand common HTTP status codes
+  - Understand JSON syntax
+  - User cURL to make HTTP requests
+  - Understand what an API is, and how they are commonly used
 
 .. _week02-objectives:
 
