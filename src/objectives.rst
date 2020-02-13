@@ -157,6 +157,8 @@ Week 7
 Week 8
 ======
 
+.. _week-data-backing-transfer-day1-objectives:
+
 Day 1
 -----
 
@@ -180,6 +182,8 @@ Practical
 - Map stored records to Java objects via ``JPARepository`` interfaces
 - Utilize CRUD functionality from mapped objects via JPA provided methods
 - Bind customized JPA methods using JPQL
+
+.. _week-data-backing-transfer-day2-objectives:
 
 Day 2
 -----
@@ -205,6 +209,8 @@ Practical
 - Override standard HTTP Response status code with ``org.springframework.http.HttpStatus;``
 - Serialize POJO to JSON
 
+.. _week-data-backing-transfer-day3-objectives:
+
 Day 3
 -----
 
@@ -224,6 +230,8 @@ Practical
 - Compose Swagger YAML files to define the endpoints, responses, and schema of an API
 - Use `$ref` to reference reuseable definitions
 - Generate Swagger docs for a RESTful service in Spring
+
+.. _week-data-backing-transfer-day4-objectives:
 
 Day 4
 -----
@@ -250,8 +258,7 @@ Practical
 - Write filter queries
 - Use pagination of result sets
 
-
-.. _week05-day2-objectives:
+.. _week-data-backing-transfer-day5-objectives:
 
 Day 5
 -----
