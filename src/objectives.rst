@@ -361,6 +361,13 @@ Conceptual
 Practical
 ^^^^^^^^^
 
+- In an AWS region create a VPC with public, and private subnets
+- Create RDS subnet groups from VPC private subnets
+- Create an RDS using a subnet group
+- Configure security groups so the RDS is accessible to AWS resources on the VPC
+- Ability to access private RDS from inside an EC2 on the greater VPC
+- Migrate data from a PSQL container into an RDS
+
 
 
 Week 12
