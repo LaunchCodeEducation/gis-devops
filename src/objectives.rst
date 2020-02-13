@@ -4,9 +4,9 @@
 Learning Objectives
 ===================
 
-**Conceptual Objectives**: concepts you should be comfortable defining and discussing
+**Conceptual Objectives**: concepts or terminology you should be comfortable defining and discussing
 
-**Practical Objectives**: abilities, syntax, or commands you should be capable of using
+**Practical Objectives**: methods, syntax, or commands you should be capable of using
 
 Week 4
 ======
@@ -58,7 +58,6 @@ Conceptual
 - What is automated testing?
 - What is an assertion?
 - What is a testing framework?
-- What is an assertion library?
 - What is a unit test?
 - What is a test suite?
 - What are happy and unhappy test paths?
@@ -73,7 +72,7 @@ Conceptual
 
 ..
   TODO: do we fit Security in here?
-  - Importancne of Security Culture in your organization
+  - Importance of Security Culture in your organization
   - Awareness of OWASP guidelines
   - Introduction to security vulnerabilities
   - Introduction to security tools
@@ -96,11 +95,32 @@ Practical
 Day 3
 -----
 
-- Understand what an integration test is compared to a unit test
-- Write integration tests in Spring using the MockMvc class and associated utilities
-- Exercise common MVC integration test patterns to verify return codes, response content, header content
-- Understand how dependency injection works within Spring Boot
-- Use @Autowired along with Spring component annotations (@Controller, @Repository, etc) to enable management and injection of components
+Conceptual
+^^^^^^^^^^
+
+- What are integration tests?
+- How do integration tests differ from unit tests?
+- What is a setup and teardown?
+- Why is it important for tests to not share a mutable state?
+- What is an assertion library?
+- What is a testing database?
+- What is dependency injection?
+- What is tight coupling and why is it detrimental?
+- What is loose coupling and why is it beneficial?
+- How does dependency injection support loose coupling?
+- What are Spring Components and how are they registered?
+- How does the Spring Container manage Components and dependency injection?
+
+Practical
+^^^^^^^^^
+
+- Create custom integration test configuration annotations
+- Register Spring Components using appropriate annotations
+- Use the ``@Autowired`` annotation to inject dependencies into test suites
+- Use Spring Test's ``MockMVC`` to mock endpoint requests
+- Use Spring Test's ``MockMVC`` assertion methods to validate response headers and status codes
+- Use assertion library methods to test HTML endpoint response bodies
+- Use assertion library methods to test JSON endpoint response bodies
 
 .. _week-code-quality-day4-objectives:
 
