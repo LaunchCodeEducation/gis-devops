@@ -121,18 +121,54 @@ Practical
 - Use assertion library methods to test HTML endpoint response bodies
 - Use assertion library methods to test JSON endpoint response bodies
 
+.. 
+  TODO: discuss grouping GeoInt ref links instead of under code quality?
+
 .. _week-code-quality-day4-objectives:
 
 Day 4
 -----
 
-- Install and use PostgreSQL via the `psql` CLI
-- Write common SQL commands in PostgreSQL: select, insert, update, delete
-- Understand relational database components: databases, schemas, tables, columns, constraints
-- Understand the benefits of using schemas
-- Use application.properties settings to configure a database connection in Spring Boot
-- Understand how Spring Data, JPA, and Hibernate relate to each other
-- Awareness of Injection attacks and how to prevent them
+Conceptual
+^^^^^^^^^^
+
+- What is GeoInt?
+- What is a GIS?
+- How does a GIS support GeoInt?
+- What is the GeoJSON format?
+- What are Point, LineString, Polygon, MultiPolygon geometry formats?
+- What are Features and FeatureCollections?
+- What is PostGIS and how is it used?
+- What is GeoServer and how is it used?
+- What is OpenLayers and how is it used?
+- What are GIS layers?
+- What are the differences between Vector, Tile, and Image layers?
+
+
+Practical
+^^^^^^^^^
+
+- Create a map visualization using OpenLayers
+- Use the OpenStreetMaps tile data
+- Request map layer data through OpenLayers
+- Create and customize the styling of vector map layers
+- Request and visualize GeoJSON vector data
+
+.. 
+  TODO: move to w3d3
+  - Install and use PostgreSQL via the `psql` CLI
+  - Write common SQL commands in PostgreSQL: select, insert, update, delete
+  - Understand relational database components: databases, schemas, tables, columns, constraints
+  - Understand the benefits of using schemas
+
+.. 
+  TODO: move to w8d1
+  - Use application.properties settings to configure a database connection in Spring Boot
+  - Understand how Spring Data, JPA, and Hibernate relate to each other
+
+.. 
+  TODO: move to appropriate security section
+  - Awareness of Injection attacks and how to prevent them
 
 .. _week-code-quality-day5-objectives:
 
