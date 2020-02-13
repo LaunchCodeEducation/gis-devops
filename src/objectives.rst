@@ -368,10 +368,14 @@ Practical
 - Ability to access private RDS from inside an EC2 on the greater VPC
 - Migrate data from a PSQL container into an RDS
 
+.. _week-aws-advanced-day1-objectives:
+
 Day 2
 -----
 
 Zika Project work day
+
+.. _week-aws-advanced-day2-objectives:
 
 Day 3
 -----
@@ -396,15 +400,21 @@ Practical
 - Create and configure a public elastic load balancer to route traffic to internal EC2s
 - Utilize cloud formation script to automate infrastructure creation and management
 
+.. _week-aws-advanced-day3-objectives:
+
 Day 4
 -----
 
 Project work day.
 
+.. _week-aws-advanced-day4-objectives:
+
 Day 5
 -----
 
 Project work day.
+
+.. _week-aws-advanced-day5-objectives:
 
 Week 12
 =======
