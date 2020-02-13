@@ -368,7 +368,43 @@ Practical
 - Ability to access private RDS from inside an EC2 on the greater VPC
 - Migrate data from a PSQL container into an RDS
 
+Day 2
+-----
 
+Zika Project work day
+
+Day 3
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- What is a golden image?
+- What is an IAM policy?
+- How can you use an IAM policy from an AWS resource?
+- What is an auto scaling group (ASG)?
+- What is an elastic load balancer (ELB)?
+- What is a cloud formation script (CF)?
+
+Practical
+^^^^^^^^^
+
+- Ability to create a golden image from an existing EC2
+- Ability to create an auto scaling group on a private subnet
+- Attach an IAM policy to an EC2, and ASG
+- Configure, and control the settings of an auto scaling group
+- Create and configure a public elastic load balancer to route traffic to internal EC2s
+- Utilize cloud formation script to automate infrastructure creation and management
+
+Day 4
+-----
+
+Project work day.
+
+Day 5
+-----
+
+Project work day.
 
 Week 12
 =======
