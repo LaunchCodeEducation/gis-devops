@@ -176,6 +176,51 @@ Week 8
 Day 1
 -----
 
+Conceptual
+^^^^^^^^^^
+
+- What is an ORM?
+- What is Hibernate?
+- How does an ORM protect you from SQL injection?
+- What is the JPA?
+- What is Spring Data?
+- How do Hibernate, JPA, and Spring Data differ?
+- How do Hibernate, JPA, and Spring Data overlap?
+
+
+Practical
+^^^^^^^^^
+
+- Add Hibernate, Spring Data, and JPA dependencies to a Spring project
+- Configure Hibernate to communicate with a PSQL data store
+- Map stored records to Java objects via ``JPARepository`` interfaces
+- Utilize CRUD functionality from mapped objects via JPA provided methods
+- Bind customized JPA methods using JPQL
+
+Day 2
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- What is REST?
+- What protocol does REST utilize?
+- What is a resource?
+- How are resources referenced in REST?
+- What are the four HTTP methods commonly used in RESTful APIs?
+- What is a data format?
+- What are the data formats used most commonly with REST?
+- How are HTTP status codes used in REST?
+
+Practical
+^^^^^^^^^
+
+- Utilize ``@RestController`` to define a controller as a RESTful endpoint
+- Define Spring Controllers to handle various HTTP requests
+- Serve HTTP responses that contain a payload of the requested resource
+- Override standard HTTP Response status code with ``org.springframework.http.HttpStatus;``
+- Serialize POJO to JSON
+
 - Use and configure SSH to access remote machines
 - Manage Unix file permissions for owners and groups
 - Manage Unix processes
