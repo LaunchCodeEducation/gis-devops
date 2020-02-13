@@ -19,17 +19,16 @@ Day 1
 Conceptual
 ^^^^^^^^^^
 
-- What are build tools?
 - What are dependencies?
 - What are dependency repositories?
 - What is Semantic Versioning (SemVer)?
-- What are dependency environment managers?
+- What is a dependency manager?
+- What is NPM?
+- What are NPM scripts?
+- What is a build tool?
 - What is Gradle?
 - What is the Gradle wrapper?
 - What are Gradle tasks?
-- What is NPM?
-- What is NVM?
-- What are NPM scripts?
 - What is a coding style guide?
 - What is code linting?
 - What is CheckStyle?
@@ -39,12 +38,12 @@ Conceptual
 Practical
 ^^^^^^^^^
 - Search for dependencies in the Maven and NPM repositories
-- Define dependencies in ``build.gradle``
-- Define dependencies in ``package.json``
+- Register dependencies in ``build.gradle``
+- Register dependencies in ``package.json``
 - Categorize production and development dependencies in Gradle or NPM
 - Execute Gradle tasks from Intellij and the CLI
 - Execute NPM scripts from the CLI
-- Use code linters
+- Use code linters in Java and JavaScript projects
 
 .. _week-code-quality-day2-objectives:
 
