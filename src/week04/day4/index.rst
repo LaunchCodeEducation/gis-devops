@@ -65,7 +65,12 @@ Studio
 Additional Resources
 ====================
 
-- TODO: GeoInt resources (GeoJSON, PostGIS, Geoserver, OpenLayers)
+- `GeoJSON <https://macwright.org/2015/03/23/geojson-second-bite>`_
+- `Open Layers Docs <https://openlayers.org/en/latest/apidoc/>`_
+- `Open Layers Examples <https://openlayers.org/en/latest/examples/>`_
+
+.. 
+  TODO: GeoInt resources (PostGIS, Geoserver)
 
 .. 
   TODO: move to w3d3
