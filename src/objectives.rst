@@ -340,7 +340,28 @@ PG104 PostGIS Analysis
 Week 11
 =======
 
-- Use the skills learned in the previous week to integrate GeoServer with a Spring Boot + OpenLayers application, both locally and on AWS
+Day 1
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- What is an AWS availability zone?
+- What is a VPC?
+- What is a subnet?
+- What is the difference between a public and private subnet?
+- What is a security group?
+- How can you open up a security group to one specific IP address?
+- How can you open up a security group to a range of IP addresses?
+- What is RDS?
+- What makes an RDS subnet group different than a VPC subnet?
+- Why must an RDS subnet group be spread across at least two availability zones?
+
+
+Practical
+^^^^^^^^^
+
+
 
 Week 12
 =======
