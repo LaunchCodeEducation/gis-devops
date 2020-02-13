@@ -51,12 +51,45 @@ Practical
 Day 2
 -----
 
-- Importancne of Security Culture in your organization
-- Awareness of OWASP guidelines
-- Introduction to security vulnerabilities
-- Introduction to security tools
-- Use TDD to write Java methods
-- Follow the Red-Green-Refactor workflow to improve test-driven coding
+Conceptual
+^^^^^^^^^^
+
+- What is manual testing?
+- What is automated testing?
+- What is an assertion?
+- What is a testing framework?
+- What is an assertion library?
+- What is a unit test?
+- What is a test suite?
+- What are happy and unhappy test paths?
+- What is Test Driven Development (TDD)?
+- What is the Red-Green-Refactor workflow?
+- How can TDD help developers stay in scope?
+- Why should tests be agnostic of implementation details?
+- What is the mirroring strategy for test code organization?
+- What functions or methods should and shouldn't be tested?
+- What is code refactoring?
+- How can automated testing protect against code regression?
+
+..
+  TODO: do we fit Security in here?
+  - Importancne of Security Culture in your organization
+  - Awareness of OWASP guidelines
+  - Introduction to security vulnerabilities
+  - Introduction to security tools
+
+Practical
+^^^^^^^^^
+
+- Use IntelliJ to generate test boilerplate
+- Identify and define the inputs and outcome of the happy path test
+- Identify and define the inputs and outcomes of any unhappy path tests
+- Use user story requirements to design unit tests
+- Use JUnit annotations and assertions to configure test cases
+- Design and use IntelliJ runtime configurations
+- Run JUnit test(s) from IntelliJ and the CLI
+- Follow the TDD process to write passing implementations
+- Follow the TDD process to refactor existing implementations
 
 .. _week-code-quality-day3-objectives:
 
