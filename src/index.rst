@@ -95,12 +95,23 @@ Week 9
 .. toctree::
   :maxdepth: 1
 
-  week09/project/index
+  weeks/week09/project/index
 
 Week 10
 -------
 
-* Week 7 - Days 1 - 5: Boundless PostGIS, Geoserver, and OpenLayers training
+.. 
+  notice toctree goes to 2nd depth for show "days"
+  weeks/week10 can be replaced with a glob of weeks/*
+
+.. toctree::
+  :maxdepth: 2
+
+  weeks/week10
+
+.. 
+  TODO: move to respective week
+  - Week 7 - Days 1 - 5: Boundless PostGIS, Geoserver, and OpenLayers training
 
 Week 11
 -------
@@ -108,7 +119,7 @@ Week 11
 .. toctree::
   :maxdepth: 1
 
-  week11/project/index
+  weeks/week11/project/index
 
 Week 12
 -------
@@ -118,9 +129,9 @@ Week 12
 .. toctree::
   :maxdepth: 1
 
-  week12/day3/index
-  week12/day4/index
-  week12/day5/index
+  weeks/week12/day3/index
+  weeks/week12/day4/index
+  weeks/week12/day5/index
 
 Week 13
 -------
