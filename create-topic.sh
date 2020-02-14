@@ -3,7 +3,7 @@
 target_path="$(pwd)/src/topics"
 
 run() {
-  read -p "topic directory name (replace spaces with dashes): " topic_name
+  read -p "enter the topic name (use dashes not spaces): " topic_name
 
   topic_dir="${target_path}/${topic_name}"
 
@@ -13,14 +13,60 @@ run() {
 }
 
 create_topic_files() {
-  declare -a file_types=(index walkthrough studio)
+  create_index_file
 
+  create_objectives_file
+
+  declare -a file_types=(walkthrough studio)
   for file_type in "${file_types[@]}"
   do
     create_topic_file $file_type
   done
+}
 
+create_index_file() {
+  create_topic_file index
+
+  cat << EOF >> "$(get_topic_file_path index)"
+$(build_ref objectives) for this module
+
+Lesson Content
+==============
+
+- 
+
+Walkthrough
+===========
+
+- $(build_ref walkthrough)
+
+Studio
+======
+
+- $(build_ref studio)
+
+Resources
+=========
+
+-
+EOF
+}
+
+create_objectives_file() {
   create_topic_file objectives 'Learning Objectives'
+
+  cat << EOF >> "$(get_topic_file_path objectives)"
+Conceptual
+----------
+
+-
+
+Practical
+---------
+
+-
+
+EOF
 }
 
 create_topic_file() {
@@ -32,16 +78,24 @@ create_topic_file() {
     IFS= read -p "enter the header for the ${file_type} doc: " file_header
   fi
 
-  cat << EOF > "${topic_dir}/${file_type}.rst"
+  cat << EOF > "$(get_topic_file_path $file_type)"
 :orphan:
 
-.. _${topic_name}_${file_type}
+.. _${topic_name}_${file_type}:
 
 $(print_header_border "$file_header")
 ${file_header}
 $(print_header_border "$file_header")
 
 EOF
+}
+
+get_topic_file_path() {
+  echo "${topic_dir}/${1}.rst"
+}
+
+build_ref() {
+  echo ":ref:\`${topic_name}_${1}\`"
 }
 
 print_header_border() {
