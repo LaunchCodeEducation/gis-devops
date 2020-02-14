@@ -23,4 +23,4 @@ CI/CD & AWS Basic Deployments
 Day 1: CI/CD
 ------------
 
-:ref:`ci-cd`
+:ref:`ci-cd_index`

@@ -1,6 +1,6 @@
 :orphan:
 
-.. _ci-cd:
+.. _ci-cd_index:
 
 =====
 CI/CD
