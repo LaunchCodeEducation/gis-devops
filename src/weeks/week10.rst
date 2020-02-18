@@ -10,15 +10,16 @@
       weeks/*
 
 .. 
-  title (purpose/theme of the week) is changed depending on which topics are referenced
+  Week #: Title (purpose/theme of the week) is changed depending on which topics are referenced
 
-=============================
-CI/CD & AWS Basic Deployments
-=============================
+======================================
+Week 10: CI/CD & AWS Basic Deployments
+======================================
 
 .. 
   topics are composed to build the week of content
   daily content is defined by title and doc reference
+  Day #: Topic Title
 
 Day 1: CI/CD
 ------------
