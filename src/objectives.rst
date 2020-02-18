@@ -4,77 +4,202 @@
 Learning Objectives
 ===================
 
+**Conceptual Objectives**: concepts or terminology you should be comfortable defining and discussing
+
+**Practical Objectives**: methods, syntax, or commands you should be capable of using
+
 Week 4
 ======
 
-.. _week01-day1-objectives:
+.. _week-code-quality-day1-objectives:
 
 Day 1
 -----
 
-* Use Git for version control
-* Navigate and use GitLab
-* Effectively use IntelliJ to streamline Java application development
+Conceptual
+^^^^^^^^^^
 
-  * Configure IntelliJ projects, including assigning the right JDK
-  * Run console and web projects in IntelliJ
-  * Understand Java project structure
+- What are dependencies?
+- What are dependency repositories?
+- What is Semantic Versioning (SemVer)?
+- What is a dependency manager?
+- What is NPM?
+- What are NPM scripts?
+- What is a build tool?
+- What is Gradle?
+- What is the Gradle wrapper?
+- What are Gradle tasks?
+- What is a coding style guide?
+- What is code linting?
+- What is CheckStyle?
+- What is ESLint?
+- When should you lint your code?
 
-* Improve applications by refactoring code
-* Describe the purpose of unit testing, and the qualities of a good unit test
-* Create unit tests in Java using JUnit
+Practical
+^^^^^^^^^
+- Search for dependencies in the Maven and NPM repositories
+- Register dependencies in ``build.gradle``
+- Register dependencies in ``package.json``
+- Categorize production and development dependencies in Gradle or NPM
+- Execute Gradle tasks from Intellij and the CLI
+- Execute NPM scripts from the CLI
+- Use code linters in Java and JavaScript projects
 
-.. _week01-day2-objectives:
+.. _week-code-quality-day2-objectives:
 
 Day 2
 -----
 
-- Importancne of Security Culture in your organization
-- Awareness of OWASP guidelines
-- Introduction to security vulnerabilities
-- Introduction to security tools
-- Use TDD to write Java methods
-- Follow the Red-Green-Refactor workflow to improve test-driven coding
+Conceptual
+^^^^^^^^^^
 
-.. _week01-day3-objectives:
+- What is manual testing?
+- What is automated testing?
+- What is an assertion?
+- What is a testing framework?
+- What is a unit test?
+- What is a test suite?
+- What are happy and unhappy test paths?
+- What is Test Driven Development (TDD)?
+- What is the Red-Green-Refactor workflow?
+- How can TDD help developers stay in scope?
+- Why should tests be agnostic of implementation details?
+- What is the mirroring strategy for test code organization?
+- What functions or methods should and shouldn't be tested?
+- What is code refactoring?
+- How can automated testing protect against code regression?
+
+..
+  TODO: do we fit Security in here?
+  - Importance of Security Culture in your organization
+  - Awareness of OWASP guidelines
+  - Introduction to security vulnerabilities
+  - Introduction to security tools
+
+Practical
+^^^^^^^^^
+
+- Use IntelliJ to generate test boilerplate
+- Identify and define the inputs and outcome of the happy path test
+- Identify and define the inputs and outcomes of any unhappy path tests
+- Use user story requirements to design unit tests
+- Use JUnit annotations and assertions to configure test cases
+- Design and use IntelliJ runtime configurations
+- Run JUnit test(s) from IntelliJ and the CLI
+- Follow the TDD process to write passing implementations
+- Follow the TDD process to refactor existing implementations
+
+.. _week-code-quality-day3-objectives:
 
 Day 3
 -----
 
-- Understand what an integration test is compared to a unit test
-- Write integration tests in Spring using the MockMvc class and associated utilities
-- Exercise common MVC integration test patterns to verify return codes, response content, header content
-- Understand how dependency injection works within Spring Boot
-- Use @Autowired along with Spring component annotations (@Controller, @Repository, etc) to enable management and injection of components
+Conceptual
+^^^^^^^^^^
 
-.. _week01-day4-objectives:
+- What are integration tests?
+- How do integration tests differ from unit tests?
+- What is a setup and teardown?
+- Why is it important for tests to not share a mutable state?
+- What is an assertion library?
+- What is a testing database?
+- What is dependency injection?
+- What is tight coupling and why is it detrimental?
+- What is loose coupling and why is it beneficial?
+- How does dependency injection support loose coupling?
+- What are Spring Components and how are they registered?
+- How does the Spring Container manage Components and dependency injection?
+
+Practical
+^^^^^^^^^
+
+- Create custom integration test configuration annotations
+- Register Spring Components using appropriate annotations
+- Use the ``@Autowired`` annotation to inject dependencies into test suites
+- Use Spring Test's ``MockMVC`` to mock endpoint requests
+- Use Spring Test's ``MockMVC`` assertion methods to validate response headers and status codes
+- Use assertion library methods to test HTML endpoint response bodies
+- Use assertion library methods to test JSON endpoint response bodies
+
+.. 
+  TODO: discuss grouping GeoInt ref links instead of under code quality?
+
+.. _week-code-quality-day4-objectives:
 
 Day 4
 -----
 
-- Install and use PostgreSQL via the `psql` CLI
-- Write common SQL commands in PostgreSQL: select, insert, update, delete
-- Understand relational database components: databases, schemas, tables, columns, constraints
-- Understand the benefits of using schemas
-- Use application.properties settings to configure a database connection in Spring Boot
-- Understand how Spring Data, JPA, and Hibernate relate to each other
-- Awareness of Injection attacks and how to prevent them
+Conceptual
+^^^^^^^^^^
 
-.. _week01-day5-objectives:
+- What is GeoInt?
+- What is a GIS?
+- How does a GIS support GeoInt?
+- What is the GeoJSON format?
+- What are Point, LineString, Polygon, MultiPolygon geometry formats?
+- What are Features and FeatureCollections?
+- What is PostGIS and how is it used?
+- What is GeoServer and how is it used?
+- What is OpenLayers and how is it used?
+- What are GIS layers?
+- What are the differences between Vector, Tile, and Image layers?
+
+
+Practical
+^^^^^^^^^
+
+- Create a map visualization using OpenLayers
+- Use the OpenStreetMaps tile data
+- Request map layer data through OpenLayers
+- Create and customize the styling of vector map layers
+- Request and visualize GeoJSON vector data
+
+.. 
+  TODO: move to w3d3
+  - Install and use PostgreSQL via the `psql` CLI
+  - Write common SQL commands in PostgreSQL: select, insert, update, delete
+  - Understand relational database components: databases, schemas, tables, columns, constraints
+  - Understand the benefits of using schemas
+
+.. 
+  TODO: move to w8d1
+  - Use application.properties settings to configure a database connection in Spring Boot
+  - Understand how Spring Data, JPA, and Hibernate relate to each other
+
+.. 
+  TODO: move to appropriate security section
+  - Awareness of Injection attacks and how to prevent them
+
+.. _week-code-quality-day5-objectives:
 
 Day 5
 -----
 
-- Understand the structure of HTTP requests and responses, including differences based on request type (GET, PUT, POST, HEAD, DELETE)
-- Understand common HTTP status codes
-- Understand JSON syntax
-- User cURL to make HTTP requests
-- Understand what an API is, and how they are commonly used
-- Understand the structure of GeoJSON
-- Understand geometry types: Point, LineString, Polygon, MultiPolygon
-- Understand the data provided by a WMS service using GetCapabilities and GetMap
-- Create map and layer objects in OpenLayers
-- Make AJAX HTTP requests using jQuery
+Conceptual
+^^^^^^^^^^
+
+- What is modular programming?
+- How can writing modular code improve testing, readability, and portability?
+- How do ES6 modules differ from traditional script files?
+- What are namespaces?
+- What are global and module scopes?
+- What are the differences between ES6 default and named exports?
+
+Practical
+^^^^^^^^^
+
+- Write ES6 modules
+- Link ES6 modules to HTML documents
+- Expose named and default exports
+- Import named and default exports
+
+.. 
+  TODO: move to w1d3
+  - Understand the structure of HTTP requests and responses, including differences based on request type (GET, PUT, POST, HEAD, DELETE)
+  - Understand common HTTP status codes
+  - Understand JSON syntax
+  - User cURL to make HTTP requests
+  - Understand what an API is, and how they are commonly used
 
 .. _week02-objectives:
 
@@ -126,29 +251,13 @@ Day 2
 
 Day 3
 -----
-- Describe the use cases for Elasticsearch (ES)
-- Understand how NoSQL databases structure data, in contrast to relational databases
-- Describe the representation of data in ES as indexes of documents with fields
-- Describe the high-level architecture of ES as being based on a cluster with nodes and shards
-- Describe how ES is fault-tolerant
-- Know when ES should be used beyond the primary data store for an application
-- Use curl to query the search API of an index
-- Write filter queries
-- Understand query and filter context, and how each affects a result set
-- Describe how analyzers are used for full text queries
-- Describe how boost and highlighting can customize result sets
-- Use pagination of result sets
-- Describe and use fuzzy queries, geo queries, and aggregations
+
 
 .. _week03-day4-objectives:
 
 Day 4
 -----
 
-- Understand how parent/child relationships are represented, and how this contrasts with such relationships in relational databases
-- Describe and configure document mappings, and know the causes of and preventions for mapping explosion
-- Describe the purpose and procedure for reindexing
-- Integrate Elasticsearch into a Spring Boot application
 
 .. _week03-day5-objectives:
 
@@ -173,17 +282,123 @@ Week 7
 Week 8
 ======
 
+.. _week-data-backing-transfer-day1-objectives:
+
 Day 1
 -----
 
-- Use and configure SSH to access remote machines
-- Manage Unix file permissions for owners and groups
-- Manage Unix processes
-- Configure systemd daemon processes to run on startup
-- Use logs to troubleshoot applications
-- Awareness of Security Misconfigation vulnerability and how to prevent it
+Conceptual
+^^^^^^^^^^
 
-.. _week05-day2-objectives:
+- What is an ORM?
+- What is Hibernate?
+- How does an ORM protect you from SQL injection?
+- What is the JPA?
+- What is Spring Data?
+- How do Hibernate, JPA, and Spring Data differ?
+- How do Hibernate, JPA, and Spring Data overlap?
+
+
+Practical
+^^^^^^^^^
+
+- Add Hibernate, Spring Data, and JPA dependencies to a Spring project
+- Configure Hibernate to communicate with a PSQL data store
+- Map stored records to Java objects via ``JPARepository`` interfaces
+- Utilize CRUD functionality from mapped objects via JPA provided methods
+- Bind customized JPA methods using JPQL
+
+.. _week-data-backing-transfer-day2-objectives:
+
+Day 2
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- What is REST?
+- What protocol does REST utilize?
+- What is a resource?
+- How are resources referenced in REST?
+- What are the four HTTP methods commonly used in RESTful APIs?
+- What is a data format?
+- What are the data formats used most commonly with REST?
+- How are HTTP status codes used in REST?
+
+Practical
+^^^^^^^^^
+
+- Utilize ``@RestController`` to define a controller as a RESTful endpoint
+- Define Spring Controllers to handle various HTTP requests
+- Serve HTTP responses that contain a payload of the requested resource
+- Override standard HTTP Response status code with ``org.springframework.http.HttpStatus;``
+- Serialize POJO to JSON
+
+.. _week-data-backing-transfer-day3-objectives:
+
+Day 3
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- Identify the difference between Swagger toolset and the Open API Specification
+- Explain the difference between authentication and authorization
+- At a high level, explain how authentication and authorization work for APIs
+- Explain HATEOAS from the perspective of the data returned by a REST service
+- Explain the four levels of the REST maturity model
+
+Practical
+^^^^^^^^^
+
+- Integrate SwaggerUI into a project
+- Compose Swagger YAML files to define the endpoints, responses, and schema of an API
+- Use `$ref` to reference reuseable definitions
+- Generate Swagger docs for a RESTful service in Spring
+
+.. _week-data-backing-transfer-day4-objectives:
+
+Day 4
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- Describe the use cases for Elasticsearch (ES)
+- Understand how NoSQL databases structure data, in contrast to relational databases
+- Describe the representation of data in ES as indexes of documents with fields
+- Describe the high-level architecture of ES as being based on a cluster with nodes and shards
+- Describe how ES is fault-tolerant
+- Know when ES should be used beyond the primary data store for an application
+- Understand query and filter context, and how each affects a result set
+- Describe how analyzers are used for full text queries
+- Describe how boost and highlighting can customize result sets
+- Describe and use fuzzy queries, geo queries, and aggregations
+
+Practical
+^^^^^^^^^
+
+- Use curl to CRUD indices, and documents into a ES cluster
+- Use curl to query the search API of an index
+- Write filter queries
+- Use pagination of result sets
+
+.. _week-data-backing-transfer-day5-objectives:
+
+Day 5
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- Understand how parent/child relationships are represented, and how this contrasts with such relationships in relational databases
+- Describe and configure document mappings, and know the causes of and preventions for mapping explosion
+- Describe the purpose and procedure for reindexing
+
+Practical
+^^^^^^^^^
+
+- Integrate Elasticsearch into a Spring Boot application
 
 Day 2
 -----
@@ -340,7 +555,81 @@ PG104 PostGIS Analysis
 Week 11
 =======
 
-- Use the skills learned in the previous week to integrate GeoServer with a Spring Boot + OpenLayers application, both locally and on AWS
+Day 1
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- What is an AWS availability zone?
+- What is a VPC?
+- What is a subnet?
+- What is the difference between a public and private subnet?
+- What is a security group?
+- How can you open up a security group to one specific IP address?
+- How can you open up a security group to a range of IP addresses?
+- What is RDS?
+- What makes an RDS subnet group different than a VPC subnet?
+- Why must an RDS subnet group be spread across at least two availability zones?
+
+
+Practical
+^^^^^^^^^
+
+- In an AWS region create a VPC with public, and private subnets
+- Create RDS subnet groups from VPC private subnets
+- Create an RDS using a subnet group
+- Configure security groups so the RDS is accessible to AWS resources on the VPC
+- Ability to access private RDS from inside an EC2 on the greater VPC
+- Migrate data from a PSQL container into an RDS
+
+.. _week-aws-advanced-day1-objectives:
+
+Day 2
+-----
+
+Zika Project work day
+
+.. _week-aws-advanced-day2-objectives:
+
+Day 3
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- What is a golden image?
+- What is an IAM policy?
+- How can you use an IAM policy from an AWS resource?
+- What is an auto scaling group (ASG)?
+- What is an elastic load balancer (ELB)?
+- What is a cloud formation script (CF)?
+
+Practical
+^^^^^^^^^
+
+- Ability to create a golden image from an existing EC2
+- Ability to create an auto scaling group on a private subnet
+- Attach an IAM policy to an EC2, and ASG
+- Configure, and control the settings of an auto scaling group
+- Create and configure a public elastic load balancer to route traffic to internal EC2s
+- Utilize cloud formation script to automate infrastructure creation and management
+
+.. _week-aws-advanced-day3-objectives:
+
+Day 4
+-----
+
+Project work day.
+
+.. _week-aws-advanced-day4-objectives:
+
+Day 5
+-----
+
+Project work day.
+
+.. _week-aws-advanced-day5-objectives:
 
 Week 12
 =======

@@ -10,6 +10,15 @@ Course Weeks
   :maxdepth: 2
 
   weeks/*
+  
+Walkthroughs
+------------
+
+.. toctree::
+  :glob:
+  :maxdepth: 1
+
+  walkthroughs/*/index
 
 Installations
 -------------
@@ -28,3 +37,12 @@ Configurations
   :maxdepth: 1
 
   configurations/*/index
+
+Notes
+-----
+
+.. toctree::
+  :glob:
+  :maxdepth: 1
+
+  notes/*/index
