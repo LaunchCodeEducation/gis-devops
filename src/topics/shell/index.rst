@@ -29,4 +29,5 @@ Studio
 Resources
 =========
 
+- :ref:`shell_commands`
 -
