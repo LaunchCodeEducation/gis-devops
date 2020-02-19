@@ -12,7 +12,6 @@ Conceptual
 - What is a transfer protocol?
 - What does HTTP stand for?
 - Why is the HTTP often referred to as a "request-response" system?
-- Why is the HTTP considered "stateless"?
 - What is a client and what role do they play in the HTTP?
 - What is a server and what role do they play in the HTTP?
 - What examples can you give of non-browser clients?
@@ -22,6 +21,8 @@ Conceptual
 - What are HTTP headers?
 - What are examples of common client [request] headers?
 - What are examples of common server [response] headers?
+- Why is the HTTP considered "stateless"?
+- What are cookies and how are they used as a form of "state"?
 - What are HTTP methods?
 - What are the two most common HTTP methods used?
 - How do ``GET`` requests differ from ``POST`` requests with respect to data?
