@@ -16,8 +16,6 @@ Conceptual
 - What is the difference between static and dynamic typing?
 - What is the relationship between a class and the source file it is defined in?
 - What is the relationship between a source file and a package directory it exists in?
-- What are access modifiers and what can they be applied to?
-- List commonly used access modifiers and their applied effects
 - What are primitive data types and which of them are commonly used?
 - What is a primitive wrapper class and what is it used for?
 - What are the differences between an ``Array`` and an ``ArrayList``?

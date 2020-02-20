@@ -1,5 +1,5 @@
 .. 
-  SLIDES:
+  SLIDES: limit to only the basics running from a single file / main method
     compiled vs interpreted language
     the java toolchain
       JDK: the SDK with compiler, debugger, JRE, and JVM
@@ -9,7 +9,6 @@
     file system
       class files
       packages
-    access modifiers
     common data types
       primitives
       object wrappers
@@ -18,11 +17,6 @@
     loops: for, while, do-while
     conditional logic
       strictly boolean no truthy/falsy
-    functions
-      not first-class citizens
-      must be written as methods
-      function signatures as a form of typing
-      overloading with different signatures
     common data structures
       arrays
       lists/arraylists
@@ -68,9 +62,9 @@ Walkthrough
 Studio
 ======
 
-- :ref:`java-fundamentals_studio`
+- `Counting Characters <https://education.launchcode.org/java-web-development/chapters/control-flow-and-collections/studio.html>`_
 
 Resources
 =========
 
--
+- `Chapters 2 and 3 of Java Web Development <https://education.launchcode.org/java-web-development/>`_
