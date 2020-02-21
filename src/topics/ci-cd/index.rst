@@ -27,7 +27,7 @@ Lesson Content
 Walkthrough
 ===========
 
-- :ref:`ci-cd_walkthrough-jenkins`
+- :ref:`ci-cd_walkthrough`
 
 Resources
 =========

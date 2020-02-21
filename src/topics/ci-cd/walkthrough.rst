@@ -1,6 +1,6 @@
 :orphan:
 
-.. _ci-cd_walkthrough-jenkins:
+.. _ci-cd_walkthrough:
 
 ===============
 Explore Jenkins
