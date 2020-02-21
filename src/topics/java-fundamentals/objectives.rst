@@ -14,13 +14,11 @@ Conceptual
 - What is the JRE and what does it include?
 - Is the entire JDK needed to execute compiled Java code?
 - What is the difference between static and dynamic typing?
-- What is the relationship between a class and the source file it is defined in?
-- What is the relationship between a source file and a package directory it exists in?
 - What are primitive data types and which of them are commonly used?
 - What is a primitive wrapper class and what is it used for?
 - What are the differences between an ``Array`` and an ``ArrayList``?
 - What is a ``HashMap`` and how does it store data?
-- What are the tradeoffs when deciding to use a ``HashMap``, ``Array``, or ``ArrayList``?
+- Compare the pros and cons when deciding to use a ``HashMap``, ``Array``, or ``ArrayList``
 
 Practical
 ---------
