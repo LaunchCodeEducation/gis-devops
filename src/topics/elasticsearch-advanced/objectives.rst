@@ -1,6 +1,6 @@
 :orphan:
 
-.. _elasticsearch-spring_objectives:
+.. _elasticsearch-advanced_objectives:
 
 ===================
 Learning Objectives

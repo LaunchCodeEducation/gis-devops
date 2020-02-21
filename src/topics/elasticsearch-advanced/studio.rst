@@ -1,6 +1,6 @@
 :orphan:
 
-.. _elasticsearch-spring_studio:
+.. _elasticsearch-advanced_studio:
 
 ===============================
 Studio: Elasticsearch Continued

@@ -1,3 +1,7 @@
+.. 
+  SLIDES:
+  WALKTHROUGH: walkthroughs/jenkins
+
 :orphan:
 
 .. _ci-cd_index:
@@ -24,11 +28,6 @@ Walkthrough
 ===========
 
 - :ref:`ci-cd_walkthrough-jenkins`
-
-Studio
-======
-
-- :ref:`ci-cd_studio-pipelines` 
 
 Resources
 =========

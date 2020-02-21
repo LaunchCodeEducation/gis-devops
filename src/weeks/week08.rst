@@ -25,7 +25,8 @@ Day 4: Elasticsearch Basics
 
 - :ref:`elasticsearch-basics_index`
 
-Day 5: Elasticsearch and Spring Integration
+Day 5: Advanced Elasticsearch & Spring Integration
 -------------------------------------------
 
-- :ref:`elasticsearch-spring_index`
+- :ref:`elasticsearch-advanced_index`
+- :ref:`spring-elasticsearch_index`

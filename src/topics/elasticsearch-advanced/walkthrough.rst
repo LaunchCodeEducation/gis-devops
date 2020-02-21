@@ -1,6 +1,6 @@
 :orphan:
 
-.. _elasticsearch-spring_walkthrough:
+.. _elasticsearch-advanced_walkthrough:
 
 ====================================
 Walkthrough: Elasticsearch Continued

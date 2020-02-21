@@ -1,3 +1,8 @@
+.. 
+  SLIDES:
+  WALKTHROUGH: cut/paste
+  STUDIO: cut/paste
+
 :orphan:
 
 .. _elasticsearch-basics_index:

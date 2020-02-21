@@ -1,6 +1,6 @@
 :orphan:
 
-.. _es6-modules_objectives:
+.. _js-modules_objectives:
 
 ===================
 Learning Objectives
