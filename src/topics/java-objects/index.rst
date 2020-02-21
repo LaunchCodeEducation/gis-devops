@@ -62,3 +62,5 @@ Resources
 =========
 
 - `Chapters 4 & 5 of Java Web Development <https://education.launchcode.org/java-web-development/chapters/classes/index.html>`_
+- `Baeldung: Access Modifiers <https://www.baeldung.com/java-access-modifiers>`_
+- `Baeldung: Equals & HashCode <https://www.baeldung.com/java-equals-hashcode-contracts>`_
