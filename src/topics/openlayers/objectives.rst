@@ -1,6 +1,6 @@
 :orphan:
 
-.. _openlayers-basic_objectives:
+.. _openlayers_objectives:
 
 ===================
 Learning Objectives
