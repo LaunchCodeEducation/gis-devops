@@ -20,12 +20,7 @@ Lesson Content
 Walkthrough
 ===========
 
-- TODO: no walkthrough as this is a collection of lessons around GeoJSON, PostGIS, GeoJSON
-
-Studio
-======
-
-- TODO: no studio as this is a collection of lessons around GeoJSON, PostGIS, GeoJSON
+- `OpenLayers Workshop <https://openlayers.org/workshop/en/>`_
 
 Resources
 =========
