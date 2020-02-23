@@ -1,9 +1,10 @@
 .. 
   SLIDES:
     opinionated framework vs microframework
+    inversion of control
+    dependency injection
     spring components
       spring container
-      inversion of control through dependency injection
     configuration
       xml
       class based
@@ -17,9 +18,10 @@
       common spring boot tasks
     spring initalizr
       navigating and generating project boilerplate
-
   WALKTHROUGH: repeat walkthrough from web-apis using spring boot
+    TODO: create walkthroughs/ dir under web-apis with walkthroughs/spring.rst
   STUDIO: rewrite TODO API (non-persistent, part 1)
+  OBJECTIVES: complete practicals
 
 :orphan:
 

@@ -9,16 +9,20 @@ Day 1: Spring Data & Hibernate
 
 - :ref:`spring-data-hibernate_index`
 
-Day 2: ReST Basics
+.. 
+  TODO: merge swagger into day 2
+    what to do with day 3?
+
+Day 2: REST Basics
 ------------------
 
 - :ref:`rest-basics_index`
 
-Day 3: ReST Maturity Model & Swagger
+Day 3: REST Maturity Model & Swagger
 ------------------------------------
 
 - :ref:`rest-maturity-model_index`
-- :ref:`swagger_index`
+- :ref:`rest-swagger_index`
 
 Day 4: Elasticsearch Basics
 ---------------------------

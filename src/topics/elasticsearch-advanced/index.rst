@@ -1,7 +1,9 @@
 .. 
+  FUTURE: how to integrate geomapping into the project?
+    limitations of spring-data-elasticsearch
+    user editable tagging
+    query boosting
   SLIDES:
-  WALKTHROUGH: move from walkthroughs/elasticsearch2
-  STUDIO: move from studios/elasticsearch2
 
 :orphan:
 
