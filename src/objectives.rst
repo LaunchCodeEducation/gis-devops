@@ -203,7 +203,7 @@ Conceptual
 - browser uses engines for parsing (html, css, js)
 - semantic html
 - static files (static vs dynamic, static http server)
-- html: tags, elements, attributes, parents/children
+- html: tags, elements, attributes, parents/children (block vs inline)
 - css: selectors, specificity (location, selector), rules
 - file protocol (opening vs serving)
 - order of execution (top-bottom)
@@ -237,7 +237,7 @@ Conceptual
 
 - scripting language (dynamic typing, interpreted)
 - functions as first-class citizens (declare anywhere, HOF)
-- quirks (browser engines, backwards compatibility, equality and type coercion)
+- quirks (browser engines, backwards compatibility, equality and type coercion, does everything it can to not crash which causes silent failures)
 - client-side/browser usages (vanilla, libs and front-end frameworks)
 - server-side/external usages (servers, CLI tools and scripted automations)
 - distinctions between usages (standard lib, global vs window)
@@ -270,27 +270,106 @@ JavaScript Callbacks
 Conceptual
 ^^^^^^^^^^
 
-- single threaded language
-- event loop to prevent blocking (browser needs)
-- 
+- function signatures
+- JS single threaded language with event loop (link out)
+- opinionated terms: procedure (defines the callback signature and is responsible for invoking the callback) and a consumer (defining how to use the arguments) consumer parameters should match the procedure callback signature
+- higher order functions (HOF)
+- where are callbacks used: DOM events, array methods, network requests
+- callbacks can be used synchronously and asynchronously
 
 Practical
 ^^^^^^^^^
 
-- documentation (MDN, js.info, ui.dev)
-- local execution using node
-- variables (const and let, block-scoping)
-- data types (string, number, boolean, null, undefined) 
-- loops (for, while)
-- conditionals (if, elseif, else)
-- functions (expression, declaration, arrow)
-- data structures (array, object [hashmap], functions/custom classes)
-- classes (fields, methods, constructor)
-- printing (console.log)
-- *template strings
-- *ES6 modules (import/export)
-- *commonJS (require/module.exports)
-- *node assert for lightweight testing
+- array methods (map, filter, *reduce)
+- inline callbacks
+- externally defined callbacks (receives arguments implicitly) (reusability)
+- `exercises <https://gist.github.com/the-vampiire/5090080c3909c217d5ca361fd2e31777#practice-challenges>`_
+
+.. _week-prep-js-dom-fundamentals-objectives:
+
+Document Object Model Fundamentals
+----------------------------------
+
+Conceptual
+^^^^^^^^^^
+
+- virtual representation of HTML
+- elements are represented as JavaScript objects (OOP elements called nodes)
+- window.document (document) represents the document as a whole and is the entry point (typically work with document.body)
+- parent and child nodes based on HTML structure
+- traditional element nodes and you have text nodes (text inside an element like <p> is a child of the element)
+- DOM nodes only exist in memory unless they are attached to the DOM
+- distinction between what exists physically written into the HTML vs what exists after JS is run
+- you cannot interact with the DOM until it has completely loaded (location of <script> tags and event listeners
+
+Practical
+^^^^^^^^^
+
+- Create node: document.createElement()
+- Read node: document.querySelector() or document.querySelectorAll()
+- Read node: use CSS selector syntax (#id, .classname)
+- the return of querySelectorAll() is array like, it's a nodelist (converting nodelist to array)
+- Update node: modifying in place (changing the text of a <p>, or a class)
+- Update DOM: appendChild(), insert(), putting an element into the DOM
+- Delete node: removeElement()
+- common node properties: .classlist, .children, .innerText
+
+.. _week-prep-js-dom-events-objectives:
+
+DOM Events
+----------
+
+Conceptual
+^^^^^^^^^^
+
+- asynchronous (driven by user interaction, not executed linearly)
+- listener and handler model (to any given node you attach an event listener, and must register it's callback handler [the function])
+- always an event object the properties of which are dependent on the context
+- *event bubbling
+- best practice: .addEventListener() not onclick=
+- a way to custom the behavior of a UI (can control or extend browser default behavior)
+- all events are strings
+
+Practical
+^^^^^^^^^
+
+- callback is invoked but the return isn't necessary (void)
+- event() -> void
+- onClick()
+- document.onReady()
+- document.addEventListener('DOMContentLoaded')
+- common event methods: .preventDefault() (for overriding default browser behavior)
+- *bubbling event properties: .target (element the event occurred on), .currentTarget (target that had the event handler on it)
+
+.. _week-prep-js-async-objectives:
+
+Asynchronous JavaScript
+-----------------------
+
+Conceptual
+^^^^^^^^^^
+
+- event loop to prevent blocking (browser needs)
+- synchronous vs asynchronous
+- promise object
+
+Practical
+^^^^^^^^^
+
+- fetch
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Week 1
 ======
