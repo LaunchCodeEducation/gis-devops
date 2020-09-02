@@ -237,11 +237,42 @@ Conceptual
 
 - scripting language (dynamic typing, interpreted)
 - functions as first-class citizens (declare anywhere, HOF)
-- quirks (browser engines, backwards compatibility)
+- quirks (browser engines, backwards compatibility, equality and type coercion)
 - client-side/browser usages (vanilla, libs and front-end frameworks)
 - server-side/external usages (servers, CLI tools and scripted automations)
 - distinctions between usages (standard lib, global vs window)
 - *multi-paradigm (OOP, functional, blended)
+
+Practical
+^^^^^^^^^
+
+- documentation (MDN, js.info, ui.dev)
+- local execution using node
+- variables (const and let, block-scoping)
+- data types (string, number, boolean, null, undefined) 
+- loops (for, while)
+- conditionals (if, elseif, else)
+- equality (==, ===)
+- functions (expression, declaration, arrow)
+- data structures (array, object [hashmap], functions/custom classes)
+- classes (fields, methods, constructor)
+- printing (console.log)
+- *template strings
+- *ES6 modules (import/export)
+- *commonJS (require/module.exports)
+- *node assert for lightweight testing
+
+.. _week-prep-js-callbacks-objectives:
+
+JavaScript Callbacks
+--------------------
+
+Conceptual
+^^^^^^^^^^
+
+- single threaded language
+- event loop to prevent blocking (browser needs)
+- 
 
 Practical
 ^^^^^^^^^
