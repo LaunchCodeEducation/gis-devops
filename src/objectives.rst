@@ -183,13 +183,39 @@ Conceptual
 Practical
 ^^^^^^^^^
 
-- docker hub (
+- docker hub
 - docker ps (-a, --filter)
 - docker pull
 - docker run (common flags: -p, -d, -e/--env-file, --rm, -it, --name, -v)
 - docker start
 - docker stop
 - *docker exec
+
+.. _week-prep-client-side-dev-objectives:
+
+Client-Side Web Dev
+-------------------
+
+Conceptual
+^^^^^^^^^^
+
+- bones (html), skin (css), brain (js)
+- browser uses engines for parsing (html, css, js)
+- semantic html
+- static files (static vs dynamic, static http server)
+- html: tags, elements, attributes, parents/children
+- css: selectors, specificity (location, selector), rules
+- file protocol (opening vs serving)
+- order of execution (top-bottom)
+
+Practical
+^^^^^^^^^
+
+- serving locally (liveserver, python)
+- html: usage of head and body, emmet expansion
+- css: in-line, style, link (local, remote)
+- css: id, class, tag selectors
+- js: script (block, local, remote)
 
 Week 1
 ======
