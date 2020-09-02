@@ -217,6 +217,50 @@ Practical
 - css: id, class, tag selectors
 - js: script (block, local, remote)
 
+.. _week-prep-js-fundamentals-objectives:
+
+JavaScript Fundamentals
+-----------------------
+
+.. admonition:: Note
+
+  This is not a comprehensive JS course. We will cover practical usage relevant to this course and day-to-day work.
+
+  Specifically, we will not be covering prototypal inheritance but you can use the links below:
+  
+  - `introductory [Tyler McGinnis] <https://ui.dev/javascript-inheritance-and-the-prototype-chain/>`_
+  - `introductory [MDN] <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain>`_
+  - `intermediate/advanced <https://javascript.info/prototype-inheritance>`_
+
+Conceptual
+^^^^^^^^^^
+
+- scripting language (dynamic typing, interpreted)
+- functions as first-class citizens (declare anywhere, HOF)
+- quirks (browser engines, backwards compatibility)
+- client-side/browser usages (vanilla, libs and front-end frameworks)
+- server-side/external usages (servers, CLI tools and scripted automations)
+- distinctions between usages (standard lib, global vs window)
+- *multi-paradigm (OOP, functional, blended)
+
+Practical
+^^^^^^^^^
+
+- documentation (MDN, js.info, ui.dev)
+- local execution using node
+- variables (const and let, block-scoping)
+- data types (string, number, boolean, null, undefined) 
+- loops (for, while)
+- conditionals (if, elseif, else)
+- functions (expression, declaration, arrow)
+- data structures (array, object [hashmap], functions/custom classes)
+- classes (fields, methods, constructor)
+- printing (console.log)
+- *template strings
+- *ES6 modules (import/export)
+- *commonJS (require/module.exports)
+- *node assert for lightweight testing
+
 Week 1
 ======
 
