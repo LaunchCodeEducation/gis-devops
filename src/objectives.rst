@@ -60,6 +60,7 @@ Conceptual
 - req: path, qs, method, headers (accept/content-type, authorization, cookies)
 - res: status codes (2XX, 3XX, 4XX, 5XX), headers (content-type, set-cookie, location)
 - clients: browser, CLI, GUI, another server
+- http vs https
 
 Practical
 ^^^^^^^^^
@@ -76,12 +77,103 @@ Networking
 Conceptual
 ^^^^^^^^^^
 
-- 
+- IP (unique to device + network)
+- public/private
+- Network processes (ports)
+- Box model (host, LAN, WAN, internet)
+- DNS (/etc/hosts -> ISP -> DNS authority)
+- network interfaces (ethernet, wireless, loopback)
+- host machine (local, remote host) machine running a process that is networked
+- IP blocks
+- later we will explore subnets and further dividing our networks
+- firewalls (machine level and network machine; inbound and outbound rules) (will see more later in the class)
 
 Practical
 ^^^^^^^^^
 
-- 
+- DNS edit /etc/hosts to show arbitrary names (hit the public IP address of the node server)
+- ifconfig (private)
+- curl ipinfo.io/ip (public)
+- curl -v (see handshake)
+- telnet (connection refused)
+
+git local
+---------
+
+Conceptual
+^^^^^^^^^^
+
+- version control (VCS)
+- local repository
+- stage and tracking
+- controlling tracking with .gitigonre
+- commit
+- branches
+- merging strategies (standard & rebase)
+- diffs (per line basis)
+- history (message, diff, timestamp, author)
+- commit strategies (commits should be small, messages should be descriptive, commits should be stable)
+
+Practical
+^^^^^^^^^
+
+- git init (.git)
+- git status
+- git add
+- git commit
+- git branch
+- git checkout
+- git merge
+- git rebase
+- git log (--oneline)
+- git revert
+- git checkout commit-hash
+- warning about destructive git commands (revert, reset, git rm)
+
+git remote
+----------
+
+Conceptual
+^^^^^^^^^^
+
+- remote repository
+- remote repo hosting providers (GitLab, GitHub)
+- sync with upstream
+- syncing local and remote
+- .gitignore (derived code, sensitive, secrets)
+- merge requests (process, use it to enforce code reviews, kicks off CI automation)
+- branching strategies (collaboration; feature branches; patch branches; open MRs)
+- merge conflict
+- handling conflict strategies (standard merge, vs squash and rebase)
+- CLASS EXPECTATIONS FOR GIT (small commits, descriptive messages, commits are stable, regular, feature branches)
+- *git stash
+- *git rebase
+
+Practical
+^^^^^^^^^
+
+- git clone
+- git push
+- git pull
+- git fetch
+- git branch --all
+- git config --global
+- handling conflicts
+- open MR (comments, push up new changes, approve changes, merge)
+
+Docker
+------
+
+Conceptual
+^^^^^^^^^^
+
+Practical
+^^^^^^^^^
+
+- docker ps
+- docker start
+- docker stop
+- docker run
 
 Week 1
 ======
