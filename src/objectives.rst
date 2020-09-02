@@ -4,6 +4,85 @@
 Learning Objectives
 ===================
 
+**Conceptual Objectives**: concepts or terminology you should be comfortable defining and discussing
+
+**Practical Objectives**: methods, syntax, or commands you should be capable of using
+
+Week 1 (Prep Weeks)
+===================
+
+.. _week-prep-shell-objectives:
+
+Shell
+-----
+
+Conceptual
+^^^^^^^^^^
+
+- GUI vs CLI
+- file system
+- CRUD files/dirs
+- path (relative and absolute)
+- package managers (PATH)
+- general command syntax (program <arg(s)> [-[-]option(s) [option arg(s)]]
+- REPL
+- scripts vs REPL commands
+- users / groups and access control
+
+Practical
+^^^^^^^^^
+
+- getting help w/ man & --help
+- cd
+- pwd
+- ls
+- mv
+- cp
+- touch
+- curl
+- man
+- sudo
+- vim (open, edit, save, exit)
+
+.. _week-prep-http-objectives:
+
+HTTP
+----
+
+Conceptual
+^^^^^^^^^^
+
+- req/res (client-server model)
+- general: headers, bodies
+- URLs: protocol, (sub)domains, path, qs, fragments
+- HTTP methods and semantic meaning (GET, POST, rest in APIs lesson)
+- DNS (phonebook analogy - human readable to machine identifiers)
+- req: path, qs, method, headers (accept/content-type, authorization, cookies)
+- res: status codes (2XX, 3XX, 4XX, 5XX), headers (content-type, set-cookie, location)
+- clients: browser, CLI, GUI, another server
+
+Practical
+^^^^^^^^^
+
+- dev tools network tab (GET, POST)
+- making curl requests (GET, POST)
+- postman (GET, POST)
+
+.. _week-prep-networking-objectives:
+
+Networking
+----------
+
+Conceptual
+^^^^^^^^^^
+
+- 
+
+Practical
+^^^^^^^^^
+
+- 
+
 Week 1
 ======
 
