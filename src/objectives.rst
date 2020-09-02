@@ -171,9 +171,10 @@ Practical
 ^^^^^^^^^
 
 - docker ps
+- docker run
 - docker start
 - docker stop
-- docker run
+- *docker exec
 
 Week 1
 ======
