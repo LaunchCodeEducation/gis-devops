@@ -97,6 +97,8 @@ Practical
 - curl -v (see handshake)
 - telnet (connection refused)
 
+.. _week-prep-git-local-objectives:
+
 git local
 ---------
 
@@ -130,6 +132,8 @@ Practical
 - git checkout commit-hash
 - warning about destructive git commands (revert, reset, git rm)
 
+.. _week-prep-git-remote-objectives:
+
 git remote
 ----------
 
@@ -161,17 +165,28 @@ Practical
 - handling conflicts
 - open MR (comments, push up new changes, approve changes, merge)
 
+.. _week-prep-docker-consumer-objectives:
+
 Docker
 ------
 
 Conceptual
 ^^^^^^^^^^
 
+- portability
+- disposability
+- isolation (to/from host machine)
+- service management
+- images (process + dependencies + fs configuration in a box)
+- docker engine
+
 Practical
 ^^^^^^^^^
 
-- docker ps
-- docker run
+- docker hub (
+- docker ps (-a, --filter)
+- docker pull
+- docker run (common flags: -p, -d, -e/--env-file, --rm, -it, --name, -v)
 - docker start
 - docker stop
 - *docker exec
