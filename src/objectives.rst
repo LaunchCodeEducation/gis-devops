@@ -325,38 +325,160 @@ Conceptual
 - asynchronous (driven by user interaction, not executed linearly)
 - listener and handler model (to any given node you attach an event listener, and must register it's callback handler [the function])
 - always an event object the properties of which are dependent on the context
-- *event bubbling
-- best practice: .addEventListener() not onclick=
 - a way to custom the behavior of a UI (can control or extend browser default behavior)
-- all events are strings
+- events based on mouse, keyboard and browser interactions (event names as strings)
+- *event bubbling
 
 Practical
 ^^^^^^^^^
 
-- callback is invoked but the return isn't necessary (void)
-- event() -> void
-- onClick()
-- document.onReady()
-- document.addEventListener('DOMContentLoaded')
+- best practice: .addEventListener() not onclick=
+- event() -> void (callback is invoked but the return isn't necessary)
+- document.addEventListener('DOMContentLoaded') (for executing JS after all HTML is parsed/loaded)
 - common event methods: .preventDefault() (for overriding default browser behavior)
 - *bubbling event properties: .target (element the event occurred on), .currentTarget (target that had the event handler on it)
 
 .. _week-prep-js-async-objectives:
 
-Asynchronous JavaScript
------------------------
+AJAX and JavaScript Promises
+----------------------------
+
+.. TODO: complete
 
 Conceptual
 ^^^^^^^^^^
 
-- event loop to prevent blocking (browser needs)
-- synchronous vs asynchronous
-- promise object
+- event loop to prevent blocking (single threaded)
+- synchronous (executed linearly) vs asynchronous (executed on demand)
+- Promises 
 
 Practical
 ^^^^^^^^^
 
+- .then(callback): processed when the Promise resolves
+- .catch(callback): processed when the Promise is rejected
 - fetch
+
+.. _week-prep-web-apis-objectives:
+
+Web APIs
+--------
+
+.. TODO: complete
+
+Conceptual
+^^^^^^^^^^
+
+- 
+
+Practical
+^^^^^^^^^
+
+- 
+
+.. _week-prep-web-apis-objectives:
+
+Web APIs
+--------
+
+.. TODO: complete
+
+Conceptual
+^^^^^^^^^^
+
+- frameworks vs micro-frameworks
+
+Practical
+^^^^^^^^^
+
+- 
+
+.. _week-prep-java-fundamentals-objectives:
+
+Java Fundamentals
+-----------------
+
+.. TODO: complete
+
+Conceptual
+^^^^^^^^^^
+
+- 
+
+Practical
+^^^^^^^^^
+
+- 
+
+.. _week-prep-spring-fundamentals-objectives:
+
+Spring Fundamentals
+-----------------
+
+.. TODO: complete
+
+Conceptual
+^^^^^^^^^^
+
+- 
+
+Practical
+^^^^^^^^^
+
+- 
+
+.. _week-prep-sql-objectives:
+
+SQL
+---
+
+.. TODO: complete
+
+Conceptual
+^^^^^^^^^^
+
+- 
+
+Practical
+^^^^^^^^^
+
+- 
+
+.. _week-prep-orms-objectives:
+
+Object Relational Mapping
+-------------------------
+
+.. TODO: complete
+
+Conceptual
+^^^^^^^^^^
+
+- 
+
+Practical
+^^^^^^^^^
+
+- 
+
+.. _week-prep-spring-data-objectives:
+
+Spring Data
+-----------
+
+.. TODO: complete
+
+Conceptual
+^^^^^^^^^^
+
+- 
+
+Practical
+^^^^^^^^^
+
+- 
+
+
 
 
 
