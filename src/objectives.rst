@@ -431,10 +431,11 @@ Spring Fundamentals
 Conceptual
 ^^^^^^^^^^
 
-- spring & springboot
-- web framework
-- dependencies
-- annotation driven (explain annotations)
+- spring & springboot web frameworks (convention over configuration)
+- spring container
+- inversion of control and dependency injection
+- dependency management with gradle
+- annotation driven configuration (explain annotations)
 - controllers
 - models
 - views? SSR?
