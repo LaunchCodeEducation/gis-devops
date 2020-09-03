@@ -1,0 +1,23 @@
+version: "3.7"
+
+volumes:
+  docs:
+
+services:
+  builder:
+    volumes:
+      - ".:/curriculum:rw"
+      - "docs:/docs"
+    build:
+      context: .
+      dockerfile: "Dockerfile.builder"
+  server:
+    depends_on:
+      - builder
+    volumes:
+      - "docs:/docs"
+    ports:
+      - "8008:8008"
+    build:
+      context: .
+      dockerfile: "Dockerfile.server"
