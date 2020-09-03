@@ -11,6 +11,8 @@ Learning Objectives
 Week 1 (Prep Weeks)
 ===================
 
+.. TODO: intro bullet points (overview of web dev/ops, key terms and goals of the class)
+
 .. _week-prep-shell-objectives:
 
 Shell
@@ -379,7 +381,7 @@ Conceptual
 - HTTP methods and paths to define resources
 - HTTP response status codes 
 - HTTP response body as business data
-- static vs dynamic sites
+- static vs dynamic sites (data-driven applications on the modern web)
 - single (static, SSR) vs multi-host (client + API)
 
 Practical
@@ -397,11 +399,12 @@ Java Fundamentals
 Conceptual
 ^^^^^^^^^^
 
-- OO (everything is an object)
+- objects as programmatic representations (inner state and methods for interacting)
+- strictly OO (everything written in class files)
 - strictly typed compiled language
 - JDK vs JRE (JVM)
 - compiles to Java bytecode executed by JRE
-- entrypoint
+- entrypoint (main)
 
 Practical
 ^^^^^^^^^
@@ -412,99 +415,105 @@ Practical
 - declaring and using variables
 - primitives vs reference types and null
 - common primitive data types: int, long, bool, char
+- printing (System.out.print())
 - loops: for, foreach, while, do while
 - conditionals
 - equality (reference vs primitive)
 - data structures (array, list, hashmap, custom class objects)
 - classes (fields, properties, methods, constructor)
 - common access modifiers: default, public, private
-- printing (System.out.print())
+- static vs instance members ("this" keyword)
 - interfaces: signatures and abstraction
 
 .. _week-prep-spring-fundamentals-objectives:
 
 Spring Fundamentals
------------------
-
-.. TODO: complete
+-------------------
 
 Conceptual
 ^^^^^^^^^^
 
 - spring & springboot web frameworks (convention over configuration)
-- spring container
-- inversion of control and dependency injection
-- dependency management with gradle
 - annotation driven configuration (explain annotations)
-- controllers
-- models
-- views? SSR?
+- controllers and route handler methods
+- in memory data stores and models
 - *extensions (spring REST, spring security, spring elasticsearch)
+- *spring container
+- *inversion of control and dependency injection
+- *dependency management with gradle
 
 Practical
 ^^^^^^^^^
 
 - `spring initializr <https://start.spring.io/>`_
-- running a springboot web application
+- running a springboot web application (IDE and CLI)
 - accessing a locally running web application with curl, browser, and postman
 - modifying an existing controller class
 - creating a custom controller class
 - adding custom GET methods to a controller class
 - adding custom POST methods to a controller class
+- creating models and in-memory data store
+
+.. TODO: persistence topic (overview of DBMS concepts, compare to in-memory store)
 
 .. _week-prep-sql-objectives:
 
 SQL
 ---
 
-.. TODO: complete
+.. TODO: remove schemas from walkthrough
 
 Conceptual
 ^^^^^^^^^^
 
-- relational databases
+- persistence in web apps (CRUD)
+- relational DBMS
 - SQL as the language for interacting with relational databases
-- SQL server
+- postgres as our chosen dialect of SQL
+- DBMS server
 - database
-- schema
 - table
-- row
 - primary key
-- one to one relationships
+- columns and data types
+- row/record
+- constraints
 - foreign key
+- one to one relationships
 - one to many relationships
-- *many to many relationships
+- many to many relationships
 - *joins
 
 Practical
 ^^^^^^^^^
 
-- postgres walkthrough (.. _postgres-walkthrough:)
+- database design (whiteboard)
+- accessing db with psql client REPL (through docker exec)
 - Create a Database
-- Create a Schema
 - Create a Table
 - Create Record - Insert Into
 - Read Record - Select
 - Alter Table
 - Update Record(s)
 - Delete Record(s)
-- Foreign Key
+- constraints: FK, unique *unique composite
+- *join queries
 
 .. _week-prep-orms-objectives:
 
 Object Relational Mapping
 -------------------------
 
-.. TODO: complete
-
 Conceptual
 ^^^^^^^^^^
 
-- third party libraries that manage: database connections and code to database interactions
+- state and representations
+- transforming representations to fit the context
+- third party libraries that manage: database connections and mapping to/from OO and SQL
 - tables can be mapped to classes
 - records can be mapped to objects
+- columns can be mapped to fields
 - database interactions controlled from source code
-- reduce or eliminate stored procedures
+- eliminate stored procedures
 
 .. _week-prep-jpa-objectives:
 
@@ -514,15 +523,22 @@ Java Persistence API (JPA)
 Conceptual
 ^^^^^^^^^^
 
-- @Entity annotation
-- @Id
-- @GeneratedValue
-- @OneToOne
-- @OneToMany
-- javax.persistence.EntityManager enables CRUD functionality between Entities (objects) and the database
-- *@ManyToOne
-- *@ManyToMany
-- *JPQL
+- a specification and set of interfaces (on their own no purpose without an implementing layer, Hibernate)
+- entity classes (models)
+- query syntax
+- persisting entities
+
+.. _week-prep-spring-data-objectives:
+
+Spring Data JPA
+---------------
+
+Conceptual
+^^^^^^^^^^
+
+- a thin layer interface layer over JPA
+- provides a further abstraction over JPA (repository pattern to abstract data access)
+- data repositories instead of DAOs
 
 .. _week-prep-hibernate-objectives:
 
@@ -532,47 +548,23 @@ Hibernate
 Conceptual
 ^^^^^^^^^^
 
-- JPA provider (implements the JPA concepts above and adds additional tooling)
-- Hibernate is the tool that implements JPA to provide ORM
-- HQL
-
-.. _week-prep-spring-data-objectives:
-
-Spring Data
------------
-
-.. TODO: complete
-
-Conceptual
-^^^^^^^^^^
-
-- provides a further abstraction over a JPA provider
-- data repositories instead of DAOs
-- data repositories come with boilerplate for standard database interactions (utilizing Hibernate, which implements JPA)
-- data repositories can be extended to meet user specifications
+- JPA/SDJPA provider (concrete implementations of the JPA/SDJPA specs and interfaces)
 
 Practical
 ^^^^^^^^^
 
-- @Query annotation and binding to a data repository method
-- 
+- creating data-model repositories
+- @Repository
+- converting in-memory models to persisted entities
+- @Entity annotation
+- @Id
+- @GeneratedValue
+- @OneToOne
+- @OneToMany & @ManyToOne
+- *@ManyToMany
+- *JPQL, HQL
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Week 1
+Week 4
 ======
 
 .. _week01-day1-objectives:
@@ -646,7 +638,7 @@ Day 5
 
 .. _week02-objectives:
 
-Week 2
+Week 5
 ======
 
 Utilize the skills learned in week 1 to build a Spring Boot application that uses OpenLayers to display geospatial data on a map. Deliver an app with the the following features:
@@ -655,7 +647,7 @@ Utilize the skills learned in week 1 to build a Spring Boot application that use
 - Display Zika infection data on a map using OpenLayers.
 - Display information about each indvidual feature.
 
-Week 3
+Week 6
 ======
 
 .. _week03-day1-objectives:
@@ -731,14 +723,14 @@ Day 5
 - Understand and use ES2015 additions: `let`, `const`, template strings, arrow functions, default parameter values
 - Understand and use Webpack to build static client-side applications
 
-Week 4
+Week 7
 ======
 
 - Use the REST, Elasticsearch, and JavaScript skills obtained in week 3 within a student-built application.
 
 .. _week05-day1-objectives:
 
-Week 5
+Week 8
 ======
 
 Day 1
@@ -815,14 +807,14 @@ Day 5
 
 .. _week06-objectives:
 
-Week 6
+Week 9
 ======
 
 - Use the AWS skills learned in the previous week to deploy a cloud-hosted, scalable application to AWS
 
 .. _week07-objectives:
 
-Week 7
+Week 10
 ======
 
 <aside class="aside-note" markdown="1">
@@ -905,13 +897,13 @@ PG104 PostGIS Analysis
 
 .. _week08-objectives:
 
-Week 8
-======
+Week 11
+=======
 
 - Use the skills learned in the previous week to integrate GeoServer with a Spring Boot + OpenLayers application, both locally and on AWS
 
-Week 9
-======
+Week 12
+=======
 
 .. _week09-day-1-2-objectives:
 
