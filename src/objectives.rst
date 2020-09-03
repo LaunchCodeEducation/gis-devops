@@ -454,12 +454,33 @@ SQL
 Conceptual
 ^^^^^^^^^^
 
-- 
+- relational databases
+- SQL as the language for interacting with relational databases
+- SQL server
+- database
+- schema
+- table
+- row
+- primary key
+- one to one relationships
+- foreign key
+- one to many relationships
+- *many to many relationships
+- *joins
 
 Practical
 ^^^^^^^^^
 
-- 
+- postgres walkthrough (.. _postgres-walkthrough:)
+- Create a Database
+- Create a Schema
+- Create a Table
+- Create Record - Insert Into
+- Read Record - Select
+- Alter Table
+- Update Record(s)
+- Delete Record(s)
+- Foreign Key
 
 .. _week-prep-orms-objectives:
 
