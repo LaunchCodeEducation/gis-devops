@@ -340,61 +340,67 @@ Practical
 
 .. _week-prep-js-async-objectives:
 
-AJAX and JavaScript Promises
-----------------------------
-
-.. TODO: complete just add the Tyler McGinnis link and then add some points of the major topics
+Asynchronous JavaScript (Promises, AJAX)
+----------------------------------------
 
 Conceptual
 ^^^^^^^^^^
 
-- event loop to prevent blocking (single threaded)
-- synchronous (executed linearly) vs asynchronous (executed on demand)
-- Promises 
+- synchronous (foreground): executes (starts and completes) sequentially waiting (blocking) for the current operation to complete before executing the next
+- asynchronous (background): executes in parallel (background in separate API threads) to prevent blocking, uses callbacks to report when completed
+- used for: UI and I/O tasks that have variability in invocation and execution time (UI event handling, FS and network interactions)
+- event loop: used to prevent blocking by passing off asynchronous operations to external (separate from the main thread) APIs and managing a queue of callbacks associated with each operation when the external API completes (providing the callback with its payload of arguments)
+- `history [Tyler McGinnis] <https://www.youtube.com/watch?v=gB-OmN1egV8>`_ (mechanisms for making asynchronous operations "sequential"): callback (hell), Promises with .then/.catch, Promises with async/await
+- Promises: objects representing the state of an asynchronous operation (pending, fulfilled, rejected) - a wrapper around callbacks
+- AJAX: asynchronous javascript and XML requests, implemented in XMLHttpRequest (old) and fetch (ES6+)
+- AJAX behavior: background (non-blocking) network request, does not cause reloading like traditional browser requests
+- JSON: modern standard (over XML) for string representation of structured data (object/hashmap of fields and values/nested fields)
 
 Practical
 ^^^^^^^^^
 
+- fetch (GET, POST)
 - .then(callback): processed when the Promise resolves
 - .catch(callback): processed when the Promise is rejected
-- fetch
+- async/await
 
 .. _week-prep-web-apis-objectives:
 
 Web APIs
 --------
 
-.. TODO: complete
-
 Conceptual
 ^^^^^^^^^^
 
+- an interface for accessing/managing data over the web
 - data transference across a network
 - data represented in a universal format
 - JSON as a data format
 - HTTP methods and paths to define resources
 - HTTP response status codes 
 - HTTP response body as business data
+- static vs dynamic sites
+- single (static, SSR) vs multi-host (client + API)
 
 Practical
 ^^^^^^^^^
 
+- build web API with node/express (GET, POST)
 - curl web API
+- simple client with fetch to web API
 
 .. _week-prep-java-fundamentals-objectives:
 
 Java Fundamentals
 -----------------
 
-.. TODO: complete
-
 Conceptual
 ^^^^^^^^^^
 
 - OO (everything is an object)
 - strictly typed compiled language
-- compiles to Java bytecode
-- JVM
+- JDK vs JRE (JVM)
+- compiles to Java bytecode executed by JRE
 - entrypoint
 
 Practical
@@ -403,16 +409,17 @@ Practical
 - documentation (javadocs)
 - CLI compiling & execution
 - IDE compiling & execution
-- variables
-- data types
-- loops
+- declaring and using variables
+- primitives vs reference types and null
+- common primitive data types: int, long, bool, char
+- loops: for, foreach, while, do while
 - conditionals
-- equality
-- methods
-- data structures (array, list, hashmap, objects)
-- classes (properties, methods, constructor)
+- equality (reference vs primitive)
+- data structures (array, list, hashmap, custom class objects)
+- classes (fields, properties, methods, constructor)
+- common access modifiers: default, public, private
 - printing (System.out.print())
-- interfaces
+- interfaces: signatures and abstraction
 
 .. _week-prep-spring-fundamentals-objectives:
 
