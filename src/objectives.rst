@@ -492,12 +492,41 @@ Object Relational Mapping
 Conceptual
 ^^^^^^^^^^
 
-- 
+- third party libraries that manage: database connections and code to database interactions
+- tables can be mapped to classes
+- records can be mapped to objects
+- database interactions controlled from source code
+- reduce or eliminate stored procedures
 
-Practical
-^^^^^^^^^
+.. _week-prep-jpa-objectives:
 
-- 
+Java Persistence API (JPA)
+--------------------------
+
+Conceptual
+^^^^^^^^^^
+
+- @Entity annotation
+- @Id
+- @GeneratedValue
+- @OneToOne
+- @OneToMany
+- javax.persistence.EntityManager enables CRUD functionality between Entities (objects) and the database
+- *@ManyToOne
+- *@ManyToMany
+- *JPQL
+
+.. _week-prep-hibernate-objectives:
+
+Hibernate
+---------
+
+Conceptual
+^^^^^^^^^^
+
+- JPA provider (implements the JPA concepts above and adds additional tooling)
+- Hibernate is the tool that implements JPA to provide ORM
+- HQL
 
 .. _week-prep-spring-data-objectives:
 
@@ -509,11 +538,15 @@ Spring Data
 Conceptual
 ^^^^^^^^^^
 
-- 
+- provides a further abstraction over a JPA provider
+- data repositories instead of DAOs
+- data repositories come with boilerplate for standard database interactions (utilizing Hibernate, which implements JPA)
+- data repositories can be extended to meet user specifications
 
 Practical
 ^^^^^^^^^
 
+- @Query annotation and binding to a data repository method
 - 
 
 
