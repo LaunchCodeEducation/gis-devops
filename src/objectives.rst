@@ -343,7 +343,7 @@ Practical
 AJAX and JavaScript Promises
 ----------------------------
 
-.. TODO: complete
+.. TODO: complete just add the Tyler McGinnis link and then add some points of the major topics
 
 Conceptual
 ^^^^^^^^^^
@@ -369,29 +369,17 @@ Web APIs
 Conceptual
 ^^^^^^^^^^
 
-- 
+- data transference across a network
+- data represented in a universal format
+- JSON as a data format
+- HTTP methods and paths to define resources
+- HTTP response status codes 
+- HTTP response body as business data
 
 Practical
 ^^^^^^^^^
 
-- 
-
-.. _week-prep-web-apis-objectives:
-
-Web APIs
---------
-
-.. TODO: complete
-
-Conceptual
-^^^^^^^^^^
-
-- frameworks vs micro-frameworks
-
-Practical
-^^^^^^^^^
-
-- 
+- curl web API
 
 .. _week-prep-java-fundamentals-objectives:
 
@@ -403,12 +391,28 @@ Java Fundamentals
 Conceptual
 ^^^^^^^^^^
 
-- 
+- OO (everything is an object)
+- strictly typed compiled language
+- compiles to Java bytecode
+- JVM
+- entrypoint
 
 Practical
 ^^^^^^^^^
 
-- 
+- documentation (javadocs)
+- CLI compiling & execution
+- IDE compiling & execution
+- variables
+- data types
+- loops
+- conditionals
+- equality
+- methods
+- data structures (array, list, hashmap, objects)
+- classes (properties, methods, constructor)
+- printing (System.out.print())
+- interfaces
 
 .. _week-prep-spring-fundamentals-objectives:
 
@@ -420,12 +424,25 @@ Spring Fundamentals
 Conceptual
 ^^^^^^^^^^
 
-- 
+- spring & springboot
+- web framework
+- dependencies
+- annotation driven (explain annotations)
+- controllers
+- models
+- views? SSR?
+- *extensions (spring REST, spring security, spring elasticsearch)
 
 Practical
 ^^^^^^^^^
 
-- 
+- `spring initializr <https://start.spring.io/>`_
+- running a springboot web application
+- accessing a locally running web application with curl, browser, and postman
+- modifying an existing controller class
+- creating a custom controller class
+- adding custom GET methods to a controller class
+- adding custom POST methods to a controller class
 
 .. _week-prep-sql-objectives:
 
