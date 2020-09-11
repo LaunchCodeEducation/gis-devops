@@ -564,7 +564,7 @@ Practical
 - *@ManyToMany
 - *JPQL, HQL
 
-.. :: END PREP WEEKS
+.. :: END PREP WEEKS FOLLOWING IS WIP THROUGHOUT THE CLASS
 
 Week 4
 ======
