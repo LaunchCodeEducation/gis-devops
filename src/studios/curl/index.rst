@@ -24,8 +24,10 @@ To the locally hosted sample API make:
 
    This is a good chance to play around with various curl options. Try ``curl --help`` or ``man curl`` to see some of the available options.
 
-Bonus
-=====
+Bonus Instructor Led Walkthrough
+================================
+
+With remaining time your instructor will lead you through:
 
 - uninstall node & the sample API from your machine
 - run the sample API as a Docker container you can find it at `this Dockerhub repository <https://hub.docker.com/repository/docker/launchcodedevops/sample-api>`_
