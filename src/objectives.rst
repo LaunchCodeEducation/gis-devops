@@ -564,6 +564,8 @@ Practical
 - *@ManyToMany
 - *JPQL, HQL
 
+.. :: END PREP WEEKS
+
 Week 4
 ======
 
