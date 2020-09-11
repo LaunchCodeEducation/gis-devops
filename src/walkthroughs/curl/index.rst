@@ -1,10 +1,10 @@
 :orphan:
 
-.. _walkthrough-curl-local:
+.. _walkthrough-curl:
 
-================================
-Walkthrough: Intro to Curl Local
-================================
+==========================
+Walkthrough: Intro to Curl
+==========================
 
 - You can find a hosted sample API at 34.237.137.145
 - You can find a hosted TODO API at 35.153.156.170
