@@ -138,6 +138,15 @@ Walkthroughs
 
   walkthroughs/*/index
 
+Studios
+-------
+
+.. toctree::
+  :glob:
+  :maxdepth: 1
+
+  studios/*/index
+
 Installations
 -------------
 
