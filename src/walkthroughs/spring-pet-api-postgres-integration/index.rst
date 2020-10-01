@@ -20,12 +20,12 @@ To accomplish this goal we will need to:
 #. Check database
 #. Working with the Data Repository
 
-We will be going through these steps with the `spring-example API<https://gitlab.com/LaunchCodeTraining/spring-example>`_ we worked on early this week.
+We will be going through these steps with the `spring-example API <https://gitlab.com/LaunchCodeTraining/spring-example>`_ we worked on early this week.
 
 Setup
 =====
 
-If you don't have the code fork, and clone the `spring-example API<https://gitlab.com/LaunchCodeTraining/spring-example>` to your GitLab account.
+If you don't have the code fork, and clone the `spring-example API <https://gitlab.com/LaunchCodeTraining/spring-example>`_ to your GitLab account.
 
 Let's Explore the code, most notably the Dog.java, and DogController.java files:
 
