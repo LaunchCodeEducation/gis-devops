@@ -28,9 +28,8 @@ Add the associated Postgres and JPA dependencies to ``build.gradle`` as a compil
 Set the existing h2 dependency to be a ``testCompile`` dependency, since it will only be needed for running tests at this point.::
 
     dependencies {
-        compile('org.springframework.boot:spring-boot-starter-data-jpa')
-        compile(group: 'org.postgresql', name: 'postgresql', version: '42.1.4')
-        testCompile('com.h2database:h2')
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	    implementation group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
     }
 
 You will more than likely have additional dependencies listed, leave the ones you do have. We are simply adding these two new dependencies. The first is for Postgres it's the library that contains all the tools we need to work with Postgres in our web applications. The second dependencies is H2 Database. It creates a temporary in memory datastore that behaves like Postgres. We can use this for testing purposes, and we won't need to setup a new database for testing purposes. In some instances you may want to use an actual database for testing purposes.
