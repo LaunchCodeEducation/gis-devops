@@ -215,6 +215,10 @@ We will be adding to ``spring-example/src/main/resources/application.properties`
     spring.datasource.username=spring-example-user
     spring.datasource.password=springuserpass
     spring.jpa.hibernate.ddl-auto=update
+    # echos SQL statements as they are executed by Hibernate ORM
+    # uncomment for debugging to view SQL
+    # spring.jpa.show-sql=true
+    # spring.jpa.properties.hibernate.format_sql=true
 
 Take note of the information we are adding:
 
