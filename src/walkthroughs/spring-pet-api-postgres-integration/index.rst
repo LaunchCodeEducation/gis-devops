@@ -163,7 +163,7 @@ We want to create a database, and grant privileges to our database user for this
 .. sourcecode:: sql
 
     CREATE DATABASE example;
-    GRANT ALL PRIVILEGES on DATABASE example TO spring-example-user;
+    GRANT ALL PRIVILEGES on DATABASE example TO "spring-example-user";
 
 .. admonition:: note
 
@@ -230,7 +230,7 @@ Now that we have configured our spring application to communicate with our datab
 
 .. admonition:: note
 
-    Look over the `Baeldung JPA Entity<https://www.baeldung.com/jpa-entities>`_ to see some examples of some of the annotations we will be using in this article.
+    Look over the `Baeldung JPA Entity <https://www.baeldung.com/jpa-entities>`_ to see some examples of some of the annotations we will be using in this article.
 
 We will be flagging all our Models with the ``@Entity`` annotation to tell Hibernate to create a Table that matches the properties of this Model. We will also need to use the ``@Id`` annotation with an id property so the database can index the records that match our POJOs.
 
