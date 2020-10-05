@@ -11,7 +11,8 @@ For this studio, you will be writing unit tests to help you find errors in provi
 Getting Started
 ---------------
 
-* Fork, and clone the `Studio Repository <https://gitlab.com/LaunchCodeTraining/unit-testing-practice>`_
+* Fork, and clone the `Studio Repository <https://gitlab.com/LaunchCodeTraining/junit-studio>`_
+* Create a story branch for your work
 * Write unit tests for the 4 provided classes (BalancedBrackets, BinarySearch, RomanNumeral, and Fraction)
 * Find and fix all 5 errors in the provided classes
 
@@ -20,9 +21,9 @@ Discuss with your fellow students, and the instructor how each of these classes 
 Uploading Your Work
 -------------------
 
-After fixing the issues make sure to upload your work, by staging, committing, and pushing your work to your GitLab repository.
+After fixing the issues make sure to upload your work, by staging, committing, and pushing your work to your GitLab repository. After pushing your work let the instructor know.
 
 Resources
 ---------
-* `JUnit 5 Docs <https://junit.org/junit5/docs/current/user-guide/>`_
+* `JUnit 4 Docs <https://junit.org/junit4/>`_
 
