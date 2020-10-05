@@ -190,6 +190,7 @@ We will be making additions to the ``build.gradle`` file. We are adding to the d
 After adding these new dependencies our build gradle will contain:
 
 .. sourcecode:: gradle
+   :caption: build.gradle
 
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-web'
