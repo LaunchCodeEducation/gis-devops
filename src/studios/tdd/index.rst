@@ -9,19 +9,19 @@ Studio: Test-Driven Development
 For this studio, you will create a class to represent `URLs <https://en.wikipedia.org/wiki/URL>`_ as Java objects. You will do this using a test-driven approach.
 
 Getting Started
----------------
+===============
 
-Create a new Java project in IntelliJ named `tdd`. Use the Gradle project template. Initialize the project as a Git repository, then create a corresponding remote repository in your GitLab account. Connect your local to the remote, commit, and push.
+Fork and clone the `tdd-studio repository <https://gitlab.com/LaunchCodeTraining/tdd-studio>`_. 
 
 Review terminology for the following URL components at `Wikipedia <https://en.wikipedia.org/wiki/URL>`_ : protocol, domain, path.
 
 Your Tasks
-----------
+==========
 
 Create two classes:
 
-* src/main/java/Url.java
-* src/test/java/TestUrl.java
+* Url.java
+* UrlTest.java
 
 You will follow a test-driven approach to implement the requirements below. This means that for each requirement, you should write a test **before** writing any code for that requirement.
 
@@ -57,20 +57,8 @@ If you implement the above requirements with time to spare, attempt to implement
 * Add port, query string, and fragment fields with reasonable validation for each
 * Add support for IP addresses in place of domains
 
-Turning In Your Work
---------------------
-
-If you don't complete each of the tasks, turn in as much as you have completed by the end of the day.
-
-* Commit and push your work to GitLab
-* Create a Merge Request for the branch you pushed (you do this on the GitLab website)
-* Ask your classmates and instructor to review your code
-* See this for details about branching and Merge Requests `Branching and Merge Request Guidelines <https://docs.google.com/document/d/1Suneuf-NTohBP2Z5BFEkkCKopVbSDsAQga9ZMfPEb3o/edit>`_
-
 Resources
----------
+=========
+
 * `Java Regex Docs <https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html>`_
 
-.. tip::
-
-    The "intentions menu", Alt + Enter, in Intellij has a "Check Regex" option that brings up a Regular Expression tester.
