@@ -14,6 +14,14 @@ With integration testing our objective is to ensure the technologies work togeth
 Setup
 =====
 
+Get Example Code
+----------------
+
+We will be writing integration tests for the Car example project we have been using throughout this class. You can use your own project assuming you have completed the previous walkthroughs, or you can clone the `car-integration-tests <https://gitlab.com/LaunchCodeTraining/car-integration-tests>`_ repository which is ready to go.
+
+Additional Setup
+----------------
+
 We have some setup we need to perform before we can write and run our integration tests.
 
 We will:
