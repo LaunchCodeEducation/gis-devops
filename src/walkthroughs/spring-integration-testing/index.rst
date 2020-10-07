@@ -7,180 +7,201 @@ Walkthrough: Spring Integration Tests
 =====================================
 
 Concept
--------
+=======
 
-Overview
-^^^^^^^^
-
-With integration testing our objective is to ensure the technologies work together correctly. In this walkthrough we will focus on our Controller class. We want to make sure that when an HTTP Request is made to a specific endpoint, the HTTP Response that is sent back contains the correct information. This will be verifying that our Controller class handles requests, interacts with the Database, creates a POJO (Java Object), and returns a valid HTTP Response.
-
-IntergrationTestConfig
-^^^^^^^^^^^^^^^^^^^^^^
-
-In order to run our Integration Tests within Spring we need to configure a few tools. In your project you have been provided with an ``IntegrationTestConfig.java`` file. This file only does a few things, but is necessary for writing our integration tests.
-
-.. image:: /_static/images/spring-integration-tests/IntegrationTestConfig.png
-
-If you are looking for more information you should look up what these different annotations do. The most important annotation for writing our Integration Tests is ``@AutoConfigureMockMvc``, it handles Dependency Injection. We are injecting the MockMvc into this interface, and when we inject this interface into our Controller Test we will have access to MockMvc.
-
-MockMvc
-^^^^^^^
-
-To write these tests we will be working with a new library inside of the Spring testing framework: **MockMvc**.
-
-The MockMvc library will allow us to make HTTP Requests, and then make assert statements against the returned HTTP Response.
-
-.. image:: /_static/images/spring-integration-tests/integration-test-mockmvc.png
-
-In the example picture above. We are using mockMvc to make an HTTP get request to the /car endpoint. Then we are expecting the resulting HTTP Response to have a status code of 200, and the content (HTML/JSON/XML, etc) to contain the string ``"Mustang"``, and contain the string ``"Camry"``. If all three of these conditions are true, this test will pass. If any of those conditions are false, this test will fail.
-
-MemoryRepository
-^^^^^^^^^^^^^^^^
-
-In order to test that our technologies are working together correctly we will need access to the database, so we can fill it with data, and then check our HTTP Responses against that data.
-
-We will be using a **JPA Repository** to do this. We will talk about JPA Repositories in greater depth later this instruction week.
-
-What you need to know for today is that we will be using a JPA Repository to put dummy data into our database. Every time we create a POJO (Java Object) we will save it to the JPA Repository so it's stored in our database. In today's example we will be working with ``CarMemoryRepository`` which is a class provided for you. You can find this Class in the data folder within your source.
-
-We will Autowire it into our test file.
-
-.. image:: /_static/images/spring-integration-tests/integration-test-car-memory-repository.png
+With integration testing our objective is to ensure the technologies work together correctly. In this case that our application can handle HTTP requests, serve HTTP responses and communicate with the database properly.
 
 Setup
------
+=====
 
-1. Fork this repo: `Car Integration Tests <https://gitlab.com/LaunchCodeTraining/car-integration-test-starter/>`_
-2. Create a story branch ``$ git checkout -b walkthrough-solution``
-3. Open project in Intellij by opening gradle.build file as a project
+We have some setup we need to perform before we can write and run our integration tests.
 
-Explore Provided Files
-----------------------
+We will:
 
-You are provided with quite a few files already. This project extends the Unit Tests, and TDD tests we worked on in previous lessons. We will be making car objects, and testing them.
+- update our ``application.properties`` file to use environment variables to externalize our configuration
+- use the included ``docker-compose.yml`` to create a testing database
+- Add ``IntergrationTestConfig.java`` file
+- Finally create the ``CarsControllerTests.java`` file
 
-In your test directory you have a models directory that holds a file that is full of unit tests.
+Using Environment Variables in application.properties
+-----------------------------------------------------
 
-There is also an ``IntegrationTestConfig.java`` file, that configures the Integration Tests we will be writing, and there is a ``CarControllerTest.java`` file. This is where we will write any integration tests for our CarController. Inside of this file we have an empty test, and we setup MockMvc, and carRepository.
+Throughout this class we have been hard coding our development environment properties into our ``application.properties`` file. We should be using environment variables to externalize our database configuration.
 
-Exploring our Main directory we have a controller directory, data directory, models directory, and our ``CarApplication.java`` file. This is where the logic of our MVC app lives.
+.. sourcecode:: text
 
-* models - where our Car class lives
-* data - where our JPA Repository lives
-* controllers - where the controllers for HTTP Requests live
+    spring.datasource.driver-class-name=org.postgresql.Driver
+    spring.datasource.url=jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    spring.datasource.username=${DB_USER}
+    spring.datasource.password=${DB_PASSWORD}
+    spring.jpa.hibernate.ddl-auto=update
 
-Looking in our ``CarController.java`` file we are provided with 2 routes off of the car mapping.
+You can see where we are using our environment variables by the token ${}. These variables will be inserted by our build tool gradle at run time when we pass in the appropriate environment variables.
 
-* /seedData - a route that allows us to put some data into the database
-* / - the index of our car route that simply returns a template found at "car/index" and adds all the cars found in the database.
+We will see this in action when we run our tests.
 
-The CarController is what we will be testing with our integration testing.
+Create and Run Testing Database
+-------------------------------
 
+We will need to create and configure a testing database for our integration tests. You could manually set one up the way we have in the past, but luckily for us this project contains a ``docker-compose.yml`` file which will allow us to create one quickly and easily.
 
-Write The Tests
----------------
+.. sourcecode:: bash
 
-Our first test will be for getting a list of all cars by going to the /car route.
+    docker-compose up -d
 
-Steps:
+This will command will create a new testing database container.
 
-* Add test cars to the database
-* Perform GET request to /car
-* Check that HTTP Response contains the information it should
+.. admonition:: note
 
-.. image:: /_static/images/spring-integration-tests/integration-test-view-list-of-cars.png
+    Check the ``docker-compose.yml`` file. It is creating a testing container on port 5432, before running the command you should double check that nothing is running on that port.
 
-Let's run our test.
+IntegrationTestConfig
+---------------------
 
-.. image:: /_static/images/spring-integration-tests/integration-test-view-list-of-cars-result.png
+In the root of our testing directory we will need to add a new configuration file that will serve as the base for our future integration tests.
 
-That test passed! We can move on.
+Create ``src/test/java/org/launchcode/devops/carintegrationtesting/IntegrationTestConfig.java`` and add the following:
 
-Our next test is for checking the result of one single car. Instead of a list of all cars in the database, we want to make sure that one car can be returned when we request a car by a specific ID number. This code has not been provided for us. So following Red-Green-Refactor workflow, we will write our test, watch it fail, write the code to make the test pass, and then refactor if necessary.
+.. sourcecode:: java
 
-Steps:
+    // package statement omitted
 
-* Add test car to database
-* Perform GET request to /car/<ID>
-* Check that the HTTP Response contains the information it should
-* Add code to make test pass
-* Refactor code if necessary
+    import java.lang.annotation.ElementType;
+    import java.lang.annotation.Retention;
+    import java.lang.annotation.RetentionPolicy;
+    import java.lang.annotation.Target;
 
-.. image:: /_static/images/spring-integration-tests/integration-test-view-by-id.png
+    import javax.transaction.Transactional;
+    import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+    import org.springframework.boot.test.context.SpringBootTest;
 
-Let's run our test.
+    @Transactional
+    @SpringBootTest
+    @AutoConfigureMockMvc
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface IntegrationTestConfig {}
 
-.. image:: /_static/images/spring-integration-tests/integration-test-view-by-id-result1.png
+We won't spend class time delving into these various annotations, but you can find more information by reading their documentation.
 
-Our test failed. Luckily MockMvc gives us a lot of information when a test fails. It tells us the HTTP Request that was made, and the HTTP Response. Scroll through this output and read it. The image above shows why this test failed. The HTTP Response that was returned had a status code of 404, but our test is expecting a status code of 200. The resource was not found. This usually means the URL is incorrect. In our case it's because we have not yet created the controller that will handle this endpoint. We will have to write some code for this endpoint.
-
-We will need to add new code to our ``CarController.java`` file to create a new RequestMapping.
-
-.. image:: /_static/images/spring-integration-tests/integration-test-new-request-mapping.png
-
-In this request mapping we are accessing a path variable. Each car will have a different, and unique ID. A user of this application can request information about a specific car by making an HTTP Request to /car/<car.id> and include in the path the ID number of the car they are requesting. We are using the builtin PathVariable annotation to do this. You will have to import this into the file to use it. Option+enter is the easiest way to do this on a Mac.
-
-We will use the ID number given to us in the PathVariable to look up the car in the database. Using the Car Repository we want to look up one car, with a specific ID number. The method we are calling doesn't currently exist, so we will need to add it. In CarMemoryRepository we will need to add a little code.
-
-.. image:: /_static/images/spring-integration-tests/integration-test-car-memory-repository-addition.png
-
-Now that the method exists, we now have access to this code in our ``CarController.java`` file. If you switch back to the file you should see the red text on findById() has changed to black text.
-
-Let's run our test.
-
-.. image:: /_static/images/spring-integration-tests/integration-test-view-by-id-result2.png
-
-Our test failed again! However the output looks a little different. We are now getting an error in resolving our template: "car/view", template might not exist. In the code we added to our controller we told it to return a template located in the car folder called view.html. Looking at our project structure we don't have that file.
+Also you can find some general information by referring to the `Spring Testing Web guide <https://spring.io/guides/gs/testing-web/>`_.
 
 
-.. image:: /_static/images/spring-integration-tests/integration-test-project-structure.png
+Creating CarsControllerTests.java
+---------------------------------
 
-We will need to add an additional file, with some HTML to pass this test.
+We will need to create a test file that will hold the integration tests for our ``/cars`` endpoint.
 
-.. image:: /_static/images/spring-integration-tests/integration-test-view-template.png
+Create ``car-integration-tests/src/test/java/org/launchcode/devops/carintegrationtesting/controllers/CarsControllerTests.java`` and add the following:
 
-Now that the route exists. Let's rerun our test.
+.. sourcecode:: java
 
-.. image:: /_static/images/spring-integration-tests/integration-test-view-by-id-result3.png
+    // package statement omitted
 
-Finally it passed!
+    import org.launchcode.devops.carintegrationtesting.IntegrationTestConfig;
 
-We wrote a Red test, we added the code necessary to make the test green, and the next step would be to refactor our code if necessary. We won't refactor together, but it's something you will be expected to do in your studio today.
+    @IntegrationTestConfig
+    public class CarsControllerTests {
 
-Resources
----------
-* `Spring framework <https://docs.spring.io/spring/docs/current/spring-framework-reference/testing.html#integration-testing>`_
+    @Autowired
+    private MockMvc mockRequest;
 
-Class-level Configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^
+    @Autowired
+    private CarRepository carRepository;
 
-=============================================================================  =============
-Annotation                                                                     What it does
-=============================================================================  =============
-``@RunWith(SpringRunner.class)``                                               runs tests with the given test runner
+    }
 
-``@SpringBootTest(classes | Application.class)``                               ensures proper Spring web app context is loaded (including loading of framework components like controllers, DAOs, etc)
+Currently devoid of tests, but contains the two tools we will need for testing our endpoints. We will be using the MockMvc object to build and send HTTP requests and evaluate the HTTP response. We will be using the CarRepository to access our testing database.
 
-``@TestPropertySource(locations = "classpath:application-test.properties")``   replaces use of application.properties with the given file
+Writing Integration Tests
+=========================
 
-``@AutoConfigureMockMvc``                                                      allows for autowiring of MockMvc instance
+Now that we have configured our application to run integration tests let's start writing tests.
 
-``@Transactional``                                                             wraps each test method in a transaction, and rolls it back after each method runs
-=============================================================================  =============
+Looking at the ``CarsController.java`` file we have three endpoints we need to test:
 
-Executing and Verifying Results
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- ``GET /cars``
+- ``POST /cars``
+- ``GET /cars/{id}``
 
-=============================================================================  =============
-Method                                                                         Info
-=============================================================================  =============
-``MockMvc.perform(RequestBuilder requestBuilder)``                             Perform a request and return a type that allows chaining further actions, such as asserting expectations, on the result. `More info on MockMvc <https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/web/servlet/MockMvc.html>`_
+We will write a test for each of these endpoints in our ``CarsControllerTests.java`` file. 
 
-``MockMvcRequestBuilders.get(String uri)``                                     static method that performs a GET request. Returns a MockMvcRequestBuilder that can be chained. `More info on MockMvcRequestBuilders <https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/request/MockMvcRequestBuilders.html>`_
+Test 1: getCars()
+-----------------
 
-``MockMvcRequestBuilders.post()``                                              static method that performs a GET request. Returns a MockMvcRequestBuilder that can be chained.  `More info on MockMvcResultMatchers <https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/result/MockMvcResultMatchers.html>`_
+Let's write the first test for our ``GET /cars`` endpoint:
 
-``MockMvcRequestMatchers - content(), jsonPath(), status()``                   The type of result to expect: HTML, JSON, status...  More info
+.. sourcecode:: java
 
-``ResultActions - andExpect()``                                                What to look for in the result: status code, a string, JSON value...  `More info <https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/test/web/servlet/ResultActions.html>`_
-=============================================================================  =============
+    @Test
+    @DisplayName("GET /cars: returns a JSON list representing the cars collection")
+    public void getCars() throws Exception {
+        mockRequest.perform(MockMvcRequestBuilders.get(CarsController.ROOT_PATH))
+            .andExpect(status().isOk())
+            .andExpect(content().json("[]"));
+    }
+
+Let's break down this test because it's using the MockMvc type we declared earlier.
+
+- ``@Test``: an annotation we have seen many times so far
+- ``@DisplayName``: an annotation that allows us to configure the output when the test is run
+- method signature: in our integration tests we must include ``throws Exception``
+- We are using the mockRequest object to build and make a HTTP GET request to the ROOT_PATH variable of the CarsController file (it happends to be ``/cars``)
+- ``.andExpect()`` methods that allow us to check the returned HTTP Response object
+
+For this test our ``.andExpect()`` statements are checking that our HTTP status code is 200, and that the content (body) of our HTTP request is an empty json array.
+
+Test 2: createCar()
+-------------------
+
+.. sourcecode:: java
+
+    @Test
+    @DisplayName("POST /cars (PartialCar): creates and returns a JSON representation of the new car entity")
+    public void createCar() throws Exception {
+        Car testCar = new Car("Toyota", "Prius", 10, 20);
+
+        mockRequest.perform(
+        MockMvcRequestBuilders
+            .post(CarsController.ROOT_PATH)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content(new ObjectMapper().writeValueAsString(testCar))
+        )
+        .andExpect(status().isCreated())
+        .andExpect(header().exists("Location"))
+        .andExpect(jsonPath("$.id").isNumber());
+    }
+
+This test is creating a POST request, which requires us to attach a JSON body to our HTTP request which we are doing when we make our MockMvcRequest. Our ``.andExpect()`` methods check that the status code is 201, the headers contain "Location" and finally that the ``.id`` property of the returned JSON body is a number.
+
+Test 3: getCarById()
+--------------------
+
+.. sourcecode:: java
+
+    @Test
+    @DisplayName("GET /cars/{id}: returns a JSON representation of a car entity matching the id path variable")
+    public void getCarById() throws Exception {
+        Car testCar = carRepository.save(new Car("Ford", "Mustang", 12, 24));
+        mockRequest.perform(MockMvcRequestBuilders.get(CarsController.ROOT_PATH + "/" + testCar.getId()))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.id").value(testCar.getId()))
+        .andExpect(jsonPath("$.make").value(testCar.getMake()));
+    }
+
+For this test we need to create a new car object in our database, so that we have an id we can make a get with. We are then firing the request with MockMvc and then checking that the HTTP status is 200, the id of the returned JSON car object matches the id of the car we created, and that the make between the JSON and the POJO match.
+
+Running Integration Tests with Gradle Variables
+===============================================
+
+Finally we need to run our test using the gradle wrapper and we will need to pass in the environment variables that match our testing database:
+
+.. sourcecode:: bash
+
+    ./gradlew test -D DB_HOST=localhost -D DB_PORT=5432 -D DB_NAME=car_test -D DB_USER=car_test_user -D DB_PASSWORD=password i
+
+From the ``--help`` command for ``./gradlew test``:
+
+    The ``-D`` option or ``--system-prop`` is the option that allows us to set a system property of the JVM when running gradle tasks.
+
+In this case these system properties match the tokens in our ``application.properties`` file that represent our testing database.
