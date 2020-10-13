@@ -1,15 +1,23 @@
-.. _week5_project:
+.. _project_zika_client:
 
-============================================
-Week 5 - Project Week: Zika Mission Control
-============================================
+====================
+Project: Zika Client
+====================
 
 Zika Mission Control
 ====================
 
-Throughout this class we will build on the Zika Mission Control project every single project week.
+Throughout this class we will build a Zika Mission Control Dashboard. We will focus on one aspect at a time to assemble this project over multiple weeks.
 
-This project will be our chance to practice the concepts we learned in the previous instruction week.
+This project will consist of:
+
+- Zika Client (HTML, CSS, JavaScript)
+- Zika API (Java/Spring)
+- Zika Geoserver
+- Public Geoserver
+- Postgres database
+
+This project will ultimately be deployed to AWS services and will be accessible 
 
 Each week we will have a list of requirements that we will need to build into our project.
 
@@ -22,7 +30,7 @@ Each week we will build on our currently existing project, so **it is crucial to
 
 Here is a mockup of the application you will be building.
 
-.. image:: /_static/images/cdc_zika_dashboard.png
+.. image:: /_static/images/project/cdc_zika_dashboard.png
 
 
 Project Requirements
@@ -33,23 +41,20 @@ Following are the requirements from our stakeholders, and our tech team.
 Stakeholder Requirements
 ------------------------
 
-- Zika Reports, that are currently stored in CSV files, need to be stored in a relational database.
-- Zika Reports need to be geographically displayed on an interactive map.
-- Zika Reports are clickable: upon clicking a report more information about that report is displayed.
+- Zika Reports need to be geographically displayed on a map
+- Related Zika reporting layers should be added using public geoserver WMS services
+- Related Zika reporting layers should be toggleable
+- Users should be able to update the date to see new report data on the map
 
 Technical Requirements
 ----------------------
 
 - Version Control: Code base is managed with Git, and a remote repository is hosted on GitLab.
-- TDD: Tests are to be written before features are implemented.
-- Unit Testing: All Java models need to be tested.
-- Integration Testing: All Spring controllers, and ``JpaRepositories`` need to be tested.
-- Datastore: PSQL/PostGIS need to be used as the primary data store for the Zika reports.
-- Backend: Java and Spring will be used to handle the HTTP Requests, serve the HTTP Responses.
-- Backend: Java, Spring Data, JPA, and Hibernate will be used to interact with the database.
-- Frontend: HTML, CSS, Javascript, AJAX, and jQuery should be used to work with the Zika report data.
-- Frontend: OpenLayers should be used to load an interactive map from OSM.
-- Frontend: Zika reports should be loaded onto the OpenLayers map as a new feature layer.
+- HTML, CSS, Javascript, and XHR should be used to work with the Zika report data in a provided geoserver.
+- OpenLayers should be used to load an interactive map from OSM.
+- Zika reports should be loaded onto the OpenLayers map as a new feature layer.
+- A population layer should be included from the underlying data set found here: https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-density-rev11
+- Additional layers should be included that may be useful when thinking about Zika report data
 
 There are many ways we could go about building this project, but we must follow the provided requirements.
 
@@ -60,16 +65,11 @@ You should **complete all primary objectives** before working on any secondary o
 
 For your primary objectives, articles have been provided to help you think about what needs to be completed to complete the objective.
 
-1. Add WMS Layers to the map
-2. Make WMS Layers toggleable on button click
-3. Make a WFS request for a specific date range and display as a layer
-4. Make a WFS request for a different date range and change source of layer
-5. Add a date range selection tool that makes a WFS request based on user input
-
-0. :ref:`Create a Spring application <week5_spring-application>`, setup Git, and GitLab, configure the database, and prepare IntelliJ.
-1. :ref:`Display an interactive map <week5_display-map>` from OSM in the browser.
-2. :ref:`Display Zika reports <week5_display-reports>` on the map as red circles.
-3. :ref:`Clicked Zika reports <week5_clickable-reports>` display more information about the report.
+1. :ref:`Add WMS Layers to the map <project_zika_client_add_wms_layers>` 
+2. :ref:`Make WMS Layers toggleable on button click <project_zika_client_add_wms_layers>`
+3. :ref:`Make a WFS request for a specific date range and display as a layer <project_zika_client_base_wfs_request>`
+4. :ref:`Make a WFS request for a different date range and change source of layer <project_zika_client_wfs_request_on_button_click>`
+5. :ref:`Add a date range selection tool that makes a WFS request based on user input <project_zika_client_wfs_request_via_date_range_selection>`
 
 Secondary Objectives
 ====================
@@ -77,24 +77,18 @@ Secondary Objectives
 For your secondary objectives no guidance will be given to you. You will have to think about what needs to be completed to pass the objective.
 
 - Zika reports change color based on the severity of the outbreak.
-- Zika reports change size based on the severity of the outbreak.
-- Duplicate city/state/country names are not displayed if more than one report is selected.
-- Sensitive Database information has not been committed to our version control software.
-- Database is secure from SQL injection.
-- Add coordinate information to CSV files that are missing latitude and longitude.
+- Sensitive Database information has not been committed to our version control software
+- View report data when features are clicked on the map (map.onclick(forEachFeatureAtPixel))
 
 Bonus Missions
 ==============
 
 If you finish all objectives above, here are some additional features to consider. These are roughly listed in order from easiest to hardest. Feel free to pick what seems interesting to you, rather than starting from the top of the list. These are all independent of one another. 
 
-- Remove dependence on jQuery
+- Use jQuery to reduce the amount of JavaScript 
 - Display report info in a popup (with OpenLayers) instead of a pane or sidebar
-- Exclude features with 0 cases reported 
-- In a new container (e.g. a sidebar) display a summary of report data by country, sorted from most cases to least 
 - "Animate" reports displayed by adding them to the map one-by-one on page load
-- Add a select box to filter down to a specific country or region 
-- Add the ability to display reported cases within a given numerical range 
+- Add a select box to filter down to a specific country or region (search by country and fuzzy search)
 
 Turning in Your Work
 ====================
