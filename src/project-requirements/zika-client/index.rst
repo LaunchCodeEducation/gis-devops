@@ -76,8 +76,8 @@ Secondary Objectives
 
 For your secondary objectives no guidance will be given to you. You will have to think about what needs to be completed to pass the objective.
 
-- Zika reports change color based on the severity of the outbreak.
-- Sensitive Database information has not been committed to our version control software
+- Zika reports change color based on the severity of the outbreak
+- modularize your JavaScript
 - View report data when features are clicked on the map (map.onclick(forEachFeatureAtPixel))
 
 Bonus Missions
@@ -86,7 +86,6 @@ Bonus Missions
 If you finish all objectives above, here are some additional features to consider. These are roughly listed in order from easiest to hardest. Feel free to pick what seems interesting to you, rather than starting from the top of the list. These are all independent of one another. 
 
 - Use jQuery to reduce the amount of JavaScript 
-- Display report info in a popup (with OpenLayers) instead of a pane or sidebar
 - "Animate" reports displayed by adding them to the map one-by-one on page load
 - Add a select box to filter down to a specific country or region (search by country and fuzzy search)
 
