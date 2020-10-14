@@ -7,66 +7,72 @@ Project: Zika Client
 Zika Mission Control
 ====================
 
-Throughout this class we will build a Zika Mission Control Dashboard. We will focus on one aspect at a time to assemble this project over multiple weeks.
+Throughout this class we will build a Zika Mission Control Dashboard. Although, thankfully, the Zika outbreak was contained we will use the data set to practice building a real GIS system. We will focus on one aspect at a time to assemble this project over multiple weeks.
 
-This project will consist of:
+In its entirety, this project will consist of:
 
-- Zika Client (HTML, CSS, JavaScript)
+- **Zika Client (HTML, CSS, JavaScript with OpenLayers)**
 - Zika API (Java/Spring)
-- Zika Geoserver
-- Public Geoserver
-- Postgres database
+- Zika Geoserver API
+- Publicly accessible Geoserver APIs
+- Postgres database with geo-spatial Zika data
+- ElasticSearch database with geo-spatial Zika data
 
-This project will ultimately be deployed to AWS services and will be accessible 
-
-Each week we will have a list of requirements that we will need to build into our project.
+Once we have developed the system we will work on configuring CI/CD for and deploying each component to the cloud using Amazon Web Services (AWS). Each week we will have a list of requirements that we will need to build into our project. For this first project week we will focus on *consuming* data in a **Zika Client** front end.
 
 Project Overview
 ================
 
-The Zika Mission Control dashboard will be a Spring web application. It will display an interactive map from `Open Street Maps <https://www.openstreetmap.org/#map=5/38.007/-95.844>`_ (OSM). The map will present a layer of features that represent an outbreak of Zika. Each representation of a Zika report will be clickable, and upon a click event the user will see more information about that specific report.
+The Zika Mission Control Client will display an interactive map from `Open Street Maps <https://www.openstreetmap.org/#map=5/38.007/-95.844>`_ (OSM). The map will present a layer of features that represent Zika outbreak data. 
+
+.. TODO: discuss inclusion of clicking
+.. Each representation of a Zika report will be clickable, and upon a click event the user will see more information about that specific report.
 
 Each week we will build on our currently existing project, so **it is crucial to finish the primary objectives** for each project week!
 
-Here is a mockup of the application you will be building.
+.. admonition:: Note
 
-.. image:: /_static/images/project/cdc_zika_dashboard.png
+  When working on a client project it is easy to get distracted trying to make things look pretty! **Focus on the primary objectives** (wiring up all the logic) *before* turning your attention to the styling.
 
 
 Project Requirements
 ====================
 
-Following are the requirements from our stakeholders, and our tech team.
+Following are the requirements from our stakeholders and our tech team.
 
 Stakeholder Requirements
 ------------------------
 
-- Zika Reports need to be geographically displayed on a map
-- Related Zika reporting layers should be added using public geoserver WMS services
-- Related Zika reporting layers should be toggleable
-- Users should be able to update the date to see new report data on the map
+- Zika report data needs to be consumable on a graphical map
+- Related Zika reporting layers should be added using public Geoserver WMS services
+- The public Geoserver layers should be have the ability to be toggled on and off to overlay related data at a glance
+- Users should be able to filter Zika report data using date range, and *fuzzy* city and state search tools
 
 Technical Requirements
 ----------------------
 
-- Version Control: Code base is managed with Git, and a remote repository is hosted on GitLab.
-- HTML, CSS, Javascript, and XHR should be used to work with the Zika report data in a provided geoserver.
-- OpenLayers should be used to load an interactive map from OSM.
-- Zika reports should be loaded onto the OpenLayers map as a new feature layer.
-- A population layer should be included from the underlying data set found here: https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-density-rev11
-- Additional layers should be included that may be useful when thinking about Zika report data
+- Version Control: Code base is managed with Git, and a remote repository is hosted on GitLab
+- HTML, CSS, and *modular* JavaScript should be used as appropriate to build the GIS Zika Client (**no giant single-file scripts!**)
+- Supplementary libraries such as OpenLayers should be used to load an interactive map and data layers
+- Zika reports should be loaded onto the OpenLayers map to visualize the outbreak data
+- A population layer should be included from the a public Geoserver API like `this one <https://sedac.ciesin.columbia.edu/data/set/gpw-v4-population-density-rev11>`_
+- Supplementary layers should be included that assist in the analysis of Zika report data
 
-There are many ways we could go about building this project, but we must follow the provided requirements.
+There are many ways we could go about building this project but, **at minimum**, we must follow the provided requirements.
 
 Primary Objectives
 ==================
 
 You should **complete all primary objectives** before working on any secondary objectives.
 
-For your primary objectives, articles have been provided to help you think about what needs to be completed to complete the objective.
+.. admonition:: Warning
+
+  You may discuss aspects of the project with other students if you are stuck. But **you may not ever write nor share code** with each other as part of that assistance.
+
+For your primary objectives, articles have been provided to help you think about the tasks associated with the objective.
 
 1. :ref:`Add WMS Layers to the map <project_zika_client_add_wms_layers>` 
-2. :ref:`Make WMS Layers toggleable on button click <project_zika_client_add_wms_layers>`
+2. :ref:`Enable toggling of WMS Layers on button click <project_zika_client_add_wms_layers>`
 3. :ref:`Make a WFS request for a specific date range and display as a layer <project_zika_client_base_wfs_request>`
 4. :ref:`Make a WFS request for a different date range and change source of layer <project_zika_client_wfs_request_on_button_click>`
 5. :ref:`Add a date range selection tool that makes a WFS request based on user input <project_zika_client_wfs_request_via_date_range_selection>`
@@ -74,67 +80,63 @@ For your primary objectives, articles have been provided to help you think about
 Secondary Objectives
 ====================
 
-For your secondary objectives no guidance will be given to you. You will have to think about what needs to be completed to pass the objective.
+For your secondary objectives no articles will be given to you. You will have to think critically and plan out the tasks needed to complete the objective. You may always reach out to the instructor for guidance but be aware that they will only provide support through discussion -- not code!
 
-- Zika reports change color based on the severity of the outbreak
-- modularize your JavaScript
-- View report data when features are clicked on the map (map.onclick(forEachFeatureAtPixel))
+- Zika report locations change color based on the severity of the outbreak
+- Display report data associated with a location when one is clicked on the map
+
+.. admonition:: Note
+
+  You can accomplish the clicking objective several different ways. But you should have a look at the `map events <https://openlayers.org/en/latest/apidoc/module-ol_MapBrowserEvent-MapBrowserEvent.html#event:click>`_ and the `forEachFeatureAtPixel <https://openlayers.org/en/latest/apidoc/module-ol_PluggableMap-PluggableMap.html#forEachFeatureAtPixel>`_ utilities built into OpenLayers.
 
 Bonus Missions
 ==============
 
 If you finish all objectives above, here are some additional features to consider. These are roughly listed in order from easiest to hardest. Feel free to pick what seems interesting to you, rather than starting from the top of the list. These are all independent of one another. 
 
-- Use jQuery to reduce the amount of JavaScript 
-- "Animate" reports displayed by adding them to the map one-by-one on page load
-- Add a select box to filter down to a specific country or region (search by country and fuzzy search)
+- *Animate* reports displayed by adding them to the map one-by-one on page load
+- Search the report data from the Zika Geoserver API using other terms (like city, state or number of cases)
+- Use `jQuery <https://jquery.com/>`_ or another front end framework like `React <https://reactjs.org/>`_ to abstract interactions with the DOM
 
 Turning in Your Work
 ====================
 
+Git Workflow
+------------
+
+As you work on your project you will be required to **commit early and commit often**. Part of your review will include an assessment of your usage of git. You are expected to have a history of commits documenting your progress through the use of **descriptive commit messages**. Part of this history will include **separate branches for each objective** titled `objective-#` which contains all the commits associated with its completion.
+
+After completing each objective you can `git merge` the objective feature branch back into your master branch. Make sure that you **push your branches** to the remote repo on GitLab at least after completing each of them. This includes pushing the `master` branch after each objective branch is merged into it.
+
+.. admonition:: Warning
+
+  **When you complete your final objective** you will open a Merge Request (MR) on GitLab to merge that objective feature branch into `master`. Notify your instructor so they can begin your code review.
+
 Code Review
 -----------
 
-Let your instructor know When you complete the primary objectives. The instructor will need a link to your GitLab repo, and they will perform a code review, and leave you feedback.
+After opening your MR your instructor will review your code and leave feedback. If changes are requested due to an incomplete or non-functioning objective you will be required to implement the suggested changes and push them up for further review. When your instructor has confirmed that your objectives are complete you can work on the Secondary and Bonus objectives!
 
 Objective Checklist
 -------------------
 
-As you work through the objectives for this week, keep track of them on your Checklist, your instructor will also confirm which objectives you completed in their code review. If you don't pass an objective the instructor will give you feedback on what you need to do to complete that objective.
+As you work through the objectives for this week, keep track of them on your checklist, your instructor will also confirm which objectives you completed in their code review. If you don't pass an objective the instructor will give you feedback on what you need to do to complete that objective.
 
 Presentation
 ------------
 
-Friday afternoon everyone will present their project to the class. This presentation is meant to be a celebration of your hard work throughout the week, and as a chance for you to share, and learn from the other students in the class.
+On the final Friday of the project week everyone will present their project to the class. This presentation is meant to be a celebration of your hard work throughout the week, and as a chance for you to share, and learn from the other students in the class. You will give a short demo and discuss new features you added or challenges you overcame.
 
-At the end of this course, during your graduation ceremony you will be expected to present your final project to the attendees. Every project week we will have a presentation as a way for you to practice for this final presentation.
+At the end of this course, during your graduation ceremony, you will be expected to present your final project to the attendees. Every project week we will have a presentation as a way for you to practice for this final presentation.
 
-Check Your Knowledge
-====================
+.. Bonus Resources
+.. ===============
 
-We covered a lot of ground this week. 
+.. * `CSS Selectors <https://www.w3schools.com/cssref/css_selectors.asp>`_
+.. * `JSON Lint <https://jsonlint.com/>`_
+.. * `geojson.io <http://geojson.io/#map=2/20.0/0.0>`_
+.. * `Spring Data JPA DataRepostiry query documentation <https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html>`_
 
-To reinforce your understanding of the concepts answer these questions to yourself:
+.. .. note::
 
-- When did we have to make changes to a controller file?
-- When did we have to make changes to a repository file?
-- When did we have to make changes to the ``index.html`` file?
-- When did we have to make changes to the script.js file?
-- When did we have to make changes to our test files?
-- How does our application communicate with the database?
-- Our data starts as various CSV files. How is that data transformed throughout our project?
-- How does our application convert a Java Object to GeoJSON?
-- How do we create a new layer in OpenLayers?
-- How do we add that layer to our map from OSM?
-
-Bonus Resources
-===============
-
-* `CSS Selectors <https://www.w3schools.com/cssref/css_selectors.asp>`_
-* `JSON Lint <https://jsonlint.com/>`_
-* `geojson.io <http://geojson.io/#map=2/20.0/0.0>`_
-* `Spring Data JPA DataRepostiry query documentation <https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html>`_
-
-.. note::
-
-   Remember that both jQuery and OpenLayers will silently fail if they are not given valid JSON and valid GeoJSON (respectively).
+..    Remember that both jQuery and OpenLayers will silently fail if they are not given valid JSON and valid GeoJSON (respectively).
