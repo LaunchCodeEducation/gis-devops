@@ -104,9 +104,11 @@ Turning in Your Work
 Git Workflow
 ------------
 
-As you work on your project you will be required to **commit early and commit often**. Part of your review will include an assessment of your usage of git. You are expected to have a history of commits documenting your progress through the use of **descriptive commit messages**. Part of this history will include **separate branches for each objective** titled `objective-#` which contains all the commits associated with its completion.
+As you work on your project you will be required to **commit early and commit often**. Part of your review will include an assessment of your usage of git. You are expected to have a history of commits documenting your progress through the use of **descriptive commit messages**. 
 
-After completing each objective you can `git merge` the objective feature branch back into your master branch. Make sure that you **push your branches** to the remote repo on GitLab at least after completing each of them. This includes pushing the `master` branch after each objective branch is merged into it.
+Your git history should include **separate branches for each primary objective** titled `objective-#` which contains all the commits associated with its completion.
+
+After completing each objective you can `git merge` the objective feature branch back into your master branch. Make sure that you **push your branches** to the remote repo on GitLab after completing each of the primary objectives. This includes pushing the `master` branch after each objective branch is merged into it.
 
 .. admonition:: Warning
 
@@ -117,15 +119,10 @@ Code Review
 
 After opening your MR your instructor will review your code and leave feedback. If changes are requested due to an incomplete or non-functioning objective you will be required to implement the suggested changes and push them up for further review. When your instructor has confirmed that your objectives are complete you can work on the Secondary and Bonus objectives!
 
-Objective Checklist
--------------------
-
-As you work through the objectives for this week, keep track of them on your checklist, your instructor will also confirm which objectives you completed in their code review. If you don't pass an objective the instructor will give you feedback on what you need to do to complete that objective.
-
 Presentation
 ------------
 
-On the final Friday of the project week everyone will present their project to the class. This presentation is meant to be a celebration of your hard work throughout the week, and as a chance for you to share, and learn from the other students in the class. You will give a short demo and discuss new features you added or challenges you overcame.
+Typically at the end of the week we try to have project presentations where everyone gets a chance to show their project to the rest of the class. Due to the remote nature of this course we may try to do this, or we may skip this. Either way be prepared to show and talk about your project at the end of the project week.
 
 At the end of this course, during your graduation ceremony, you will be expected to present your final project to the attendees. Every project week we will have a presentation as a way for you to practice for this final presentation.
 
