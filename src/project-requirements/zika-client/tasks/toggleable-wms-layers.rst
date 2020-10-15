@@ -1,4 +1,4 @@
-.. _project_zika_client_add_wms_layers:
+.. _project_zika_client_toggleable_wms_layers:
 
 =====================
 Toggleable WMS Layers
@@ -11,6 +11,8 @@ Viewing all three of these layers at the same time is overwhelming. Let's give a
 In the starter code of the Zika Client you will notice that three toggle buttons already exist.
 
 Your goal for this task will be to wire these buttons so that when they are clicked their associated layer's visibility is changed.
+
+You can find information on the available properties, and methods associated with a Layer object by checking the `OpenLayers Layer documentation <https://openlayers.org/en/latest/apidoc/module-ol_layer_Layer-Layer.html>`_
 
 Take Inventory
 ==============

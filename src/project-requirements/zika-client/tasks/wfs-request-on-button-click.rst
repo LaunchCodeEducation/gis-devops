@@ -1,18 +1,19 @@
 .. _project_zika_client_wfs_request_on_button_click:
 
-===============================
-New WFS Request on Button Click
-===============================
+=========================
+WFS Request by Date Range
+=========================
 
-You will need to add a new button adjacent to the provided toggle buttons.
+In the previous task we let the user make a new WFS request based on entering in one date, and then we made a new filter that matched their date with a specific date in geoserver and then would render a layer based on the data for that specific date.
 
-You will need to register a new event listener on the button that will create a new WFS.getFeatures() request, and then make the request with fetch().
+Let's expand on this idea further and give the user the ability to select a range of dates, by selecting a start date, and an end date. We will then create a WFS request that will check for report_dates in that range using an `IsBetween Filter <https://openlayers.org/en/latest/apidoc/module-ol_format_filter_IsBetween-IsBetween.html>`_
 
 Take Inventory
 ==============
 
-- create new button
-- register new click event listener for the button
-- make a new WFS().getFeatures() request with the start date '2016-01-01' and the end date '2017-01-01'
+- we will need two select boxes that are filled with valid dates
+- we will need a button to send the request
+- register a new click event handler for the button
+- make a new WFS().getFeatures() request with the dates selected by the user in the select elements
 - fire a fetch() request to geoserver using the new WFS().getFeatures() request
 - load the returned data into the source of the layer created for zika reports

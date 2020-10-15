@@ -60,6 +60,10 @@ Technical Requirements
 
 There are many ways we could go about building this project but, **at minimum**, we must follow the provided requirements.
 
+An example of what this completed project may look like:
+
+.. image:: /_static/images/project/cdc_zika_dashboard.png
+
 Primary Objectives
 ==================
 
@@ -71,32 +75,38 @@ You should **complete all primary objectives** before working on any secondary o
 
 For your primary objectives, articles have been provided to help you think about the tasks associated with the objective.
 
-1. :ref:`Add WMS Layers to the map <project_zika_client_add_wms_layers>` 
-2. :ref:`Enable toggling of WMS Layers on button click <project_zika_client_add_wms_layers>`
-3. :ref:`Make a WFS request for a specific date range and display as a layer <project_zika_client_base_wfs_request>`
-4. :ref:`Make a WFS request for a different date range and change source of layer <project_zika_client_wfs_request_on_button_click>`
-5. :ref:`Add a date range selection tool that makes a WFS request based on user input <project_zika_client_wfs_request_via_date_range_selection>`
+1. :ref:`Add WMS Layers to the map <project_zika_client_add_wms>` 
+2. :ref:`Enable toggling of WMS Layers on button click <project_zika_client_toggleable_wms_layers>`
+3. :ref:`Make an initial WFS request for a specific date and display as a layer <project_zika_client_base_wfs_request>`
+4. :ref:`Make WFS request by user selected date <project_zika_client_wfs_by_date>`
+5. :ref:`Make a WFS request for a different date range <project_zika_client_wfs_request_on_button_click>`
+6. :ref:`Make WFS request based on cases by operator <project_zika_client_wfs_request_cases_by_operator>`
 
 Secondary Objectives
 ====================
 
 For your secondary objectives no articles will be given to you. You will have to think critically and plan out the tasks needed to complete the objective. You may always reach out to the instructor for guidance but be aware that they will only provide support through discussion -- not code!
 
+- Change the opacity of the WMS layers to make them less distracting (give the user the ability to set the opacity of these layers)
+- Refactor the UI: reduce the number of buttons, and select boxes (check out the picture at the bottom of this picture for an example)
+- Styling: look into some CSS libraries to improve the general look and feel of the HTML elements
+- Move the UI elements into an OpenLayers map control
 - Zika report locations change color based on the severity of the outbreak
 - Display report data associated with a location when one is clicked on the map
+- *Animate* reports displayed by adding them to the map one-by-one on page load
+- Search the report data from the Zika Geoserver API using other terms (like city, state or number of cases)
+- Use `jQuery <https://jquery.com/>`_ or another front end framework like `React <https://reactjs.org/>`_ to abstract interactions with the DOM
+- Make your map clickable on click event you can display the underlying data of the features in the layer that was clicked
+
+An example of a refactored UI with user changeable search terms:
+
+.. image:: /_static/images/project/cdc_zika_dashboard_better_ui.png
+
+You would need to put in the proper logic to show or hide various HTML elements based on the search term and type of comparison.
 
 .. admonition:: Note
 
   You can accomplish the clicking objective several different ways. But you should have a look at the `map events <https://openlayers.org/en/latest/apidoc/module-ol_MapBrowserEvent-MapBrowserEvent.html#event:click>`_ and the `forEachFeatureAtPixel <https://openlayers.org/en/latest/apidoc/module-ol_PluggableMap-PluggableMap.html#forEachFeatureAtPixel>`_ utilities built into OpenLayers.
-
-Bonus Missions
-==============
-
-If you finish all objectives above, here are some additional features to consider. These are roughly listed in order from easiest to hardest. Feel free to pick what seems interesting to you, rather than starting from the top of the list. These are all independent of one another. 
-
-- *Animate* reports displayed by adding them to the map one-by-one on page load
-- Search the report data from the Zika Geoserver API using other terms (like city, state or number of cases)
-- Use `jQuery <https://jquery.com/>`_ or another front end framework like `React <https://reactjs.org/>`_ to abstract interactions with the DOM
 
 Turning in Your Work
 ====================

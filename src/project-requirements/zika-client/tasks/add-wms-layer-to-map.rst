@@ -1,4 +1,4 @@
-.. _project_zika_client_add_wms_layers:
+.. _project_zika_client_add_wms:
 
 =====================
 Add WMS Layers to Map
@@ -19,19 +19,19 @@ Take Inventory
 What do we need to do in order to add a new WMS layer to our map?
 
 - we need an Open Street Map object
-- we need to define a new Layer which needs:
+- we need to define a new Layer which needs
     - a map projection
     - a geoserver url
     - a list of layer names to load from geoserver
 - the layer needs to be added to the map
+
+For a refresher on WMS requests with OpenLayers take a look at their `TileWMS Example <https://openlayers.org/en/latest/examples/wms-tiled.html>`_
 
 Add Additional Layers
 =====================
 
 After adding the population density layer to your map you will need to add two additional layers using WMS and publicly available geoservers.
 
-You can find additional geoserver map services at the following locations:
+You can find additional geoserver map services at: https://sedac.ciesin.columbia.edu/data/sets/browse?
 
-- https://sedac.ciesin.columbia.edu/data/sets/browse?facets=data-type:map%20service
-- http://www.skylab-mobilesystems.com/en/wms_serverlist.html
-- https://freegisdata.rtwilson.com/
+There are many other WMS services you can consume online, but if you want additional WMS layers you will have to research them.

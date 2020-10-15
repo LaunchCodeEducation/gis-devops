@@ -147,6 +147,15 @@ Studios
 
   studios/*/index
 
+Project Requirements
+--------------------
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   project-requirements/*/index
+
 Installations
 -------------
 
