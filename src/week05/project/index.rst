@@ -60,6 +60,12 @@ You should **complete all primary objectives** before working on any secondary o
 
 For your primary objectives, articles have been provided to help you think about what needs to be completed to complete the objective.
 
+1. Add WMS Layers to the map
+2. Make WMS Layers toggleable on button click
+3. Make a WFS request for a specific date range and display as a layer
+4. Make a WFS request for a different date range and change source of layer
+5. Add a date range selection tool that makes a WFS request based on user input
+
 0. :ref:`Create a Spring application <week5_spring-application>`, setup Git, and GitLab, configure the database, and prepare IntelliJ.
 1. :ref:`Display an interactive map <week5_display-map>` from OSM in the browser.
 2. :ref:`Display Zika reports <week5_display-reports>` on the map as red circles.
