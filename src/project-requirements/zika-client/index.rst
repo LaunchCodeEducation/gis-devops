@@ -45,8 +45,7 @@ Stakeholder Requirements
 
 - Zika report data needs to be consumable on a graphical map
 - Related Zika reporting layers should be added using public Geoserver WMS services
-- The public Geoserver layers should be have the ability to be toggled on and off to overlay related data at a glance
-- Users should be able to filter Zika report data using date range, and *fuzzy* city and state search tools
+- The public Geoserver layers should have the ability to be toggled on and off to overlay related data at a glance
 
 Technical Requirements
 ----------------------
