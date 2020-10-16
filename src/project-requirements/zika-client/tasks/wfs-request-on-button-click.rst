@@ -15,7 +15,7 @@ You will need some information about your geoserver container in order to make t
 
 - geoserver namespace: ``'https://zika.devops.launchcode.org'``
 - geoserver prefix: ``'zika'``
-- geoserver Types: ``['location_with_cases_by_date']``
+- geoserver Types: ``['locations_with_cases_by_date']``
 - geoserver output format: ``'application/json'``
 - geoserver srs name: Your map projection
 - geoserver WFS URL: ``'http://localhost:8080/geoserver/zika/wfs'``
