@@ -64,7 +64,11 @@ We will do this using the aws cli:
 
     aws configure
 
-This command will prompt you for two things which you will need to paste into your terminal. First your access key id, and second your secret access key. Both are long strings of characters. The secret key id, and and secret access key are your way of identifying yourself to AWS through the AWS CLI. These are not things you should share with anyone else. If you ever feel they have been compromised you can revoke access to any keys, and generate new ones through the AWS Web Console mentioned in the note above.
+This command will prompt you for two things which you will need to paste into your terminal. 
+
+First your access key id, and second your secret access key. 
+
+Both are long strings of characters. The secret key id, and and secret access key are your way of identifying yourself to AWS through the AWS CLI. These are not things you should share with anyone else. If you ever feel they have been compromised you can revoke access to any keys, and generate new ones through the AWS Web Console mentioned in the note above.
 
 Next we will be configuring our default region. For our S3 buckets we will be placing them in the AWS North Virginia region also known as ``us-east-1``.
 
@@ -235,7 +239,7 @@ Let's take a look at our current ``package.json``:
         "prestart:services": "npm run install:geoserver-config",
         "prestop:services": "npm run install:geoserver-config",
         "start:services": "docker-compose -f docker-compose.yml -f ./geoserver-config/docker-compose.preconfigured.yml up -d",
-        "stop:services": "docker-compose  -f docker-compose.yml -f ./geoserver-config/docker-compose.preconfigured.yml down",
+        "stop:services": "docker-compose  -f docker-compose.yml -f ./geoserver-config/docker-compose.preconfigured.yml down"
     },
 
 Pretty straight forward we have been using these scripts as we have been developing our application. Let's add two new scripts at the bottom of the ``"scripts"`` section:
@@ -263,4 +267,8 @@ We added a ``"predeploy"`` script that will run before any script named ``"deplo
 
 Then our ``"deploy"`` script runs which calls the aws s3 sync command for our bucket.
 
-Make a change to your application and tryout our new deploy script.
+Make a change to your application and tryout our new deploy script:
+
+.. sourcecode:: bash
+
+    npm run deploy
