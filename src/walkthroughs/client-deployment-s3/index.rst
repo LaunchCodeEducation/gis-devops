@@ -8,7 +8,9 @@ Deploy Zika Client to S3
 
 In this walkthrough we will be deploying the static zika client to AWS S3.
 
-S3 is Amazon Web Services Simple Storage Service. S3 is a cloud hosted file system that can store any type of file and can be accessed from the AWS Web Console, or the AWS CLI. Since our Zika client is purely static and only needs a browser to run a file system with a basic web server can serve the files as a website. Luckily, AWS S3 can be configured to serve files with a basic web server. This will transform our S3 file system into a very simple web server for our Client.
+S3 is Amazon Web Services Simple Storage Service. S3 is a cloud hosted file system that can store any type of file and can be accessed from the AWS Web Console, or the AWS CLI. It's primary purpose is to act as cloud object storage that can be used for any purpose. However, it can also be configured to serve static content like our HTML, CSS, and JavaScript files.
+
+Since our Zika client is purely static and only needs a browser to run a file system with a basic web server can serve the files as a website. Luckily, AWS S3 can be configured to serve files like a basic web server. This will transform our S3 file system into a very simple web server for our Client.
 
 Later in this course we will dive much deeper into AWS and some of the various services offered, but all we need to deploy a static front end is S3.
 
@@ -32,7 +34,7 @@ After it is complete you can verify it installed correctly by checking it's vers
 
 .. sourcecode:: bash
 
-    awscli --version
+    aws --version
 
 You should see a line of output describing the version of the AWS CLI tool you just installed on your machine.
 
@@ -258,7 +260,7 @@ Pretty straight forward we have been using these scripts as we have been develop
         "start:services": "docker-compose -f docker-compose.yml -f ./geoserver-config/docker-compose.preconfigured.yml up -d",
         "stop:services": "docker-compose  -f docker-compose.yml -f ./geoserver-config/docker-compose.preconfigured.yml down",
         "predeploy": "npm run build",
-        "deploy": "aws s3 sync --acl public-read dist/ s3://launchcode-gisdevops-c7-paul-zika-client"
+        "deploy": "aws s3 sync --acl public-read dist/ s3://<your-bucket-name>"
     },
 
 We added a ``"predeploy"`` script that will run before any script named ``"deploy"`` which we also added.
