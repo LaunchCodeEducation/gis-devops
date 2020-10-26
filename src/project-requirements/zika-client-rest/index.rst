@@ -31,7 +31,6 @@ In order to start working with this new Map Notes API we will need to do a few s
 
 - Add mapnotes source code
 - Add mapnotes API container
-- Add DotEnv
 - Add HTML elements
 - Initialize Map Notes
 
@@ -134,28 +133,6 @@ After adding this section your yaml file should look like:
             image: "launchcodedevops/mapnotes-api-node"
             ports:
             - "8008:8008"    
-
-
-Add DotEnv
-----------
-
-We will be using an environment variable in this project, and we will need to add the dotenv-webpack module to our project.
-
-From the root of your project you will need to install the package:
-
-.. sourcecode:: bash
-
-    npm install dotenv-webpack --save-dev
-
-You will then need to create ``dev.env`` and ``prod.env`` files at the root of your project.
-
-You will need to add the following key to both files:
-
-.. sourcecode:: text
-
-    MAP_NOTES_API_URL=<location>
-
-You will need to replace ``<location>`` with the URL to your Map Notes API. In your development environment it should be ``http://localhost:8008``. Your instructor will provide to you the URL for your production environment variable later this week when you are ready for deployment.    
 
 Add HTML elements
 -----------------
