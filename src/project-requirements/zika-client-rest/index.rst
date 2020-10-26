@@ -1,0 +1,276 @@
+.. _project_zika_client_rest:
+
+=========================
+Project: Zika Client REST
+=========================
+
+Zika Mission Control
+====================
+
+We continue to work on our Zika Client this week, by incorporating some features that consume a RESTful Map Notes API.
+
+The Map Notes API provides the ability to save features that are drawn on an OpenLayers map together with a note title and note body. These Map Notes can be saved, recalled, and deleted from the API. This gives end users the ability to take notes on interesting areas around the map. With this application it may allow certain countries, or municipalities to mark areas within their borders as potential hotspots, or areas that may have unusual circumstances that make providing medical care difficult.
+
+As an example consider the following image:
+
+.. image:: /_static/images/project/yopal-layer.png
+
+This feature will allow scientists to flag specific areas on the map as points of interest with regards to the Zika outbreak.
+
+Project Overview
+================
+
+You objective for this week is to update your Zika Client to include this new Map Notes API.
+
+Starter code has been provided so you can focus on the RESTful API calls from your Zika Client, however you are more than welcome to take a shot at building the entire Zika Client Map Notes integration yourself after completing the primary objectives.
+
+Project Setup
+=============
+
+In order to start working with this new Map Notes API we will need to do a few setup steps:
+
+- Add mapnotes source code
+- Add mapnotes API container
+- Add DotEnv
+- Add HTML elements
+- Initialize Map Notes
+
+Add Map Notes source code
+-------------------------
+
+You will have three options for the amount of starter code that is given to you:
+
+- primary objectives
+- generic components + primary objectives
+- blank starter
+
+The Primary Objectives branch has you focused on the RESTful API calls that will be made to the Map Notes API.
+
+The Generic Components branch has you focused on the RESTful API calls and creating the generic components.
+
+The blank starter branch has a small amount of code, but largely just structure and you would be responsible for creating the entire module.
+
+Your goal is to finish the primary objectives by the end of the week.
+
+Primary Objectives
+^^^^^^^^^^^^^^^^^^
+
+With this branch you will be responsible for filling out the provided interfaces in:
+
+- ``new-notes-form-handlers.js``
+- ``note-viewer-handlers.js``
+- ``notes-manager-handlers.js``
+- ``api.js``
+- ``map-notes-layer.js``
+
+.. sourcecode:: bash
+
+    git clone -b primary-objectives-starter https://gitlab.com/LaunchCodeTraining/zika-project/mapnotes src/modules/mapnotes
+    rm -rf src/modules/mapnotes/.git    
+
+Generic Components + Primary Objectives
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. sourcecode:: bash
+
+    git clone -b generic-components-starter https://gitlab.com/LaunchCodeTraining/zika-project/mapnotes src/modules/mapnotes
+    rm -rf src/modules/mapnotes/.git
+
+Blank Starter
+^^^^^^^^^^^^^
+
+.. sourcecode:: bash
+
+    git clone -b blank-starter https://gitlab.com/LaunchCodeTraining/zika-project/mapnotes src/modules/mapnotes
+    rm -rf src/modules/mapnotes/.git`
+
+.. admonition:: note
+
+    You will notice that each of these commands deletes the hidden ``.git/`` directory within the mapnotes module. You will want this directory to be gone so that it doesn't conflict with the ``.git/`` directory of your base project.
+
+Bonus
+^^^^^
+
+Turn the previous step of bash commands into an NPM script that will do this for you with one simple NPM command.
+
+Add Map Notes API Container
+---------------------------
+
+The next step is to add the Map Notes API container to this project.
+
+You can do this by appending a new service to the ``docker-compose.yml`` file located at the root of this project.
+
+You will need to add as a new service:
+
+.. sourcecode:: yaml
+
+    mapnotes-api:
+        container_name: "zika-mapnotes-api"
+        image: "launchcodedevops/mapnotes-api-node"
+        ports:
+            - "8008:8008"
+
+After adding this section your yaml file should look like:
+
+.. sourcecode:: yaml
+
+    version: "3.7"
+
+    services:
+        postgres:
+            container_name: "zika-postgres-db"
+            image: "launchcodedevops/zika:geoserver"
+            ports:
+            - "5432:5432"
+        geoserver:
+            container_name: "zika-geoserver-api"
+            image: "kartoza/geoserver:2.17.2"
+            ports:
+            - "8080:8080"
+            depends_on:
+            - postgres
+        mapnotes-api:
+            container_name: "zika-mapnotes-api"
+            image: "launchcodedevops/mapnotes-api-node"
+            ports:
+            - "8008:8008"    
+
+
+Add DotEnv
+----------
+
+We will be using an environment variable in this project, and we will need to add the dotenv-webpack module to our project.
+
+From the root of your project you will need to install the package:
+
+.. sourcecode:: bash
+
+    npm install dotenv-webpack --save-dev
+
+You will then need to create ``dev.env`` and ``prod.env`` files at the root of your project.
+
+You will need to add the following key to both files:
+
+.. sourcecode:: text
+
+    MAP_NOTES_API_URL=<location>
+
+You will need to replace ``<location>`` with the URL to your Map Notes API. In your development environment it should be ``http://localhost:8008``. Your instructor will provide to you the URL for your production environment variable later this week when you are ready for deployment.    
+
+Add HTML elements
+-----------------
+
+The MapNotes code you added in a previous step requires an OpenLayers map object, which you already have in your project. Map notes also requires two HTML divs to add the Map Note components to. You will need to add the following HTML after your map div:
+
+.. sourcecode:: html
+
+    <div id="mapnotes">
+      <div id="mapnotes-manager"></div>
+      <div id="mapnotes-active-note"></div>
+    </div>
+
+When you initialize the Map Notes you will need to reference these two divs by their ids (mapnotes-manager and mapnotes-active-note).
+
+Initialize Map Notes
+--------------------
+
+Finally in your index.js, or wherever you first initilzie your Open Layers map object, you will need to initialize map notes with the following JavaScript code:
+
+.. sourcecode:: javascript
+
+    initializeMapNotes({
+        map,
+        notesManagerTargetId: "mapnotes-manager",
+        activeNoteTargetId: "mapnotes-active-note"
+    });
+
+Verify Setup
+------------
+
+After setting everything up we need to check a couple of things to make sure this project is ready to go.
+
+When running this project with ``npm run start`` it should start up three docker containers named:
+
+- ``zika-mapnotes-api``
+- ``zika-geoserver-api``
+- ``zika-postgres-db``
+
+You should check that all three of these containers started successfully by running ``docker ps``. If you don't see the ``zika-mapnotes-api`` container you may have an issue with adding the map notes API container.
+
+You should also check that your Zika Client starts cleanly with no issues. If you pulled the primary-objectives branch you will notice a new select box, and button at the bottom of your application the first time it launches:
+
+.. image:: /_static/images/project/successful-startup.png
+
+If you have any additional issues with starting this application reach out to an instructor.
+
+Project Requirements
+====================
+
+Following are the requirements from our stakeholders and our tech team.
+
+Stakeholder Requirements
+------------------------
+
+- All map notes should be loaded into a select box when the application is first initialized
+- Map notes should be selectable via the select box
+- When a map note is selected the title and body of the map note should be displayed with a load features button and a delete button
+- When features are loaded by clicking the load features button a layer should be added to the map that contains a graphical representation of the map note
+- When the delete button is clicked the selected note should be deleted from the API
+- When the Create MapNote button is clicked the user should be presented with a form where they can add a title and body, a draw features button will allow the user to interact with the map by drawing a polygon by clicking
+- Once the user is happy with the polygon(s) they have added to the map they can click the ``Save`` button which should send the information to the API to be persisted
+
+Primary Objectives
+==================
+
+You should **complete all primary objectives** before working on any secondary objectives.
+
+.. admonition:: Warning
+
+  You may discuss aspects of the project with other students if you are stuck. But **you may not ever write nor share code** with each other as part of that assistance.
+
+For your primary objectives, articles have been provided to help you think about the tasks associated with the objective.
+
+#. :ref:`Create click event handler <project_zika_client_rest_create-event>`
+#. :ref:`Draw Features click event handler <project_zika_client_rest_draw-features-event>`
+#. :ref:`Save click event handler <project_zika_client_rest_save-event>`
+#. :ref:`Populate select box on load <project_zika_client_rest_populate-select-box-handler>`
+#. :ref:`Select box on change event handler <project_zika_client_rest_select-box-handler>`
+#. :ref:`Load features event handler <project_zika_client_rest_load-features-event>`
+#. :ref:`Delete event handler <project_zika_client_rest_delete-event>`
+
+Secondary Objectives
+====================
+
+For your secondary objectives no articles will be given to you. You will have to think critically and plan out the tasks needed to complete the objective. You may always reach out to the instructor for guidance but be aware that they will only provide support through discussion -- not code!
+
+- build the generic components of the map notes client source code
+- build the entire map notes client source code
+- externalize your configuration
+
+Turning in Your Work
+====================
+
+Git Workflow
+------------
+
+As you work on your project you will be required to **commit early and commit often**. Part of your review will include an assessment of your usage of git. You are expected to have a history of commits documenting your progress through the use of **descriptive commit messages**. 
+
+Your git history should include **separate branches for each primary objective** titled `objective-#` which contains all the commits associated with its completion.
+
+After completing each objective you can `git merge` the objective feature branch back into your master branch. Make sure that you **push your branches** to the remote repo on GitLab after completing each of the primary objectives. This includes pushing the `master` branch after each objective branch is merged into it.
+
+.. admonition:: Warning
+
+  **When you complete your final objective** you will open a Merge Request (MR) on GitLab to merge that objective feature branch into `master`. Notify your instructor so they can begin your code review.
+
+Code Review
+-----------
+
+After opening your MR your instructor will review your code and leave feedback. If changes are requested due to an incomplete or non-functioning objective you will be required to implement the suggested changes and push them up for further review. When your instructor has confirmed that your objectives are complete you can work on the Secondary and Bonus objectives!
+
+Presentation
+------------
+
+Typically at the end of the week we try to have project presentations where everyone gets a chance to show their project to the rest of the class. Due to the remote nature of this course we may try to do this, or we may skip this. Either way be prepared to show and talk about your project at the end of the project week.
+
+At the end of this course, during your graduation ceremony, you will be expected to present your final project to the attendees. Every project week we will have a presentation as a way for you to practice for this final presentation.

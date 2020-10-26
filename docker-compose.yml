@@ -17,7 +17,7 @@ services:
     volumes:
       - "docs:/docs"
     ports:
-      - "8008:8008"
+      - "8888:8008"
     build:
       context: .
       dockerfile: "Dockerfile.server"
