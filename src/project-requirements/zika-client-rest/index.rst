@@ -151,6 +151,10 @@ The MapNotes code you added in a previous step requires an OpenLayers map object
 
 When you initialize the Map Notes you will need to reference these two divs by their ids (mapnotes-manager and mapnotes-active-note).
 
+.. admonition:: note
+
+    You may want to change the CSS of your map. If it is currently set to take up 100% of the screen, it will be difficult for the user to see and interact with the Map Notes Manager that will be loaded in the next step.
+
 Initialize Map Notes
 --------------------
 
@@ -208,17 +212,79 @@ You should **complete all primary objectives** before working on any secondary o
 
   You may discuss aspects of the project with other students if you are stuck. But **you may not ever write nor share code** with each other as part of that assistance.
 
-#. Create click event handler
-#. Draw Features click event handler
-#. Save click event handler
+#. ``Create`` click event handler
+#. ``Draw Features`` click event handler
+#. ``Save`` click event handler
 #. Populate select box on load
-#. Select box on change event handler
-#. Load features event handler
-#. Delete event handler
+#. ``Select box on change`` event handler
+#. ``Load Features`` event handler
+#. ``Delete`` event handler
 
 This week instead of having articles that help you collect your thoughts, you will be responsible for reading the provided code and thinking through what code will need to be added to the provided event handlers to achieve the objectives.
 
 You may find the following images useful:
+
+Map Notes Manager
+-----------------
+
+.. image:: /_static/images/project/map-notes-manager.png
+
+The base view of our Map Notes Manager are the select box: ``mapnotes-notes-manager-note-selector`` and the ``Create MapNote`` button: ``mapnotes-note-manager-create``.
+
+What requests are necessary to load the initial notes into the select box?
+
+What happens when a user clicks the ``Create MapNote`` button?
+
+Map Notes Form
+--------------
+
+.. image:: /_static/images/project/map-notes-form.png
+
+The map notes form is how we gather the title and body from the user.
+
+What are the inputs?
+
+What happens when a user clicks the ``Draw Features`` button?
+
+What happens when a user clicks the ``Save`` button?
+
+Map Notes Draw Interaction
+--------------------------
+
+.. image:: /_static/images/project/draw-interaction.png
+
+A draw interaction needs to be enabled and disabled. Which buttons are these interactions tied to?
+
+How do you get a Feature Collection out of the map so that it can be packaged into a fetch request?
+
+Map Notes Note Viewer
+---------------------
+
+What happens when a user selects a note from the select box?
+
+.. image:: /_static/images/project/map-notes-note-viewer.png
+
+What happens if the user clicks the ``Load Features`` button?
+
+What happens if the user clicks the ``Delete`` button?
+
+Take Inventory
+--------------
+
+Look over the provided code to get a sense of what has already been accomplished. You will be predominately writing code in:
+
+- ``new-notes-form-handlers.js``
+- ``note-viewer-handlers.js``
+- ``notes-manager-handlers.js``
+- ``api.js``
+- ``map-notes-layer.js``
+
+Think about the various handlers:
+
+- What are they responsible for?
+- What requests if any should they incorporate?
+- What DOM elements are they associated with?
+- How can they utilize the provided code?
 
 Secondary Objectives
 ====================
