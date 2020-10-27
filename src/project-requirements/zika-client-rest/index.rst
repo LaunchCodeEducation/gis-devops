@@ -47,12 +47,12 @@ The Primary Objectives branch has you focused on the RESTful API calls that will
 
 The Generic Components branch has you focused on the RESTful API calls and creating the generic components.
 
-The blank starter branch has a small amount of code, but largely just structure and you would be responsible for creating the entire module.
+The blank starter branch has a small amount of code, but largely just structure and you will be responsible for creating the majority of the module.
 
-Your goal is to finish the primary objectives by the end of the week.
+Your goal is to finish the **primary objectives** by the end of the week.
 
-Primary Objectives
-^^^^^^^^^^^^^^^^^^
+Primary Objectives Branch
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 With this branch you will be responsible for filling out the provided interfaces in:
 
@@ -70,6 +70,8 @@ With this branch you will be responsible for filling out the provided interfaces
 Generic Components + Primary Objectives
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+With the generic components branch you will be responsible for filling out everything listed above and the generic components found in ``generic-components.js``.
+
 .. sourcecode:: bash
 
     git clone -b generic-components-starter https://gitlab.com/LaunchCodeTraining/zika-project/mapnotes src/modules/mapnotes
@@ -77,6 +79,8 @@ Generic Components + Primary Objectives
 
 Blank Starter
 ^^^^^^^^^^^^^
+
+The blank starter branch, has some structure in place, but the rest is up to you.
 
 .. sourcecode:: bash
 
@@ -87,10 +91,9 @@ Blank Starter
 
     You will notice that each of these commands deletes the hidden ``.git/`` directory within the mapnotes module. You will want this directory to be gone so that it doesn't conflict with the ``.git/`` directory of your base project.
 
-Bonus
-^^^^^
+.. admonition:: warning
 
-Turn the previous step of bash commands into an NPM script that will do this for you with one simple NPM command.
+    Regardless of the branch you start with you will be expected to finish the Primary Objectives within the week.
 
 Add Map Notes API Container
 ---------------------------
@@ -205,15 +208,17 @@ You should **complete all primary objectives** before working on any secondary o
 
   You may discuss aspects of the project with other students if you are stuck. But **you may not ever write nor share code** with each other as part of that assistance.
 
-For your primary objectives, articles have been provided to help you think about the tasks associated with the objective.
+#. Create click event handler
+#. Draw Features click event handler
+#. Save click event handler
+#. Populate select box on load
+#. Select box on change event handler
+#. Load features event handler
+#. Delete event handler
 
-#. :ref:`Create click event handler <project_zika_client_rest_create-event>`
-#. :ref:`Draw Features click event handler <project_zika_client_rest_draw-features-event>`
-#. :ref:`Save click event handler <project_zika_client_rest_save-event>`
-#. :ref:`Populate select box on load <project_zika_client_rest_populate-select-box-handler>`
-#. :ref:`Select box on change event handler <project_zika_client_rest_select-box-handler>`
-#. :ref:`Load features event handler <project_zika_client_rest_load-features-event>`
-#. :ref:`Delete event handler <project_zika_client_rest_delete-event>`
+This week instead of having articles that help you collect your thoughts, you will be responsible for reading the provided code and thinking through what code will need to be added to the provided event handlers to achieve the objectives.
+
+You may find the following images useful:
 
 Secondary Objectives
 ====================
