@@ -158,7 +158,7 @@ When you initialize the Map Notes you will need to reference these two divs by t
 Initialize Map Notes
 --------------------
 
-Finally in your index.js, or wherever you first initilzie your Open Layers map object, you will need to initialize map notes with the following JavaScript code:
+Finally in your index.js, or wherever you first initialize your Open Layers map object, you will need to initialize map notes with the following JavaScript code:
 
 .. sourcecode:: javascript
 
@@ -291,11 +291,16 @@ MapNotes REST API Spec
 
 Endpoints:
 
-- GET /notes -> Note[] 200
-- POST /notes ({title, body}) -> Note 201
-- DELETE /notes/{id} -> 204
-- GET /notes/{id}/features -> NoteFeatureCollection 200
-- PUT /notes/{id}/features (NoteFeatureCollection) -> 201
+- ``GET /notes -> (Note[]) 200``
+- ``GET /notes/{noteId} -> (Note) 200``
+- ``DELETE /notes/{noteId} -> 204``
+- ``POST /notes ({title, body}) -> (Note) 201``
+- ``GET /notes/{id}/features -> (GeoJSON feature collection) 200``
+- ``PUT /notes/{id}/features (GeoJSON feature collection) -> 201``
+
+.. note::
+
+  You will be using _both_ the GeoJSON `readFeatures <https://openlayers.org/en/latest/apidoc/module-ol_format_GeoJSON-GeoJSON.html#readFeatures>`_ and `writeFeatures <https://openlayers.org/en/latest/apidoc/module-ol_format_GeoJSON-GeoJSON.html#writeFeatures>`_ methods. You have used ``readFeatures`` when loading your WFS layer. The ``writeFeatures`` method can be used to turn features into a GeoJSON string. Think about which one will be used when you are _receiving_  or _sending_ the note features.
 
 Note Shape:
 
@@ -307,27 +312,23 @@ Note Shape:
         body: string
     }
 
-NoteFeature Shape:
+NoteFeatures Shape: `a GeoJSON FeatureCollection <https://en.wikipedia.org/wiki/GeoJSON#Example>`_
+
+.. sourcecode:: json
+
+    NoteFeatures {
+        type: "FeatureCollection",
+        features: NoteFeature[]
+    }
 
 .. sourcecode:: json
 
     NoteFeature {
         type: "Feature",
-        id: number,
-        properties: { noteId: number },
         geometry: {
             type: "Polygon",
             coordinates: Coordinates[]
         }
-    }
-
-NoteFeatureCollection shape:
-
-.. sourcecode:: json
-
-    NoteFeatureCollection {
-        type: "FeatureCollection",
-        features: NoteFeature[]
     }
 
 
