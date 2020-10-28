@@ -286,6 +286,51 @@ Think about the various handlers:
 - What DOM elements are they associated with?
 - How can they utilize the provided code?
 
+MapNotes REST API Spec
+----------------------
+
+Endpoints:
+
+- GET /notes -> Note[] 200
+- POST /notes ({title, body}) -> Note 201
+- DELETE /notes/{id} -> 204
+- GET /notes/{id}/features -> NoteFeatureCollection 200
+- PUT /notes/{id}/features (NoteFeatureCollection) -> 201
+
+Note Shape:
+
+.. sourcecode:: json
+
+    Note {
+        id: number,
+        title: string,
+        body: string
+    }
+
+NoteFeature Shape:
+
+.. sourcecode:: json
+
+    NoteFeature {
+        type: "Feature",
+        id: number,
+        properties: { noteId: number },
+        geometry: {
+            type: "Polygon",
+            coordinates: Coordinates[]
+        }
+    }
+
+NoteFeatureCollection shape:
+
+.. sourcecode:: json
+
+    NoteFeatureCollection {
+        type: "FeatureCollection",
+        features: NoteFeature[]
+    }
+
+
 Secondary Objectives
 ====================
 
