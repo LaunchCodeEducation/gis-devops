@@ -154,6 +154,22 @@ We won't require you to follow a strict list of primary objectives like previous
 - GET /notes/{id}/features -> (GeoJSON feature collection) 200
 - PUT /notes/{id}/features (GeoJSON feature collection) -> 201
 
+Your primary objective is to implement the spec listed above, with a full suite of integration tests that show the API behaves the way it should.
+
+Bonus Objectives
+================
+
+- Update your Zika Client to consume your Map Notes API
+- Incoming DTO validation
+- Swagger docs
+- Location headers
+- Containerize and deploy API to ECS?
+- Extend functionality of API
+
+.. admonition:: note
+
+    For more ideas talk to your instructor. With any additional time after completing the primary objectives you are more than welcome to continue working on other pieces of this project namely the Zika Client.
+
 Turning in Your Work
 ====================
 
