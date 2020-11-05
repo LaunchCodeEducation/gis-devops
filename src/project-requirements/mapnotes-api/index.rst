@@ -66,6 +66,10 @@ This command will:
 
 If any tests fail the command will automatically open a Python web server with the test results at ``localhost:4000``. If you have failing tests and you want to stop the ``run.sh test`` command you can do so with ``Ctrl+C``.
 
+.. admonition:: note
+
+    If you are running this right after cloning, you will notice all of the tests fail. This is to be expected. If you look at the provided tests they are empty except for one assert statement that will always fail. You are responsible for writing valid tests for this API.
+
 Using ``run.sh`` with dev
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -81,7 +85,7 @@ This command will:
 - start the bootRun command
 - start the Tomcat web server
 
-At this point you would be able to use ``curl`` to manual test your API as you develop.
+At this point you would be able to use ``curl`` to manually test your API as you develop.
 
 .. admonition:: warning
 
@@ -104,7 +108,7 @@ If you want a little more guidance stick around.
 
 .. admonition:: note
 
-    The first thing you should do with this project is look over the provided code. Not much has been provided for you in this project. Most files indicate (through code comments) if they are completed or if you will need to work in them. Ask yourself what needs to be accomplished in each file.
+    The first thing you should do with this project is *look over the provided code*. Not much has been provided for you in this project. Most files indicate (through code comments) if they are completed or if you will need to work in them. Ask yourself what needs to be accomplished in each file.
 
 Limited Guidance
 ================
@@ -169,6 +173,33 @@ Bonus Objectives
 .. admonition:: note
 
     For more ideas talk to your instructor. With any additional time after completing the primary objectives you are more than welcome to continue working on other pieces of this project namely the Zika Client.
+
+Provided Code Explanation
+=========================
+
+Serialization
+-------------
+
+The majority of the completed files involve JSON serialization and de-serialization. The jackson library is pretty good at serializing JSON to and from standard Java library code, however, it isn't perfect.
+
+The jackson library isn't able to (de)serialize geo information out of the box. There are some additional third party libraries that can assist with this, but for the convenience of this project we have provide two custom serialization classes:
+
+- ``models/Feature/utils/FeatureCollectionSerializer.java``
+- ``models/Feature/utils/FeatureCollectionDeSerializer.java``
+
+These files do exactly what they say. They de-serialize a GEOJSON representation of a FeatureCollection to a usable FeatureCollection Java object and vice versa. You can look at how the files work, but learning about custom (de)serialization is not a topic we will explore in this class.
+
+Testing Utils
+-------------
+
+Two files have been created to help you with writing your tests:
+
+- ``TestUtils/NoteDataTestUtil.java``
+- ``NoteFeatureEntityUtil.java``
+
+``NoteDataTestUtil.java`` is currently commented out, so that your code will compile, but after adding in the necessary code you can comment it in, and it will assist you in creating test notes.
+
+``NoteFeatureEntityUtil.java`` is a class with one static method ``getTestNoteFeatureEntities()``. This method will return a List of NoteFeatureEntity objects. This List of NoteFeatureEntity objects *is necessary* for writing tests around the ``/notes/{id}/features`` endpoints. You can look at this file to see how it created this test object if you would like to add more test data.
 
 Turning in Your Work
 ====================
