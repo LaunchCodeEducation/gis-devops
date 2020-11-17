@@ -98,6 +98,15 @@ So this VPC has a public subnet with addresses bound between: ``10.0.0.0`` to ``
 Create an EC2 on the Private Subnet
 ===================================
 
+Now that we have our new private subnet we need to create an EC2 that will live on this private network and will hold our database.
+
+Navigate to the EC2 homepage:
+
+.. image:: /_static/images/todo-tasks-multi-ec2-deployment/ec2-homepage.png
+    :alt:
+
+Click the ``instances`` option and then click the ``Launch instances`` button in the top right corner.
+
 Access the EC2 on the Private Subnet
 ====================================
 
