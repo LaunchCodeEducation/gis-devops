@@ -1,0 +1,13 @@
+version: "3.7"
+
+volumes:
+  postgres:
+
+services:
+  postgres:
+    image: postgis/postgis:12-master
+    ports:
+      - "5432:5432"
+    env_file: db.env
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
