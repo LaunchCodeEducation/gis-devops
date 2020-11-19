@@ -134,7 +134,7 @@ From here click on ``Console Output`` so we can see what came out of the termina
 
 The Console Output is pretty sparse, which makes sense, we haven't told Jenkins to do anything for us in this build yet! The output is just letting us know where this project's workspace is, and this build was successful. The workspace is where all of the files for this project would live. Any built artifacts, or .jar files, test results, etc.
 
-However, we don't want to manually trigger all of these individual projects manually. In the next section we will add some configurations to our existing projects so they will automatically build when a previous project was successful.
+However, we don't want to manually trigger all of these individual projects. In the next section we will add some configurations to our existing projects so they will automatically build when a previous project was successful.
 
 Link Projects Together
 ======================
