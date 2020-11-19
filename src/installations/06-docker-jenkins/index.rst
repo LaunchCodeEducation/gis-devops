@@ -6,101 +6,133 @@
 Installation: Docker Jenkins
 ============================
 
-Installation Steps
-------------------
+What do We Need
+===============
 
-#. Run a new Jenkins container using a persisted volume
-#. Jenkins first time setup
-#. Configuring the AWS CLI inside the Jenkins container
-#. Connect other containers to the Jenkins container
+We are using Jenkins as our CI/CD tool that will make our life much easier. We want to configure this tool so that it will:
 
-Running A Jenkins Container
----------------------------
+- compile our Java source code
+- test our Java source code
+- create our build artifacts
+- deliver our build artifacts
 
-Docker makes creating new containers really easy, we simply need to provide a name for our container bind the correct ports, and include the image we want to run in our container.
+We will need to create an environment for our Jenkins tool AND for a testing database. Luckily we can do this quickly and easily with Docker.
 
-We have created a Jenkins container Image that includes the AWS CLI pre-installed. Like the other custom images used in this class it can be found under the ``launchcodedevops`` Docker Hub organization.
+.. admonition:: warning
 
-.. code:: bash
+    Do not use the following ``docker-compose.yml`` file to create your Jenkins and Postgis databse. A ``docker-compose.yml`` file will be provided for you in a later step.
 
-  $ docker run -d --name jenkins -p 7070:8080 -v jenkins_home:/var/jenkins_home launchcodedevops/jenkins-awscli
+.. sourcecode:: yml
 
-Although you have seen many docker run commands so far this one has a few options that may confuse you. The first difference is that we have *published* the host machine port ``7070`` to the container port ``8080`` -- the default port Jenkins listens on. For consistency we usually publish the same host and container port. But in this case we use a different host port to avoid conflict with port ``8080`` that our Spring applications run on by default.
+    version: "3.7"
 
-.. tip::
+    services:
+      jenkins:
+        image: launchcodedevops/jenkins-awscli
+        ports:
+        - "${JENKINS_PORT:-8080}:8080"
+      postgres:
+        image: postgis/postgis:12-master
+        # hardcode here for consistency
+        # this is an ephemeral test db its credentials are arbitrary
+        environment:
+        - POSTGRES_DB=test
+        - POSTGRES_USER=test
+        - POSTGRES_PASSWORD=test
 
-   The general form for *publishing* a port is ``-p <host port>:<container port>``. This lets you define the host machine port independent of the container process port. Often container processes listen on common ports like ``8080``. By varying the host port you can avoid port conflicts on the host machine or when running many containers that listen on the same port.
+The preceding ``docker-compose.yml`` file would create two docker containers: ``jenkins`` and ``postgres``. They would be spun up on the same virtual Docker network and therefore would be able to communicate with each other via DNS resolution.
 
-The second difference is the use of the ``-v`` or *volume* option. This option instructs Docker to create a persistent volume named ``jenkins_home`` and mount it to the container's directory ``/var/jenkins_home``. 
+Steps
+=====
 
-Recall that a core tenant of using Docker containers is to treat them as disposable or *ephemeral*. This is what gives Docker containers their unprecedented portability and scalability. In the next step we will configure our Jenkins container to prepare it for setting up a pipeline. During this step all of the settings are saved to the container's ``/var/jenkins_home`` directory.
+#. Clone docker-compose.yml
+#. Create docker ``.env`` file
+#. Start Jenkins and Postgis containers
 
-If we dispose of the container we would also be disposing of all the settings it wrote internally to the configuration directory. It would be frustrating to have to re-configure Jenkins from scratch every time we recreate the container! And what if we wanted to run our container on a different machine, like a remote EC2 instance?
+Clone ``docker-compose.yml``
+============================
 
-Wouldn't it be better if we could save those configuration files for reuse and portability while still having the freedom to create and destroy the container as needed?
+As there is a little more to the example ``docker-compose.yml`` above we have created a starter repository for you that has a complete ``docker-compose.yml`` file and a template of the ``jenkins.env`` file you will need to create.
 
-.. note::
+Navigate to and clone the ` Jenkins Compose Repository <https://gitlab.com/LaunchCodeTraining/jenkins-compose>`_ to your computer.
 
-  By default all data written in a container exists in its internal file system layer. **This data only exists for the lifetime of the container on the host machine that created it.**
+Looking over the ``docker-compose.yml`` pay extra attention to the ``jenkins.env`` and the ``volumes``. This ``docker-file.yml`` is expecting a env file named ``jenkins.env`` it will need to match the template file: ``template.jenkins.env``.
 
-Container Volumes
-+++++++++++++++++
+This ``docker-compose.yml`` also sets up a **persistent volume**. Although the containers are disposable a ``volume`` will be created and used for each unique container. This important as we are storing some information in our Jenkins container that we want to be permanent. We use this volume as a way for storing this information that needs to persist.
 
-While a container itself should be disposable that doesn't mean that all of the data inside of it needs to be discarded with it. For cases where the data a container uses needs to be *persisted* beyond its lifetime we can mount external volumes into a directory in the container.
+You can learn more about `Docker Volumes <https://docs.docker.com/storage/volumes/>`_ by referring to their documentation.
 
-.. tip::
-  Think of a volume like an external drive that can be attached and unattached from containers.
+Create Docker ``.env`` File
+===========================
 
-From the container's perspective it is writing to a directory in its file system. But because that directory is mounted from an external volume it will be persisted even after the container is destroyed. 
+Before we can create this containers we will first need to create a ``jenkins.env`` file to be used by our ``docker-compose.yml`` file.
 
-In the same way we can mount an existing volume to any new containers we create. Once again the container sees just another directory in its file system. But its contents will have been provided from the external volume. In our case we can persist our Jenkins settings in a volume then mount it into any new Jenkins containers we create so we don't have to re-configure them every time!
+In the same directory as the ``docker-compose.yml`` file create a new file named ``jenkins.env`` and add the following environment variables:
 
-.. note::
+.. sourcecode:: bash
 
-  There are many different types of mounts that can be used in a container. In this context we chose to use a ``named volume mount`` that the Docker Engine will manage for us. You can read more about the different storage options and their use cases in the `storage documentation section <https://docs.docker.com/storage/>`_.
+    DB_HOST=postgres
+    DB_PORT=5432
+    DB_NAME=test
+    DB_USER=test
+    DB_PASS=test
+    APP_PORT=8080
 
-Check That Everything Worked
-++++++++++++++++++++++++++++
+    AWS_DEFAULT_REGION=
+    AWS_ACCESS_KEY_ID=
+    AWS_SECRET_ACCESS_KEY=
 
-After issuing the ``run`` command you can run a few more commands to investigate what was created:
+    # student bucket name: lc-nga-c7-name-artifacts
+    ARTIFACTS_BUCKET_NAME=
+    # (NO leading or trailing slash): todo-api
+    ARTIFACTS_PROJECT_DIRECTORY=
 
-.. code:: bash
+Most of the environment is already filled out because the testing database for Jenkins is known, however we need to add some information **that is unique** to our application:
 
-  # check that the container named 'jenkins' is up and running
-  $ docker ps
+- ``AWS_DEAFULT_REGION``
+- ``AWS_ACCESS_KEY_ID``
+- ``AWS_SECRET_ACCESS_KEY``
+- ``ARTIFACTS_BUCKET_NAME``
+- ``ARTIFACTS_PROJECT_DIRECTORY``
 
-  # see the 'jenkins_home' named volume created by the run command
-  $ docker volume ls
+To find the first three values you will need to access your AWS credentials. You can do this by printing out your AWS config and credentials files:
 
-  # inspect the container configuration (warning there is a LOT in here!)
-  $ docker inspect jenkins
+.. sourcecode:: bash
 
-  # you can use grep to skip to the Mounts section of the configuration
-  # the -A 11 option means print 11 lines after the matched term (Mounts)
-  $ docker inspect jenkins | grep Mounts -A 11
+    cat ~/.aws/config
+    cat ~/.aws/credentials
 
-  # gives the following output
-  # you can see that the named volume 'jenkins_home' has been mounted to '/var/jenkins_home'
-  "Mounts": [
-      {
-          "Type": "volume",
-          "Name": "jenkins_home",
-          # this is the directory where the volume exists on the Linux host (VM in Docker for Mac)
-          "Source": "/var/lib/docker/volumes/jenkins_home/_data",
-          # this is the directory where the volume is mounted in the container
-          "Destination": "/var/jenkins_home",
-          "Driver": "local",
-          "Mode": "z",
-          "RW": true,
-          "Propagation": ""
-      }
-  ],
+Using the data from these print outs paste them into your ``jenkins.env`` file under the appropriate keys.
 
-After checking that everything was set up correctly you can navigate to http://localhost:7070 in your browser to begin configuring Jenkins.
+You will also need your AWS S3 artifacts bucket name which you can find by sifting through all the buckets:
 
+.. sourcecode:: bash
+
+    aws s3 ls
+
+Find your bucket name and put it into your ``jenkins.env`` file under the appropriate key.
+
+There is one final env variable for ``ARTIFACTS_PROJECT_DIRECTORY`` this is helping us to keep our S3 artifacts bucket organized. We recommend using ``todo-app``. This way your artifacts for this Todo Application will be copied to: ``s3://<your-bucket-name>/todo-app/``.
+
+Start Jenkins and Postgis Containers
+====================================
+
+After creating our ``jenkins.env`` file. We can spin up our Jenkins and Postgis containers.
+
+.. admonition:: note
+
+    You may have noticed that the Jenkins container is configured to run on port 8080 and the test database is configured to run on port 5432. You may already have services, or applications running on those ports. Make sure to shut them down, or alter the ports of the services this ``docker-compose.yml`` file creates.
+
+Let's start up our containers:
+
+.. sourcecode:: bash
+
+    docker-compose up -d
+
+This should start two containers. You should see them if you run a ``docker ps`` command.
 
 Jenkins First Time Setup
-------------------------
+========================
 
 The first time you start an empty Jenkins server you will need to unlock it with an admin password. 
 
@@ -116,9 +148,9 @@ Enter the following command to instruct the container to ``cat`` the contents of
 
 .. code:: bash
 
-  $ docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+  $ docker exec <container-identifier> cat /var/jenkins_home/secrets/initialAdminPassword
 
-Copy and enter the password into the Unlock Jenkins page at http://localhost:7070 then click ``Continue``. On the next page select ``Install suggested plugins`` and give it a few minutes to install everything Jenkins needs.
+Copy and enter the password into the Unlock Jenkins page at http://localhost:8080 then click ``Continue``. On the next page select ``Install suggested plugins`` and give it a few minutes to install everything Jenkins needs.
 
 .. warning::
   Do not continue to the following section until all of the plugins have finished installing. Now is a good time to take a break for some coffee or fresh air.
@@ -132,7 +164,7 @@ In order to make debugging easier we will all use the same credentials:
 * **username**: ``launchcode``
 * **password**: ``launchcode``
 
-You will then be asked about the ``Jenkins URL``. For now we will leave this with the default value of ``http://localhost:7070/``. Select ``Save and Continue``.
+You will then be asked about the ``Jenkins URL``. For now we will leave this with the default value of ``http://localhost:8080/``. Select ``Save and Continue``.
 
 .. tip::
 
@@ -140,107 +172,12 @@ You will then be asked about the ``Jenkins URL``. For now we will leave this wit
 
 .. _docker-jenkins-setup-aws:
 
-
-Seting Up the AWS CLI in the Jenkins Container
-----------------------------------------------
-
-In some cases you need to load environment variables for Jenkins to use in its pipeline stages. For example, you will likely need to load your AWS credentials in order to deliver and deploy to AWS resources. Recall that you can use the ``-e VAR=value`` option when running a container to provide environment variables to it. However, **all values passed this way will be exposed in your shell history**.
- 
-Using Env Files
-+++++++++++++++
-
-For scenarios where you want to protect sensitive values you can use another option, ``--env-file /path/to/env-file``. This option lets you load environment variables from a file rather than listing them individually in the run command. The shell history will only show a path to a file rather than exposing the values themselves.
-
-.. tip::
-
-  Using the ``--env-file`` option can also be useful when you have many environment variables to pass to a container that become unmanageable to list individually.
-
-If you want to run the Jenkins container and provide AWS credentials you should use an ``env`` file. This way the AWS environment variables can be loaded without exposing the sensitive credentials in your shell history. 
-
-.. note::
-
-  The env file itself can be named anything you'd like. The common convention is to use the ``.list`` file extension.
-
-While an environment file's name and extension are arbitary **the format used to define the variables is not**. Environment variables must use the common ``VARIABLE_NAME=value`` [shell] format. 
-
-.. code:: bash
-
-  # comments are preceeded with the hashtag character
-  # each env var is declared on its own line
-  MY_ENV_VAR=somevalue
-  NEXT_VAR=othervalue
-
-.. warning::
-
-  There can be no spaces between the ``VARIABLE_NAME`` the ``=`` sign or the ``value``!
-
-Setting Up the AWS Env File
-+++++++++++++++++++++++++++
-
-Your AWS CLI credentials can be found on your AWS Account page (if permitted by your organization owner). If you have already set up the AWS CLI locally you can view the credentials and configuration settings in the default ``~/.aws/credentials`` and ``~/.aws/config`` files. 
-
-After you have located your credentials create an env file. You should create this file in the ``~/.aws`` directory to keep it in a well-known location so it is not misplaced. First create the file then paste in the template below with your values.
-
-.. code:: bash
-
-  # create and open the file for editing
-
-  # in VSCode
-  $ code ~/.aws/jenkins.list
-  
-  # in VIM
-  $ vim ~/.aws/jenkins.list
-
-.. code:: bash
-
-  # paste this into ~/.aws/jenkins.list with the values of your variables
-  AWS_DEFAULT_REGION=
-  AWS_ACCESS_KEY_ID=
-  AWS_SECRET_ACCESS_KEY=
-
-.. code:: bash
-
-  # confirm it was created and saved properly
-  # make sure there are no spaces after the '='!
-  $ cat ~/.aws/jenkins.list
-
-.. note::
-
-  We could simplify this by copying the entire ``~/.aws`` directory into the container. But this is risky as it would copy over **ALL** of the AWS profiles which may include credentials that have nothing to do with this course. In practice the **safest** way to go about this is to create an IAM service role (for use within AWS) or JenkinsUser account (for use outside AWS) that have restricted policies for resource access. But this section is already pretty complex and your student AWS accounts are restricted in our AWS organization so we will take a shortcut in the name of brevity. 
-
-Because **environment variables cannot be set in a running container** they must be provided during container creation. This means we will need to stop and remove our Jenkins container. Normally doing so would mean we lose all of the configuration data. But because we used a **volume** this is of no concern to us! We will stop and remove the container then re-create it with the volume and environment file:
-
-.. code:: bash
-
-  # stop and remove the container
-  $ docker stop jenkins && docker rm jenkins
-
-  # you can see the volume exists even after the container is removed
-  $ docker volume ls | grep jenkins_home
-
-  # create the container again, this time adding the env-file option
-  $ docker run -d --name jenkins -p 7070:8080 --env-file ~/.aws/jenkins.list -v jenkins_home:/var/jenkins_home launchcodedevops/jenkins-awscli
-
-Check That Everything Worked
-++++++++++++++++++++++++++++
-
-You can confirm that the volume mounting worked by navigating back to http://localhost:7070 and seeing the first-time setup page is not presented. Instead you should see the user login page. You can log in using the ``launchcode`` / ``launchcode`` username and password we set earlier. 
-
-.. image:: /_static/images/docker-jenkins/jenkins-login-screen.png
-
-Next let's confirm that the AWS credentials were loaded by the env file. We can check by having the container print out its environment using ``exec``:
-
-.. code:: bash
-
-  $ docker exec jenkins env | grep AWS
-
-  # expected output
-  AWS_DEFAULT_REGION=us-east-1
-  AWS_ACCESS_KEY_ID=XXX
-  AWS_SECRET_ACCESS_KEY=YYY
-
 Testing the AWS CLI
-+++++++++++++++++++
+===================
+
+The Jenkins container we pulled down has the AWS CLI pre-installed. We passed it some environment variables that include our AWS credentials. The container used these environment variables to configure AWS CLI so that Jenkins would have the ability to interface with our S3 buckets!
+
+This section will show you how to test this functionality.
 
 Now let's do a final test by running the AWS CLI from **within the container**. We will use ``exec`` again with some additional options.
 
@@ -280,6 +217,6 @@ Once we are in the container we will command AWS to list the S3 buckets for the 
 
 .. note::
 
-  For the clever toads out there, yes, you could have used ``docker exec jenkins aws s3 ls`` and gotten the same result. But then you wouldn't have learned how to enter a container! Like using SSH, entering a container is a rare occurence. But it is useful to know for the times when debugging means getting inside for a look around.
+  For the clever toads out there, yes, you could have used ``docker exec jenkins aws s3 ls`` and gotten the same result. But then you wouldn't have learned how to enter a container! Like using SSH, entering a container is a rare occurrence. But it is useful to know for the times when debugging means getting inside for a look around.
 
 Everything is ready to go! You can return to the :ref:`walkthrough-jenkins` page now.
