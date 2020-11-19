@@ -313,8 +313,86 @@ You can also check the file by running: ``aws s3 ls s3://<your-bucket-name>/todo
 
 .. image:: /_static/images/jenkins/jar-in-s3.png
 
-Next Steps
-==========
+Continuous Integration?
+=======================
+
+As our Jenkins pipeline stands right now it's not automatic. We have to login to Jenkins and click the run build action on our ``Todo API Compile`` task. So although we have a Jenkins pipe that does all the work up to Delivery for us, we still hav to manually engage with it.
+
+You could say this pipeline isn't continuously integrated because it requires human interaction. We want the ``Todo API Compile`` project to engage automatically when a new change is pushed to master.
+
+What is necessary for our Jenkins Pipeline to automatically fire? Communication.
+
+There are essentially two options:
+
+- Our Jenkins Pipeline needs to check the GitLab repository for changes at some interval
+- The GitLab repository needs to send a notification to our Jenkins Pipeline after a change has been made
+
+Currently our Jenkins Pipeline is running in a development environment because it's tied to our local development machine. GitLab would need to make a web request to Jenkins in order to trigger a build action. 
+
+To configure this would take a bunch of steps in your own personal home LAN. It would also probably break some rules in the contract you have with your Internet Service Provider. So we can't have GitLab contact our Jenkins pipeline because it is running on our machine.
+
+However, we can configure our Jenkins Pipeline to check our GitLab repo every so often for changes. If it detects changes it can kick off the ``Todo API Compile`` task automatically.
+
+Add Poll SCM to ``Todo API Compile``
+------------------------------------
+
+Navigate to the ``Todo API Compile`` project and click Configure. Scroll down to ``Build Triggers`` and check ``Poll SCM``:
+
+.. image:: /_static/images/jenkins/build-trigger-poll-scm.png
+
+We will be adding a `Cron job <https://www.man7.org/linux/man-pages/man5/crontab.5.html`_ this is a linux tool for scheduling specific tasks. In this case we will be scheduling this ``Poll SCM`` to check our GitLab repo every five minutes.
+
+After entering in the valid crontab syntax: ``*/5 * * * *`` for run every five minutes click save.
+
+Now check the ``Git Polling Log`` tab of our ``Todo API Compile`` project:
+
+.. image:: /_static/images/jenkins/todo-api-compile-git-polling-no-changes.png
+
+You may have to wait a couple of minutes but you will eventually see output like the line above. It checked the main branch of our GitLab repo and didn't detect any changes, so no task was fired.
+
+Your instructor will make a change to the master branch and after five minutes you should see an update to this tab:
+
+.. image:: /_static/images/jenkins/todo-api-compile-git-polling-changes-found.png
+
+Jenkins detected a change to the master branch and automatically triggered the ``Todo API Compile`` project. Which succeed and propagated through our pipeline of linked projects.
+
+You can see that all of the tasks ran by looking at 
+
+Next Steps: Bonus
+=================
+
+Deploy Jenkins
+--------------
+
+Right now our Jenkins Pipeline is using SCM Polling to detect changes, however this is pretty inefficient because the Jenkins container must be running on your local machine to poll the GitLab repo, and it does so every five minutes. Not only is this wasteful, it's a pipeline that shuts down anytime your machine shuts down or loses internet access.
+
+The next step for this Pipeline would be to deploy it. You could easily create a new VPC, with a public subnet and one EC2 for Jenkins. You could then move Jenkins over to that EC2 and re-configure your pipeline.
+
+Use the GitLab Plugin to Trigger Builds
+---------------------------------------
+
+You could then use the ``GitLab Plugin`` and configure a ``Build Trigger`` on a change to the master branch that would send a web-request to Jenkins! This is what would fire the ``Todo API Compile`` project and engage the pipeline.
+
+Expanding the Functionality of the Jenkins Pipeline
+---------------------------------------------------
+
+With CI/CD the sky is the limit. Whatever regular tasks that need to be performed we can add to our Pipeline.
+
+Right now Jenkins is only delivering one JAR file to the S3 bucket. What other files does our EC2 depend on?
+
+- nginx.conf
+- docker-compose.yml
+- Systemd unit file
+- possibly a docker env file
+
+You could easily add a new task that would send these files to the S3 artifacts bucket as well, which would make your deployment even easier.
+
+If you really wanted to get crazy with it you could add a bash script that can be ran that will remove the old JAR file, copy the new JAR file with the AWS CLI, stop the todo-app.service, start the todo-app.service which in essence is the remainder of our deployment steps. 
+
+You could add this bash script to your list of additional build artifacts and have our Pipeline push it to the S3 bucket.
+
+Additional Bonus Tasks
+----------------------
 
 Our Jenkins pipeline only takes us through Delivery, but doesn't automatically Deploy our ``jar`` file. Looking into AWS Code PipeLine could help us take this pipe all the way to deployment...
 
