@@ -54,7 +54,7 @@ Clone ``docker-compose.yml``
 
 As there is a little more to the example ``docker-compose.yml`` above we have created a starter repository for you that has a complete ``docker-compose.yml`` file and a template of the ``jenkins.env`` file you will need to create.
 
-Navigate to and clone the ` Jenkins Compose Repository <https://gitlab.com/LaunchCodeTraining/jenkins-compose>`_ to your computer.
+Navigate to and clone the `Jenkins Compose Repository <https://gitlab.com/LaunchCodeTraining/jenkins-compose>`_ to your computer.
 
 Looking over the ``docker-compose.yml`` pay extra attention to the ``jenkins.env`` and the ``volumes``. This ``docker-file.yml`` is expecting a env file named ``jenkins.env`` it will need to match the template file: ``template.jenkins.env``.
 
@@ -131,12 +131,14 @@ Let's start up our containers:
 
 This should start two containers. You should see them if you run a ``docker ps`` command.
 
+After starting the containers you should be able to access your project at `localhost:8080 <http://localhost:8080>`_:
+
+.. image:: /_static/images/docker-jenkins/jenkins-is-alive.png
+
 Jenkins First Time Setup
 ========================
 
 The first time you start an empty Jenkins server you will need to unlock it with an admin password. 
-
-.. image:: /_static/images/docker-jenkins/unlock-jenkins.png
 
 This password can be found at ``/var/jenkins_home/secrets/initialAdminPassword`` *within the container*. There are many ways we can access this value but the simplest is to have the container do the work for us! We can have the container print out the contents using the ``exec`` command. 
 
@@ -153,6 +155,7 @@ Enter the following command to instruct the container to ``cat`` the contents of
 Copy and enter the password into the Unlock Jenkins page at http://localhost:8080 then click ``Continue``. On the next page select ``Install suggested plugins`` and give it a few minutes to install everything Jenkins needs.
 
 .. warning::
+  
   Do not continue to the following section until all of the plugins have finished installing. Now is a good time to take a break for some coffee or fresh air.
 
 After the plugins have been installed you will be prompted with the ``Create Admin User`` form. 
@@ -181,11 +184,11 @@ This section will show you how to test this functionality.
 
 Now let's do a final test by running the AWS CLI from **within the container**. We will use ``exec`` again with some additional options.
 
-This time we will pass the ``-it`` options to enter ``-i`` interactive mode and ``-t`` to attach the container to our terminal. By issuing the ``bash`` command we are instructing the container to execute the bash shell. Combined with the ``-it`` options this means our terminal will be binded to the bash session executed in the container. 
+This time we will pass the ``-it`` options to enter ``-i`` interactive mode and ``-t`` to attach the container to our terminal. By issuing the ``bash`` command we are instructing the container to execute the bash shell. Combined with the ``-it`` options this means our terminal will be bound to the bash session executed in the container. 
 
 .. note::
 
-  Attaching to the shell session of a container is the functional equivalent of SSH-ing into a remote machine. Depending on which shell the container has installed you will adjust the shell command issued in ``exec``. In lean containers, that have minimal installed programs, bash may not be insalled. You can usually use at least the original ``sh`` shell (before it was the **B** orn **A** gain **SH** ell)! 
+  Attaching to the shell session of a container is the functional equivalent of SSH-ing into a remote machine. Depending on which shell the container has installed you will adjust the shell command issued in ``exec``. In lean containers, that have minimal installed programs, bash may not be installed. You can usually use at least the original ``sh`` shell (before it was the **B** orn **A** gain **SH** ell)! 
 
 .. tip::
 
@@ -203,7 +206,7 @@ Once we are in the container we will command AWS to list the S3 buckets for the 
 .. code:: bash
 
   # attach the container's bash shell to your terminal
-  $ docker exec -it jenkins bash
+  $ docker exec -it <container-id> bash
 
   # the terminal will now be attached to the container's shell session as root
 
