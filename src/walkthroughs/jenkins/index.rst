@@ -8,16 +8,6 @@ Walkthrough: CI/CD With Jenkins
 
 Follow along with the instructor as we configure Jenkins.
 
-Setup
-=====
-
-For this example we will be using the same project. Fork and Clone `this repository <https://gitlab.com/LaunchCodeTraining/airwaze-jenkins>`_.
-
-For this to work your Todo API tests need to pass.
-
-* Open your Todo API project and run the tests
-* If they don't pass, then fix them ;)
-
 Our Continuous Integration & Delivery Goals
 ===========================================
 
