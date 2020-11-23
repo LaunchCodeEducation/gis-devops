@@ -78,6 +78,7 @@ Bonus Objectives
 ================
 
 - clean up your EC2 Map Notes API so that it only contains resources necessary for hosting the Map Notes API
+- alter your API SG so that SSH access is only allowed from private network
 - talk to your instructor about hosting Geoserver on your VPC
 
 Turning in your work
