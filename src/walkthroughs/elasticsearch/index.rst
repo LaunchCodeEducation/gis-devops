@@ -24,16 +24,64 @@ Disadvantages:
     - Reindex for every document creation, or update
     - Memory intensive
 
-Throughout this class we will be leveraging Elasticsearch's fast, full, and fuzzy searches, but will never use it as a primary datastore. We will be using it as a secondary datastore.
-
 Getting Ready
 =============
 
-To use Elasticsearch we need to first install it.
+Clone the `elasticsearch-kibana-starter <https://gitlab.com/LaunchCodeTraining/elasticsearch-kibana-starter>`_ to your machine.
 
-We will be running Elasticsearch as a docker container. You can check if you have docker installed with: ``$ docker -v``, if it's installed it will print out the version installed. Check out the :ref:`docker` if you need to install docker.
+Invoke the ``docker-compose.yml`` script to start up the elasticsearch and kibana containers:
 
-After docker is installed you can check your containers with: ``$ docker ps -a``, if you don't have an elasticsearch container, you can get one by following the :ref:`docker-elasticsearch`.
+.. sourcecode:: console
+
+    docker-compose up -d
+
+After waiting a minute or two for elasticsearch to startup you can verify that it is running properly with the following curl command:
+
+.. sourcecode:: console
+
+    curl localhost:9200
+
+You should see an output containing some meta data about this cluster that looks similar to:
+
+.. sourcecode:: console
+
+    {
+        "name" : "e5f4faac973f",
+        "cluster_name" : "elasticsearch",
+        "cluster_uuid" : "E5RXB-RuT9eWreLKiDQ63g",
+        "version" : {
+            "number" : "7.9.3",
+            "build_flavor" : "default",
+            "build_type" : "docker",
+            "build_hash" : "c4138e51121ef06a6404866cddc601906fe5c868",
+            "build_date" : "2020-10-16T10:36:16.141335Z",
+            "build_snapshot" : false,
+            "lucene_version" : "8.6.2",
+            "minimum_wire_compatibility_version" : "6.8.0",
+            "minimum_index_compatibility_version" : "6.0.0-beta1"
+        },
+        "tagline" : "You Know, for Search"
+    }
+
+You can verify Kibana started correctly by navigating to ``http://localhost:5601`` in your browser.
+
+You should be greeted with the Kibana starting screen:
+
+.. image:: /_static/images/elasticsearch/kibana-start-page.png
+
+Go ahead and click the ``Explore on my own`` button which will take you to the home page:
+
+.. image:: /_static/images/elasticsearch/kibana-home-page.png
+
+In this walkthrough we will only be working with the Kibana Dev Tools which you can find by clicking the hamburger icon in the top left corner and selecting ``Dev Tools``:
+
+.. image:: /_static/images/elasticsearch/menu-dev-tools.png
+
+This will take you to the console:
+
+.. image:: /_static/images/elasticsearch/kibana-console.png
+
+From the console we can easily write web requests that will interact with our elasticsearch cluster.
 
 Elasticsearch Terms
 ===================
@@ -44,7 +92,7 @@ Elasticsearch Terms
 
 **Index** - A collection of documents that have somewhat similar characteristics.
 
-**Shard** - A single piece of an index. It stores some documents, but not necessairly all the documents for a specific Index. The data of an Index is spread out amongst many Shards.
+**Shard** - A single piece of an index. It stores some documents, but not necessarily all the documents for a specific Index. The data of an Index is spread out amongst many Shards.
 
 **Replica** - A copy of a shard. If a shard is corrupted, or goes offline, the Replica can be used to re-create the Shard, or can be used in the Shards place. A replica cannot be housed on the same Node as the Shard it was created from.
 
@@ -52,44 +100,102 @@ Elasticsearch Terms
 
 Read more about these specific terms from the Elasticsearch documentation `basic concepts <https://www.elastic.co/guide/en/elasticsearch/reference/6.5/getting-started-concepts.html>`_.
 
+Interfacing with Elasticsearch
+==============================
+
+At it's heart Elasticsearch is a RESTful API. We can fire web requests to the elasticsearch cluster go Create, Read, Update, or Delete documents.
+
+We could simply craft and execute curl requests to interface with this tool, or we can use the Kibana console which provides a better interface for creating and managing web requests to elasticsearch.
+
+From the Kibana console let's try making the same request we made earlier:
+
+.. sourcecode:: console
+
+    GET /
+
+Which should give you an output similar to:
+
+.. sourcecode:: console
+
+    {
+        "name" : "e5f4faac973f",
+        "cluster_name" : "elasticsearch",
+        "cluster_uuid" : "E5RXB-RuT9eWreLKiDQ63g",
+        "version" : {
+            "number" : "7.9.3",
+            "build_flavor" : "default",
+            "build_type" : "docker",
+            "build_hash" : "c4138e51121ef06a6404866cddc601906fe5c868",
+            "build_date" : "2020-10-16T10:36:16.141335Z",
+            "build_snapshot" : false,
+            "lucene_version" : "8.6.2",
+            "minimum_wire_compatibility_version" : "6.8.0",
+            "minimum_index_compatibility_version" : "6.0.0-beta1"
+        },
+        "tagline" : "You Know, for Search"
+    }
+
+So in short you have two options to interface with elasticsearch:
+
+- curl
+- kibana
+
+They both result in making a web request to the elasticsearch cluster.
+
 Elasticsearch Basics
 ====================
 
-Now that we have Elasticsearch installed on our machines we can learn the basics. We will focus on CRUD functionality.
+Meta Data Requests
+------------------
 
-We will be passing JSON back and forth with Elasticsearch, and using HTTP as the means of communication.
+.. sourcecode:: console
 
-To do this on Unix based systems we will use the cURL terminal tool.
+    GET /
 
-From the terminal a cURL command looks like: ``$ curl -X<HTTP_VERB> '<URL>' -H 'Content-type:application/json' -d '<BODY>'``
+.. sourcecode:: console
 
-Let's break that command down:
-    - -X<HTTP_VERB>: The HTTP verb we want to use (GET, POST, PUT, DELETE)
-    - <URL>: The URL of the Elasticsearch cluster and the path of the index we are requesting
-    - -H: HTTP Header in this case we are setting the Content Type to application/json this allows us to include JSON with our request
-    - -d: The Body of the request in this case it's where we would include our JSON
+    GET /_cat
 
-Let's make a request to view data about our Elasticsearch cluster: ``$ curl -XGET 'http://127.0.0.1:9200/'``
+.. sourcecode:: console
+    :caption: output
 
-.. image:: /_static/images/elasticsearch/cluster-data.png
+    =^.^=
+    /_cat/allocation
+    /_cat/shards
+    /_cat/shards/{index}
+    /_cat/master
+    /_cat/nodes
+    /_cat/tasks
+    /_cat/indices
+    /_cat/indices/{index}
+    /_cat/segments
+    /_cat/segments/{index}
+    /_cat/count
+    /_cat/count/{index}
 
-Another useful request is to the _cat endpoint. It gives us more information about how to query even more resources.
+    ... trimmed ...
 
-``$ curl -XGET 'http://127.0.0.1:9200/_cat/'``
+.. sourcecode:: console
 
-.. image:: /_static/images/elasticsearch/cat.png
+    GET /_cat/nodes
 
-Let's check the nodes associated with this cluster: ``$ curl -XGET 'http://127.0.0.1:9200/_cat/nodes'``
+.. sourcecode:: console
+    :caption: output
 
-.. image:: /_static/images/elasticsearch/cat-nodes.png
+    172.29.0.3 26 24 4 1.29 0.94 0.65 dilmrt * e5f4faac973f
 
-We have one node. The location of the node on my machine is 172.17.0.2, that happens to be the internal IP address of the docker container where my Elasticsearch cluster lives. Your IP Address will probably be different.
+.. sourcecode:: console
 
-Now let's check the indices associated with our cluster: ``$ curl -XGET 'http://127.0.0.1:9200/_cat/indices'``.
+    GET /_cat/indices
 
-.. image:: /_static/images/elasticsearch/cat-indices-empty.png
+.. sourcecode:: console
+    :caption: output
 
-We don't have any! We will have to create one.
+    green open .kibana-event-log-7.9.3-000001 F3GgrQ8JSpylaZcybsMThQ 1 0  1   0   5.5kb   5.5kb
+    green open .apm-custom-link               NsolNevvSCuZQfJz9owKYg 1 0  0   0    208b    208b
+    green open .kibana_task_manager_1         movhn2pQROa5pbfvGCvr4w 1 0  6 132 107.3kb 107.3kb
+    green open .apm-agent-configuration       MokgJm7kQJCH0hAk6zXdxA 1 0  0   0    208b    208b
+    green open .kibana_1                      Zy0BoXDoSOyw8q7hYe0UAA 1 0 19   5  10.4mb  10.4mb
 
 Create
 ------
@@ -97,17 +203,25 @@ Create
 Before we create documents, we will have to create an index for our documents. Let's create a new index called teams.
 
 .. sourcecode:: console
-   :caption: PUT /teams
 
-   curl -XPUT 127.0.0.1:9200/teams -H 'Content-Type: application/json' -d '
-   { 
+    PUT /teams
+    { 
       "settings": {
         "index": {
           "number_of_shards": 2,
           "number_of_replicas": 1
         }
       }
-   }'
+   }
+   
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "acknowledged" : true,
+    "shards_acknowledged" : true,
+    "index" : "teams"
+    }
 
 When you add a document to an index it's called indexing a document. Indexing is slightly different than creating a record in a relational database. Indexing creates the document, and makes it fully searchable, which is more memory intensive, and slower than simply creating a record in a database. This allows the document in Elasticsearch to be searched fully, and very quickly. Elasticsearch is Near Realtime which means when we index a new document, it is searchable almost immediately.
 
@@ -116,38 +230,93 @@ Now let's index some MLB teams as documents on the ``/teams`` index.
 First the St. Louis Cardinals.
 
 .. sourcecode:: console
-   :caption: POST /teams/_doc/1
 
-   curl -XPOST 127.0.0.1:9200/teams/_doc/1 -H 'Content-Type: application/json' -d '
-   {
+    POST /teams/_doc/1
+    {
       "city": "St. Louis",
       "name": "Cardinals",
       "league": "National"
-   }'
+    }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "1",
+    "_version" : 1,
+    "result" : "created",
+    "_shards" : {
+        "total" : 2,
+        "successful" : 1,
+        "failed" : 0
+    },
+    "_seq_no" : 0,
+    "_primary_term" : 1
+    }
+
 
 The Washington Nationals.
 
 .. sourcecode:: console
    :caption: POST /teams/_doc/2
 
-   curl -XPOST 127.0.0.1:9200/teams/_doc/2 -H 'Content-Type: application/json' -d '
+   POST /teams/_doc/2
    {
       "city": "Washington",
       "name": "Nationals",
       "league": "National"
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "2",
+    "_version" : 1,
+    "result" : "created",
+    "_shards" : {
+        "total" : 2,
+        "successful" : 1,
+        "failed" : 0
+    },
+    "_seq_no" : 1,
+    "_primary_term" : 1
+    }
+
 
 Finally, the Chicago Cubs.
 
 .. sourcecode:: console
    :caption: POST /teams/_doc/3
 
-   curl -XPOST 127.0.0.1:9200/teams/_doc/3 -H 'Content-Type: application/json' -d '
+   POST /teams/_doc/3 
    {
        "city": "Chicago",
        "name": "Cubs",
        "league": "National"
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "3",
+    "_version" : 1,
+    "result" : "created",
+    "_shards" : {
+        "total" : 2,
+        "successful" : 1,
+        "failed" : 0
+    },
+    "_seq_no" : 2,
+    "_primary_term" : 1
+    }
 
 Read
 ----
@@ -155,30 +324,90 @@ Read
 Let's rerun that command from earlier to check on the indices associated with this cluster.
 
 .. sourcecode:: console
-   :caption: GET /_cat/indices
 
-   curl -XGET 127.0.0.1:9200/_cat/indices
+    GET /_cat/indices
+
+.. sourcecode:: console
+    :caption: output
+
+    green  open .kibana-event-log-7.9.3-000001 F3GgrQ8JSpylaZcybsMThQ 1 0  1   0  5.5kb  5.5kb
+    yellow open teams                          3H0gwUatQaOC7rHfYXkjRQ 2 1  3   0  5.4kb  5.4kb
+    green  open .apm-custom-link               NsolNevvSCuZQfJz9owKYg 1 0  0   0   208b   208b
+    green  open .kibana_task_manager_1         movhn2pQROa5pbfvGCvr4w 1 0  6 168 79.1kb 79.1kb
+    green  open .apm-agent-configuration       MokgJm7kQJCH0hAk6zXdxA 1 0  0   0   208b   208b
+    green  open .kibana_1                      Zy0BoXDoSOyw8q7hYe0UAA 1 0 21   8 10.4mb 10.4mb
 
 Let's read these documents from Elasticsearch.
 
 .. sourcecode:: console
    :caption: GET /teams/_doc/1
 
-   curl -XGET 127.0.0.1:9200/teams/_doc/1?pretty=true
+   GET /teams/_doc/1
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "1",
+    "_version" : 1,
+    "_seq_no" : 0,
+    "_primary_term" : 1,
+    "found" : true,
+    "_source" : {
+        "city" : "St. Louis",
+        "name" : "Cardinals",
+        "league" : "National"
+    }
+    }
 
 .. sourcecode:: console
    :caption: GET /teams/_doc/2
 
-   curl -XGET 127.0.0.1:9200/teams/_doc/2?pretty=true
+   GET /teams/_doc/2
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "2",
+    "_version" : 1,
+    "_seq_no" : 1,
+    "_primary_term" : 1,
+    "found" : true,
+    "_source" : {
+        "city" : "Washington",
+        "name" : "Nationals",
+        "league" : "National"
+    }
+    }
+
 
 .. sourcecode:: console
    :caption: GET /teams/_doc/3
 
-   curl -XGET 127.0.0.1:9200/teams/_doc/3?pretty=true
+   GET /teams/_doc/3
 
-.. note::
-   
-   In the case of these cURL requests we are passing the pretty option, and setting it as true. This makes our queries a little easier to read. This option can be passed to any Elasticsearch query, and the results will come back nicer. `Learn more about Elasticsearch 6.5 options <https://www.elastic.co/guide/en/elasticsearch/reference/6.5/common-options.html>`_ 
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "3",
+    "_version" : 1,
+    "_seq_no" : 2,
+    "_primary_term" : 1,
+    "found" : true,
+    "_source" : {
+        "city" : "Chicago",
+        "name" : "Cubs",
+        "league" : "National"
+    }
+    }
 
 Update
 ------
@@ -186,44 +415,100 @@ Update
 Let's update one of these documents. The ``"city"`` key for our 2nd document currently is valued as ``"Washington"``. This can cause confusion for people that don't know the Washington Nationals are in Washington D.C. Let's update this record with a new ``"city"`` name.
 
 .. sourcecode:: console
-   :caption: POST /teams/_doc/2/_update
 
-   curl -XPOST 127.0.0.1:9200/teams/_doc/2/_update -H 'Content-Type: application/json' -d '
-   {
-       "doc": {
-           "city": "Washington D.C."
-       }
-   }'
+    POST /teams/_update/2
+    {
+        "doc": {
+            "city": "Washington D.C"
+        }
+    }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "2",
+    "_version" : 4,
+    "result" : "updated",
+    "_shards" : {
+        "total" : 2,
+        "successful" : 1,
+        "failed" : 0
+    },
+    "_seq_no" : 5,
+    "_primary_term" : 1
+    }
 
 One of the differences between a relational database (PSQL) and a non-relational database (Elasticsearch) is how records/documents are updated. In a relational database the field is simply changed. In a non-relational database the entire document is deleted, and reindexed. This makes every update far more resource intensive than an update in a relational database.
 
 Let's see this change.
 
 .. sourcecode:: console
-   :caption: GET /teams/_doc/2
 
-   curl -XGET 127.0.0.1:9200/teams/_doc/2?pretty=true
+    GET /teams/_doc/2
+    
+.. sourcecode:: console
+    :caption: output
 
-.. image:: /_static/images/elasticsearch/update-city.png
-
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "2",
+    "_version" : 4,
+    "_seq_no" : 5,
+    "_primary_term" : 1,
+    "found" : true,
+    "_source" : {
+        "city" : "Washington D.C",
+        "name" : "Nationals",
+        "league" : "National"
+    }
+    }
+    
 Delete
 ------
 
 Let's delete a document.
 
 .. sourcecode:: console
-   :caption: DELETE /teams/_doc/3
 
-   curl -XDELETE 127.0.0.1:9200/teams/_doc/3
+    DELETE /teams/_doc/3
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "3",
+    "_version" : 2,
+    "result" : "deleted",
+    "_shards" : {
+        "total" : 2,
+        "successful" : 1,
+        "failed" : 0
+    },
+    "_seq_no" : 6,
+    "_primary_term" : 1
+    }    
 
 Let's query that document again to make sure it's gone.
 
 .. sourcecode:: console
-   :caption: GET /teams/_doc/3
 
-   curl -XGET 127.0.0.1:9200/teams/_doc/3?pretty=true
+    GET /teams/_doc/3
 
-.. image:: /_static/images/elasticsearch/delete.png
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "_index" : "teams",
+    "_type" : "_doc",
+    "_id" : "3",
+    "found" : false
+    }
 
 I think we all feel better now that the Cubs have been deleted!
 
@@ -233,12 +518,31 @@ Elasticsearch Search API
 Setup
 -----
 
-Before we can start utilizing the Search API, we need more data:
-    #. Copy `baseball.sh <https://gitlab.com/LaunchCodeTraining/elasticsearch-practice/blob/master/baseball-teams.sh>`_ to your local machine as baseball.sh.
-    #. Make the script file excutable from the terminal: ``$ chmod 500 baseball.sh``
-    #. Run the script: ``$ ./baseball.sh``
+Before we can start exploring the Search API, we need more data. In the ``elasticsearch-kibana-starter`` folder you cloned earlier you should find a few scripts. We will be running ``baseball-teams.sh``:
 
-To make sure our Elasticsearch cluster was seeded from the shell script correctly from the terminal: ``$ curl -XGET 127.0.0.1:9200/teams/_count``.
+.. sourcecode:: console
+
+    bash baseball-teams.sh
+
+You should see a bunch of output as each team is created.
+
+Let's make sure the script ran succesfully by counting the number of teams in the index:
+
+.. sourcecode:: console
+
+    GET /teams/_count
+
+.. sourcecode:: console
+
+    {
+    "count" : 30,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    }
+    }
 
 We should have a total of 30 documents stored within the ``/teams`` index.
 
@@ -246,57 +550,179 @@ So far Elasticsearch functions very similarly to PSQL. How do we leverage some t
 
 We do this through the Elasticsearch Search API!
 
-We will be writing our Elasticsearch queries by making GET requests: ``curl -XGET 127.0.0.1:9200/teams/_search``
+We will be writing our Elasticsearch queries by making GET requests: ``GET /teams/_search``
 
-We can access the _search API by using query parameters, or by including JSON that describes the query to be made.
+We can access the ``_search`` API by using query parameters, or by including JSON that describes the query to be made.
 
 Match All Documents in Index
 ----------------------------
 
 .. sourcecode:: console
-   :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true
+    GET /teams/_search
 
 .. sourcecode:: console
-   :caption: GET /teams/_search
+    :caption: output
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
-   {
-       "query": { "match_all": {} }
-   }'
+    {
+    "took" : 1,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 30,
+        "relation" : "eq"
+        },
+        "max_score" : 1.0,
+        "hits" : [
+        {
+            "_index" : "teams",
+            "_type" : "_doc",
+            "_id" : "ks38JnYBsXlZ1fuSR5PV",
+            "_score" : 1.0,
+            "_source" : {
+            "city" : "Toronto",
+            "country" : "Canada",
+            "state" : "Ontario",
+            "name" : "Blue Jays",
+            "league" : "American",
+            "division" : "East",
+            "world_series_champions" : 2
+            }
+        },
+
+    ... trimmed ...
+
+Another way of writing this would be:
+
+.. sourcecode:: console
+
+    GET /teams/_search
+    {
+        "query": { "match_all": {} }   
+    }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 1,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 30,
+        "relation" : "eq"
+        },
+        "max_score" : 1.0,
+        "hits" : [
+        {
+            "_index" : "teams",
+            "_type" : "_doc",
+            "_id" : "ks38JnYBsXlZ1fuSR5PV",
+            "_score" : 1.0,
+            "_source" : {
+            "city" : "Toronto",
+            "country" : "Canada",
+            "state" : "Ontario",
+            "name" : "Blue Jays",
+            "league" : "American",
+            "division" : "East",
+            "world_series_champions" : 2
+            }
+        },
+    ... trimmed ...
 
 These queries only return 10 results. Looking at the `documentation for From/Size <https://www.elastic.co/guide/en/elasticsearch/reference/6.5/search-request-from-size.html>`_ to learn about Pagination.
 
 We can configure how many results are returned with the From, and Size request parameters.
 
 .. sourcecode:: console
-   :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
-   {
-       "from": 0,
-       "size": 30,
-       "query": { "match_all": {} }
-   }'
+    GET /teams/_search
+    {
+        "from": 0,
+        "size": 30,
+        "query": { "match_all": {} }
+    }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 0,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 30,
+        "relation" : "eq"
+        },
+    ... trimmed ...
 
 We can also control the results of the document source. For example if we only wanted the city, and name from each document:
 
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "from": 0,
        "size": 30,
        "_source": ["city", "name"],
        "query": { "match_all": {} }
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 1,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 30,
+        "relation" : "eq"
+        },
+        "max_score" : 1.0,
+        "hits" : [
+        {
+            "_index" : "teams",
+            "_type" : "_doc",
+            "_id" : "ks38JnYBsXlZ1fuSR5PV",
+            "_score" : 1.0,
+            "_source" : {
+            "city" : "Toronto",
+            "name" : "Blue Jays"
+            }
+        },
+    ... trimmed ...
 
 Match Documents by Field
 ------------------------
 
-Elasticsearch gives us even more control of our seaches with the ``"match"`` query.
+Elasticsearch gives us even more control of our searches with the ``"match"`` query.
 
 Match String
 ^^^^^^^^^^^^
@@ -306,12 +732,31 @@ Let's match all the teams in the National league.
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "from": 0,
        "size": 15,
        "query": { "match": { "league": "National" } }
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 2,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 15,
+        "relation" : "eq"
+        },
+    ... trimmed ...
 
 Match Phrase
 ^^^^^^^^^^^^
@@ -321,10 +766,48 @@ Let's match all teams in the city "St. Louis"
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "query": { "match_phrase": { "city": "St. Louis" } }
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 1,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 1,
+        "relation" : "eq"
+        },
+        "max_score" : 3.9303184,
+        "hits" : [
+        {
+            "_index" : "teams",
+            "_type" : "_doc",
+            "_id" : "p838JnYBsXlZ1fuSSJPw",
+            "_score" : 3.9303184,
+            "_source" : {
+            "city" : "St. Louis",
+            "country" : "United States",
+            "state" : "Missouri",
+            "name" : "Cardinals",
+            "league" : "National",
+            "division" : "Central",
+            "world_series_champions" : 11
+            }
+        }
+        ]
+    }
+    }
 
 Match Or
 ^^^^^^^^
@@ -334,19 +817,38 @@ Let's match all teams in state "Illinois" or "Missouri"
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search/?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "query": { "match": { "state": "Illinois Missouri" } }
-   }'
+   }
 
-When we use ``match`` instead of ``match_phrase`` Elasticsearch searches for both indivdual words and returns any document that matches either term.
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 0,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 4,
+        "relation" : "eq"
+    },    
+    ... trimmed ...
+
+When we use ``match`` instead of ``match_phrase`` Elasticsearch searches for both individual words and returns any document that matches either term.
 
 This can be a little ambiguous, you can create a more explicit query by creating a ``boolQuery``.
 
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "query": {
            "bool": {
@@ -356,7 +858,26 @@ This can be a little ambiguous, you can create a more explicit query by creating
                ]
            }
        }
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 0,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 4,
+        "relation" : "eq"
+    },
+    ... trimmed ...
 
 Match And
 ^^^^^^^^^
@@ -366,7 +887,7 @@ Let's match all teams in "Florida" and in "Miami". We will do this by creating a
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "query": {
            "bool": {
@@ -376,7 +897,45 @@ Let's match all teams in "Florida" and in "Miami". We will do this by creating a
                ]
            }
        }
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 0,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 1,
+        "relation" : "eq"
+        },
+        "max_score" : 5.177124,
+        "hits" : [
+        {
+            "_index" : "teams",
+            "_type" : "_doc",
+            "_id" : "os38JnYBsXlZ1fuSSJO1",
+            "_score" : 5.177124,
+            "_source" : {
+            "city" : "Miami",
+            "country" : "United States",
+            "state" : "Florida",
+            "name" : "Marlins",
+            "league" : "National",
+            "division" : "East",
+            "world_series_champions" : 2
+            }
+        }
+        ]
+    }
+    }
 
 In this case the ``boolQuery`` has a ``"must"`` statement which operates like an AND statement in SQL. The previous examples used a ``"should"`` statement which operates like an OR statement in SQL.
 
@@ -385,26 +944,64 @@ A  ``boolQuery`` can be include as many ``"must"``, ``"should"``, ``"match"``, `
 Elasticsearch Fuzzy Search
 ==========================
 
-A key way we will be using Elasticsearch in this class is by leveraging Elasticsearch's fuzzy search. This gives us the abiltiy to set the fuzziness factor, and Elasticsearch will match words, or phrases that are within the fuzziness factor of the query term.
+Elasticsearch also allows fuzzy searches. This gives us the ability to set the fuzziness factor, and Elasticsearch will match words, or phrases that are within the fuzziness factor of the query term.
 
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "query": {
            "fuzzy": { "name": "Damondbacks" }
        }
-   }'
+   }
 
-Despite ommitting a letter from "Diamondbacks" fuzzy search was still able to make the match happen!
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 15,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 1,
+        "relation" : "eq"
+        },
+        "max_score" : 2.07845,
+        "hits" : [
+        {
+            "_index" : "teams",
+            "_type" : "_doc",
+            "_id" : "rs38JnYBsXlZ1fuSSZM9",
+            "_score" : 2.07845,
+            "_source" : {
+            "city" : "Phoenix",
+            "country" : "United States",
+            "state" : "Arizona",
+            "name" : "Diamondbacks",
+            "league" : "National",
+            "division" : "West",
+            "world_series_champions" : 1
+            }
+        }
+        ]
+    }
+    }
+
+Despite omitting a letter from "Diamondbacks" fuzzy search was still able to make the match happen!
 
 We can manually set the fuzziness factor in a fuzzy search, from 0 edits, to 2 edits.
 
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "query": {
            "fuzzy": {
@@ -414,12 +1011,34 @@ We can manually set the fuzziness factor in a fuzzy search, from 0 edits, to 2 e
                }
            }
        }
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 0,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 0,
+        "relation" : "eq"
+        },
+        "max_score" : null,
+        "hits" : [ ]
+    }
+    }
 
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "query": {
            "fuzzy": {
@@ -429,12 +1048,34 @@ We can manually set the fuzziness factor in a fuzzy search, from 0 edits, to 2 e
                }
            }
        }
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 0,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 0,
+        "relation" : "eq"
+        },
+        "max_score" : null,
+        "hits" : [ ]
+    }
+    }
 
 .. sourcecode:: console
    :caption: GET /teams/_search
 
-   curl -XGET 127.0.0.1:9200/teams/_search?pretty=true -H 'Content-Type: application/json' -d '
+   GET /teams/_search
    {
        "query": {
            "fuzzy": {
@@ -444,7 +1085,45 @@ We can manually set the fuzziness factor in a fuzzy search, from 0 edits, to 2 e
                }
            }
        }
-   }'
+   }
+
+.. sourcecode:: console
+    :caption: output
+
+    {
+    "took" : 4,
+    "timed_out" : false,
+    "_shards" : {
+        "total" : 2,
+        "successful" : 2,
+        "skipped" : 0,
+        "failed" : 0
+    },
+    "hits" : {
+        "total" : {
+        "value" : 1,
+        "relation" : "eq"
+        },
+        "max_score" : 2.07845,
+        "hits" : [
+        {
+            "_index" : "teams",
+            "_type" : "_doc",
+            "_id" : "rs38JnYBsXlZ1fuSSZM9",
+            "_score" : 2.07845,
+            "_source" : {
+            "city" : "Phoenix",
+            "country" : "United States",
+            "state" : "Arizona",
+            "name" : "Diamondbacks",
+            "league" : "National",
+            "division" : "West",
+            "world_series_champions" : 1
+            }
+        }
+        ]
+    }
+    }
 
 Conclusion
 ==========
