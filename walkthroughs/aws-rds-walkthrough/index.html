@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Walkthrough: RDS &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Client Certificates" href="../client-certificates/index.html" />
+    <link rel="prev" title="Walkthrough: Intro to AWS" href="../aws-intro/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="/installations/index.html">Installations</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Welcome, Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Terminal, Shell, Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Shell, Git, SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: SQL, HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: HTTP, Docker</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day1/index.html">Week 2 - Day 1: HTML, CSS, Browser DevTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day2/index.html">Week 2 - Day 2: HTML/CSS Template, JavaScript Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day3/index.html">Week 2 - Day 3: Programming Fundamentals, JavaScript, DOM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day4/index.html">Week 2 - Day 4: JS, DOM, Promises, AJAX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day5/index.html">Week 2 - Day 5: Promises, AJAX, HTTP</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: Java, OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2: Spring Boot, Controllers, Routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Models, ORM (Hibernate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: Persistence, ORM Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: Review</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day1/index.html">Week 4 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day2/index.html">Week 4 - Day 2: Security, Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day3/index.html">Week 4 - Day 3: Integration testing, dependency injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day4/index.html">Week 4 - Day 4: Postgres, Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day5/index.html">Week 4 - Day 5: AJAX, Open Layers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/project/index.html">Week 5 - Project Week: Zika Mission Control</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day1/index.html">Week 6 - Day 1: RESTful web services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day2/index.html">Week 6 - Day 2: Swagger REST framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day3/index.html">Week 6 - Day 3: Intro to Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day4/index.html">Week 6 - Day 4: More Elasticsearch, Integrating ES with Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day5/index.html">Week 6 - Day 5: ES2015, ESLint, OpenLayers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week07/project/index.html">Week 7 - Project Week: Zika Mission Control Part 2</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day1/index.html">Week 8 - Day 1: Intro to DevOps/AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day2/index.html">Week 8 - Day 2: More with AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day3/index.html">Week 8 - Day 3: 12 Factor Apps and Auto Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day4/index.html">Week 8 - Day 4: Gradle, Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day5/index.html">Week 8 - Day 5: Sonarqube</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/project/index.html">Week 9 - Project Week: Zika Mission Control Part 3</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week11/project/index.html">Week 11 - Project Week: Zika Mission Control Part 4</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day3/index.html">Week 12 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day4/index.html">Week 12 - Day 4: OAuth 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day5/index.html">Week 12 - Day 5: Certificates</a></li>
+</ol>
+<ol class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws-intro/index.html">Walkthrough: Intro to AWS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Walkthrough: RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-certificates/index.html">Client Certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-deployment-s3/index.html">Deploy Zika Client to S3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../curl/index.html">Walkthrough: Intro to Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Walkthrough: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch-spring/index.html">Walkthrough: Elasticsearch in Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch/index.html">Walkthrough: Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch2/index.html">Walkthrough: Elasticsearch Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eslint-airwaze/index.html">Walkthrough: ESLint Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitLab/index.html">Walkthrough: Git and Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gradle/index.html">Walkthrough: Gradle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hashing-salting/index.html">Walkthrough: Hashing and Salting Passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Walkthrough: CI/CD With Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../launchcart-rest/index.html">Walkthrough: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nginx-proxy-spring/index.html">NGINX as a Proxy to Spring Apache Tomcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oauth2/index.html">Visual OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openlayers/index.html">Walkthrough: OpenLayers and jQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgress/index.html">Walkthrough: PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sonarqube/index.html">Walkthrough: Sonarqube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spring-data-jpa-hibernate/index.html">Walkthrough: Cars Demo - Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spring-integration-testing/index.html">Walkthrough: Spring Integration Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spring-pet-api-postgres-integration/index.html">Spring Postgres Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../springfox-swagger/index.html">Walkthrough: SwaggerUI via SpringFox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swagger/index.html">Walkthrough: SwaggerUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tdd/index.html">Walkthrough: TDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo-tasks-single-ec2-deployment/index.html">Todo Tasks Deployment Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-files/index.html">Running a Java Application as a Linux Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-tests/index.html">Walkthrough: Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading-spring-boot/index.html">Walkthrough: Upgrading to Spring Boot 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../watch-todo-tasks-deployment/index.html">Watch a Todo Tasks Deployment</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/airwaze/index.html">Studio: Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-EC2-basics/index.html">Studio: AWS Devops Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-auto-scaling/index.html">Scaling horizontally AutoScaling Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-rds-vpc/index.html">Studio: AWS RDS VPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/curl/index.html">Curl Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch1/index.html">Elasticsearch Query Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch2/index.html">Elasticsearch Queries Studio 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/junit/index.html">Studio: JUnit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart-rest/index.html">Studio: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart1/index.html">Studio: LaunchCart Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart2/index.html">Studio: LaunchCart Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/openlayers-es2015/index.html">Studio: OpenLayers ES2015 Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/swagger/index.html">Studio: Springfox and Swagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/tdd/index.html">Studio: Test-Driven Development</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/deploy-mapnotes-api-single-ec2/index.html">Project: Deploy Map Notes to a Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-api/index.html">Project: Map Notes API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-pipeline/index.html">Project: Mapnotes API Jenkins Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-rds/index.html">Project: Map Notes Backed by AWS RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/zika-client-rest/index.html">Project: Zika Client REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/zika-client/index.html">Project: Zika Client</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/00-prep-week/index.html">Installation: Essential Tooling &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/01-docker/index.html">Installation: Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/02-docker-psql/index.html">Installation: Docker PSQL Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/03-docker-postgis/index.html">Installation: Docker PostGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/04-docker-elasticsearch/index.html">Installation: Docker Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/05-docker-kibana/index.html">Installation: Docker Kibana</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/06-docker-jenkins/index.html">Installation: Docker Jenkins</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/00-intellij/index.html">Configuration: IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/01-runtime-configurations/index.html">Configuration: IntelliJ - Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/02-environment-variables-intellij/index.html">Configuration: Environment Variables - IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/04-spring-elasticsearch/index.html">Configuration: Spring &amp; Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/05-spring-postgres/index.html">Configuration: Spring &amp; Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/06-vscode-eslint/index.html">Configuration: Visual Studio Code - ESLint</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/docker/index.html">Docker</a></li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Walkthrough: RDS</a><ul>
+<li><a class="reference internal" href="#create-rds-networking-resources">Create RDS Networking Resources</a><ul>
+<li><a class="reference internal" href="#navigate-to-vpc">Navigate to VPC</a></li>
+<li><a class="reference internal" href="#create-subnet">Create Subnet</a></li>
+<li><a class="reference internal" href="#select-correct-vpc">Select Correct VPC</a></li>
+<li><a class="reference internal" href="#subnet-settings">Subnet Settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-security-groups">Create Security Groups</a><ul>
+<li><a class="reference internal" href="#privatepostgresdb">PrivatePostgresDB</a></li>
+<li><a class="reference internal" href="#publicprojectnameapi-security-group">PublicProjectNameAPI Security Group</a></li>
+<li><a class="reference internal" href="#edit-privatepostgresdb-sg">Edit PrivatePostgresDB SG</a></li>
+<li><a class="reference internal" href="#create-ssh-group">Create SSH Group</a></li>
+<li><a class="reference internal" href="#create-jumpbox-sg">Create JumpBox SG</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-subnet-group">Create Subnet Group</a></li>
+<li><a class="reference internal" href="#create-rds">Create RDS</a><ul>
+<li><a class="reference internal" href="#creation-method">Creation Method</a><ul>
+<li><a class="reference internal" href="#engine-options">Engine Options</a></li>
+<li><a class="reference internal" href="#templates">Templates</a></li>
+<li><a class="reference internal" href="#settings">Settings</a></li>
+<li><a class="reference internal" href="#db-instance-size">DB Instance Size</a></li>
+<li><a class="reference internal" href="#storage">Storage</a></li>
+<li><a class="reference internal" href="#availability-durability">Availability &amp; Durability</a></li>
+<li><a class="reference internal" href="#connectivity">Connectivity</a></li>
+<li><a class="reference internal" href="#database-authentication">Database Authentication</a></li>
+<li><a class="reference internal" href="#additional-configuration">Additional Configuration</a></li>
+<li><a class="reference internal" href="#create-error">Create Error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#view-rds-instance">View RDS Instance</a></li>
+<li><a class="reference internal" href="#create-ec2-jumpbox">Create EC2 Jumpbox</a><ul>
+<li><a class="reference internal" href="#create-ec2-instance">Create EC2 Instance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#connect-to-rds">Connect to RDS</a><ul>
+<li><a class="reference internal" href="#configure-rds">Configure RDS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#update-systemd-service-configuration-file">Update Systemd Service Configuration File</a><ul>
+<li><a class="reference internal" href="#bonus-clean-up-ec2">Bonus: Clean up EC2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#review">Review</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="walkthrough-rds">
+<span id="aws-rds-walkthrough"></span><h1>Walkthrough: RDS<a class="headerlink" href="#walkthrough-rds" title="Permalink to this headline">¶</a></h1>
+<p>In this walkthrough we will be moving our PostGIS database from the EC2 that hosts our web application to a dedicated Amazon managed RDS.</p>
+<p>We will be editing our VPC in the following ways:</p>
+<ul class="simple">
+<li>creating two new private subnets</li>
+<li>create a new subnet group from the two new private subnets</li>
+<li>editing our security groups</li>
+</ul>
+<p>This will allow us to create a new RDS on our VPC.</p>
+<p>To interact with this VPC we will also be creating a new EC2 instance that will serve as a jumpbox.</p>
+<div class="section" id="create-rds-networking-resources">
+<h2>Create RDS Networking Resources<a class="headerlink" href="#create-rds-networking-resources" title="Permalink to this headline">¶</a></h2>
+<p>We will be adding this RDS to the VPC of our project. For the purposes of this walkthrough it will be the VPC of your Todo Tasks API deployment.</p>
+<div class="section" id="navigate-to-vpc">
+<h3>Navigate to VPC<a class="headerlink" href="#navigate-to-vpc" title="Permalink to this headline">¶</a></h3>
+<p>Navigate to the VPC dashboard by searching for the <code class="docutils literal notranslate"><span class="pre">VPC</span></code> service.</p>
+<img alt="../../_images/15-services-vpc.png" src="../../_images/15-services-vpc.png" />
+</div>
+<div class="section" id="create-subnet">
+<h3>Create Subnet<a class="headerlink" href="#create-subnet" title="Permalink to this headline">¶</a></h3>
+<p>From the side bar menu on the left scroll down to and select <code class="docutils literal notranslate"><span class="pre">Subnets</span></code> which will show you a list of all the subnets associated with this region. We want to add a new subnet so click the orange <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">subnet</span></code> button:</p>
+<img alt="../../_images/16-create-subnet.png" src="../../_images/16-create-subnet.png" />
+</div>
+<div class="section" id="select-correct-vpc">
+<h3>Select Correct VPC<a class="headerlink" href="#select-correct-vpc" title="Permalink to this headline">¶</a></h3>
+<p>The first section of the Create subnet form is the associated <code class="docutils literal notranslate"><span class="pre">VPC</span></code>. Make sure to use the VPC for your project:</p>
+<img alt="../../_images/17-subnet-vpc.png" src="../../_images/17-subnet-vpc.png" />
+</div>
+<div class="section" id="subnet-settings">
+<h3>Subnet Settings<a class="headerlink" href="#subnet-settings" title="Permalink to this headline">¶</a></h3>
+<p>After selecting the VPC to associate with your new subnet you can add both the subnets. For each subnet we will be setting:</p>
+<ul class="simple">
+<li>name</li>
+<li>availability zone</li>
+<li>CIDR block</li>
+</ul>
+<p>Set-up the first subnet:</p>
+<img alt="../../_images/18-subnet-settings-first-subnet.png" src="../../_images/18-subnet-settings-first-subnet.png" />
+<p>Click <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">subnet</span></code> and then set up the second subnet:</p>
+<img alt="../../_images/19-subnet-settings-second-subnet.png" src="../../_images/19-subnet-settings-second-subnet.png" />
+<p>Click the <code class="docutils literal notranslate"><span class="pre">create</span></code> button.</p>
+</div>
+</div>
+<div class="section" id="create-security-groups">
+<h2>Create Security Groups<a class="headerlink" href="#create-security-groups" title="Permalink to this headline">¶</a></h2>
+<p>Now that our deployment is changing we need to update our existing security groups. We will be deleting the existing security groups associated with your VPC and we will be creating three new ones:</p>
+<ul class="simple">
+<li>public Web API SG (inbound HTTP/S, outbound HTTP/S + postgres 5432)</li>
+<li>create PrivatePostgresDB SG (inbound 5432, outbound HTTP/S)</li>
+<li>create &lt;Name&gt;SSH SG (inbound SSH for &lt;name&gt; IP)</li>
+</ul>
+<p>In VPC dashboard scroll down the left hand menu to security groups:</p>
+<img alt="../../_images/22-scroll-to-security-groups.png" src="../../_images/22-scroll-to-security-groups.png" />
+<div class="section" id="privatepostgresdb">
+<h3>PrivatePostgresDB<a class="headerlink" href="#privatepostgresdb" title="Permalink to this headline">¶</a></h3>
+<p>Create a new Security Group to allow postgres traffic to your Public Web API:</p>
+<img alt="../../_images/20-create-private-postgres-db-sg-basic-details.png" src="../../_images/20-create-private-postgres-db-sg-basic-details.png" />
+<p>Set it’s inbound rules:</p>
+<img alt="../../_images/21-create-private-postgres-db-sg-inbound-rules.png" src="../../_images/21-create-private-postgres-db-sg-inbound-rules.png" />
+<p>You will search for project name, but then will have to select both of them.</p>
+<img alt="../../_images/21-create-private-postgres-db-sg-inbound-rules-final.png" src="../../_images/21-create-private-postgres-db-sg-inbound-rules-final.png" />
+<p>Then set the outbound rules:</p>
+<img alt="../../_images/21-create-private-postgres-db-sg-outbound-rules.png" src="../../_images/21-create-private-postgres-db-sg-outbound-rules.png" />
+<p>Click the <code class="docutils literal notranslate"><span class="pre">create</span></code> button and then return to the Security Group dashboard, the easiest way is by clicking the breadcrumb link:</p>
+<img alt="../../_images/23-sg-breadcrumb.png" src="../../_images/23-sg-breadcrumb.png" />
+</div>
+<div class="section" id="publicprojectnameapi-security-group">
+<h3>PublicProjectNameAPI Security Group<a class="headerlink" href="#publicprojectnameapi-security-group" title="Permalink to this headline">¶</a></h3>
+<p>Create a new Security Group to allow HTTP/S traffic to your Public Web API.</p>
+<p>Set the name, description and VPC:</p>
+<img alt="../../_images/24-create-public-api-sg-basic-details.png" src="../../_images/24-create-public-api-sg-basic-details.png" />
+<p>Set the inbound rules:</p>
+<img alt="../../_images/25-create-public-api-sg-inbound-rules.png" src="../../_images/25-create-public-api-sg-inbound-rules.png" />
+<p>Set the outbound rules:</p>
+<img alt="../../_images/26-create-public-api-sg-outbound-rules-search.png" src="../../_images/26-create-public-api-sg-outbound-rules-search.png" />
+<img alt="../../_images/27-create-public-api-sg-outbound-rules-final.png" src="../../_images/27-create-public-api-sg-outbound-rules-final.png" />
+<p>Click create. After creating this security group we need to edit the inbound rules of our previous security group using this new security group.</p>
+</div>
+<div class="section" id="edit-privatepostgresdb-sg">
+<h3>Edit PrivatePostgresDB SG<a class="headerlink" href="#edit-privatepostgresdb-sg" title="Permalink to this headline">¶</a></h3>
+<p>Click the breadcrumb back to Security Groups. You are looking for your PrivatePostgresDB (double check your VPC) and then click <code class="docutils literal notranslate"><span class="pre">edit</span> <span class="pre">inbound</span> <span class="pre">rules</span></code>:</p>
+<img alt="../../_images/28-private-postgres-edit-inbound-rules.png" src="../../_images/28-private-postgres-edit-inbound-rules.png" />
+<p>Select the PublicProjectNameAPI security group you created in the previous step:</p>
+<img alt="../../_images/29-private-postgres-edit-inbound-rules-source.png" src="../../_images/29-private-postgres-edit-inbound-rules-source.png" />
+<img alt="../../_images/30-private-postgres-edit-inbound-rules-source-final.png" src="../../_images/30-private-postgres-edit-inbound-rules-source-final.png" />
+<p>Click <code class="docutils literal notranslate"><span class="pre">save</span></code> to update the inbound rules.</p>
+</div>
+<div class="section" id="create-ssh-group">
+<h3>Create SSH Group<a class="headerlink" href="#create-ssh-group" title="Permalink to this headline">¶</a></h3>
+<p>Create the Security Group for SSH access:</p>
+<p>Name, Description and VPC:</p>
+<img alt="../../_images/31-create-ssh-sg.png" src="../../_images/31-create-ssh-sg.png" />
+<p>Inbound rules:</p>
+<img alt="../../_images/32-create-ssh-sg-rules.png" src="../../_images/32-create-ssh-sg-rules.png" />
+<p>Outbound rules:</p>
+<img alt="../../_images/32-create-ssh-sg-outbound.png" src="../../_images/32-create-ssh-sg-outbound.png" />
+</div>
+<div class="section" id="create-jumpbox-sg">
+<h3>Create JumpBox SG<a class="headerlink" href="#create-jumpbox-sg" title="Permalink to this headline">¶</a></h3>
+<p>Add the final SG we will need for our jumpbox:</p>
+<p>Name, description, VPC:</p>
+<img alt="../../_images/41-basic-details.png" src="../../_images/41-basic-details.png" />
+<p>Inbound rules:</p>
+<img alt="../../_images/42-inbound-rules.png" src="../../_images/42-inbound-rules.png" />
+<p>Outbound rules:</p>
+<img alt="../../_images/43-outbound-rules.png" src="../../_images/43-outbound-rules.png" />
+<img alt="../../_images/44-outbound-rules-final.png" src="../../_images/44-outbound-rules-final.png" />
+</div>
+</div>
+<div class="section" id="create-subnet-group">
+<h2>Create Subnet Group<a class="headerlink" href="#create-subnet-group" title="Permalink to this headline">¶</a></h2>
+<p>With our Subnets and Security Groups created, let’s create a subnet group that will be used by our RDS.</p>
+<p>Search for the <code class="docutils literal notranslate"><span class="pre">RDS</span></code> service:</p>
+<img alt="../../_images/1-rds-search.png" src="../../_images/1-rds-search.png" />
+<p>From the <code class="docutils literal notranslate"><span class="pre">RDS</span></code> dashboard scroll the left hand menu bar down and select the <code class="docutils literal notranslate"><span class="pre">Subnet</span> <span class="pre">groups</span></code> option. From here click the orange <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">DB</span> <span class="pre">Subnet</span> <span class="pre">Group</span></code> button:</p>
+<img alt="../../_images/33-create-db-subnet-group.png" src="../../_images/33-create-db-subnet-group.png" />
+<p>This will take you to the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">DB</span> <span class="pre">Subnet</span> <span class="pre">Group</span></code> web form.</p>
+<p>Set the Name, Description, and VPC:</p>
+<img alt="../../_images/34-subnet-group-details.png" src="../../_images/34-subnet-group-details.png" />
+<p>Select the two availability zones you used for your security groups, and select your two subnets:</p>
+<img alt="../../_images/35-add-subnets.png" src="../../_images/35-add-subnets.png" />
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<ol class="last arabic simple">
+<li>select the AZs of your 2 private subnets (should be first and second choices)</li>
+<li>select the 2 subnets (make sure they are both private - should not be 10.0.0.0/24)</li>
+</ol>
+</div>
+</div>
+<div class="section" id="create-rds">
+<h2>Create RDS<a class="headerlink" href="#create-rds" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have our database subnets, subnet group and have updated our security groups, let’s create the RDS instance. Navigate to the RDS dashboard.</p>
+<img alt="../../_images/2-rds-dashboard.png" src="../../_images/2-rds-dashboard.png" />
+<p>From here click the <code class="docutils literal notranslate"><span class="pre">create</span> <span class="pre">database</span></code> button.</p>
+<div class="section" id="creation-method">
+<h3>Creation Method<a class="headerlink" href="#creation-method" title="Permalink to this headline">¶</a></h3>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Standard</span> <span class="pre">create</span></code>:</p>
+<img alt="../../_images/3-standard-create.png" src="../../_images/3-standard-create.png" />
+<div class="section" id="engine-options">
+<h4>Engine Options<a class="headerlink" href="#engine-options" title="Permalink to this headline">¶</a></h4>
+<p>Select <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> Version <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span> <span class="pre">12.4-R1</span></code>:</p>
+<img alt="../../_images/4-engine-options.png" src="../../_images/4-engine-options.png" />
+</div>
+<div class="section" id="templates">
+<h4>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h4>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Free</span> <span class="pre">tier</span></code>:</p>
+<img alt="../../_images/5-templates.png" src="../../_images/5-templates.png" />
+</div>
+<div class="section" id="settings">
+<h4>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h4>
+<p>Set <code class="docutils literal notranslate"><span class="pre">DB</span> <span class="pre">instance</span> <span class="pre">identifier</span></code>, <code class="docutils literal notranslate"><span class="pre">Master</span> <span class="pre">username</span></code>, <code class="docutils literal notranslate"><span class="pre">Master</span> <span class="pre">password</span></code> and <code class="docutils literal notranslate"><span class="pre">Confirm</span> <span class="pre">password</span></code>:</p>
+<img alt="../../_images/6-settings.png" src="../../_images/6-settings.png" />
+</div>
+<div class="section" id="db-instance-size">
+<h4>DB Instance Size<a class="headerlink" href="#db-instance-size" title="Permalink to this headline">¶</a></h4>
+<p>Leave all the default settings for <code class="docutils literal notranslate"><span class="pre">DB</span> <span class="pre">Instance</span> <span class="pre">Size</span></code>:</p>
+<img alt="../../_images/6-2-db-instance-size.png" src="../../_images/6-2-db-instance-size.png" />
+</div>
+<div class="section" id="storage">
+<h4>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h4>
+<p>Leave all the default settings for <code class="docutils literal notranslate"><span class="pre">Storage</span></code>:</p>
+<img alt="../../_images/7-storage.png" src="../../_images/7-storage.png" />
+</div>
+<div class="section" id="availability-durability">
+<h4>Availability &amp; Durability<a class="headerlink" href="#availability-durability" title="Permalink to this headline">¶</a></h4>
+<p>Since we are using the free-tier we aren’t even allowed to create a standby instance. It should be greyed out, so leave this section untouched:</p>
+<img alt="../../_images/8-availability-durability.png" src="../../_images/8-availability-durability.png" />
+</div>
+<div class="section" id="connectivity">
+<h4>Connectivity<a class="headerlink" href="#connectivity" title="Permalink to this headline">¶</a></h4>
+<p>Select your VPC for connectivity:</p>
+<img alt="../../_images/9-connectivity.png" src="../../_images/9-connectivity.png" />
+<p>Click the dropdown arrow for <code class="docutils literal notranslate"><span class="pre">Additional</span> <span class="pre">connectivity</span> <span class="pre">configuration</span></code>.</p>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">Subnet</span> <span class="pre">group</span></code> (using the one we created earlier):</p>
+<img alt="../../_images/10-connectivity-additional-1.png" src="../../_images/10-connectivity-additional-1.png" />
+<p>Set the <code class="docutils literal notranslate"><span class="pre">Existing</span> <span class="pre">VPC</span> <span class="pre">security</span> <span class="pre">groups</span></code> (using PrivatePostgresDB):</p>
+<img alt="../../_images/11-connectivity-additional-2.png" src="../../_images/11-connectivity-additional-2.png" />
+</div>
+<div class="section" id="database-authentication">
+<h4>Database Authentication<a class="headerlink" href="#database-authentication" title="Permalink to this headline">¶</a></h4>
+<p>Leave the <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">authentication</span></code> section at the default value <code class="docutils literal notranslate"><span class="pre">Password</span> <span class="pre">authentication</span></code>:</p>
+<img alt="../../_images/12-database-authentication.png" src="../../_images/12-database-authentication.png" />
+</div>
+<div class="section" id="additional-configuration">
+<h4>Additional Configuration<a class="headerlink" href="#additional-configuration" title="Permalink to this headline">¶</a></h4>
+<p>Click the <code class="docutils literal notranslate"><span class="pre">Additional</span> <span class="pre">configuration</span></code> drop down arrow.</p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">Initial</span> <span class="pre">database</span> <span class="pre">name</span></code> (make sure to use the database name your project uses):</p>
+<img alt="../../_images/13-additional-configuration-1.png" src="../../_images/13-additional-configuration-1.png" />
+<p>De-select any selected options under <code class="docutils literal notranslate"><span class="pre">Backup</span></code>, <code class="docutils literal notranslate"><span class="pre">Performance</span> <span class="pre">Insights</span></code>, <code class="docutils literal notranslate"><span class="pre">Monitoring</span></code>, and <code class="docutils literal notranslate"><span class="pre">Log</span> <span class="pre">exports</span></code>:</p>
+<img alt="../../_images/13-additional-configuration-2.png" src="../../_images/13-additional-configuration-2.png" />
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">AWS RDS will automatically create backups, perform performance insights, monitor the RDS service. For the purposes of this class we will not be exploring any of these concepts, so we are turning them off. In a real world database you would configure each of these things as they provide redundancy and information for troubleshooting.</p>
+</div>
+<p>For the remainder of the form it should be all defaults, confirm yours with:</p>
+<img alt="../../_images/13-additional-configuration-3.png" src="../../_images/13-additional-configuration-3.png" />
+<p>We have completed all the information necessary to create our RDS instance so click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">RDS</span></code>.</p>
+</div>
+<div class="section" id="create-error">
+<h4>Create Error<a class="headerlink" href="#create-error" title="Permalink to this headline">¶</a></h4>
+<p>If you get the following error:</p>
+<img alt="../../_images/15-subnet-warning.png" src="../../_images/15-subnet-warning.png" />
+<p>You did not create your <code class="docutils literal notranslate"><span class="pre">DB</span> <span class="pre">Subnet</span> <span class="pre">Group</span></code> before creating your RDS instance.</p>
+</div>
+</div>
+</div>
+<div class="section" id="view-rds-instance">
+<h2>View RDS Instance<a class="headerlink" href="#view-rds-instance" title="Permalink to this headline">¶</a></h2>
+<p>You will need to view your RDS instance, we will need the RDS endpoint after it is done initializing.</p>
+<img alt="../../_images/14-rds-instance-link.png" src="../../_images/14-rds-instance-link.png" />
+</div>
+<div class="section" id="create-ec2-jumpbox">
+<h2>Create EC2 Jumpbox<a class="headerlink" href="#create-ec2-jumpbox" title="Permalink to this headline">¶</a></h2>
+<p>While we are waiting for our RDS instance to spin up let’s create the Jumpbox we will be using to interface with our RDS instance.</p>
+<p>Our RDS instance is on a private subnet, which means it’s only accessible to internal VPC network. We can’t simply PSQL into the RDS from our local computer. We will first need to create an intermediary jumpbox. This EC2 will have one responsibility: <code class="docutils literal notranslate"><span class="pre">provide</span> <span class="pre">administrative</span> <span class="pre">access</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">private</span> <span class="pre">RDS</span></code>.</p>
+<div class="section" id="create-ec2-instance">
+<h3>Create EC2 Instance<a class="headerlink" href="#create-ec2-instance" title="Permalink to this headline">¶</a></h3>
+<p>Search for the <code class="docutils literal notranslate"><span class="pre">EC2</span></code> service, and then click the <code class="docutils literal notranslate"><span class="pre">create</span></code> button.</p>
+<p>From here we will be spinning up a new Ubuntu EC2 instance with the following information:</p>
+<ul class="simple">
+<li>AMI: ubuntu 18.04</li>
+<li>type: micro</li>
+<li>VPC &amp; subnet: your vpc public subnet</li>
+<li>User data script: enter a first time setup script</li>
+</ul>
+<p>Following are the images that will guide your process:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Network</span></code>, <code class="docutils literal notranslate"><span class="pre">Subnet</span></code>, <code class="docutils literal notranslate"><span class="pre">Auto-assign</span> <span class="pre">Public</span> <span class="pre">IP</span></code>:</p>
+<img alt="../../_images/36-jumpbox-config.png" src="../../_images/36-jumpbox-config.png" />
+<p>At the very bottom of the form is the <code class="docutils literal notranslate"><span class="pre">Advanced</span> <span class="pre">Details</span></code> drop down arrow. Click it and paste in the following script to the <code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">data</span></code> section.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+apt update -y
+apt upgrade -y
+apt install -y postgresql-client
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">The image isn’t correct, but does illustrate where to add the following script.</p>
+</div>
+<img alt="../../_images/37-jumpbox-user-data-script.png" src="../../_images/37-jumpbox-user-data-script.png" />
+<p>Add tags to make your EC2 distinguishable from others:</p>
+<img alt="../../_images/38-jumpbox-name-tag.png" src="../../_images/38-jumpbox-name-tag.png" />
+<p>On the next page of <code class="docutils literal notranslate"><span class="pre">Security</span> <span class="pre">Groups</span></code> choose the Jumpbox Security Group we created above.</p>
+<p>As a reminder it allows inbound traffic on port 22 to your computer. It allows outbound traffic on ports 80, 443, and 5432.</p>
+<p>Finally set the key pair for the jumpbox. It’s easiest to use the key you already created in this class:</p>
+<img alt="../../_images/40-jumpbox-pem.png" src="../../_images/40-jumpbox-pem.png" />
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">As a best practice you would typically have a different key-pair for this jumpbox than from the key for your Web API EC2, however you are not required to do that in this class.</p>
+</div>
+</div>
+</div>
+<div class="section" id="connect-to-rds">
+<h2>Connect to RDS<a class="headerlink" href="#connect-to-rds" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have created our RDS jumpbox, check back on your RDS instance. It probably has an RDS endpoint we can use to connect to the database. We will need that RDS endpoint in order to access the RDS from our jumpbox.</p>
+<p>SSH into the jumpbox.</p>
+<p>From here use psql client to connect to RDS.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql -h rds-poc-db.cq2s2klvmrfq.us-west-2.rds.amazonaws.com -U launchcode -d project_name
+</pre></div>
+</div>
+<p>You should use your RDS public endpoint, and your database name.</p>
+<div class="section" id="configure-rds">
+<h3>Configure RDS<a class="headerlink" href="#configure-rds" title="Permalink to this headline">¶</a></h3>
+<p>Once you are in the psql CLI for your RDS enter the following commands to enable PostGIS:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span> <span class="n">extension</span> <span class="n">postgis</span><span class="p">;</span>
+<span class="k">create</span> <span class="n">extension</span> <span class="n">fuzzystrmatch</span><span class="p">;</span>
+<span class="k">create</span> <span class="n">extension</span> <span class="n">postgis_tiger_geocoder</span><span class="p">;</span>
+<span class="k">create</span> <span class="n">extension</span> <span class="n">postgis_topology</span><span class="p">;</span>
+
+<span class="k">create</span> <span class="k">user</span> <span class="n">project_name_user</span> <span class="k">with</span> <span class="k">encrypted</span> <span class="n">password</span> <span class="s1">&#39;password&#39;</span><span class="p">;</span>
+<span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="k">database</span> <span class="n">project_name</span> <span class="k">to</span> <span class="n">project_name_user</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">While enabling PostGIS isn’t necessary for the Todo Tasks API RDS isntance, it will be necessary for your MapNotes RDS instance. You will need to create the application database user, password and grant them privileges.</p>
+</div>
+</div>
+</div>
+<div class="section" id="update-systemd-service-configuration-file">
+<h2>Update Systemd Service Configuration File<a class="headerlink" href="#update-systemd-service-configuration-file" title="Permalink to this headline">¶</a></h2>
+<p>Now that our Database is setup properly we need to update our deployed API to use this new RDS instance.</p>
+<p>SSH into the EC2 of your deployed API.</p>
+<p>From here we will need to update the Systemd configuration file. It is currently using <code class="docutils literal notranslate"><span class="pre">DB_HOST=localhost</span></code> we need to update it to <code class="docutils literal notranslate"><span class="pre">DB_HOST=your-rds-endpoint</span></code>. This file lives in <code class="docutils literal notranslate"><span class="pre">/etc/opt/project-name</span></code> and more than likely is named: <code class="docutils literal notranslate"><span class="pre">project-name-app.config</span></code>.</p>
+<p>After updating your configuration file you will need to stop and start the project service: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">restart</span> <span class="pre">project-name.service</span></code>.</p>
+<p>After restarting the service check the journalctl logs to make sure it connected to the database properly: <code class="docutils literal notranslate"><span class="pre">journalctl</span> <span class="pre">-fu</span> <span class="pre">project-name.service</span></code>.</p>
+<p>If your application doesn’t start cleanly let your instructor know. It is almost certainly due to a misconfiguration with your RDS instance setup and you will need to troubleshoot it together.</p>
+<div class="section" id="bonus-clean-up-ec2">
+<h3>Bonus: Clean up EC2<a class="headerlink" href="#bonus-clean-up-ec2" title="Permalink to this headline">¶</a></h3>
+<p>Now that we are using RDS for our relational database needs we can remove some unecessary dependencies from the EC2 hosting our web application. It no longer needs <code class="docutils literal notranslate"><span class="pre">docker</span></code>, <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code>, or the existing docker container.</p>
+</div>
+</div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>We migrated our embedded database as a docker container to AWS managed RDS.</p>
+<p>To do this we:</p>
+<ul class="simple">
+<li>create new subnets</li>
+<li>create a new subnet group</li>
+<li>create RDS instance</li>
+<li>create an EC2 RDS jumpbox</li>
+<li>SSH into the RDS jumpbox</li>
+<li>Connect to RDS from jumpbox</li>
+<li>Configure RDS</li>
+<li>update security group rules</li>
+<li>update deployed API</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

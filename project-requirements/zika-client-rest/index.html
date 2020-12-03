@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Project: Zika Client REST &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project: Zika Client" href="../zika-client/index.html" />
+    <link rel="prev" title="Project: Map Notes Backed by AWS RDS" href="../mapnotes-rds/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="/installations/index.html">Installations</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Welcome, Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Terminal, Shell, Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Shell, Git, SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: SQL, HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: HTTP, Docker</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day1/index.html">Week 2 - Day 1: HTML, CSS, Browser DevTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day2/index.html">Week 2 - Day 2: HTML/CSS Template, JavaScript Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day3/index.html">Week 2 - Day 3: Programming Fundamentals, JavaScript, DOM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day4/index.html">Week 2 - Day 4: JS, DOM, Promises, AJAX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day5/index.html">Week 2 - Day 5: Promises, AJAX, HTTP</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: Java, OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2: Spring Boot, Controllers, Routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Models, ORM (Hibernate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: Persistence, ORM Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: Review</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day1/index.html">Week 4 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day2/index.html">Week 4 - Day 2: Security, Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day3/index.html">Week 4 - Day 3: Integration testing, dependency injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day4/index.html">Week 4 - Day 4: Postgres, Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day5/index.html">Week 4 - Day 5: AJAX, Open Layers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/project/index.html">Week 5 - Project Week: Zika Mission Control</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day1/index.html">Week 6 - Day 1: RESTful web services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day2/index.html">Week 6 - Day 2: Swagger REST framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day3/index.html">Week 6 - Day 3: Intro to Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day4/index.html">Week 6 - Day 4: More Elasticsearch, Integrating ES with Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day5/index.html">Week 6 - Day 5: ES2015, ESLint, OpenLayers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week07/project/index.html">Week 7 - Project Week: Zika Mission Control Part 2</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day1/index.html">Week 8 - Day 1: Intro to DevOps/AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day2/index.html">Week 8 - Day 2: More with AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day3/index.html">Week 8 - Day 3: 12 Factor Apps and Auto Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day4/index.html">Week 8 - Day 4: Gradle, Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day5/index.html">Week 8 - Day 5: Sonarqube</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/project/index.html">Week 9 - Project Week: Zika Mission Control Part 3</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week11/project/index.html">Week 11 - Project Week: Zika Mission Control Part 4</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day3/index.html">Week 12 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day4/index.html">Week 12 - Day 4: OAuth 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day5/index.html">Week 12 - Day 5: Certificates</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/aws-intro/index.html">Walkthrough: Intro to AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/aws-rds-walkthrough/index.html">Walkthrough: RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/client-certificates/index.html">Client Certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/client-deployment-s3/index.html">Deploy Zika Client to S3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/curl/index.html">Walkthrough: Intro to Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/docker/index.html">Walkthrough: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/elasticsearch-spring/index.html">Walkthrough: Elasticsearch in Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/elasticsearch/index.html">Walkthrough: Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/elasticsearch2/index.html">Walkthrough: Elasticsearch Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/eslint-airwaze/index.html">Walkthrough: ESLint Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/gitLab/index.html">Walkthrough: Git and Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/gradle/index.html">Walkthrough: Gradle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/hashing-salting/index.html">Walkthrough: Hashing and Salting Passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/jenkins/index.html">Walkthrough: CI/CD With Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/launchcart-rest/index.html">Walkthrough: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/nginx-proxy-spring/index.html">NGINX as a Proxy to Spring Apache Tomcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/oauth2/index.html">Visual OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/openlayers/index.html">Walkthrough: OpenLayers and jQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/postgress/index.html">Walkthrough: PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/sonarqube/index.html">Walkthrough: Sonarqube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/spring-data-jpa-hibernate/index.html">Walkthrough: Cars Demo - Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/spring-integration-testing/index.html">Walkthrough: Spring Integration Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/spring-pet-api-postgres-integration/index.html">Spring Postgres Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/springfox-swagger/index.html">Walkthrough: SwaggerUI via SpringFox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/swagger/index.html">Walkthrough: SwaggerUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/tdd/index.html">Walkthrough: TDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/todo-tasks-single-ec2-deployment/index.html">Todo Tasks Deployment Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/unit-files/index.html">Running a Java Application as a Linux Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/unit-tests/index.html">Walkthrough: Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/upgrading-spring-boot/index.html">Walkthrough: Upgrading to Spring Boot 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/watch-todo-tasks-deployment/index.html">Watch a Todo Tasks Deployment</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/airwaze/index.html">Studio: Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-EC2-basics/index.html">Studio: AWS Devops Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-auto-scaling/index.html">Scaling horizontally AutoScaling Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-rds-vpc/index.html">Studio: AWS RDS VPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/curl/index.html">Curl Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch1/index.html">Elasticsearch Query Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch2/index.html">Elasticsearch Queries Studio 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/junit/index.html">Studio: JUnit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart-rest/index.html">Studio: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart1/index.html">Studio: LaunchCart Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart2/index.html">Studio: LaunchCart Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/openlayers-es2015/index.html">Studio: OpenLayers ES2015 Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/swagger/index.html">Studio: Springfox and Swagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/tdd/index.html">Studio: Test-Driven Development</a></li>
+</ol>
+<ol class="current">
+<li class="toctree-l1"><a class="reference internal" href="../deploy-mapnotes-api-single-ec2/index.html">Project: Deploy Map Notes to a Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mapnotes-api/index.html">Project: Map Notes API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mapnotes-pipeline/index.html">Project: Mapnotes API Jenkins Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mapnotes-rds/index.html">Project: Map Notes Backed by AWS RDS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project: Zika Client REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zika-client/index.html">Project: Zika Client</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/00-prep-week/index.html">Installation: Essential Tooling &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/01-docker/index.html">Installation: Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/02-docker-psql/index.html">Installation: Docker PSQL Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/03-docker-postgis/index.html">Installation: Docker PostGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/04-docker-elasticsearch/index.html">Installation: Docker Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/05-docker-kibana/index.html">Installation: Docker Kibana</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/06-docker-jenkins/index.html">Installation: Docker Jenkins</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/00-intellij/index.html">Configuration: IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/01-runtime-configurations/index.html">Configuration: IntelliJ - Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/02-environment-variables-intellij/index.html">Configuration: Environment Variables - IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/04-spring-elasticsearch/index.html">Configuration: Spring &amp; Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/05-spring-postgres/index.html">Configuration: Spring &amp; Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/06-vscode-eslint/index.html">Configuration: Visual Studio Code - ESLint</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/docker/index.html">Docker</a></li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Project: Zika Client REST</a><ul>
+<li><a class="reference internal" href="#zika-mission-control">Zika Mission Control</a></li>
+<li><a class="reference internal" href="#project-overview">Project Overview</a></li>
+<li><a class="reference internal" href="#project-setup">Project Setup</a><ul>
+<li><a class="reference internal" href="#add-map-notes-source-code">Add Map Notes source code</a><ul>
+<li><a class="reference internal" href="#primary-objectives-branch">Primary Objectives Branch</a></li>
+<li><a class="reference internal" href="#generic-components-primary-objectives">Generic Components + Primary Objectives</a></li>
+<li><a class="reference internal" href="#blank-starter">Blank Starter</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#add-map-notes-api-container">Add Map Notes API Container</a></li>
+<li><a class="reference internal" href="#add-html-elements">Add HTML elements</a></li>
+<li><a class="reference internal" href="#initialize-map-notes">Initialize Map Notes</a></li>
+<li><a class="reference internal" href="#verify-setup">Verify Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-requirements">Project Requirements</a><ul>
+<li><a class="reference internal" href="#stakeholder-requirements">Stakeholder Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#primary-objectives">Primary Objectives</a><ul>
+<li><a class="reference internal" href="#map-notes-manager">Map Notes Manager</a></li>
+<li><a class="reference internal" href="#map-notes-form">Map Notes Form</a></li>
+<li><a class="reference internal" href="#map-notes-draw-interaction">Map Notes Draw Interaction</a></li>
+<li><a class="reference internal" href="#map-notes-note-viewer">Map Notes Note Viewer</a></li>
+<li><a class="reference internal" href="#take-inventory">Take Inventory</a></li>
+<li><a class="reference internal" href="#mapnotes-rest-api-spec">MapNotes REST API Spec</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#secondary-objectives">Secondary Objectives</a></li>
+<li><a class="reference internal" href="#turning-in-your-work">Turning in Your Work</a><ul>
+<li><a class="reference internal" href="#git-workflow">Git Workflow</a></li>
+<li><a class="reference internal" href="#code-review">Code Review</a></li>
+<li><a class="reference internal" href="#presentation">Presentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="project-zika-client-rest">
+<span id="id1"></span><h1>Project: Zika Client REST<a class="headerlink" href="#project-zika-client-rest" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="zika-mission-control">
+<h2>Zika Mission Control<a class="headerlink" href="#zika-mission-control" title="Permalink to this headline">¶</a></h2>
+<p>We continue to work on our Zika Client this week, by incorporating some features that consume a RESTful Map Notes API.</p>
+<p>The Map Notes API provides the ability to save features that are drawn on an OpenLayers map together with a note title and note body. These Map Notes can be saved, recalled, and deleted from the API. This gives end users the ability to take notes on interesting areas around the map. With this application it may allow certain countries, or municipalities to mark areas within their borders as potential hotspots, or areas that may have unusual circumstances that make providing medical care difficult.</p>
+<p>As an example consider the following image:</p>
+<img alt="../../_images/yopal-layer.png" src="../../_images/yopal-layer.png" />
+<p>This feature will allow scientists to flag specific areas on the map as points of interest with regards to the Zika outbreak.</p>
+</div>
+<div class="section" id="project-overview">
+<h2>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this headline">¶</a></h2>
+<p>You objective for this week is to update your Zika Client to include this new Map Notes API.</p>
+<p>Starter code has been provided so you can focus on the RESTful API calls from your Zika Client, however you are more than welcome to take a shot at building the entire Zika Client Map Notes integration yourself after completing the primary objectives.</p>
+</div>
+<div class="section" id="project-setup">
+<h2>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h2>
+<p>In order to start working with this new Map Notes API we will need to do a few setup steps:</p>
+<ul class="simple">
+<li>Add mapnotes source code</li>
+<li>Add mapnotes API container</li>
+<li>Add HTML elements</li>
+<li>Initialize Map Notes</li>
+</ul>
+<div class="section" id="add-map-notes-source-code">
+<h3>Add Map Notes source code<a class="headerlink" href="#add-map-notes-source-code" title="Permalink to this headline">¶</a></h3>
+<p>You will have three options for the amount of starter code that is given to you:</p>
+<ul class="simple">
+<li>primary objectives</li>
+<li>generic components + primary objectives</li>
+<li>blank starter</li>
+</ul>
+<p>The Primary Objectives branch has you focused on the RESTful API calls that will be made to the Map Notes API.</p>
+<p>The Generic Components branch has you focused on the RESTful API calls and creating the generic components.</p>
+<p>The blank starter branch has a small amount of code, but largely just structure and you will be responsible for creating the majority of the module.</p>
+<p>Your goal is to finish the <strong>primary objectives</strong> by the end of the week.</p>
+<div class="section" id="primary-objectives-branch">
+<h4>Primary Objectives Branch<a class="headerlink" href="#primary-objectives-branch" title="Permalink to this headline">¶</a></h4>
+<p>With this branch you will be responsible for filling out the provided interfaces in:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">new-notes-form-handlers.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">note-viewer-handlers.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">notes-manager-handlers.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">api.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">map-notes-layer.js</span></code></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone -b primary-objectives-starter https://gitlab.com/LaunchCodeTraining/zika-project/mapnotes src/modules/mapnotes
+rm -rf src/modules/mapnotes/.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="generic-components-primary-objectives">
+<h4>Generic Components + Primary Objectives<a class="headerlink" href="#generic-components-primary-objectives" title="Permalink to this headline">¶</a></h4>
+<p>With the generic components branch you will be responsible for filling out everything listed above and the generic components found in <code class="docutils literal notranslate"><span class="pre">generic-components.js</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone -b generic-components-starter https://gitlab.com/LaunchCodeTraining/zika-project/mapnotes src/modules/mapnotes
+rm -rf src/modules/mapnotes/.git
+</pre></div>
+</div>
+</div>
+<div class="section" id="blank-starter">
+<h4>Blank Starter<a class="headerlink" href="#blank-starter" title="Permalink to this headline">¶</a></h4>
+<p>The blank starter branch, has some structure in place, but the rest is up to you.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone -b blank-starter https://gitlab.com/LaunchCodeTraining/zika-project/mapnotes src/modules/mapnotes
+rm -rf src/modules/mapnotes/.git<span class="sb">`</span>
+</pre></div>
+</div>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">You will notice that each of these commands deletes the hidden <code class="docutils literal notranslate"><span class="pre">.git/</span></code> directory within the mapnotes module. You will want this directory to be gone so that it doesn’t conflict with the <code class="docutils literal notranslate"><span class="pre">.git/</span></code> directory of your base project.</p>
+</div>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>warning</p>
+<p class="last">Regardless of the branch you start with you will be expected to finish the Primary Objectives within the week.</p>
+</div>
+</div>
+</div>
+<div class="section" id="add-map-notes-api-container">
+<h3>Add Map Notes API Container<a class="headerlink" href="#add-map-notes-api-container" title="Permalink to this headline">¶</a></h3>
+<p>The next step is to add the Map Notes API container to this project.</p>
+<p>You can do this by appending a new service to the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file located at the root of this project.</p>
+<p>You will need to add as a new service:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">mapnotes-api</span><span class="p">:</span>
+    <span class="nt">container_name</span><span class="p">:</span> <span class="s">&quot;zika-mapnotes-api&quot;</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="s">&quot;launchcodedevops/mapnotes-api-node&quot;</span>
+    <span class="nt">ports</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;8008:8008&quot;</span>
+</pre></div>
+</div>
+<p>After adding this section your yaml file should look like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="s">&quot;3.7&quot;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+    <span class="nt">postgres</span><span class="p">:</span>
+        <span class="nt">container_name</span><span class="p">:</span> <span class="s">&quot;zika-postgres-db&quot;</span>
+        <span class="nt">image</span><span class="p">:</span> <span class="s">&quot;launchcodedevops/zika:geoserver&quot;</span>
+        <span class="nt">ports</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;5432:5432&quot;</span>
+    <span class="nt">geoserver</span><span class="p">:</span>
+        <span class="nt">container_name</span><span class="p">:</span> <span class="s">&quot;zika-geoserver-api&quot;</span>
+        <span class="nt">image</span><span class="p">:</span> <span class="s">&quot;kartoza/geoserver:2.17.2&quot;</span>
+        <span class="nt">ports</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;8080:8080&quot;</span>
+        <span class="nt">depends_on</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">postgres</span>
+    <span class="nt">mapnotes-api</span><span class="p">:</span>
+        <span class="nt">container_name</span><span class="p">:</span> <span class="s">&quot;zika-mapnotes-api&quot;</span>
+        <span class="nt">image</span><span class="p">:</span> <span class="s">&quot;launchcodedevops/mapnotes-api-node&quot;</span>
+        <span class="nt">ports</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;8008:8008&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-html-elements">
+<h3>Add HTML elements<a class="headerlink" href="#add-html-elements" title="Permalink to this headline">¶</a></h3>
+<p>The MapNotes code you added in a previous step requires an OpenLayers map object, which you already have in your project. Map notes also requires two HTML divs to add the Map Note components to. You will need to add the following HTML after your map div:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mapnotes&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mapnotes-manager&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mapnotes-active-note&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>When you initialize the Map Notes you will need to reference these two divs by their ids (mapnotes-manager and mapnotes-active-note).</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">You may want to change the CSS of your map. If it is currently set to take up 100% of the screen, it will be difficult for the user to see and interact with the Map Notes Manager that will be loaded in the next step.</p>
+</div>
+</div>
+<div class="section" id="initialize-map-notes">
+<h3>Initialize Map Notes<a class="headerlink" href="#initialize-map-notes" title="Permalink to this headline">¶</a></h3>
+<p>Finally in your index.js, or wherever you first initialize your Open Layers map object, you will need to initialize map notes with the following JavaScript code:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">initializeMapNotes</span><span class="p">({</span>
+    <span class="nx">map</span><span class="p">,</span>
+    <span class="nx">notesManagerTargetId</span><span class="o">:</span> <span class="s2">&quot;mapnotes-manager&quot;</span><span class="p">,</span>
+    <span class="nx">activeNoteTargetId</span><span class="o">:</span> <span class="s2">&quot;mapnotes-active-note&quot;</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="verify-setup">
+<h3>Verify Setup<a class="headerlink" href="#verify-setup" title="Permalink to this headline">¶</a></h3>
+<p>After setting everything up we need to check a couple of things to make sure this project is ready to go.</p>
+<p>When running this project with <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">start</span></code> it should start up three docker containers named:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">zika-mapnotes-api</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">zika-geoserver-api</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">zika-postgres-db</span></code></li>
+</ul>
+<p>You should check that all three of these containers started successfully by running <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>. If you don’t see the <code class="docutils literal notranslate"><span class="pre">zika-mapnotes-api</span></code> container you may have an issue with adding the map notes API container.</p>
+<p>You should also check that your Zika Client starts cleanly with no issues. If you pulled the primary-objectives branch you will notice a new select box, and button at the bottom of your application the first time it launches:</p>
+<img alt="../../_images/successful-startup.png" src="../../_images/successful-startup.png" />
+<p>If you have any additional issues with starting this application reach out to an instructor.</p>
+</div>
+</div>
+<div class="section" id="project-requirements">
+<h2>Project Requirements<a class="headerlink" href="#project-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Following are the requirements from our stakeholders and our tech team.</p>
+<div class="section" id="stakeholder-requirements">
+<h3>Stakeholder Requirements<a class="headerlink" href="#stakeholder-requirements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>All map notes should be loaded into a select box when the application is first initialized</li>
+<li>Map notes should be selectable via the select box</li>
+<li>When a map note is selected the title and body of the map note should be displayed with a load features button and a delete button</li>
+<li>When features are loaded by clicking the load features button a layer should be added to the map that contains a graphical representation of the map note</li>
+<li>When the delete button is clicked the selected note should be deleted from the API</li>
+<li>When the Create MapNote button is clicked the user should be presented with a form where they can add a title and body, a draw features button will allow the user to interact with the map by drawing a polygon by clicking</li>
+<li>Once the user is happy with the polygon(s) they have added to the map they can click the <code class="docutils literal notranslate"><span class="pre">Save</span></code> button which should send the information to the API to be persisted</li>
+</ul>
+</div>
+</div>
+<div class="section" id="primary-objectives">
+<h2>Primary Objectives<a class="headerlink" href="#primary-objectives" title="Permalink to this headline">¶</a></h2>
+<p>You should <strong>complete all primary objectives</strong> before working on any secondary objectives.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">You may discuss aspects of the project with other students if you are stuck. But <strong>you may not ever write nor share code</strong> with each other as part of that assistance.</p>
+</div>
+<ol class="arabic simple">
+<li><code class="docutils literal notranslate"><span class="pre">Create</span></code> click event handler</li>
+<li><code class="docutils literal notranslate"><span class="pre">Draw</span> <span class="pre">Features</span></code> click event handler</li>
+<li><code class="docutils literal notranslate"><span class="pre">Save</span></code> click event handler</li>
+<li>Populate select box on load</li>
+<li><code class="docutils literal notranslate"><span class="pre">Select</span> <span class="pre">box</span> <span class="pre">on</span> <span class="pre">change</span></code> event handler</li>
+<li><code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Features</span></code> event handler</li>
+<li><code class="docutils literal notranslate"><span class="pre">Delete</span></code> event handler</li>
+</ol>
+<p>This week instead of having articles that help you collect your thoughts, you will be responsible for reading the provided code and thinking through what code will need to be added to the provided event handlers to achieve the objectives.</p>
+<p>You may find the following images useful:</p>
+<div class="section" id="map-notes-manager">
+<h3>Map Notes Manager<a class="headerlink" href="#map-notes-manager" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/map-notes-manager.png" src="../../_images/map-notes-manager.png" />
+<p>The base view of our Map Notes Manager are the select box: <code class="docutils literal notranslate"><span class="pre">mapnotes-notes-manager-note-selector</span></code> and the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">MapNote</span></code> button: <code class="docutils literal notranslate"><span class="pre">mapnotes-note-manager-create</span></code>.</p>
+<p>What requests are necessary to load the initial notes into the select box?</p>
+<p>What happens when a user clicks the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">MapNote</span></code> button?</p>
+</div>
+<div class="section" id="map-notes-form">
+<h3>Map Notes Form<a class="headerlink" href="#map-notes-form" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/map-notes-form.png" src="../../_images/map-notes-form.png" />
+<p>The map notes form is how we gather the title and body from the user.</p>
+<p>What are the inputs?</p>
+<p>What happens when a user clicks the <code class="docutils literal notranslate"><span class="pre">Draw</span> <span class="pre">Features</span></code> button?</p>
+<p>What happens when a user clicks the <code class="docutils literal notranslate"><span class="pre">Save</span></code> button?</p>
+</div>
+<div class="section" id="map-notes-draw-interaction">
+<h3>Map Notes Draw Interaction<a class="headerlink" href="#map-notes-draw-interaction" title="Permalink to this headline">¶</a></h3>
+<img alt="../../_images/draw-interaction.png" src="../../_images/draw-interaction.png" />
+<p>A draw interaction needs to be enabled and disabled. Which buttons are these interactions tied to?</p>
+<p>How do you get a Feature Collection out of the map so that it can be packaged into a fetch request?</p>
+</div>
+<div class="section" id="map-notes-note-viewer">
+<h3>Map Notes Note Viewer<a class="headerlink" href="#map-notes-note-viewer" title="Permalink to this headline">¶</a></h3>
+<p>What happens when a user selects a note from the select box?</p>
+<img alt="../../_images/map-notes-note-viewer.png" src="../../_images/map-notes-note-viewer.png" />
+<p>What happens if the user clicks the <code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Features</span></code> button?</p>
+<p>What happens if the user clicks the <code class="docutils literal notranslate"><span class="pre">Delete</span></code> button?</p>
+</div>
+<div class="section" id="take-inventory">
+<h3>Take Inventory<a class="headerlink" href="#take-inventory" title="Permalink to this headline">¶</a></h3>
+<p>Look over the provided code to get a sense of what has already been accomplished. You will be predominately writing code in:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">new-notes-form-handlers.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">note-viewer-handlers.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">notes-manager-handlers.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">api.js</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">map-notes-layer.js</span></code></li>
+</ul>
+<p>Think about the various handlers:</p>
+<ul class="simple">
+<li>What are they responsible for?</li>
+<li>What requests if any should they incorporate?</li>
+<li>What DOM elements are they associated with?</li>
+<li>How can they utilize the provided code?</li>
+</ul>
+</div>
+<div class="section" id="mapnotes-rest-api-spec">
+<h3>MapNotes REST API Spec<a class="headerlink" href="#mapnotes-rest-api-spec" title="Permalink to this headline">¶</a></h3>
+<p>Endpoints:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/notes</span> <span class="pre">-&gt;</span> <span class="pre">(Note[])</span> <span class="pre">200</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/notes/{noteId}</span> <span class="pre">-&gt;</span> <span class="pre">(Note)</span> <span class="pre">200</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/notes/{noteId}</span> <span class="pre">-&gt;</span> <span class="pre">204</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/notes</span> <span class="pre">({title,</span> <span class="pre">body})</span> <span class="pre">-&gt;</span> <span class="pre">(Note)</span> <span class="pre">201</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/notes/{id}/features</span> <span class="pre">-&gt;</span> <span class="pre">(GeoJSON</span> <span class="pre">feature</span> <span class="pre">collection)</span> <span class="pre">200</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">PUT</span> <span class="pre">/notes/{id}/features</span> <span class="pre">(GeoJSON</span> <span class="pre">feature</span> <span class="pre">collection)</span> <span class="pre">-&gt;</span> <span class="pre">201</span></code></li>
+</ul>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">You will be using _both_ the GeoJSON <a class="reference external" href="https://openlayers.org/en/latest/apidoc/module-ol_format_GeoJSON-GeoJSON.html#readFeatures" target="_blank">readFeatures<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> and <a class="reference external" href="https://openlayers.org/en/latest/apidoc/module-ol_format_GeoJSON-GeoJSON.html#writeFeatures" target="_blank">writeFeatures<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> methods. You have used <code class="docutils literal notranslate"><span class="pre">readFeatures</span></code> when loading your WFS layer. The <code class="docutils literal notranslate"><span class="pre">writeFeatures</span></code> method can be used to turn features into a GeoJSON string. Think about which one will be used when you are _receiving_  or _sending_ the note features.</p>
+</div>
+<p>Note Shape:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Note {
+    id: number,
+    title: string,
+    body: string
+}
+</pre></div>
+</div>
+<p>NoteFeatures Shape: <a class="reference external" href="https://en.wikipedia.org/wiki/GeoJSON#Example" target="_blank">a GeoJSON FeatureCollection<i class="fas fa-external-link-alt" aria-hidden="true"></i></a></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>NoteFeatures {
+    type: &quot;FeatureCollection&quot;,
+    features: NoteFeature[]
+}
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>NoteFeature {
+    type: &quot;Feature&quot;,
+    geometry: {
+        type: &quot;Polygon&quot;,
+        coordinates: Coordinates[]
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="secondary-objectives">
+<h2>Secondary Objectives<a class="headerlink" href="#secondary-objectives" title="Permalink to this headline">¶</a></h2>
+<p>For your secondary objectives no articles will be given to you. You will have to think critically and plan out the tasks needed to complete the objective. You may always reach out to the instructor for guidance but be aware that they will only provide support through discussion – not code!</p>
+<ul class="simple">
+<li>build the generic components of the map notes client source code</li>
+<li>build the entire map notes client source code</li>
+<li>externalize your configuration</li>
+</ul>
+</div>
+<div class="section" id="turning-in-your-work">
+<h2>Turning in Your Work<a class="headerlink" href="#turning-in-your-work" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="git-workflow">
+<h3>Git Workflow<a class="headerlink" href="#git-workflow" title="Permalink to this headline">¶</a></h3>
+<p>As you work on your project you will be required to <strong>commit early and commit often</strong>. Part of your review will include an assessment of your usage of git. You are expected to have a history of commits documenting your progress through the use of <strong>descriptive commit messages</strong>.</p>
+<p>Your git history should include <strong>separate branches for each primary objective</strong> titled <cite>objective-#</cite> which contains all the commits associated with its completion.</p>
+<p>After completing each objective you can <cite>git merge</cite> the objective feature branch back into your master branch. Make sure that you <strong>push your branches</strong> to the remote repo on GitLab after completing each of the primary objectives. This includes pushing the <cite>master</cite> branch after each objective branch is merged into it.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last"><strong>When you complete your final objective</strong> you will open a Merge Request (MR) on GitLab to merge that objective feature branch into <cite>master</cite>. Notify your instructor so they can begin your code review.</p>
+</div>
+</div>
+<div class="section" id="code-review">
+<h3>Code Review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h3>
+<p>After opening your MR your instructor will review your code and leave feedback. If changes are requested due to an incomplete or non-functioning objective you will be required to implement the suggested changes and push them up for further review. When your instructor has confirmed that your objectives are complete you can work on the Secondary and Bonus objectives!</p>
+</div>
+<div class="section" id="presentation">
+<h3>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h3>
+<p>Typically at the end of the week we try to have project presentations where everyone gets a chance to show their project to the rest of the class. Due to the remote nature of this course we may try to do this, or we may skip this. Either way be prepared to show and talk about your project at the end of the project week.</p>
+<p>At the end of this course, during your graduation ceremony, you will be expected to present your final project to the attendees. Every project week we will have a presentation as a way for you to practice for this final presentation.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

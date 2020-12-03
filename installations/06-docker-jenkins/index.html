@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Installation: Docker Jenkins &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configuration: IntelliJ" href="../../configurations/00-intellij/index.html" />
+    <link rel="prev" title="Installation: Docker Kibana" href="../05-docker-kibana/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="/installations/index.html">Installations</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Welcome, Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Terminal, Shell, Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Shell, Git, SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: SQL, HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: HTTP, Docker</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day1/index.html">Week 2 - Day 1: HTML, CSS, Browser DevTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day2/index.html">Week 2 - Day 2: HTML/CSS Template, JavaScript Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day3/index.html">Week 2 - Day 3: Programming Fundamentals, JavaScript, DOM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day4/index.html">Week 2 - Day 4: JS, DOM, Promises, AJAX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day5/index.html">Week 2 - Day 5: Promises, AJAX, HTTP</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: Java, OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2: Spring Boot, Controllers, Routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Models, ORM (Hibernate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: Persistence, ORM Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: Review</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day1/index.html">Week 4 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day2/index.html">Week 4 - Day 2: Security, Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day3/index.html">Week 4 - Day 3: Integration testing, dependency injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day4/index.html">Week 4 - Day 4: Postgres, Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day5/index.html">Week 4 - Day 5: AJAX, Open Layers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/project/index.html">Week 5 - Project Week: Zika Mission Control</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day1/index.html">Week 6 - Day 1: RESTful web services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day2/index.html">Week 6 - Day 2: Swagger REST framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day3/index.html">Week 6 - Day 3: Intro to Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day4/index.html">Week 6 - Day 4: More Elasticsearch, Integrating ES with Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day5/index.html">Week 6 - Day 5: ES2015, ESLint, OpenLayers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week07/project/index.html">Week 7 - Project Week: Zika Mission Control Part 2</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day1/index.html">Week 8 - Day 1: Intro to DevOps/AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day2/index.html">Week 8 - Day 2: More with AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day3/index.html">Week 8 - Day 3: 12 Factor Apps and Auto Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day4/index.html">Week 8 - Day 4: Gradle, Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day5/index.html">Week 8 - Day 5: Sonarqube</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/project/index.html">Week 9 - Project Week: Zika Mission Control Part 3</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week11/project/index.html">Week 11 - Project Week: Zika Mission Control Part 4</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day3/index.html">Week 12 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day4/index.html">Week 12 - Day 4: OAuth 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day5/index.html">Week 12 - Day 5: Certificates</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/aws-intro/index.html">Walkthrough: Intro to AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/aws-rds-walkthrough/index.html">Walkthrough: RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/client-certificates/index.html">Client Certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/client-deployment-s3/index.html">Deploy Zika Client to S3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/curl/index.html">Walkthrough: Intro to Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/docker/index.html">Walkthrough: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/elasticsearch-spring/index.html">Walkthrough: Elasticsearch in Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/elasticsearch/index.html">Walkthrough: Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/elasticsearch2/index.html">Walkthrough: Elasticsearch Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/eslint-airwaze/index.html">Walkthrough: ESLint Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/gitLab/index.html">Walkthrough: Git and Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/gradle/index.html">Walkthrough: Gradle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/hashing-salting/index.html">Walkthrough: Hashing and Salting Passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/jenkins/index.html">Walkthrough: CI/CD With Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/launchcart-rest/index.html">Walkthrough: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/nginx-proxy-spring/index.html">NGINX as a Proxy to Spring Apache Tomcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/oauth2/index.html">Visual OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/openlayers/index.html">Walkthrough: OpenLayers and jQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/postgress/index.html">Walkthrough: PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/sonarqube/index.html">Walkthrough: Sonarqube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/spring-data-jpa-hibernate/index.html">Walkthrough: Cars Demo - Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/spring-integration-testing/index.html">Walkthrough: Spring Integration Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/spring-pet-api-postgres-integration/index.html">Spring Postgres Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/springfox-swagger/index.html">Walkthrough: SwaggerUI via SpringFox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/swagger/index.html">Walkthrough: SwaggerUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/tdd/index.html">Walkthrough: TDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/todo-tasks-single-ec2-deployment/index.html">Todo Tasks Deployment Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/unit-files/index.html">Running a Java Application as a Linux Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/unit-tests/index.html">Walkthrough: Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/upgrading-spring-boot/index.html">Walkthrough: Upgrading to Spring Boot 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../walkthroughs/watch-todo-tasks-deployment/index.html">Watch a Todo Tasks Deployment</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/airwaze/index.html">Studio: Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-EC2-basics/index.html">Studio: AWS Devops Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-auto-scaling/index.html">Scaling horizontally AutoScaling Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-rds-vpc/index.html">Studio: AWS RDS VPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/curl/index.html">Curl Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch1/index.html">Elasticsearch Query Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch2/index.html">Elasticsearch Queries Studio 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/junit/index.html">Studio: JUnit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart-rest/index.html">Studio: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart1/index.html">Studio: LaunchCart Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart2/index.html">Studio: LaunchCart Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/openlayers-es2015/index.html">Studio: OpenLayers ES2015 Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/swagger/index.html">Studio: Springfox and Swagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/tdd/index.html">Studio: Test-Driven Development</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/deploy-mapnotes-api-single-ec2/index.html">Project: Deploy Map Notes to a Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-api/index.html">Project: Map Notes API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-pipeline/index.html">Project: Mapnotes API Jenkins Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-rds/index.html">Project: Map Notes Backed by AWS RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/zika-client-rest/index.html">Project: Zika Client REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/zika-client/index.html">Project: Zika Client</a></li>
+</ol>
+<ol class="current">
+<li class="toctree-l1"><a class="reference internal" href="../00-prep-week/index.html">Installation: Essential Tooling &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-docker/index.html">Installation: Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-docker-psql/index.html">Installation: Docker PSQL Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-docker-postgis/index.html">Installation: Docker PostGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-docker-elasticsearch/index.html">Installation: Docker Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-docker-kibana/index.html">Installation: Docker Kibana</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation: Docker Jenkins</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/00-intellij/index.html">Configuration: IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/01-runtime-configurations/index.html">Configuration: IntelliJ - Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/02-environment-variables-intellij/index.html">Configuration: Environment Variables - IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/04-spring-elasticsearch/index.html">Configuration: Spring &amp; Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/05-spring-postgres/index.html">Configuration: Spring &amp; Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/06-vscode-eslint/index.html">Configuration: Visual Studio Code - ESLint</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/docker/index.html">Docker</a></li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Installation: Docker Jenkins</a><ul>
+<li><a class="reference internal" href="#what-do-we-need">What do We Need</a></li>
+<li><a class="reference internal" href="#steps">Steps</a></li>
+<li><a class="reference internal" href="#clone-docker-compose-yml">Clone <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code></a></li>
+<li><a class="reference internal" href="#create-docker-env-file">Create Docker <code class="docutils literal notranslate"><span class="pre">.env</span></code> File</a></li>
+<li><a class="reference internal" href="#start-jenkins-and-postgis-containers">Start Jenkins and Postgis Containers</a></li>
+<li><a class="reference internal" href="#jenkins-first-time-setup">Jenkins First Time Setup</a></li>
+<li><a class="reference internal" href="#testing-the-aws-cli">Testing the AWS CLI</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="installation-docker-jenkins">
+<span id="docker-jenkins"></span><h1>Installation: Docker Jenkins<a class="headerlink" href="#installation-docker-jenkins" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-do-we-need">
+<h2>What do We Need<a class="headerlink" href="#what-do-we-need" title="Permalink to this headline">¶</a></h2>
+<p>We are using Jenkins as our CI/CD tool that will make our life much easier. We want to configure this tool so that it will:</p>
+<ul class="simple">
+<li>compile our Java source code</li>
+<li>test our Java source code</li>
+<li>create our build artifacts</li>
+<li>deliver our build artifacts</li>
+</ul>
+<p>We will need to create an environment for our Jenkins tool AND for a testing database. Luckily we can do this quickly and easily with Docker.</p>
+<div class="admonition-warning admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>warning</p>
+<p class="last">Do not use the following <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file to create your Jenkins and Postgis databse. A <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file will be provided for you in a later step.</p>
+</div>
+<div class="highlight-yml notranslate"><div class="highlight"><pre><span></span>version: &quot;3.7&quot;
+
+services:
+  jenkins:
+    image: launchcodedevops/jenkins-awscli
+    ports:
+    - &quot;${JENKINS_PORT:-8080}:8080&quot;
+  postgres:
+    image: postgis/postgis:12-master
+    # hardcode here for consistency
+    # this is an ephemeral test db its credentials are arbitrary
+    environment:
+    - POSTGRES_DB=test
+    - POSTGRES_USER=test
+    - POSTGRES_PASSWORD=test
+</pre></div>
+</div>
+<p>The preceding <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file would create two docker containers: <code class="docutils literal notranslate"><span class="pre">jenkins</span></code> and <code class="docutils literal notranslate"><span class="pre">postgres</span></code>. They would be spun up on the same virtual Docker network and therefore would be able to communicate with each other via DNS resolution.</p>
+</div>
+<div class="section" id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Clone docker-compose.yml</li>
+<li>Create docker <code class="docutils literal notranslate"><span class="pre">.env</span></code> file</li>
+<li>Start Jenkins and Postgis containers</li>
+</ol>
+</div>
+<div class="section" id="clone-docker-compose-yml">
+<h2>Clone <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code><a class="headerlink" href="#clone-docker-compose-yml" title="Permalink to this headline">¶</a></h2>
+<p>As there is a little more to the example <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> above we have created a starter repository for you that has a complete <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file and a template of the <code class="docutils literal notranslate"><span class="pre">jenkins.env</span></code> file you will need to create.</p>
+<p>Navigate to and clone the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/jenkins-compose" target="_blank">Jenkins Compose Repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> to your computer.</p>
+<p>Looking over the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> pay extra attention to the <code class="docutils literal notranslate"><span class="pre">jenkins.env</span></code> and the <code class="docutils literal notranslate"><span class="pre">volumes</span></code>. This <code class="docutils literal notranslate"><span class="pre">docker-file.yml</span></code> is expecting a env file named <code class="docutils literal notranslate"><span class="pre">jenkins.env</span></code> it will need to match the template file: <code class="docutils literal notranslate"><span class="pre">template.jenkins.env</span></code>.</p>
+<p>This <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> also sets up a <strong>persistent volume</strong>. Although the containers are disposable a <code class="docutils literal notranslate"><span class="pre">volume</span></code> will be created and used for each unique container. This important as we are storing some information in our Jenkins container that we want to be permanent. We use this volume as a way for storing this information that needs to persist.</p>
+<p>You can learn more about <a class="reference external" href="https://docs.docker.com/storage/volumes/" target="_blank">Docker Volumes<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> by referring to their documentation.</p>
+</div>
+<div class="section" id="create-docker-env-file">
+<h2>Create Docker <code class="docutils literal notranslate"><span class="pre">.env</span></code> File<a class="headerlink" href="#create-docker-env-file" title="Permalink to this headline">¶</a></h2>
+<p>Before we can create this containers we will first need to create a <code class="docutils literal notranslate"><span class="pre">jenkins.env</span></code> file to be used by our <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file.</p>
+<p>In the same directory as the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file create a new file named <code class="docutils literal notranslate"><span class="pre">jenkins.env</span></code> and add the following environment variables:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DB_HOST</span><span class="o">=</span>postgres
+<span class="nv">DB_PORT</span><span class="o">=</span><span class="m">5432</span>
+<span class="nv">DB_NAME</span><span class="o">=</span><span class="nb">test</span>
+<span class="nv">DB_USER</span><span class="o">=</span><span class="nb">test</span>
+<span class="nv">DB_PASS</span><span class="o">=</span><span class="nb">test</span>
+<span class="nv">APP_PORT</span><span class="o">=</span><span class="m">8080</span>
+
+<span class="nv">AWS_DEFAULT_REGION</span><span class="o">=</span>
+<span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span>
+<span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span>
+
+<span class="c1"># student bucket name: lc-nga-c7-name-artifacts</span>
+<span class="nv">ARTIFACTS_BUCKET_NAME</span><span class="o">=</span>
+<span class="c1"># (NO leading or trailing slash): todo-api</span>
+<span class="nv">ARTIFACTS_PROJECT_DIRECTORY</span><span class="o">=</span>
+</pre></div>
+</div>
+<p>Most of the environment is already filled out because the testing database for Jenkins is known, however we need to add some information <strong>that is unique</strong> to our application:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">AWS_DEAFULT_REGION</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">AWS_ACCESS_KEY_ID</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">AWS_SECRET_ACCESS_KEY</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ARTIFACTS_BUCKET_NAME</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ARTIFACTS_PROJECT_DIRECTORY</span></code></li>
+</ul>
+<p>To find the first three values you will need to access your AWS credentials. You can do this by printing out your AWS config and credentials files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat ~/.aws/config
+cat ~/.aws/credentials
+</pre></div>
+</div>
+<p>Using the data from these print outs paste them into your <code class="docutils literal notranslate"><span class="pre">jenkins.env</span></code> file under the appropriate keys.</p>
+<p>You will also need your AWS S3 artifacts bucket name which you can find by sifting through all the buckets:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws s3 ls
+</pre></div>
+</div>
+<p>Find your bucket name and put it into your <code class="docutils literal notranslate"><span class="pre">jenkins.env</span></code> file under the appropriate key.</p>
+<p>There is one final env variable for <code class="docutils literal notranslate"><span class="pre">ARTIFACTS_PROJECT_DIRECTORY</span></code> this is helping us to keep our S3 artifacts bucket organized. We recommend using <code class="docutils literal notranslate"><span class="pre">todo-app</span></code>. This way your artifacts for this Todo Application will be copied to: <code class="docutils literal notranslate"><span class="pre">s3://&lt;your-bucket-name&gt;/todo-app/</span></code>.</p>
+</div>
+<div class="section" id="start-jenkins-and-postgis-containers">
+<h2>Start Jenkins and Postgis Containers<a class="headerlink" href="#start-jenkins-and-postgis-containers" title="Permalink to this headline">¶</a></h2>
+<p>After creating our <code class="docutils literal notranslate"><span class="pre">jenkins.env</span></code> file. We can spin up our Jenkins and Postgis containers.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">You may have noticed that the Jenkins container is configured to run on port 8080 and the test database is configured to run on port 5432. You may already have services, or applications running on those ports. Make sure to shut them down, or alter the ports of the services this <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file creates.</p>
+</div>
+<p>Let’s start up our containers:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up -d
+</pre></div>
+</div>
+<p>This should start two containers. You should see them if you run a <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code> command.</p>
+<p>After starting the containers you should be able to access your project at <a class="reference external" href="http://localhost:8080" target="_blank">localhost:8080<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>:</p>
+<img alt="../../_images/jenkins-is-alive.png" src="../../_images/jenkins-is-alive.png" />
+</div>
+<div class="section" id="jenkins-first-time-setup">
+<h2>Jenkins First Time Setup<a class="headerlink" href="#jenkins-first-time-setup" title="Permalink to this headline">¶</a></h2>
+<p>The first time you start an empty Jenkins server you will need to unlock it with an admin password.</p>
+<p>This password can be found at <code class="docutils literal notranslate"><span class="pre">/var/jenkins_home/secrets/initialAdminPassword</span></code> <em>within the container</em>. There are many ways we can access this value but the simplest is to have the container do the work for us! We can have the container print out the contents using the <code class="docutils literal notranslate"><span class="pre">exec</span></code> command.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">general form: <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">&lt;container</span> <span class="pre">name</span> <span class="pre">/</span> <span class="pre">ID&gt;</span> <span class="pre">[...command]</span></code>. The <code class="docutils literal notranslate"><span class="pre">exec</span></code> command instructs a container to <em>execute</em> the command string provided after the container name. The <code class="docutils literal notranslate"><span class="pre">stdout</span></code> of the command will be displayed on the host machine. You can read more about the <a class="reference external" href="https://docs.docker.com/engine/reference/commandline/exec/" target="_blank">exec command and its many uses here<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<p>Enter the following command to instruct the container to <code class="docutils literal notranslate"><span class="pre">cat</span></code> the contents of password file:</p>
+<div class="code bash highlight-none notranslate"><div class="highlight"><pre><span></span>$ docker exec &lt;container-identifier&gt; cat /var/jenkins_home/secrets/initialAdminPassword
+</pre></div>
+</div>
+<p>Copy and enter the password into the Unlock Jenkins page at <a class="reference external" href="http://localhost:8080" target="_blank">http://localhost:8080<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> then click <code class="docutils literal notranslate"><span class="pre">Continue</span></code>. On the next page select <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">suggested</span> <span class="pre">plugins</span></code> and give it a few minutes to install everything Jenkins needs.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>Warning</p>
+<p class="last">Do not continue to the following section until all of the plugins have finished installing. Now is a good time to take a break for some coffee or fresh air.</p>
+</div>
+<p>After the plugins have been installed you will be prompted with the <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">Admin</span> <span class="pre">User</span></code> form.</p>
+<img alt="../../_images/jenkins-create-admin.png" src="../../_images/jenkins-create-admin.png" />
+<p>In order to make debugging easier we will all use the same credentials:</p>
+<ul class="simple">
+<li><strong>username</strong>: <code class="docutils literal notranslate"><span class="pre">launchcode</span></code></li>
+<li><strong>password</strong>: <code class="docutils literal notranslate"><span class="pre">launchcode</span></code></li>
+</ul>
+<p>You will then be asked about the <code class="docutils literal notranslate"><span class="pre">Jenkins</span> <span class="pre">URL</span></code>. For now we will leave this with the default value of <code class="docutils literal notranslate"><span class="pre">http://localhost:8080/</span></code>. Select <code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">and</span> <span class="pre">Continue</span></code>.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">In the future if you deploy Jenkins to the cloud don’t forget to update this setting to reference the <code class="docutils literal notranslate"><span class="pre">Public</span> <span class="pre">DNS</span> <span class="pre">Name</span></code> of your instance running the Jenkins container. This can be found in the sidebar under <code class="docutils literal notranslate"><span class="pre">Manage</span> <span class="pre">Jenkins</span> <span class="pre">&gt;</span> <span class="pre">Configure</span> <span class="pre">System</span> <span class="pre">&gt;</span> <span class="pre">Jenkins</span> <span class="pre">Location</span> <span class="pre">&gt;</span> <span class="pre">Jenkins</span> <span class="pre">URL</span></code>.</p>
+</div>
+</div>
+<div class="section" id="testing-the-aws-cli">
+<span id="docker-jenkins-setup-aws"></span><h2>Testing the AWS CLI<a class="headerlink" href="#testing-the-aws-cli" title="Permalink to this headline">¶</a></h2>
+<p>The Jenkins container we pulled down has the AWS CLI pre-installed. We passed it some environment variables that include our AWS credentials. The container used these environment variables to configure AWS CLI so that Jenkins would have the ability to interface with our S3 buckets!</p>
+<p>This section will show you how to test this functionality.</p>
+<p>Now let’s do a final test by running the AWS CLI from <strong>within the container</strong>. We will use <code class="docutils literal notranslate"><span class="pre">exec</span></code> again with some additional options.</p>
+<p>This time we will pass the <code class="docutils literal notranslate"><span class="pre">-it</span></code> options to enter <code class="docutils literal notranslate"><span class="pre">-i</span></code> interactive mode and <code class="docutils literal notranslate"><span class="pre">-t</span></code> to attach the container to our terminal. By issuing the <code class="docutils literal notranslate"><span class="pre">bash</span></code> command we are instructing the container to execute the bash shell. Combined with the <code class="docutils literal notranslate"><span class="pre">-it</span></code> options this means our terminal will be bound to the bash session executed in the container.</p>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">Attaching to the shell session of a container is the functional equivalent of SSH-ing into a remote machine. Depending on which shell the container has installed you will adjust the shell command issued in <code class="docutils literal notranslate"><span class="pre">exec</span></code>. In lean containers, that have minimal installed programs, bash may not be installed. You can usually use at least the original <code class="docutils literal notranslate"><span class="pre">sh</span></code> shell (before it was the <strong>B</strong> orn <strong>A</strong> gain <strong>SH</strong> ell)!</p>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-lightbulb" aria-hidden="true"></i>Tip</p>
+<p class="last">When you are done working inside the container you can use <code class="docutils literal notranslate"><span class="pre">exit</span></code> to get back to the host machine shell.</p>
+</div>
+<p>Before we enter the container we will list our S3 buckets on the host machine. That way once we are in the container we can issue the same command and confirm that the AWS CLI has been configured properly.</p>
+<div class="code bash highlight-none notranslate"><div class="highlight"><pre><span></span># issued from the host machine for comparison
+$ aws s3 ls
+</pre></div>
+</div>
+<p>Once we are in the container we will command AWS to list the S3 buckets for the credentialed account. We expect to see the same output we saw on our host machine.</p>
+<div class="code bash highlight-none notranslate"><div class="highlight"><pre><span></span># attach the container&#39;s bash shell to your terminal
+$ docker exec -it &lt;container-id&gt; bash
+
+# the terminal will now be attached to the container&#39;s shell session as root
+
+# now check the AWS CLI is working within the container
+$ aws s3 ls
+
+# expect the same list of buckets as were listed on our host machine
+
+# exit the container shell to return to your host shell
+$ exit
+</pre></div>
+</div>
+<div class="admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>Note</p>
+<p class="last">For the clever toads out there, yes, you could have used <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">exec</span> <span class="pre">jenkins</span> <span class="pre">aws</span> <span class="pre">s3</span> <span class="pre">ls</span></code> and gotten the same result. But then you wouldn’t have learned how to enter a container! Like using SSH, entering a container is a rare occurrence. But it is useful to know for the times when debugging means getting inside for a look around.</p>
+</div>
+<p>Everything is ready to go! You can return to the <a class="reference internal" href="../../walkthroughs/jenkins/index-old.html#walkthrough-jenkins"><span class="std std-ref">Walkthrough: CI/CD With Jenkins</span></a> page now.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

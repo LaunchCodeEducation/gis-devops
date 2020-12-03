@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Walkthrough: SwaggerUI via SpringFox &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Walkthrough: SwaggerUI" href="../swagger/index.html" />
+    <link rel="prev" title="Spring Postgres Integration" href="../spring-pet-api-postgres-integration/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="/installations/index.html">Installations</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Welcome, Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Terminal, Shell, Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Shell, Git, SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: SQL, HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: HTTP, Docker</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day1/index.html">Week 2 - Day 1: HTML, CSS, Browser DevTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day2/index.html">Week 2 - Day 2: HTML/CSS Template, JavaScript Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day3/index.html">Week 2 - Day 3: Programming Fundamentals, JavaScript, DOM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day4/index.html">Week 2 - Day 4: JS, DOM, Promises, AJAX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day5/index.html">Week 2 - Day 5: Promises, AJAX, HTTP</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: Java, OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2: Spring Boot, Controllers, Routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Models, ORM (Hibernate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: Persistence, ORM Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: Review</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day1/index.html">Week 4 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day2/index.html">Week 4 - Day 2: Security, Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day3/index.html">Week 4 - Day 3: Integration testing, dependency injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day4/index.html">Week 4 - Day 4: Postgres, Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day5/index.html">Week 4 - Day 5: AJAX, Open Layers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/project/index.html">Week 5 - Project Week: Zika Mission Control</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day1/index.html">Week 6 - Day 1: RESTful web services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day2/index.html">Week 6 - Day 2: Swagger REST framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day3/index.html">Week 6 - Day 3: Intro to Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day4/index.html">Week 6 - Day 4: More Elasticsearch, Integrating ES with Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day5/index.html">Week 6 - Day 5: ES2015, ESLint, OpenLayers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week07/project/index.html">Week 7 - Project Week: Zika Mission Control Part 2</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day1/index.html">Week 8 - Day 1: Intro to DevOps/AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day2/index.html">Week 8 - Day 2: More with AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day3/index.html">Week 8 - Day 3: 12 Factor Apps and Auto Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day4/index.html">Week 8 - Day 4: Gradle, Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day5/index.html">Week 8 - Day 5: Sonarqube</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/project/index.html">Week 9 - Project Week: Zika Mission Control Part 3</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week11/project/index.html">Week 11 - Project Week: Zika Mission Control Part 4</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day3/index.html">Week 12 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day4/index.html">Week 12 - Day 4: OAuth 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day5/index.html">Week 12 - Day 5: Certificates</a></li>
+</ol>
+<ol class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws-intro/index.html">Walkthrough: Intro to AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws-rds-walkthrough/index.html">Walkthrough: RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-certificates/index.html">Client Certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-deployment-s3/index.html">Deploy Zika Client to S3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../curl/index.html">Walkthrough: Intro to Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Walkthrough: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch-spring/index.html">Walkthrough: Elasticsearch in Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch/index.html">Walkthrough: Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch2/index.html">Walkthrough: Elasticsearch Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eslint-airwaze/index.html">Walkthrough: ESLint Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitLab/index.html">Walkthrough: Git and Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gradle/index.html">Walkthrough: Gradle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hashing-salting/index.html">Walkthrough: Hashing and Salting Passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Walkthrough: CI/CD With Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../launchcart-rest/index.html">Walkthrough: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nginx-proxy-spring/index.html">NGINX as a Proxy to Spring Apache Tomcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oauth2/index.html">Visual OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openlayers/index.html">Walkthrough: OpenLayers and jQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgress/index.html">Walkthrough: PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sonarqube/index.html">Walkthrough: Sonarqube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spring-data-jpa-hibernate/index.html">Walkthrough: Cars Demo - Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spring-integration-testing/index.html">Walkthrough: Spring Integration Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spring-pet-api-postgres-integration/index.html">Spring Postgres Integration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Walkthrough: SwaggerUI via SpringFox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swagger/index.html">Walkthrough: SwaggerUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tdd/index.html">Walkthrough: TDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo-tasks-single-ec2-deployment/index.html">Todo Tasks Deployment Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-files/index.html">Running a Java Application as a Linux Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-tests/index.html">Walkthrough: Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading-spring-boot/index.html">Walkthrough: Upgrading to Spring Boot 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../watch-todo-tasks-deployment/index.html">Watch a Todo Tasks Deployment</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/airwaze/index.html">Studio: Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-EC2-basics/index.html">Studio: AWS Devops Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-auto-scaling/index.html">Scaling horizontally AutoScaling Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-rds-vpc/index.html">Studio: AWS RDS VPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/curl/index.html">Curl Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch1/index.html">Elasticsearch Query Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch2/index.html">Elasticsearch Queries Studio 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/junit/index.html">Studio: JUnit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart-rest/index.html">Studio: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart1/index.html">Studio: LaunchCart Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart2/index.html">Studio: LaunchCart Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/openlayers-es2015/index.html">Studio: OpenLayers ES2015 Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/swagger/index.html">Studio: Springfox and Swagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/tdd/index.html">Studio: Test-Driven Development</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/deploy-mapnotes-api-single-ec2/index.html">Project: Deploy Map Notes to a Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-api/index.html">Project: Map Notes API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-pipeline/index.html">Project: Mapnotes API Jenkins Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-rds/index.html">Project: Map Notes Backed by AWS RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/zika-client-rest/index.html">Project: Zika Client REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/zika-client/index.html">Project: Zika Client</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/00-prep-week/index.html">Installation: Essential Tooling &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/01-docker/index.html">Installation: Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/02-docker-psql/index.html">Installation: Docker PSQL Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/03-docker-postgis/index.html">Installation: Docker PostGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/04-docker-elasticsearch/index.html">Installation: Docker Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/05-docker-kibana/index.html">Installation: Docker Kibana</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/06-docker-jenkins/index.html">Installation: Docker Jenkins</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/00-intellij/index.html">Configuration: IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/01-runtime-configurations/index.html">Configuration: IntelliJ - Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/02-environment-variables-intellij/index.html">Configuration: Environment Variables - IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/04-spring-elasticsearch/index.html">Configuration: Spring &amp; Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/05-spring-postgres/index.html">Configuration: Spring &amp; Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/06-vscode-eslint/index.html">Configuration: Visual Studio Code - ESLint</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/docker/index.html">Docker</a></li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Walkthrough: SwaggerUI via SpringFox</a><ul>
+<li><a class="reference internal" href="#concepts">Concepts</a><ul>
+<li><a class="reference internal" href="#rest">Rest</a></li>
+<li><a class="reference internal" href="#openapi">OpenAPI</a></li>
+<li><a class="reference internal" href="#swagger">Swagger</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#walkthrough">Walkthrough</a></li>
+<li><a class="reference internal" href="#add-dependency">Add Dependency</a></li>
+<li><a class="reference internal" href="#setup-swagger">Setup Swagger</a><ul>
+<li><a class="reference internal" href="#application-root">Application Root</a></li>
+<li><a class="reference internal" href="#controller-updates">Controller Updates</a><ul>
+<li><a class="reference internal" href="#todocontroller-java">TodoController.java</a></li>
+<li><a class="reference internal" href="#taskcontroller-java">TaskController.java</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#model-updates">Model Updates</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#access-swagger-ui">Access Swagger-UI</a></li>
+<li><a class="reference internal" href="#configure">Configure</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="walkthrough-swaggerui-via-springfox">
+<span id="walkthrough-swagger-springfox"></span><h1>Walkthrough: SwaggerUI via SpringFox<a class="headerlink" href="#walkthrough-swaggerui-via-springfox" title="Permalink to this headline">¶</a></h1>
+<p>In this walkthrough we will see how to enable Swagger UI for a Springboot API.</p>
+<div class="section" id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h2>
+<p>Before we jump in let’s review some of the concepts.</p>
+<div class="section" id="rest">
+<h3>Rest<a class="headerlink" href="#rest" title="Permalink to this headline">¶</a></h3>
+<p>Throughout this class you have written multiple RESTful APIs at various levels along the Rest Maturity Model.</p>
+<p>The Rest Maturity Model in short:</p>
+<ul class="simple">
+<li>level 0: uses HTTP</li>
+<li>level 1: Resources separated by path</li>
+<li>level 2: Resource actions separated by path and method (endpoint)</li>
+<li>level 3: Hypermedia controls (HATEOAS)</li>
+</ul>
+<p>We have used various Spring annotations to bring our RESTful APIs to fruition:</p>
+<ul class="simple">
+<li>&#64;RestController</li>
+<li>&#64;RequestMapping</li>
+<li>&#64;GetMapping</li>
+<li>&#64;PostMapping</li>
+<li>&#64;PutMapping</li>
+<li>&#64;DeleteMapping</li>
+<li>&#64;PatchMapping</li>
+<li>&#64;PathVariable</li>
+<li>&#64;RequestBody</li>
+</ul>
+<p>We have also used the Spring <code class="docutils literal notranslate"><span class="pre">ResponseEntity</span></code> quite extensively to control the HTTP Responses being returned from our RESTful API.</p>
+<p>Our RESTful API persists data to a Postgres database through the use of Hibernate and <code class="docutils literal notranslate"><span class="pre">JPARepository</span></code>.</p>
+<p>Finally we have controlled incoming HTTP request bodies and HTTP response bodies by building DTOs that represent the shape of the data.</p>
+</div>
+<div class="section" id="openapi">
+<h3>OpenAPI<a class="headerlink" href="#openapi" title="Permalink to this headline">¶</a></h3>
+<p>From the <a class="reference external" href="https://github.com/OAI/OpenAPI-Specification/" target="_blank">OpenAPI initiative’s Github<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> readme:</p>
+<blockquote>
+<div>The OpenAPI Specification (OAS) defines a standard, programming language-agnostic interface description for HTTP APIs, which allows both humans and computers to discover and understand the capabilities of a service without requiring access to source code, additional documentation, or inspection of network traffic.</div></blockquote>
+<p>The spec defines many things including:</p>
+<ul class="simple">
+<li>interactive documentation</li>
+<li>human and machine readable documentation</li>
+<li>documentation as source code</li>
+<li>code generation from documentation</li>
+</ul>
+<p>Of course being a specification is not usable in actual projects, and a specification provider is necessary. This is where Swagger, and Springfox come in. They provide tools for implementing the OpenAPI spec.</p>
+</div>
+<div class="section" id="swagger">
+<h3>Swagger<a class="headerlink" href="#swagger" title="Permalink to this headline">¶</a></h3>
+<p>Swagger is predominately used for API documentation and discover-ability. It can be used for even more things which you can learn about from the <a class="reference external" href="https://swagger.io/" target="_blank">Swagger website<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<p>Swagger is quite popular and can be implemented with many different programming languages and application frameworks. It can even be configured in many different ways, to suit your teams workflow. Our example will show us how to use annotation driven configuration in a Spring boot project.</p>
+<p>After Swagger has been added to and configured for our project it will provide interactive documentation for our RESTful API.</p>
+<img alt="../../_images/example-swagger.png" src="../../_images/example-swagger.png" />
+</div>
+</div>
+<div class="section" id="walkthrough">
+<h2>Walkthrough<a class="headerlink" href="#walkthrough" title="Permalink to this headline">¶</a></h2>
+<p>For this walkthrough you will need a completed TodoTask API in spring.</p>
+<p>You can use the one you created in this class. Or you can utilize <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/todo-tasks-api-solution" target="_blank">the example repository<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">You can find the full solution on the <code class="docutils literal notranslate"><span class="pre">springfox-swagger</span></code> branch.</p>
+</div>
+</div>
+<div class="section" id="add-dependency">
+<h2>Add Dependency<a class="headerlink" href="#add-dependency" title="Permalink to this headline">¶</a></h2>
+<p>To start we need to add our springfox Dependency.</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">build.gradle</span></code> file and add the following line to the dependencies section:</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">implementation</span> <span class="s1">&#39;io.springfox:springfox-boot-starter:3.0.0&#39;</span>
+</pre></div>
+</div>
+<p>If your IDE or Code Editor prompts you to reload the project, or update gradle, select yes.</p>
+</div>
+<div class="section" id="setup-swagger">
+<h2>Setup Swagger<a class="headerlink" href="#setup-swagger" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="application-root">
+<h3>Application Root<a class="headerlink" href="#application-root" title="Permalink to this headline">¶</a></h3>
+<p>In <code class="docutils literal notranslate"><span class="pre">TodoApplication.java</span></code>, your project entry point you will need to add some code to configure Swagger UI.</p>
+<p>First the <code class="docutils literal notranslate"><span class="pre">&#64;EnableSwagger2</span></code> annotation to the top of the <code class="docutils literal notranslate"><span class="pre">TodoApplication</span></code> class:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@SpringBootApplication</span>
+<span class="nd">@EnableSwagger2</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TodoApplication</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">TodoApplication</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>Next up we need to add a bean and set our base API information:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">TodoApplication</span><span class="p">.</span><span class="na">class</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Docket</span> <span class="nf">todoApi</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">Docket</span><span class="p">(</span><span class="n">DocumentationType</span><span class="p">.</span><span class="na">SWAGGER_2</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">select</span><span class="p">()</span>
+                    <span class="p">.</span><span class="na">apis</span><span class="p">(</span><span class="n">RequestHandlerSelectors</span><span class="p">.</span><span class="na">any</span><span class="p">())</span>
+                    <span class="p">.</span><span class="na">paths</span><span class="p">(</span><span class="n">Predicate</span><span class="p">.</span><span class="na">not</span><span class="p">(</span><span class="n">PathSelectors</span><span class="p">.</span><span class="na">regex</span><span class="p">(</span><span class="s">&quot;/error.*&quot;</span><span class="p">)))</span>
+                    <span class="p">.</span><span class="na">build</span><span class="p">()</span>
+                    <span class="p">.</span><span class="na">apiInfo</span><span class="p">(</span><span class="n">todoApiInfo</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="n">ApiInfo</span> <span class="nf">todoApiInfo</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">ApiInfoBuilder</span><span class="p">()</span>
+                    <span class="p">.</span><span class="na">title</span><span class="p">(</span><span class="s">&quot;Todo Tasks API&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">description</span><span class="p">(</span><span class="s">&quot;An API for creating Todo items and associated subtasks&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">contact</span><span class="p">(</span><span class="k">new</span> <span class="n">Contact</span><span class="p">(</span><span class="s">&quot;Paul Matthews&quot;</span><span class="p">,</span> <span class="s">&quot;paul@launchcode.org&quot;</span><span class="p">,</span> <span class="s">&quot;paul@launchcode.org&quot;</span><span class="p">))</span>
+                    <span class="p">.</span><span class="na">license</span><span class="p">(</span><span class="s">&quot;MIT&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">licenseUrl</span><span class="p">(</span><span class="s">&quot;https://opensource.org/licenses/MIT&quot;</span><span class="p">)</span>
+                    <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="controller-updates">
+<h3>Controller Updates<a class="headerlink" href="#controller-updates" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="todocontroller-java">
+<h4>TodoController.java<a class="headerlink" href="#todocontroller-java" title="Permalink to this headline">¶</a></h4>
+<p>First up is the <code class="docutils literal notranslate"><span class="pre">TodoController.java</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RestController</span>
+<span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;/todos&quot;</span><span class="p">)</span>
+<span class="nd">@Api</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Operations on Todo Items&quot;</span><span class="p">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TodoController</span> <span class="p">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="n">TodoRepository</span> <span class="n">todoRepository</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now we need to configure each endpoint:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ApiOperation</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Get all Todo Items&quot;</span><span class="p">,</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="s">&quot;Returns a List of all Todo Items&quot;</span><span class="p">,</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">OutgoingTodoItem</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
+    <span class="n">responseContainer</span> <span class="o">=</span> <span class="s">&quot;List&quot;</span><span class="p">,</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">produces</span> <span class="o">=</span> <span class="s">&quot;application/json&quot;</span>
+<span class="p">)</span>
+<span class="nd">@GetMapping</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">getTodos</span><span class="p">()</span> <span class="p">{</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ApiOperation</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Get Todo Item by ID&quot;</span><span class="p">,</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="s">&quot;Returns a Todo Item matching ID&quot;</span><span class="p">,</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">OutgoingTodoItem</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">produces</span> <span class="o">=</span> <span class="s">&quot;application/json&quot;</span>
+<span class="p">)</span>
+<span class="nd">@GetMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;/{id}&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">getTodoById</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ApiOperation</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Create a Todo Item&quot;</span><span class="p">,</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="s">&quot;Creates a Todo Item using an incoming HTTP Request body&quot;</span><span class="p">,</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">OutgoingTodoItem</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="mi">201</span><span class="p">,</span>
+    <span class="n">produces</span> <span class="o">=</span> <span class="s">&quot;application/json&quot;</span>
+<span class="p">)</span>
+<span class="nd">@PostMapping</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">postTodo</span><span class="p">(</span><span class="nd">@RequestBody</span> <span class="n">IncomingTodoItem</span> <span class="n">todoDto</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ApiOperation</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Update Todo Item&quot;</span><span class="p">,</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="s">&quot;Change a Todo Item completed property to true&quot;</span><span class="p">,</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">OutgoingTodoItem</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="n">produces</span> <span class="o">=</span> <span class="s">&quot;application/json&quot;</span>
+<span class="p">)</span>
+<span class="nd">@PatchMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;/{id}&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">patchTodo</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ApiOperation</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Delete Todo Item&quot;</span><span class="p">,</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="s">&quot;Delete Todo Item that matches ID&quot;</span><span class="p">,</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="mi">204</span>
+<span class="p">)</span>
+<span class="nd">@DeleteMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;/{id}&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">deleteTodo</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="taskcontroller-java">
+<h4>TaskController.java<a class="headerlink" href="#taskcontroller-java" title="Permalink to this headline">¶</a></h4>
+<p>Next up is the <code class="docutils literal notranslate"><span class="pre">TaskController.java</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@RestController</span>
+<span class="nd">@RequestMapping</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;/todos/{id}/tasks&quot;</span><span class="p">)</span>
+<span class="nd">@Api</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Operations on a Todo Item&#39;s sub-tasks&quot;</span><span class="p">,</span> <span class="n">produces</span> <span class="o">=</span> <span class="s">&quot;application/json&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TaskController</span> <span class="p">{</span>
+</pre></div>
+</div>
+<p>And each endpoint:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ApiOperation</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Get Todo Item&#39;s tasks&quot;</span><span class="p">,</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="s">&quot;Get a list of tasks associated with Todo Item matching ID&quot;</span><span class="p">,</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">TaskDto</span><span class="p">.</span><span class="na">class</span><span class="p">,</span>
+    <span class="n">responseContainer</span> <span class="o">=</span> <span class="s">&quot;List&quot;</span><span class="p">,</span>
+    <span class="n">produces</span> <span class="o">=</span> <span class="s">&quot;application/json&quot;</span>
+<span class="p">)</span>
+<span class="nd">@GetMapping</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">getTodoTasks</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ApiOperation</span><span class="p">(</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="s">&quot;Add a Task to a Todo Item&quot;</span><span class="p">,</span>
+    <span class="n">notes</span> <span class="o">=</span> <span class="s">&quot;Add a task to a Todo Item matching ID&quot;</span>
+<span class="p">)</span>
+<span class="nd">@PostMapping</span>
+<span class="kd">public</span> <span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="nf">putTodoTasks</span><span class="p">(</span><span class="nd">@PathVariable</span> <span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="nd">@RequestBody</span> <span class="n">TaskDto</span> <span class="n">taskDto</span><span class="p">)</span> <span class="p">{</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="model-updates">
+<h3>Model Updates<a class="headerlink" href="#model-updates" title="Permalink to this headline">¶</a></h3>
+<p>Swagger is smart enough to auto-detect the inputs, but it struggles a bit with the outputs because they are wrapped in ResponseEntities. Let’s ensure the <code class="docutils literal notranslate"><span class="pre">OutgoingTodoItem</span> <span class="pre">model</span></code> is discoverable.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@ApiModel</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OutgoingTodoItem</span> <span class="p">{</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="access-swagger-ui">
+<h2>Access Swagger-UI<a class="headerlink" href="#access-swagger-ui" title="Permalink to this headline">¶</a></h2>
+<p>Launch the application with bootRun.</p>
+<p>Make sure to start the docker containers first: <code class="docutils literal notranslate"><span class="pre">docker-compose</span> <span class="pre">up</span> <span class="pre">-d</span></code></p>
+<p>Then launch the application: <code class="docutils literal notranslate"><span class="pre">./gradlew</span> <span class="pre">bootRun</span> <span class="pre">-D</span> <span class="pre">DB_HOST=localhost</span> <span class="pre">-D</span> <span class="pre">DB_PORT=5444</span> <span class="pre">-D</span> <span class="pre">DB_NAME=todo</span> <span class="pre">-D</span> <span class="pre">DB_USER=todo_user</span> <span class="pre">-D</span> <span class="pre">DB_PASS=todopass</span></code></p>
+<p>Access the swagger docs in your browser at: <code class="docutils literal notranslate"><span class="pre">localhost:8080/swagger-ui/index.html</span></code></p>
+</div>
+<div class="section" id="configure">
+<h2>Configure<a class="headerlink" href="#configure" title="Permalink to this headline">¶</a></h2>
+<p>You can further configure the documentation with the annotations. Look up their documentation for more examples.</p>
+<ul class="simple">
+<li>&#64;Api</li>
+<li>&#64;ApiOperation</li>
+<li>&#64;ApiModel</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

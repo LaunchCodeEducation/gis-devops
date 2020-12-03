@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Walkthrough: Spring Integration Tests &#8212; LaunchCode: GIS DevOps  documentation</title>
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fa/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/launchcode.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Spring Postgres Integration" href="../spring-pet-api-postgres-integration/index.html" />
+    <link rel="prev" title="Walkthrough: Cars Demo - Spring Data, JPA, Hibernate" href="../spring-data-jpa-hibernate/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html"><span><img src="../../_static/lc-ed-logo.png" alt="LaunchCode logo"></span>
+          GIS DevOps</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="/installations/index.html">Installations</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Pages <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day1/index.html">Week 1 - Day 1: Welcome, Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day2/index.html">Week 1 - Day 2: Terminal, Shell, Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day3/index.html">Week 1 - Day 3: Shell, Git, SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day4/index.html">Week 1 - Day 4: SQL, HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week01/day5/index.html">Week 1 - Day 5: HTTP, Docker</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day1/index.html">Week 2 - Day 1: HTML, CSS, Browser DevTools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day2/index.html">Week 2 - Day 2: HTML/CSS Template, JavaScript Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day3/index.html">Week 2 - Day 3: Programming Fundamentals, JavaScript, DOM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day4/index.html">Week 2 - Day 4: JS, DOM, Promises, AJAX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week02/day5/index.html">Week 2 - Day 5: Promises, AJAX, HTTP</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day1/index.html">Week 3 - Day 1: Java, OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day2/index.html">Week 3 - Day 2: Spring Boot, Controllers, Routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day3/index.html">Week 3 - Day 3: Models, ORM (Hibernate)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day4/index.html">Week 3 - Day 4: Persistence, ORM Relationships</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week03/day5/index.html">Week 3 - Day 5: Review</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day1/index.html">Week 4 - Day 1: Git, GitLab, IntelliJ, Refactoring, Unit Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day2/index.html">Week 4 - Day 2: Security, Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day3/index.html">Week 4 - Day 3: Integration testing, dependency injection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day4/index.html">Week 4 - Day 4: Postgres, Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week04/day5/index.html">Week 4 - Day 5: AJAX, Open Layers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week05/project/index.html">Week 5 - Project Week: Zika Mission Control</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day1/index.html">Week 6 - Day 1: RESTful web services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day2/index.html">Week 6 - Day 2: Swagger REST framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day3/index.html">Week 6 - Day 3: Intro to Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day4/index.html">Week 6 - Day 4: More Elasticsearch, Integrating ES with Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week06/day5/index.html">Week 6 - Day 5: ES2015, ESLint, OpenLayers</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week07/project/index.html">Week 7 - Project Week: Zika Mission Control Part 2</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day1/index.html">Week 8 - Day 1: Intro to DevOps/AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day2/index.html">Week 8 - Day 2: More with AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day3/index.html">Week 8 - Day 3: 12 Factor Apps and Auto Scaling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day4/index.html">Week 8 - Day 4: Gradle, Continuous Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week08/day5/index.html">Week 8 - Day 5: Sonarqube</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week09/project/index.html">Week 9 - Project Week: Zika Mission Control Part 3</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week11/project/index.html">Week 11 - Project Week: Zika Mission Control Part 4</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day3/index.html">Week 12 - Day 3: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day4/index.html">Week 12 - Day 4: OAuth 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../week12/day5/index.html">Week 12 - Day 5: Certificates</a></li>
+</ol>
+<ol class="current">
+<li class="toctree-l1"><a class="reference internal" href="../aws-intro/index.html">Walkthrough: Intro to AWS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aws-rds-walkthrough/index.html">Walkthrough: RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-certificates/index.html">Client Certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client-deployment-s3/index.html">Deploy Zika Client to S3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../curl/index.html">Walkthrough: Intro to Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Walkthrough: Intro to Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch-spring/index.html">Walkthrough: Elasticsearch in Spring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch/index.html">Walkthrough: Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticsearch2/index.html">Walkthrough: Elasticsearch Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eslint-airwaze/index.html">Walkthrough: ESLint Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gitLab/index.html">Walkthrough: Git and Gitlab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gradle/index.html">Walkthrough: Gradle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hashing-salting/index.html">Walkthrough: Hashing and Salting Passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jenkins/index.html">Walkthrough: CI/CD With Jenkins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../launchcart-rest/index.html">Walkthrough: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nginx-proxy-spring/index.html">NGINX as a Proxy to Spring Apache Tomcat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oauth2/index.html">Visual OAuth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../openlayers/index.html">Walkthrough: OpenLayers and jQuery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postgress/index.html">Walkthrough: PostgreSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sonarqube/index.html">Walkthrough: Sonarqube</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spring-data-jpa-hibernate/index.html">Walkthrough: Cars Demo - Spring Data, JPA, Hibernate</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Walkthrough: Spring Integration Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spring-pet-api-postgres-integration/index.html">Spring Postgres Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../springfox-swagger/index.html">Walkthrough: SwaggerUI via SpringFox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swagger/index.html">Walkthrough: SwaggerUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tdd/index.html">Walkthrough: TDD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo-tasks-single-ec2-deployment/index.html">Todo Tasks Deployment Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-files/index.html">Running a Java Application as a Linux Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../unit-tests/index.html">Walkthrough: Unit Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading-spring-boot/index.html">Walkthrough: Upgrading to Spring Boot 2.x</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../watch-todo-tasks-deployment/index.html">Watch a Todo Tasks Deployment</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/airwaze/index.html">Studio: Airwaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-EC2-basics/index.html">Studio: AWS Devops Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-auto-scaling/index.html">Scaling horizontally AutoScaling Group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/aws-rds-vpc/index.html">Studio: AWS RDS VPC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/curl/index.html">Curl Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch1/index.html">Elasticsearch Query Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/elasticsearch2/index.html">Elasticsearch Queries Studio 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/junit/index.html">Studio: JUnit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart-rest/index.html">Studio: LaunchCart REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart1/index.html">Studio: LaunchCart Part 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/launchcart2/index.html">Studio: LaunchCart Part 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/openlayers-es2015/index.html">Studio: OpenLayers ES2015 Workshop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/swagger/index.html">Studio: Springfox and Swagger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../studios/tdd/index.html">Studio: Test-Driven Development</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/deploy-mapnotes-api-single-ec2/index.html">Project: Deploy Map Notes to a Single EC2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-api/index.html">Project: Map Notes API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-pipeline/index.html">Project: Mapnotes API Jenkins Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/mapnotes-rds/index.html">Project: Map Notes Backed by AWS RDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/zika-client-rest/index.html">Project: Zika Client REST</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../project-requirements/zika-client/index.html">Project: Zika Client</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/00-prep-week/index.html">Installation: Essential Tooling &amp; Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/01-docker/index.html">Installation: Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/02-docker-psql/index.html">Installation: Docker PSQL Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/03-docker-postgis/index.html">Installation: Docker PostGIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/04-docker-elasticsearch/index.html">Installation: Docker Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/05-docker-kibana/index.html">Installation: Docker Kibana</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installations/06-docker-jenkins/index.html">Installation: Docker Jenkins</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/00-intellij/index.html">Configuration: IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/01-runtime-configurations/index.html">Configuration: IntelliJ - Runtime Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/02-environment-variables-intellij/index.html">Configuration: Environment Variables - IntelliJ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/04-spring-elasticsearch/index.html">Configuration: Spring &amp; Elasticsearch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/05-spring-postgres/index.html">Configuration: Spring &amp; Postgres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configurations/06-vscode-eslint/index.html">Configuration: Visual Studio Code - ESLint</a></li>
+</ol>
+<ol>
+<li class="toctree-l1"><a class="reference internal" href="../../notes/docker/index.html">Docker</a></li>
+</ol>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+    <label for="q" class="searchLabel">Search</label>
+    <input type="text" name="q" class="form-control" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Walkthrough: Spring Integration Tests</a><ul>
+<li><a class="reference internal" href="#concept">Concept</a></li>
+<li><a class="reference internal" href="#setup">Setup</a><ul>
+<li><a class="reference internal" href="#get-example-code">Get Example Code</a></li>
+<li><a class="reference internal" href="#additional-setup">Additional Setup</a></li>
+<li><a class="reference internal" href="#using-environment-variables-in-application-properties">Using Environment Variables in application.properties</a></li>
+<li><a class="reference internal" href="#create-and-run-testing-database">Create and Run Testing Database</a></li>
+<li><a class="reference internal" href="#integrationtestconfig">IntegrationTestConfig</a></li>
+<li><a class="reference internal" href="#creating-carscontrollertests-java">Creating CarsControllerTests.java</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#writing-integration-tests">Writing Integration Tests</a><ul>
+<li><a class="reference internal" href="#test-1-getcars">Test 1: getCars()</a></li>
+<li><a class="reference internal" href="#test-2-createcar">Test 2: createCar()</a></li>
+<li><a class="reference internal" href="#test-3-getcarbyid">Test 3: getCarById()</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-integration-tests-with-gradle-variables">Running Integration Tests with Gradle Variables</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="walkthrough-spring-integration-tests">
+<span id="sit-walkthrough"></span><h1>Walkthrough: Spring Integration Tests<a class="headerlink" href="#walkthrough-spring-integration-tests" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="concept">
+<h2>Concept<a class="headerlink" href="#concept" title="Permalink to this headline">¶</a></h2>
+<p>With integration testing our objective is to ensure the technologies work together correctly. In this case that our application can handle HTTP requests, serve HTTP responses and communicate with the database properly.</p>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-example-code">
+<h3>Get Example Code<a class="headerlink" href="#get-example-code" title="Permalink to this headline">¶</a></h3>
+<p>We will be writing integration tests for the Car example project we have been using throughout this class. You can use your own project assuming you have completed the previous walkthroughs, or you can clone the <a class="reference external" href="https://gitlab.com/LaunchCodeTraining/car-integration-tests" target="_blank">car-integration-tests<i class="fas fa-external-link-alt" aria-hidden="true"></i></a> repository which is ready to go.</p>
+</div>
+<div class="section" id="additional-setup">
+<h3>Additional Setup<a class="headerlink" href="#additional-setup" title="Permalink to this headline">¶</a></h3>
+<p>We have some setup we need to perform before we can write and run our integration tests.</p>
+<p>We will:</p>
+<ul class="simple">
+<li>update our <code class="docutils literal notranslate"><span class="pre">application.properties</span></code> file to use environment variables to externalize our configuration</li>
+<li>use the included <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> to create a testing database</li>
+<li>Add <code class="docutils literal notranslate"><span class="pre">IntergrationTestConfig.java</span></code> file</li>
+<li>Finally create the <code class="docutils literal notranslate"><span class="pre">CarsControllerTests.java</span></code> file</li>
+</ul>
+</div>
+<div class="section" id="using-environment-variables-in-application-properties">
+<h3>Using Environment Variables in application.properties<a class="headerlink" href="#using-environment-variables-in-application-properties" title="Permalink to this headline">¶</a></h3>
+<p>Throughout this class we have been hard coding our development environment properties into our <code class="docutils literal notranslate"><span class="pre">application.properties</span></code> file. We should be using environment variables to externalize our database configuration.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.url=jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+spring.datasource.username=${DB_USER}
+spring.datasource.password=${DB_PASSWORD}
+spring.jpa.hibernate.ddl-auto=update
+</pre></div>
+</div>
+<p>You can see where we are using our environment variables by the token ${}. These variables will be inserted by our build tool gradle at run time when we pass in the appropriate environment variables.</p>
+<p>We will see this in action when we run our tests.</p>
+</div>
+<div class="section" id="create-and-run-testing-database">
+<h3>Create and Run Testing Database<a class="headerlink" href="#create-and-run-testing-database" title="Permalink to this headline">¶</a></h3>
+<p>We will need to create and configure a testing database for our integration tests. You could manually set one up the way we have in the past, but luckily for us this project contains a <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file which will allow us to create one quickly and easily.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up -d
+</pre></div>
+</div>
+<p>This will command will create a new testing database container.</p>
+<div class="admonition-note admonition">
+<p class="first admonition-title"><i class="fas fa-sticky-note" aria-hidden="true"></i>note</p>
+<p class="last">Check the <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code> file. It is creating a testing container on port 5432, before running the command you should double check that nothing is running on that port.</p>
+</div>
+</div>
+<div class="section" id="integrationtestconfig">
+<h3>IntegrationTestConfig<a class="headerlink" href="#integrationtestconfig" title="Permalink to this headline">¶</a></h3>
+<p>In the root of our testing directory we will need to add a new configuration file that will serve as the base for our future integration tests.</p>
+<p>Create <code class="docutils literal notranslate"><span class="pre">src/test/java/org/launchcode/devops/carintegrationtesting/IntegrationTestConfig.java</span></code> and add the following:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// package statement omitted</span>
+
+<span class="kn">import</span> <span class="nn">java.lang.annotation.ElementType</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.Retention</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.RetentionPolicy</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.lang.annotation.Target</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.transaction.Transactional</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.context.SpringBootTest</span><span class="p">;</span>
+
+<span class="nd">@Transactional</span>
+<span class="nd">@SpringBootTest</span>
+<span class="nd">@AutoConfigureMockMvc</span>
+<span class="nd">@Target</span><span class="p">(</span><span class="n">ElementType</span><span class="p">.</span><span class="na">TYPE</span><span class="p">)</span>
+<span class="nd">@Retention</span><span class="p">(</span><span class="n">RetentionPolicy</span><span class="p">.</span><span class="na">RUNTIME</span><span class="p">)</span>
+<span class="kd">public</span> <span class="nd">@interface</span> <span class="n">IntegrationTestConfig</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>We won’t spend class time delving into these various annotations, but you can find more information by reading their documentation.</p>
+<p>Also you can find some general information by referring to the <a class="reference external" href="https://spring.io/guides/gs/testing-web/" target="_blank">Spring Testing Web guide<i class="fas fa-external-link-alt" aria-hidden="true"></i></a>.</p>
+</div>
+<div class="section" id="creating-carscontrollertests-java">
+<h3>Creating CarsControllerTests.java<a class="headerlink" href="#creating-carscontrollertests-java" title="Permalink to this headline">¶</a></h3>
+<p>We will need to create a test file that will hold the integration tests for our <code class="docutils literal notranslate"><span class="pre">/cars</span></code> endpoint.</p>
+<p>Create <code class="docutils literal notranslate"><span class="pre">car-integration-tests/src/test/java/org/launchcode/devops/carintegrationtesting/controllers/CarsControllerTests.java</span></code> and add the following:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// package statement omitted</span>
+
+<span class="kn">import</span> <span class="nn">org.launchcode.devops.carintegrationtesting.IntegrationTestConfig</span><span class="p">;</span>
+
+<span class="nd">@IntegrationTestConfig</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CarsControllerTests</span> <span class="p">{</span>
+
+<span class="nd">@Autowired</span>
+<span class="kd">private</span> <span class="n">MockMvc</span> <span class="n">mockRequest</span><span class="p">;</span>
+
+<span class="nd">@Autowired</span>
+<span class="kd">private</span> <span class="n">CarRepository</span> <span class="n">carRepository</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Currently devoid of tests, but contains the two tools we will need for testing our endpoints. We will be using the MockMvc object to build and send HTTP requests and evaluate the HTTP response. We will be using the CarRepository to access our testing database.</p>
+</div>
+</div>
+<div class="section" id="writing-integration-tests">
+<h2>Writing Integration Tests<a class="headerlink" href="#writing-integration-tests" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have configured our application to run integration tests let’s start writing tests.</p>
+<p>Looking at the <code class="docutils literal notranslate"><span class="pre">CarsController.java</span></code> file we have three endpoints we need to test:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/cars</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/cars</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/cars/{id}</span></code></li>
+</ul>
+<p>We will write a test for each of these endpoints in our <code class="docutils literal notranslate"><span class="pre">CarsControllerTests.java</span></code> file.</p>
+<div class="section" id="test-1-getcars">
+<h3>Test 1: getCars()<a class="headerlink" href="#test-1-getcars" title="Permalink to this headline">¶</a></h3>
+<p>Let’s write the first test for our <code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/cars</span></code> endpoint:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
+<span class="nd">@DisplayName</span><span class="p">(</span><span class="s">&quot;GET /cars: returns a JSON list representing the cars collection&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">getCars</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+    <span class="n">mockRequest</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span><span class="n">MockMvcRequestBuilders</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">CarsController</span><span class="p">.</span><span class="na">ROOT_PATH</span><span class="p">))</span>
+        <span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="na">isOk</span><span class="p">())</span>
+        <span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">content</span><span class="p">().</span><span class="na">json</span><span class="p">(</span><span class="s">&quot;[]&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Let’s break down this test because it’s using the MockMvc type we declared earlier.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&#64;Test</span></code>: an annotation we have seen many times so far</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;DisplayName</span></code>: an annotation that allows us to configure the output when the test is run</li>
+<li>method signature: in our integration tests we must include <code class="docutils literal notranslate"><span class="pre">throws</span> <span class="pre">Exception</span></code></li>
+<li>We are using the mockRequest object to build and make a HTTP GET request to the ROOT_PATH variable of the CarsController file (it happends to be <code class="docutils literal notranslate"><span class="pre">/cars</span></code>)</li>
+<li><code class="docutils literal notranslate"><span class="pre">.andExpect()</span></code> methods that allow us to check the returned HTTP Response object</li>
+</ul>
+<p>For this test our <code class="docutils literal notranslate"><span class="pre">.andExpect()</span></code> statements are checking that our HTTP status code is 200, and that the content (body) of our HTTP request is an empty json array.</p>
+</div>
+<div class="section" id="test-2-createcar">
+<h3>Test 2: createCar()<a class="headerlink" href="#test-2-createcar" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
+<span class="nd">@DisplayName</span><span class="p">(</span><span class="s">&quot;POST /cars (PartialCar): creates and returns a JSON representation of the new car entity&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">createCar</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+    <span class="n">Car</span> <span class="n">testCar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="s">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s">&quot;Prius&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+
+    <span class="n">mockRequest</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span>
+    <span class="n">MockMvcRequestBuilders</span>
+        <span class="p">.</span><span class="na">post</span><span class="p">(</span><span class="n">CarsController</span><span class="p">.</span><span class="na">ROOT_PATH</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">contentType</span><span class="p">(</span><span class="n">MediaType</span><span class="p">.</span><span class="na">APPLICATION_JSON</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">content</span><span class="p">(</span><span class="k">new</span> <span class="n">ObjectMapper</span><span class="p">().</span><span class="na">writeValueAsString</span><span class="p">(</span><span class="n">testCar</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="na">isCreated</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">header</span><span class="p">().</span><span class="na">exists</span><span class="p">(</span><span class="s">&quot;Location&quot;</span><span class="p">))</span>
+    <span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">jsonPath</span><span class="p">(</span><span class="s">&quot;$.id&quot;</span><span class="p">).</span><span class="na">isNumber</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This test is creating a POST request, which requires us to attach a JSON body to our HTTP request which we are doing when we make our MockMvcRequest. Our <code class="docutils literal notranslate"><span class="pre">.andExpect()</span></code> methods check that the status code is 201, the headers contain “Location” and finally that the <code class="docutils literal notranslate"><span class="pre">.id</span></code> property of the returned JSON body is a number.</p>
+</div>
+<div class="section" id="test-3-getcarbyid">
+<h3>Test 3: getCarById()<a class="headerlink" href="#test-3-getcarbyid" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Test</span>
+<span class="nd">@DisplayName</span><span class="p">(</span><span class="s">&quot;GET /cars/{id}: returns a JSON representation of a car entity matching the id path variable&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">getCarById</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+    <span class="n">Car</span> <span class="n">testCar</span> <span class="o">=</span> <span class="n">carRepository</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="s">&quot;Ford&quot;</span><span class="p">,</span> <span class="s">&quot;Mustang&quot;</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">));</span>
+    <span class="n">mockRequest</span><span class="p">.</span><span class="na">perform</span><span class="p">(</span><span class="n">MockMvcRequestBuilders</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">CarsController</span><span class="p">.</span><span class="na">ROOT_PATH</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">testCar</span><span class="p">.</span><span class="na">getId</span><span class="p">()))</span>
+    <span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">status</span><span class="p">().</span><span class="na">isOk</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">jsonPath</span><span class="p">(</span><span class="s">&quot;$.id&quot;</span><span class="p">).</span><span class="na">value</span><span class="p">(</span><span class="n">testCar</span><span class="p">.</span><span class="na">getId</span><span class="p">()))</span>
+    <span class="p">.</span><span class="na">andExpect</span><span class="p">(</span><span class="n">jsonPath</span><span class="p">(</span><span class="s">&quot;$.make&quot;</span><span class="p">).</span><span class="na">value</span><span class="p">(</span><span class="n">testCar</span><span class="p">.</span><span class="na">getMake</span><span class="p">()));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For this test we need to create a new car object in our database, so that we have an id we can make a get with. We are then firing the request with MockMvc and then checking that the HTTP status is 200, the id of the returned JSON car object matches the id of the car we created, and that the make between the JSON and the POJO match.</p>
+</div>
+</div>
+<div class="section" id="running-integration-tests-with-gradle-variables">
+<h2>Running Integration Tests with Gradle Variables<a class="headerlink" href="#running-integration-tests-with-gradle-variables" title="Permalink to this headline">¶</a></h2>
+<p>Finally we need to run our test using the gradle wrapper and we will need to pass in the environment variables that match our testing database:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gradlew <span class="nb">test</span> -D <span class="nv">DB_HOST</span><span class="o">=</span>localhost -D <span class="nv">DB_PORT</span><span class="o">=</span><span class="m">5432</span> -D <span class="nv">DB_NAME</span><span class="o">=</span>car_test -D <span class="nv">DB_USER</span><span class="o">=</span>car_test_user -D <span class="nv">DB_PASSWORD</span><span class="o">=</span>password i
+</pre></div>
+</div>
+<p>From the <code class="docutils literal notranslate"><span class="pre">--help</span></code> command for <code class="docutils literal notranslate"><span class="pre">./gradlew</span> <span class="pre">test</span></code>:</p>
+<blockquote>
+<div>The <code class="docutils literal notranslate"><span class="pre">-D</span></code> option or <code class="docutils literal notranslate"><span class="pre">--system-prop</span></code> is the option that allows us to set a system property of the JVM when running gradle tasks.</div></blockquote>
+<p>In this case these system properties match the tokens in our <code class="docutils literal notranslate"><span class="pre">application.properties</span></code> file that represent our testing database.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+        <br/>
+        
+      
+    </p>
+    <p>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
