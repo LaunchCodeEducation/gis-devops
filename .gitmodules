@@ -1,0 +1,3 @@
+[submodule "src/themes/docport"]
+	path = src/themes/docport
+	url = https://github.com/vjeantet/hugo-theme-docport.git
