@@ -1,3 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://education.launchcode.org/gis-devops"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "LaunchCode Technical Training: GIS-DevOps"
+theme = ["learn"]
