@@ -1,4 +1,11 @@
+# https://gohugo.io/getting-started/configuration/
 baseURL = "https://education.launchcode.org/gis-devops"
 languageCode = "en-us"
 title = "LaunchCode Technical Training: GIS-DevOps"
-theme = ["learn"]
+theme = ["learn"] 
+
+[outputs]
+# HTML: site
+# RSS: feed data
+# JSON: search indexing
+home = [ "HTML", "RSS", "JSON"]
