@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "LANGUAGE Implementation"
 date: {{ .Date }}
 summary: ""
 # TODO: add/remove tags before committing
