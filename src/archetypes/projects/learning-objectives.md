@@ -1,3 +1,0 @@
-# Conceptual Learning Objectives
-
-- 
