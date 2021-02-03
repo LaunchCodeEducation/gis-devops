@@ -51,3 +51,10 @@ hugo new
 
 - the `_index.md` (branch) frontmatter title dictates the name listed in the sidebar
   - any nested items do not need to be prefixed with the title
+
+## Adominitions
+
+> referred to as short codes in hugo
+
+- [hugo docs](https://gohugo.io/content-management/shortcodes/)
+- [learn theme docs](https://learn.netlify.app/en/shortcodes/notice/)
