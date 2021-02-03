@@ -13,14 +13,17 @@
 - external configuration
 - de/serialization
 - ORM
-- testing
 - integration testing
 - unit testing
-- CLI
+- TDD
+- terminal
 
 ## Exposure
 
 - SQL
 - docker
 - swagger
-- gradle
+- dependency management*
+- build tools*
+
+<!-- *generalize or specify (here or in implementation language) -->
