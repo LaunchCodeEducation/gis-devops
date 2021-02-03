@@ -4,7 +4,7 @@ date: {{ .Date }}
 summary: ""
 type: slides
 # TODO: add/remove tags before committing
-tags: ["slides", ""]
+tags: [""]
 ---
 
 <!-- SAMPLES

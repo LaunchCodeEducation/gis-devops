@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }} Index"
 date: {{ .Date }}
 summary: ""
-
+categories: ["topics"]
 ---
 
 <!-- SAMPLES
