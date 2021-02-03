@@ -93,3 +93,27 @@ Deployment projects:
 > Expect to use these minimally and/or be prepared to provide support for these topics
 
 > given starter code / commands, detailed instructions
+
+# Outgoing ACE
+
+> for outgoing expectations (hiring managers, prospective training clients)
+
+Rate each topic according to the minimum desired level for a junior devops engineer position. For each question the ACE system can be used to describe the desired level. 
+
+Autonomy
+- conversational in fundamental concepts and terminology
+- has independent or minimally guided practical experience 
+- capable of independently learning and applying related topics or technologies
+- needs minimal to no support in day-to-day tasks
+
+- Competency:
+- understands fundamental concepts and terminology
+- has some or guided practical experience
+- capable of learning and applying related topics or technologies with support of a mentor
+- needs some guidance in day-to-day tasks
+
+Exposure:
+- understands fundamental concepts and terminology but may need refreshing
+- has little or no unguided practical experience
+- requires mentorship and isolated practice for further learning and application
+- needs guidance and 1-on-1 review in day-to-day tasks
