@@ -1,3 +1,13 @@
+# Usage
+
+Pulls the theme. If you don't do this you will get Warnings about not having layouts for HTML files.
+
+```
+git clone 
+git submodule init
+git submodule update
+```
+
 # Content Organization
 
 ## Archetypes
