@@ -58,3 +58,24 @@ hugo new
 
 - [hugo docs](https://gohugo.io/content-management/shortcodes/)
 - [learn theme docs](https://learn.netlify.app/en/shortcodes/notice/)
+
+# Markdown notes
+
+- [Hugo Markdown Guide](https://www.markdownguide.org/tools/hugo/)
+
+## Tables
+
+just go here: https://www.tablesgenerator.com/markdown_tables
+
+<!-- 
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
+-->
+
+# VSCode Snippets
+
+Refer to .vscodesnippets file, the names are prefixes.
+
+To use them type the prefix and then hit `Ctrl+space` and then tab to move cursor.
