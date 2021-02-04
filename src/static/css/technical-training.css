@@ -1,0 +1,12 @@
+html {
+    font-size: 20px;
+    /* font-size: 20px; */
+}
+
+body {
+    font-size: 1rem !important;
+}
+
+#sidebar {
+    font-size: .8rem;
+}
