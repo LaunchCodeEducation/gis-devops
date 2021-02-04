@@ -22,11 +22,18 @@ dependencies (...) (...)
 backing services (postgis container)
 dev tools (docker-compose, bash)
  -->
-- Java / Spring Boot
-- Gradle
-- Spring Boot Test / Junit5
-- Spring Boot Data JPA / Hibernate
-- PostgreSQL + PostGIS extension container
+
+| | |
+| --- | --- |
+| **Language** | Java |
+| **Framework** | Spring Boot |
+| **Build Tool** | Gradle |
+| **Testing Framework** | Junit 5 |
+| **Database** | Postgres + PostGIS |
+
+{{% notice tip %}}
+Your gradle dependencies and tasks have been provided for you review them in the `build.gradle` file.
+{{% /notice %}}
 
 # Instructions
 
@@ -104,6 +111,124 @@ You can exit this command with `Ctrl+C`.
 <!-- TODO: add ref when article is up -->
 Refer to the [project submission guide]({{ < ref "" >}})
 
-# Gotchas
+# Techncial Requirements
 
-# Limited Guidance
+## REST
+
+Refer to the [REST spec on main project page]({{< ref "../#api-specification" >}})
+
+## External Configuration
+
+In the application.properties file in the provided starter code the following environment variable keys have been provided:
+
+```
+spring.datasource.url=jdbc:postgresql://${MAPNOTES_API_DB_HOST}:${MAPNOTES_API_DB_PORT}/${MAPNOTES_API_DB_NAME}
+spring.datasource.username=${MAPNOTES_API_DB_USER}
+spring.datasource.password=${MAPNOTES_API_DB_PASSWORD}
+```
+
+- MAPNOTES_API_DB_HOST
+- MAPNOTES_API_DB_PORT
+- MAPNOTES_API_DB_NAME
+- MAPNOTES_API_DB_USER
+- MAPNOTES_API_DB_PASSWORD
+
+## Serialization
+
+The majority of the completed files involve JSON serialization and de-serialization. The jackson library is pretty good at serializing JSON to and from standard Java library code, however, it isn't perfect.
+
+The jackson library isn't able to (de)serialize geo information out of the box. There are some additional third party libraries that can assist with this, but for the convenience of this project we have provide two custom serialization classes:
+
+- ``models/Feature/utils/FeatureCollectionSerializer.java``
+- ``models/Feature/utils/FeatureCollectionDeSerializer.java``
+
+These files do exactly what they say. They de-serialize a GEOJSON representation of a FeatureCollection to a usable FeatureCollection Java object and vice versa. You can look at how the files work, but learning about custom (de)serialization is not a topic we will explore in this class.
+
+You are still responsbile for completing generic JSON serializations by implementing the following DTO classes:
+
+- `InboundNoteRepresentation.java`
+- `OutboundNoteRepresentation.java`
+- `Feature.java`
+- `FeatureCollection.java`
+
+Refer to the [JSON Representations on the main project page]({{< ref "../#json-representations" >}})
+
+## GeoJSON
+
+Your integration tests inside `NoteFeatureController/` must adhere to the GeoJSON spec.
+
+Refer to the [GeoJSON Representations on the main project page]({{< ref "../#json-representations" >}})
+
+## ORM
+
+You will be responsbile for the provided models:
+
+- `NoteEntity.java`
+- `NoteFeatureEntity.java`
+
+{{% notice tip %}}
+Remeber your NoteEntity has a one to many relationship with NoteFeatureEntity.
+{{% /notice %}}
+
+Refer to the [JSON Representations on the main project page]({{< ref "../#json-representations" >}})
+
+## Integration Testing
+
+You will be responsbile for the provided integration testing files:
+
+- `GetNoteFeaturesTests.java`
+- `PutNoteFeaturesTests.java`
+- `GetNoteTests.java`
+- `DeleteNoteTests.java`
+- `GetNotesTests.java`
+- `PutNotesTests.java`
+
+You are responsbile for testing **all endpoint conclusions** in this application.
+
+Refer to the [REST spec on main project page]({{< ref "../#api-specification" >}}) for a refresher on the endpoints required for this application.
+
+{{% notice tip %}}
+Your integration tests are responsbile for testing HTTP responses & Database interactions.
+{{% /notice %}}
+
+### Testing Utilities
+
+Two files have been created to help you with writing your tests:
+
+- ``TestUtils/NoteDataTestUtil.java``
+- ``NoteFeatureEntityUtil.java``
+
+``NoteDataTestUtil.java`` is currently commented out, so that your code will compile, but after adding in the necessary code you can comment it in, and it will assist you in creating test notes.
+
+``NoteFeatureEntityUtil.java`` is a class with one static method ``getTestNoteFeatureEntities()``. This method will return a List of NoteFeatureEntity objects. This List of NoteFeatureEntity objects *is necessary* for writing tests around the ``/notes/{id}/features`` endpoints. You can look at this file to see how it created this test object if you would like to add more test data.
+
+## Unit Testing
+
+You will be responsbile for the provided unit testing files:
+
+- `InboundNoteRepresentationTests.java`
+- `OutboundNoteRepresentationTests.java`
+
+## TDD
+
+You are expected to follow TDD practices while coding this application.
+
+{{% notice warning %}}
+Check in with your instructor after writing your tests before moving into implementation.
+{{% /notice %}}
+
+<!-- 
+### Swagger
+
+https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api  (provide annotation config; submit a swagger doc via annotations) -->
+
+# Suggested Approach
+
+1. Get notes collection
+2. Get note entity
+3. Delete note entity
+4. Create note entity
+5. Get a note's features
+6. Save a note's features
+
+<!-- TODO: turn each suggested approach into subheaders and add additional things that will need to be done (from a high level) look into shortcodes for making the subsections collapsable -->

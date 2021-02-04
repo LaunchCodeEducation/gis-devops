@@ -5,6 +5,7 @@
 - HTTP
 - git
 - OOP
+- terminal
 
 ## Competency
 
@@ -16,13 +17,12 @@
 - integration testing
 - unit testing
 - TDD
-- terminal
+- swagger
 
 ## Exposure
 
 - SQL
 - docker
-- swagger
 - dependency management*
 - build tools*
 

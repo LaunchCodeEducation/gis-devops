@@ -25,14 +25,62 @@ This API project will require you to adhere to the RESTful specification below a
 
 The Map Notes API endpoints:
 
-<!-- TODO: convert to table -->
+<!-- vscode snippet -->
+| Method | Path | Request Body | Response Body | Status |
+| --- | --- | --- | --- | --- |
+| GET | `/notes` | | `OutboundNote[]` | 200 |
+| POST | `/notes` | `InboundNote` | `OutboundNote` | 201 |
+| GET | `/notes/{id}` | | `OutboundNote` | 200 |
+| DELETE | `/notes/{id}` | | | 204 |
+| GET | `/notes/{id}/features` | | `FeatureCollection` | 200 |
+| PUT | `/notes/{id}` | `FeatureCollection` | | 201 |
 
-- `GET /notes -> (Note[]) 200`
-- `POST /notes ({title, body}) -> (Note) 201`
-- `GET /notes/{id} -> (Note) 200`
-- `DELETE /notes/{id} -> 204`
-- `GET /notes/{id}/features -> (GeoJSON feature collection) 200`
-- `PUT /notes/{id}/features (GeoJSON feature collection) -> 201`
+### JSON Representations
+
+Your implementation should adhere to the following JSON shapes:
+
+{{% notice note %}}
+The following are generic JSON data types. Refer to your implementation for the data types of your language.
+{{% /notice %}}
+
+
+> `OutboundNote`:
+```js
+{
+  "id": number,
+  "title": string,
+  "body": string
+}
+```
+
+> `InboundNote`:
+```js
+{
+  "title": string,
+  "body": string
+}
+```
+
+> `Feature`:
+```js
+{
+  "id": number,
+  "type": "Feature",
+  "geometry": Geometry
+}
+```
+
+> `FeatureCollection`:
+```js
+{
+  "type": "FeatureCollection",
+  "features": Feature[]
+}
+```
+
+{{% notice note %}}
+Refer to the implementation for the `Geometry`. For additional information look at the offical [GeoJSON spec](https://geojson.org/).
+{{% /notice %}}
 
 ## API Requirements
 

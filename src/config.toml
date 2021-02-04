@@ -9,3 +9,7 @@ theme = ["learn"]
 # RSS: feed data
 # JSON: search indexing
 home = [ "HTML", "RSS", "JSON"]
+
+[params]
+# Change default color scheme with a variant one. Can be "red", "blue", "green".
+themeVariant = "blue"
