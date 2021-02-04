@@ -14,3 +14,4 @@ home = [ "HTML", "RSS", "JSON"]
 # Change default color scheme with a variant one. Can be "red", "blue", "green".
 themeVariant = "blue"
 custom_css = ["css/technical-training.css"]
+disableInlineCopyToClipBoard = true
