@@ -2,9 +2,9 @@
 title: "Mapnotes Api"
 date: 2021-02-02T20:31:55Z
 summary: ""
-# TODO: check if categories work for search
+## TODO: check if categories work for search
 
-# TODO: add/remove tags before committing
+## TODO: add/remove tags before committing
 categories: ["projects"]
 tags: ["api", "gis"]
 ---
@@ -13,15 +13,15 @@ tags: ["api", "gis"]
 language specific implementation requirements / overview
  -->
 
-# Overview
+## Overview
 
 Currently our Client consumes a Map Notes service that was provided for us. This project week we will be building our own Map Notes API.
 
-# Functional Requirements
+## Functional Requirements
 
 This API project will require you to adhere to the RESTful specification below as well as general API requirements.
 
-## API Specification
+### API Specification
 
 The Map Notes API endpoints:
 
@@ -35,7 +35,7 @@ The Map Notes API endpoints:
 | GET | `/notes/{id}/features` | | `FeatureCollection` | 200 |
 | PUT | `/notes/{id}` | `FeatureCollection` | | 201 |
 
-### JSON Representations
+#### JSON Representations
 
 Your implementation should adhere to the following JSON shapes:
 
@@ -82,7 +82,7 @@ The following are generic JSON data types. Refer to your implementation for the 
 Refer to the implementation for the `Geometry`. For additional information look at the offical [GeoJSON spec](https://geojson.org/).
 {{% /notice %}}
 
-## API Requirements
+### API Requirements
 
 - All endpoint conclusions must have passing integration tests
 - Any request that contains a path variable that doesn't exist in the database must return a 404 status code
@@ -90,7 +90,7 @@ Refer to the implementation for the `Geometry`. For additional information look 
 - DTOs must be used for incoming and outgoing JSON representations
 - API data must be persisted to a database
 
-# Implementations
+## Implementations
 
 Refer to the course schedule for which implementation to follow.
 

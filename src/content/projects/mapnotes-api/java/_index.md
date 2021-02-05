@@ -2,7 +2,7 @@
 title: "Java/Spring Implementation"
 date: 2021-02-02T20:31:55Z
 summary: ""
-# TODO: add/remove tags before committing
+## TODO: add/remove tags before committing
 tags: ["projects", "api", "java", "spring"]
 ---
 
@@ -12,7 +12,7 @@ language specific implementation requirements / overview
 
 This is the assigned project page with specific requirements and details for this tech stack. Refer to the [project overview]({{< ref "../" >}}) for general information, functional requirements and any other implementations of the project.
 
-# Tech Stack
+## Tech Stack
 
 <!-- table
 language (java) (python)
@@ -35,9 +35,9 @@ dev tools (docker-compose, bash)
 Your gradle dependencies and tasks have been provided for you review them in the `build.gradle` file.
 {{% /notice %}}
 
-# Instructions
+## Instructions
 
-## Setup
+### Setup
 
 Fork and clone the Map Notes API [java/spring starter repository](https://gitlab.com/LaunchCodeTraining/zika-project/mapnotes-api).
 
@@ -49,7 +49,7 @@ TODO: create dedicated dev submission article w/ assessment criteria
 - link to it in all projects it applies to
 -->
 
-## Running the Project
+### Running the Project
 
 There is some provided code, largely files, and some empty methods. The project has been given to you in a stable state. You can run this project with `bootRun` or you can test this project with `test`.
 
@@ -57,7 +57,7 @@ To make things easier for you while you work on this project we have created a `
 
 Try them out after cloning this project to your computer.
 
-### Running Test
+#### Running Test
 
 <!-- TODO: use vscode test runner config for embedded execution / results -->
 
@@ -79,7 +79,7 @@ If any tests fail the command will automatically open a Python web server with t
 If you are running this right after cloning, you will notice all of the tests fail. This is to be expected. If you look at the provided tests they are empty except for one assert statement that will always fail. You are responsible for writing valid tests for this API.
 {{% /notice %}}
 
-### Running Dev
+#### Running Dev
 
 If you want to kick off the gradle `bootRun` task you can do so from the root of your project with:
 
@@ -107,17 +107,17 @@ Your Tomcat web server started before your development database container was co
 
 You can exit this command with `Ctrl+C`.
 
-## Submission
+### Submission
 <!-- TODO: add ref when article is up -->
 Refer to the [project submission guide]({{ < ref "" >}})
 
-# Techncial Requirements
+## Techncial Requirements
 
-## REST
+### REST
 
 Refer to the [REST spec on main project page]({{< ref "../#api-specification" >}})
 
-## External Configuration
+### External Configuration
 
 In the application.properties file in the provided starter code the following environment variable keys have been provided:
 
@@ -133,7 +133,7 @@ spring.datasource.password=${MAPNOTES_API_DB_PASSWORD}
 - MAPNOTES_API_DB_USER
 - MAPNOTES_API_DB_PASSWORD
 
-## Serialization
+### Serialization
 
 The majority of the completed files involve JSON serialization and de-serialization. The jackson library is pretty good at serializing JSON to and from standard Java library code, however, it isn't perfect.
 
@@ -153,13 +153,13 @@ You are still responsbile for completing generic JSON serializations by implemen
 
 Refer to the [JSON Representations on the main project page]({{< ref "../#json-representations" >}})
 
-## GeoJSON
+### GeoJSON
 
 Your integration tests inside `NoteFeatureController/` must adhere to the GeoJSON spec.
 
 Refer to the [GeoJSON Representations on the main project page]({{< ref "../#json-representations" >}})
 
-## ORM
+### ORM
 
 You will be responsbile for the provided models:
 
@@ -172,7 +172,7 @@ Remeber your NoteEntity has a one to many relationship with NoteFeatureEntity.
 
 Refer to the [JSON Representations on the main project page]({{< ref "../#json-representations" >}})
 
-## Integration Testing
+### Integration Testing
 
 You will be responsbile for the provided integration testing files:
 
@@ -191,7 +191,7 @@ Refer to the [REST spec on main project page]({{< ref "../#api-specification" >}
 Your integration tests are responsbile for testing HTTP responses & Database interactions.
 {{% /notice %}}
 
-### Testing Utilities
+#### Testing Utilities
 
 Two files have been created to help you with writing your tests:
 
@@ -202,14 +202,14 @@ Two files have been created to help you with writing your tests:
 
 ``NoteFeatureEntityUtil.java`` is a class with one static method ``getTestNoteFeatureEntities()``. This method will return a List of NoteFeatureEntity objects. This List of NoteFeatureEntity objects *is necessary* for writing tests around the ``/notes/{id}/features`` endpoints. You can look at this file to see how it created this test object if you would like to add more test data.
 
-## Unit Testing
+### Unit Testing
 
 You will be responsbile for the provided unit testing files:
 
 - `InboundNoteRepresentationTests.java`
 - `OutboundNoteRepresentationTests.java`
 
-## TDD
+### TDD
 
 You are expected to follow TDD practices while coding this application.
 
@@ -218,11 +218,11 @@ Check in with your instructor after writing your tests before moving into implem
 {{% /notice %}}
 
 <!-- 
-### Swagger
+#### Swagger
 
 https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api  (provide annotation config; submit a swagger doc via annotations) -->
 
-# Suggested Approach
+## Suggested Approach
 
 1. Get notes collection
 2. Get note entity
