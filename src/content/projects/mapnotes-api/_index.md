@@ -92,6 +92,8 @@ Refer to the implementation for the `Geometry`. For additional information look 
 
 ## Implementations
 
-Refer to the course schedule for which implementation to follow.
+{{% notice note %}}
+Refer to your course schedule for which implementation to follow.
+{{% /notice %}}
 
 - [Java/Spring]({{< ref "java/" >}})

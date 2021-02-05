@@ -14,15 +14,6 @@ This is the assigned project page with specific requirements and details for thi
 
 ## Tech Stack
 
-<!-- table
-language (java) (python)
-framework (spring boot) (flask)
-build tool (gradle) (pip)
-dependencies (...) (...)
-backing services (postgis container)
-dev tools (docker-compose, bash)
- -->
-
 | | |
 | --- | --- |
 | **Language** | Java |
@@ -36,6 +27,9 @@ Your gradle dependencies and tasks have been provided for you review them in the
 {{% /notice %}}
 
 ## Instructions
+
+### Workflow
+<!-- TODO: add ref when article is up -->
 
 ### Setup
 
@@ -107,11 +101,7 @@ Your Tomcat web server started before your development database container was co
 
 You can exit this command with `Ctrl+C`.
 
-### Submission
-<!-- TODO: add ref when article is up -->
-Refer to the [project submission guide]({{ < ref "" >}})
-
-## Techncial Requirements
+## Technical Requirements
 
 ### REST
 
@@ -221,6 +211,10 @@ Check in with your instructor after writing your tests before moving into implem
 #### Swagger
 
 https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api  (provide annotation config; submit a swagger doc via annotations) -->
+
+## Submission
+<!-- TODO: add ref when article is up -->
+Refer to the [project submission guide]({{ < ref "" >}})
 
 ## Suggested Approach
 
