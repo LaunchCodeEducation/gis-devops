@@ -15,4 +15,7 @@ vertical slides separate by: ___
 instructor notes (anything beneath this is not displayed): Notes: 
  -->
 
+ {{< slides >}}
+ <!-- write all content inside the slides shortcode -->
  
+ {{< /slides >}}
