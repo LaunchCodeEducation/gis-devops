@@ -8,6 +8,32 @@ git submodule init
 git submodule update
 ```
 
+# Workflow
+
+## TODO Tree
+
+> usage
+
+```md
+TODO: some todo
+IDEA: some idea
+TAG: content
+...
+
+> avaiilable tags
+
+- TODO
+- IDEA
+- 
+
+## Snippets
+
+Refer to .vscodesnippets file, the names are prefixes.
+
+To use them type the prefix and then hit `Ctrl+space` and then tab to move cursor.
+
+
+
 # Content Organization
 
 ## Archetypes
@@ -73,9 +99,3 @@ just go here: https://www.tablesgenerator.com/markdown_tables
 | Header      | Title       | Here's this   |
 | Paragraph   | Text        | And more      |
 -->
-
-# VSCode Snippets
-
-Refer to .vscodesnippets file, the names are prefixes.
-
-To use them type the prefix and then hit `Ctrl+space` and then tab to move cursor.
