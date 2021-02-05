@@ -16,3 +16,5 @@ themeVariant = "blue"
 custom_css = ["css/technical-training.css"]
 disableInlineCopyToClipBoard = true
 showVisitedLinks = true
+editURL = true
+disableNextPrev = true
