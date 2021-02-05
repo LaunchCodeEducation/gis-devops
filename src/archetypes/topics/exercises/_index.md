@@ -1,12 +1,12 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "Exercises"
 date: {{ .Date }}
 summary: ""
-categories: ["exercises"]
+weight: 2
 ---
 
 Exercises are designed to give you focused practice on a topic. Solutions are provided in class with an opportunity to go over them together. While they are not graded you should use them as a guide to check your own understanding of the topic.
 
-# Exercises
+## Exercises
 
 - []({< ref "" >})

@@ -56,6 +56,8 @@ IDEA:
 optionally treat each step as a subheader with bullet points of sub tasks
 
 consider making them individually collapsible
+
+https://learn.netlify.app/en/shortcodes/expand/
 -->
 
 1. 

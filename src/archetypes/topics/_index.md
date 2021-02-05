@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }} Index"
+title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 summary: ""
 categories: ["topics"]
@@ -9,20 +9,18 @@ categories: ["topics"]
 
  -->
 
-# Key Takeaways
+## Key Takeaways
 
-# Learning Objectives
+## Learning Objectives
 
-## Conceptual
-
--
-
-## Practical
+### Conceptual
 
 -
 
-# Content
+### Practical
 
-- [Slides]({< ref "" >})
-- [Exercises]({< ref "" >})
-- [Walkthroughs]({< ref "" >})
+-
+
+## Content
+
+{{% children depth=2 sort="weight" %}}
