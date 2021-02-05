@@ -16,7 +16,7 @@
 				<section data-markdown
 				         data-separator="^---"
 					 data-separator-vertical="^___"
-					 data-separator-notes="^Note:">
+           data-separator-notes="^Notes:">
 				{{ .RawContent }}
 				</section>
 			</div>
@@ -29,8 +29,9 @@
 
 		<script>
 			Reveal.initialize({
-					plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
-			      });
+          plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+          // options: https://revealjs.com/config/
+      });
 		</script>
 
 
