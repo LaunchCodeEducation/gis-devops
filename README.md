@@ -36,8 +36,11 @@ testing/
 
 ```sh
 hugo new topics/TOPIC <-- top-level topic / tool agnostic
-hugo new topics/TOPIC/TOOL <-- tool specific
+hugo new topics/TOPIC/tools/TOOL <-- tool specific
 ```
+
+- after creating the tools sub-topic change the `categories: ["tools"]`
+- delete any sub-dirs that definitel wont be used for the topic / tool
 
 be specific with topic naming but no tools as top levels 
 
