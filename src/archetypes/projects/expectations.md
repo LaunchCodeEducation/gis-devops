@@ -1,16 +1,24 @@
 ---
-title: "Incoming Expectations"
+title: "Student Expectations"
 date: {{ .Date }}
 ---
 
-# Autonomy
+<!-- 
+IDEA:
+
+link to dedicated ACE document with detailed explanation (project section)
+
+quoted expectation summary
+-->
+
+## Autonomy
 
 -
 
-# Competency
+## Competency
 
 - 
 
-# Exposure
+## Exposure
 
 - 

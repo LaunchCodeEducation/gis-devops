@@ -12,10 +12,14 @@ tags: ["projects"]
 language specific implementation requirements / overview
  -->
 
-# Overview
+## Overview
 
-# Functional Requirements
+## Functional Requirements
 
-# Implementations
+## Implementations
+
+{{% notice note %}}
+Refer to your course schedule for which implementation to follow.
+{{% /notice %}}
 
 - [LANGUAGE/FRAMEWORK]({{< ref "LANGUAGE/" >}})
