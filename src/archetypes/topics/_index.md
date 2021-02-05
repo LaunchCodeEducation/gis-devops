@@ -3,6 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 summary: ""
 categories: ["topics"]
+# TODO: use the .Name param to set the tags
 ---
 
 <!-- SAMPLES
@@ -23,4 +24,5 @@ categories: ["topics"]
 
 ## Content
 
-{{% children depth=2 sort="weight" %}}
+{{% children style="h3" depth=2 sort="weight" %}}
+
