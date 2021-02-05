@@ -8,6 +8,51 @@ git submodule init
 git submodule update
 ```
 
+# Organization
+
+> prefer flat FS. grouping should be done in version controlled documents (course schedule, units, courses etc)
+
+
+> example
+
+```sh
+topics/
+  integration-testing/
+  # tool-agnostic-content
+    tool/
+    # tool-specific-content
+  test-driven-development/
+
+vs
+
+testing/
+  integration/
+    tool/
+
+# testing is a grouping concept that should be done in a document not in the FS
+```
+
+> create any tool implementations using the topics archetype. delete anything not used at that level
+
+```sh
+hugo new topics/TOPIC <-- top-level topic / tool agnostic
+hugo new topics/TOPIC/TOOL <-- tool specific
+```
+
+be specific with topic naming but no tools as top levels 
+
+> example
+
+```sh
+integration-testing/
+  java/
+    junit-stuff.md
+
+# preferred over
+
+junit/
+  junit-stuff.md
+
 # Workflow
 
 ## TODO Tree
