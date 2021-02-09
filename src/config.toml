@@ -1,7 +1,7 @@
 # https://gohugo.io/getting-started/configuration/
 baseURL = "https://education.launchcode.org/gis-devops"
 languageCode = "en-us"
-title = "LaunchCode Technical Training: GIS-DevOps"
+title = "GIS-DevOps"
 theme = ["learn"] 
 
 [outputs]
@@ -15,6 +15,21 @@ home = [ "HTML", "RSS", "JSON"]
 themeVariant = "blue"
 custom_css = ["css/technical-training.css"]
 disableInlineCopyToClipBoard = true
+disableLandingPage = false
 showVisitedLinks = true
-editURL = true
+# sets the "edit this page" base URL
+# !! must include branch name and end with src/ for proper pathing !!
+editURL = "https://github.com/LaunchCodeEducation/gis-devops/tree/master/src/"
 disableNextPrev = true
+
+[Languages]
+[Languages.en]
+landingPageURL = "/gis-devops"
+landingPageName = "<i class='fas fa-home'></i> Course Schedule"
+# -- sidebar --
+
+# [[menu.shortcuts]] 
+# identifier = "github"
+# name = "<i class='fab fa-github'></i> Github repo"
+# url = "https://github.com/launchcodeeducation/gis-devops"
+# weight = 10
