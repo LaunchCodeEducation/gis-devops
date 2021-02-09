@@ -9,4 +9,4 @@ Slides are meant to give you a high-level overview of the topic. They cover the 
 
 ## Slides
 
-- []({< ref "" >})
+{{% children depth=2 sort="weight" %}}

@@ -1,6 +1,6 @@
 ---
 title: "Exercises"
-date: 2021-02-05T19:54:14Z
+date: 2021-02-05T19:54:37Z
 summary: ""
 weight: 2
 ---
@@ -9,4 +9,4 @@ Exercises are designed to give you focused practice on a topic. Solutions are pr
 
 ## Exercises
 
-- []({< ref "" >})
+{{% children depth=2 sort="weight" %}}

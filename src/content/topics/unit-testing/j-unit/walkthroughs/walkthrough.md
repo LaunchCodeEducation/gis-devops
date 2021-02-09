@@ -1,6 +1,6 @@
 ---
 # TODO: set walkthrough title
-title: "WALKTHROUGH TITLE"
+title: "Unit Testing LaunchCart"
 date: 2021-02-05T19:54:37Z
 summary: ""
 categories: ["walkthroughs"]

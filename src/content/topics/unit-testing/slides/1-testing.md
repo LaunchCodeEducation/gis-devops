@@ -1,0 +1,92 @@
+---
+# TODO: set slide name
+title: "1. Testing Fundamentals"
+date: 2021-02-05T19:54:14Z
+summary: "Introduction to manual and automated testing"
+categories: ["slides"]
+# TODO: add/remove tags before committing
+tags: ["testing"]
+---
+
+{{< slides >}}
+<!-- .slide: data-background="#ff0000" -->
+# Testing Code
+
+---
+
+# Approaches
+
+> How can you be sure your code does what you expect?
+
+- Manual testing
+- **Automated testing**
+
+---
+
+# Manual Testing
+
+> Manually execute your code with a **given input** and compare the result to an **expected output**
+
+___
+
+Provides a tangible feel for **overall** behavior
+
+Typically performed by a QA (Quality Assurance) team
+
+> Manually testing individual units of code has some downsides
+
+___
+
+## Downsides
+
+- Tedious
+- Error prone 
+- Time consuming
+
+---
+
+# Automated Testing
+
+> Code that tests your code!
+
+---
+
+# Many Forms of Automated Testing
+
+___
+
+## Unit Testing
+
+> Testing **individual units** of code
+
+Tests the code itself
+
+___
+
+## Integration Testing (code)
+
+> Testing how multiple units **integrate with each other**
+
+Tests the code itself
+___
+
+## End-to-end Testing (user)
+
+> Testing the **functionality** of an application
+
+Simulates user/consumer interactions with the application
+
+---
+
+# Exploring Automated Testing
+
+> What we will cover
+
+- Unit testing
+- Integration testing
+
+Notes:
+
+instructor notes below (not displayed in slides)
+
+{{< /slides >}}

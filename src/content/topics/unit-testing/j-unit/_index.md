@@ -1,8 +1,9 @@
 ---
-title: "J Unit"
+title: "Java/J-Unit"
 date: 2021-02-05T19:54:37Z
-summary: ""
-categories: ["tools"]
+summary: "Unit testing in Java with J-Unit"
+categories: ["java"]
+tags: ["unit-testing", "j-unit"]
 ---
 
 <!-- SAMPLES
