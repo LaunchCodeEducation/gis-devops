@@ -1,8 +1,9 @@
 ---
 title: "Unit Testing"
-date: 2021-02-05T19:54:14Z
+date: 2021-02-09T20:32:36Z
 summary: ""
 categories: ["topics"]
+# IDEA: use the .Name param to set the tags
 ---
 
 <!-- SAMPLES
@@ -20,9 +21,3 @@ categories: ["topics"]
 ### Practical
 
 -
-
-## Content
-
-{{% children style="h3" depth=2 sort="weight" %}}
-
-

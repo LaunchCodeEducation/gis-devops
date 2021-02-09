@@ -1,7 +1,8 @@
 ---
 title: "Slides"
-date: 2021-02-05T19:54:14Z
+date: 2021-02-09T20:32:36Z
 summary: ""
+# puts slides above others in ToC sidebar
 weight: 1
 ---
 
@@ -9,4 +10,6 @@ weight: 1
 Slides are meant to give you a high-level overview of the topic. They cover the key concepts and terminology with some exposure to practical syntax where appropriate.
 {{% /notice %}}
 
-{{% children style="h2" sort="weight" %}}
+## Slides
+
+{{% children style="h3" sort="weight" %}}
