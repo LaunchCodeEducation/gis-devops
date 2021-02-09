@@ -21,3 +21,9 @@ categories: ["topics"]
 ### Practical
 
 -
+
+## Resources
+
+<!-- TODO: links to additional resources -->
+
+- []()

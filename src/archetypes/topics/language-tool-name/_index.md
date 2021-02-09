@@ -23,3 +23,9 @@ tags: ["{{ replace .Name '-' ' ' }}", ""]
 ### Practical
 
 -
+
+## Resources
+
+<!-- links to additional resources -->
+
+- []()
