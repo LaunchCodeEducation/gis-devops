@@ -2,8 +2,8 @@
 title: "Walkthroughs"
 date: {{ .Date }}
 summary: ""
-# walkthroughs come after slides (1) and exercises (2)
-weight: 3
+# walkthroughs come after slides (1) in ToC sidebar
+weight: 2
 categories: ["walkthroughs"]
 # TODO: add/remove tags before committing
 tags: [""]

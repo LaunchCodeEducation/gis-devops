@@ -2,10 +2,9 @@
 title: "Exercises"
 date: {{ .Date }}
 summary: ""
-# slides (1) come before exercises in ToC sidebar
-weight: 2
-# tags the topic
-# TODO: add the tool-name and any other related tags before committing
+# slides (1) and walkthroughs (2) come before exercises in ToC sidebar
+weight: 3
+# TODO: add related tags before committing
 tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
@@ -15,11 +14,4 @@ Exercises are designed to give you isolated practice on a topic. Solutions are n
 
 ## Exercises
 
-<!--
-
-add sub-headers as needed to separate:
-- types of related exercises
-- exercises that are grouped under a common intro section
--->
-
-1. 
+{{% children style="h3" sort="weight" %}}
