@@ -3,7 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 summary: ""
 categories: ["topics"]
-# TODO: use the .Name param to set the tags
+# IDEA: use the .Name param to set the tags
 ---
 
 <!-- SAMPLES
