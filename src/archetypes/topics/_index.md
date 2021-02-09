@@ -21,8 +21,3 @@ categories: ["topics"]
 ### Practical
 
 -
-
-## Content
-
-{{% children style="h3" depth=2 sort="weight" %}}
-

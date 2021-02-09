@@ -1,0 +1,33 @@
+---
+# TODO: set slide name
+# prefix with number (title and file name) for dictating order of multiple slide decks
+title: "1. SLIDES NAME"
+date: {{ .Date }}
+summary: ""
+categories: ["slides"]
+# TODO: add/remove tags before committing
+tags: [""]
+---
+
+<!-- 
+title slide (h1): #
+other slides (h2): ##
+
+!! prefer using multiple vertical slides over dense slides !!
+
+vertical slides to expand on the concept
+vertical separator: ___
+
+horizontal slides to separate concepts
+horizontal separator: ---
+-->
+
+{{< slides >}}
+
+<!-- slide content between < slides > and Notes: -->
+
+Notes:
+
+instructor notes below (not rendered in slides unless in presenter mode)
+
+{{< /slides >}}

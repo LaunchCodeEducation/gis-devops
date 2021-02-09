@@ -5,8 +5,9 @@ summary: ""
 # walkthroughs come after slides (1) and exercises (2)
 weight: 3
 categories: ["walkthroughs"]
-# TODO: add/remove tags before committing
-tags: [""]
+# tags the topic
+# TODO: add the tool-name and any other related tags before committing
+tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
 <!--
@@ -23,4 +24,4 @@ You can complete walkthroughs on your own for additional practice or use them as
 
 ## Walkthroughs
 
-{{% children style="h3" depth=2 sort="weight" %}}
+{{% children style="h3" depth=1 sort="weight" %}}
