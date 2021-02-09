@@ -4,15 +4,6 @@
   - diagrams preferred
   - led by instructor
   - loosely isolated
-- exercises: repetitive practice that is isolated to the topic
-  - may include: only the topic
-  - low detail without solutions (random prompts we think of)
-  - we can go over solutions with students / class if needed
-  - otherwise no solutions provided (just random questions we think of)
-- quizzes: convert topic learning objectives into a graded assessment
-  - may include: only the topic
-  - auto-graded (google form, hugo plugin, custom JS / JSON)
-  - informs student and instructor of progression
 - walkthroughs: application of the topic
   - may include: closely related / autonomous topics
   - loosely isolated
@@ -20,10 +11,20 @@
   - gives student opportunity for applied practice
   - detailed writeup
   - can be consumed independently
-- exploration (studio): application of the topic
+- exercises: repetitive practice that is isolated to the topic
   - may include: closely related / autonomous topics
-  - gives student opportunity for applied practice
-  - requires instructor support
+  - low detail without solutions
+  - we can go over solutions with students / class if needed
+  - otherwise no solutions provided (just random questions we think of)
+- quizzes: convert topic learning objectives into a graded assessment
+  - may include: only the topic
+  - auto-graded (google form, hugo plugin, custom JS / JSON)
+  - informs student and instructor of progression
+
+## projects
+
+TODO: discuss mini-projects (todo API) vs assessment projects (mapnotes API)
+
 - mission (project): application of multiple related topics
   - may include: anything related that has been covered
   - minimum ACE requirements
