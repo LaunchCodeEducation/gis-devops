@@ -11,42 +11,28 @@ tags: ["{{ replace .Name '-' ' ' }}", ""]
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
-## Learning Objectives
+<!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
+
+<!-- ## Learning Objectives
 
 {{% notice info %}}
-<!-- TODO: set the ACE rating -->
-<!-- INSTRUCTOR: check that the level matches expectations for the cohort -->
-After learning this topic you are expected to reach the **ACE RATING** level of the following objectives.
-{{% /notice %}}
+After learning this topic you are expected to reach the **Competence** level of the following objectives.
+{{% /notice %}} -->
 
-<!-- TODO: cut any levels that are not currently being used. add later as needed -->
-### Exposure
+<!-- ### Terminology
 
-#### Conceptual
+> For the following list you should know the definition and have an example to relate it to:
 
--
+-  -->
 
-#### Practical
+<!-- ### Concepts
 
--
+> You should be able to discuss the following:
 
-### Competency
+-  -->
 
-#### Conceptual
+<!-- ### Capabilities
 
-- 
+> You should be able to:
 
-#### Practical
-
-- 
-
-### Autonomy
-
-#### Conceptual
-
-- 
-
-#### Practical
-
-- 
-
+-  -->
