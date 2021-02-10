@@ -9,44 +9,55 @@ tags: ["unit-testing"]
 
 ## Content
 
-{{% children style="h3" depth=2 sort="weight" %}}
-
+{{% children style="h3" depth=1 sort="weight" %}}
 
 ## Learning Objectives
 
-<!-- TODO: cut any levels that are not currently being used. add later as needed -->
-
 {{% notice info %}}
-<!-- INSTRUCTOR: check that the level matches expectations for the cohort -->
 After learning this topic you are expected to reach the **Competence** level of the following objectives.
 {{% /notice %}}
 
-### Exposure
+### Terminology
 
-#### Conceptual
+> For the following list you should know the definition and have an example to relate it to:
 
--
+- Manual Testing
+- Assertion Statement
+- Expected value
+- Actual value
+- Test coverage
+- Testing Framework
+- Automated Testing
+- Unit
 
-#### Practical
+### Concepts
 
--
+<!-- What, Why, When, Where, Best practices/conventions -->
 
-### Competency
+> You should be able to discuss the following:
 
-#### Conceptual
+- Pros and cons of automated and manual testing
+- Common automated testing techniques
+- Benefits of unit testing
+- What code should or should not be unit tested
 
-- 
+<!-- quiz questions 
 
-#### Practical
+- What are the benefits of unit testing?
+- What are the benefits of automated testing?
+- What are common automated testing techniques?
+- What should/shouldn't be tested in your code?
+- What does a testing framework do?
 
-- 
+-->
 
-### Autonomy
+### Capabilities
 
-#### Conceptual
+> You should be able to:
 
-- 
-
-#### Practical
-
-- 
+- design the setup and assertions of a unit test
+- write unit tests for existing code
+- write unit tests for new code
+- execute tests
+- open and read test reports
+- identify issues in source code based on test results
