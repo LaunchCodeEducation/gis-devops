@@ -7,24 +7,46 @@ categories: ["topics"]
 tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
-<!-- SAMPLES
+## Content
 
- -->
-
-## Key Takeaways
+{{% children style="h3" depth=1 sort="weight" %}}
 
 ## Learning Objectives
 
-### Conceptual
+{{% notice info %}}
+<!-- TODO: set the ACE rating -->
+<!-- INSTRUCTOR: check that the level matches expectations for the cohort -->
+After learning this topic you are expected to reach the **ACE RATING** level of the following objectives.
+{{% /notice %}}
+
+<!-- TODO: cut any levels that are not currently being used. add later as needed -->
+### Exposure
+
+#### Conceptual
 
 -
 
-### Practical
+#### Practical
 
 -
 
-## Resources
+### Competency
 
-<!-- TODO: links to additional resources -->
+#### Conceptual
 
-- []()
+- 
+
+#### Practical
+
+- 
+
+### Autonomy
+
+#### Conceptual
+
+- 
+
+#### Practical
+
+- 
+

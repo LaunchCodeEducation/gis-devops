@@ -8,24 +8,6 @@ categories: ["LANGUAGE"]
 tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
-<!-- SAMPLES
+## Content
 
- -->
-
-## Key Takeaways
-
-## Learning Objectives
-
-### Conceptual
-
--
-
-### Practical
-
--
-
-## Resources
-
-<!-- links to additional resources -->
-
-- []()
+{{% children style="h3" depth=1 sort="weight" %}}
