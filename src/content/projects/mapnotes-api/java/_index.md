@@ -111,7 +111,7 @@ Refer to the [REST spec on main project page]({{< ref "../#api-specification" >}
 
 In the application.properties file in the provided starter code the following environment variable keys have been provided:
 
-```
+```sh
 spring.datasource.url=jdbc:postgresql://${MAPNOTES_API_DB_HOST}:${MAPNOTES_API_DB_PORT}/${MAPNOTES_API_DB_NAME}
 spring.datasource.username=${MAPNOTES_API_DB_USER}
 spring.datasource.password=${MAPNOTES_API_DB_PASSWORD}
@@ -210,7 +210,8 @@ Check in with your instructor after writing your tests before moving into implem
 <!-- 
 #### Swagger
 
-https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api  (provide annotation config; submit a swagger doc via annotations) -->
+https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api  (provide annotation config; submit a swagger doc via annotations)
+-->
 
 ## Submission
 <!-- TODO: add ref when article is up -->

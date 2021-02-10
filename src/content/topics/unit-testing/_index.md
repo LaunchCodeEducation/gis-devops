@@ -7,18 +7,46 @@ categories: ["topics"]
 tags: ["unit-testing"]
 ---
 
-<!-- SAMPLES
+## Content
 
- -->
+{{% children style="h3" depth=2 sort="weight" %}}
 
-## Key Takeaways
 
 ## Learning Objectives
 
-### Conceptual
+<!-- TODO: cut any levels that are not currently being used. add later as needed -->
+
+{{% notice info %}}
+<!-- INSTRUCTOR: check that the level matches expectations for the cohort -->
+After learning this topic you are expected to reach the **Competence** level of the following objectives.
+{{% /notice %}}
+
+### Exposure
+
+#### Conceptual
 
 -
 
-### Practical
+#### Practical
 
 -
+
+### Competency
+
+#### Conceptual
+
+- 
+
+#### Practical
+
+- 
+
+### Autonomy
+
+#### Conceptual
+
+- 
+
+#### Practical
+
+- 
