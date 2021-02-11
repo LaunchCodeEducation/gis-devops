@@ -16,7 +16,7 @@ tags: ["testing"]
 ## Learning Objectives
 
 {{% notice info %}}
-After learning this topic you are expected to reach the **Competence** level of the following objectives.
+After learning this topic you are expected to reach the **Exposure** level of the following objectives.
 {{% /notice %}}
 
 ### Terminology
