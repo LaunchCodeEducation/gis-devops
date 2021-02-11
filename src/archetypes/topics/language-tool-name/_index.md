@@ -8,6 +8,16 @@ categories: ["LANGUAGE"]
 tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
+<!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->
+
+<!-- ## Prerequisites
+
+{{% notice warning %}}
+In order to learn this implementation you need to know the learning objectives of the following prerequisite implementations:
+{{% /notice %}}
+
+1. [LANGUAGE/TOOL NAME: PARENT TOPIC]({{< ref "topics/TOPIC/LANGUAGE-TOOL-NAME/" >}}) -->
+
 ## Content
 
 {{% children style="h3" depth=1 sort="weight" %}}
@@ -22,7 +32,7 @@ In addition to the learning objectives listed here you are responsible for the [
 
 <!-- ### Terminology
 
-> For the following list you should know the definition and have an example to relate it to:
+> For the following list you should know the purpose and have an example to relate it to:
 
 -  -->
 
