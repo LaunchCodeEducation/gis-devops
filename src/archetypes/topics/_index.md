@@ -7,6 +7,16 @@ categories: ["topics"]
 tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
+<!-- TODO: back link to any previous topics (from root up to current topic) -->
+
+<!-- ## Prerequisites
+
+{{% notice warning %}}
+In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
+{{% /notice %}}
+
+- [TOPIC]({{< ref "topics/TOPIC" >}}) -->
+
 ## Content
 
 {{% children style="h3" depth=1 sort="weight" %}}
