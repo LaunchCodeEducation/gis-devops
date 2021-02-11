@@ -5,7 +5,7 @@ summary: ""
 categories: ["java"]
 # tags the topic
 # TODO: add the tool-name and any other related tags before committing
-tags: ["unit-testing", ""]
+tags: ["unit-testing", "j-unit"]
 ---
 
 ## Content
@@ -22,11 +22,11 @@ In addition to the learning objectives listed here you are responsible for the [
 
 > For the following list you should know the definition and have an example to relate it to:
 
-- @Test
-- @DisplayName
-- @Before
-- @After
-- assertEquals()
+- `@Test`
+- `@DisplayName`
+- `@Before`
+- `@After`
+- `assertEquals()`
 
 <!-- TODO: check for other annotations or assert methods that should be listed -->
 
@@ -41,6 +41,6 @@ In addition to the learning objectives listed here you are responsible for the [
 > You should be able to:
 
 - Run tests with the gradle wrapper
-- Run tests with the Visual Studio Code Test Runner
+- Run tests with the VSC Test Runner
 - View gradle test results
 - View VSC test results

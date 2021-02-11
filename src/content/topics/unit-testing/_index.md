@@ -7,6 +7,14 @@ categories: ["topics"]
 tags: ["unit-testing"]
 ---
 
+## Prerequisites
+
+{{% notice warning %}}
+In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
+{{% /notice %}}
+
+- [Testing]({{< ref "topics/testing/" >}})
+
 ## Content
 
 {{% children style="h3" depth=1 sort="weight" %}}
@@ -21,35 +29,14 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 > For the following list you should know the definition and have an example to relate it to:
 
-- Manual Testing
-- Assertion Statement
-- Expected value
-- Actual value
-- Test coverage
-- Testing Framework
-- Automated Testing
 - Unit
 
 ### Concepts
 
-<!-- What, Why, When, Where, Best practices/conventions -->
-
 > You should be able to discuss the following:
 
-- Pros and cons of automated and manual testing
-- Common automated testing techniques
 - Benefits of unit testing
 - What code should or should not be unit tested
-
-<!-- quiz questions 
-
-- What are the benefits of unit testing?
-- What are the benefits of automated testing?
-- What are common automated testing techniques?
-- What should/shouldn't be tested in your code?
-- What does a testing framework do?
-
--->
 
 ### Capabilities
 
