@@ -7,7 +7,7 @@ categories: ["topics"]
 tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
-<!-- TODO: back link to any previous topics (from root up to current topic) -->
+<!-- TODO: back link to any previous topics (ascending order from root to current topic) -->
 
 <!-- ## Prerequisites
 
@@ -15,7 +15,7 @@ tags: ["{{ replace .Name '-' ' ' }}", ""]
 In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-- [TOPIC]({{< ref "topics/TOPIC" >}}) -->
+1. [TOPIC]({{< ref "topics/TOPIC/" >}}) -->
 
 ## Content
 
@@ -28,6 +28,8 @@ In order to learn this topic you need to know the learning objectives of the fol
 {{% notice info %}}
 After learning this topic you are expected to reach the **Competence** level of the following objectives.
 {{% /notice %}} -->
+
+<!-- the main terms you would use when discussing the topic in the class / on the job -->
 
 <!-- ### Terminology
 
