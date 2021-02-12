@@ -6,7 +6,7 @@ summary: ""
 weight: 2
 categories: ["walkthroughs"]
 # TODO: remove hiding if walkthroughs are added
-hide: true
+hidden: true
 # TODO: add/remove tags before committing
 tags: [""]
 ---
