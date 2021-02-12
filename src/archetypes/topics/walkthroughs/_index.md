@@ -5,6 +5,8 @@ summary: ""
 # walkthroughs come after slides (1) in ToC sidebar
 weight: 2
 categories: ["walkthroughs"]
+# TODO: remove hiding if walkthroughs are added
+hide: true
 # TODO: add/remove tags before committing
 tags: [""]
 ---

@@ -16,7 +16,7 @@ tags: ["{{ replace .Name '-' ' ' }}", ""]
 In order to learn this implementation you need to know the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [LANGUAGE/TOOL NAME: PARENT TOPIC]({{< ref "topics/TOPIC/LANGUAGE-TOOL-NAME/" >}}) -->
+1. [LANGUAGE/TOOL NAME: PARENT TOPIC]({{< ref "topics/" >}}) -->
 
 ## Content
 
