@@ -1,22 +1,22 @@
 ---
-title: "LANGUAGE/TOOL NAME"
+title: "Java/J-Unit"
 date: 2021-02-11T22:23:20Z
 summary: ""
-categories: ["LANGUAGE"]
+categories: ["java"]
 # tags the topic
 # TODO: add the tool-name and any other related tags before committing
-tags: ["tdd", ""]
+tags: ["tdd", "j-unit", "unit-testing"]
 ---
 
 <!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->
 
-<!-- ## Prerequisites
+## Prerequisites
 
 {{% notice warning %}}
 In order to learn this implementation you need to know the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [LANGUAGE/TOOL NAME: PARENT TOPIC]({{< ref "topics/TOPIC/LANGUAGE-TOOL-NAME/" >}}) -->
+1. [Java/J-Unit: Unit Testing]({{< ref "topics/unit-testing/java-j-unit/" >}})
 
 ## Content
 

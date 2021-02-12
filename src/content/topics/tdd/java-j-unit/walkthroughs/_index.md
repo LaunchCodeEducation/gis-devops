@@ -7,7 +7,7 @@ weight: 2
 categories: ["walkthroughs"]
 # tags the topic
 # TODO: add the tool-name and any other related tags before committing
-tags: ["tdd", ""]
+tags: ["tdd", "j-unit", "unit-testing"]
 ---
 
 <!--
