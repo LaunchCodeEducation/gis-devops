@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "Quiz"
 date: {{ .Date }}
 summary: ""
 categories: ["quizzes"]
