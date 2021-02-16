@@ -4,6 +4,8 @@ date: {{ .Date }}
 summary: ""
 categories: ["LANGUAGE"]
 # tags the topic
+# TODO: unhide if in use
+hidden: true
 # TODO: add the tool-name and any other related tags before committing
 tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
