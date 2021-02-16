@@ -1,0 +1,119 @@
+---
+title: "Quiz"
+date: 2021-02-11T18:34:35Z
+summary: ""
+categories: ["quizzes"]
+# TODO: add any other related tags before committing
+tags: ["integration-testing"]
+---
+
+## Which is the appropriate testing approach?
+
+> A `convertErrors()` Controller *utility* method designed to convert errors into a shape that is more consumable by the client
+
+<!-- 1 -->
+
+1. Unit test
+2. Integration test
+
+> A `getUsers()` Controller method for handling requests to the `GET /users` endpoint
+
+<!-- 2 -->
+
+1. Unit test
+2. Integration test
+
+> A `findUsersByLastName()` *custom query* Repository method
+
+<!-- 2 -->
+
+1. Unit test
+2. Integration test
+
+> The User and Project Models are associated in a one-to-many relationship. An `addProject()` method on the User Model that saves an associated Project
+
+<!-- 2 -->
+
+1. Unit test
+2. Integration test
+
+## Testing state
+
+> It is a best practice to have tests rely on a testing state produced from previous tests in the suite
+
+<!-- false -->
+
+1. true
+2. false
+
+> If tests utilize a shared testing state the order in which they are run may impact the results
+
+<!-- true -->
+
+1. true
+2. false
+
+> When tests produce consistent results regardless of the order they are run in we call these tests:
+
+<!-- idempotent -->
+
+1. integration tests
+2. idempotent tests
+3. regression tests
+4. independent tests
+
+> The setup of a test is designed to establish the initial state of a test
+
+<!-- true -->
+
+1. true
+2. false
+
+> The teardown of a test is designed to revert any changes that were made during a test
+
+<!-- true -->
+
+1. true
+2. false
+
+## Web Integration Tests
+
+> The two types of assertions used in web integration tests are (select 2)
+
+- HTTP assertions
+- Client interaction assertions
+- Database assertions
+- Documentation assertions
+
+> HTTP assertions in an integration test may verify (select all that apply)
+
+<!-- 
+- response status code
+- response headers
+- response body
+-->
+
+- request headers
+- request status code
+- response status code
+- response headers
+- request body
+- response body
+
+> Database assertions in an integration test may verify (select all that apply)
+
+- row counts (for creates and deletes)
+
+
+> When performing an integration test that *updates existing data* it is important to assert this change in the database
+
+<!-- true -->
+
+- true
+- false
+
+> Testing utilities can be used to provide (select all that apply)
+
+- known constant values
+- methods for setting up a known testing state
+- methods for creating objects common to more than one test
