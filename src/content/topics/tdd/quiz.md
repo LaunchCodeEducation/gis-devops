@@ -17,13 +17,22 @@ Terminology:
 - true/false
 -->
 
+> Source code includes which two of the following:
+
+<!-- test code & implementation code -->
+
+1. environment startup scripts
+2. test
+3. implementation
+4. external configurations
+
 > The process of altering existing code is known as:
 
 <!-- Refactoring -->
 
 1. Regression
 2. Refactoring
-3. Implementing
+3. Implementation
 
 > When a change to existing source code has an adverse effect, like creating a new bug it is known as:
 
@@ -31,7 +40,7 @@ Terminology:
 
 1. Regression
 2. Refactoring
-3. Implementing
+3. Implementation
 
 > Which of the following is the proper order of the red-green-refactor workflow:
 
