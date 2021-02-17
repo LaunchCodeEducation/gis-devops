@@ -14,7 +14,25 @@ difference between automated and manual testing
 
 -->
 
-> An assertion is made up of which of the following two pieces:
+> What is the purpose of testing?
+
+<!-- 2. -->
+
+1. To make our source code more discoverable by users.
+2. To determine if code behaves the way we expect.
+3. To increase the time it takes to develop a project.
+4. To connect our source code to a database.
+
+> From the following list what are two of the benefits of automated testing?
+
+<!-- 3. 4. -->
+
+1. test coverage
+2. portability
+3. repeatable
+4. fast
+
+> An assertion statement is made up of which of the following two pieces:
 
 <!-- 1 & 4 -->
 
@@ -29,29 +47,3 @@ difference between automated and manual testing
 
 1. True
 2. False
-
-<!-- 
-Terminology:
-
-- (general) match definition to term
-- (lang/tool) match purpose to syntax
-- true/false
--->
-
-<!-- 
- Concepts:
-
-- given scenario label the terms 
-- given scenario select concept
-- multiple selection (checkboxes)
-- true/false
-
--->
-
-<!-- 
-Capabilities:
-
-- given scenario label the terms 
-- given scenario select syntax
-
--->
