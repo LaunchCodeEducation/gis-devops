@@ -3,6 +3,7 @@ title: "Quiz"
 date: 2021-02-11T18:34:35Z
 summary: "Questions on integration testing with Spring and J-Unit"
 categories: ["quizzes"]
+weight: 4
 # TODO: add any other related tags before committing
 tags: ["integration-testing"]
 ---

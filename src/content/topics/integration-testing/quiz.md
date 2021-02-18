@@ -2,6 +2,7 @@
 title: "Quiz"
 date: 2021-02-11T18:34:35Z
 summary: ""
+weight: 4
 categories: ["quizzes"]
 # TODO: add any other related tags before committing
 tags: ["integration-testing"]
