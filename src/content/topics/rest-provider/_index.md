@@ -53,9 +53,14 @@ After learning this topic you are expected to reach the **Competence** level of 
 - State
 - Representation
   - JSON review
+  - Resource
+    - Resource Shapes (representation of a resource)
 - Transfer
 - HTTP review
   - Request
   - Response
   - Body
   - Status Codes
+- Endpoint
+  - Path
+  - Method
