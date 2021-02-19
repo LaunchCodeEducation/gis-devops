@@ -6,7 +6,7 @@ summary: ""
 weight: 3
 # tags the topic
 # TODO: add the tool-name and any other related tags before committing
-tags: ["integration-testing", ""]
+tags: ["integration-testing", "j-unit"]
 ---
 
 {{% notice info %}}

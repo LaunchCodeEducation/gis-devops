@@ -50,8 +50,10 @@ After learning this topic you are expected to reach the **Competence** level of 
 - Idempotency
 - Setup
 - Teardown
-- Testing Utilities
-- Web Testing Environment
+
+<!-- IDEA: should these go under an environment topic? -->
+<!-- - Web Testing Environment
+- Parity -->
 
 ### Concepts
 
@@ -59,9 +61,9 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 - What are the differences between unit and integration testing?
 - Why should you write unit tests before integration tests?
+- What components are involved in web integration testing?
 - Value of maintaining a controlled testing state for each test
 - What roles do setup and teardown play in managing testing state?
-- What components are involved in web integration testing?
 
 <!-- 
 IDEA: how to work this best practice in?
