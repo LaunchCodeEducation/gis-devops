@@ -24,8 +24,6 @@ In addition to the learning objectives listed here you are responsible for the [
 
 - `@Test`
 - `@DisplayName`
-- `@Before`
-- `@After`
 - `assertEquals()`
 
 <!-- TODO: check for other annotations or assert methods that should be listed -->

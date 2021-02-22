@@ -1,0 +1,52 @@
+---
+title: "Java/J-Unit Quiz"
+date: 2021-02-11T18:34:35Z
+summary: ""
+weight: 4
+categories: ["quizzes", "java"]
+# TODO: add any other related tags before committing
+tags: ["unit-testing", "j-unit"]
+---
+
+## To Test Or Not To Test
+
+For each of the following questions identify whether the function/method is a good candidate for unit testing. Think about the justification for your answers.
+
+> A method, `getName()`, which acts a *simple getter* for the `name` field of a `User` class
+
+<!-- false -->
+
+1. true
+2. false
+
+> A method, `setName()`, which sets the `name` field of a `User` class *after ensuring only the first letter is capitalized*
+
+<!-- true -->
+
+1. true
+2. false
+
+> A method, `getFullName()`, which combines the `name` and `lastName` fields in a `User` class
+
+<!-- true -->
+
+1. true
+2. false
+
+## J-Unit & Gradle
+
+> What Gradle task do we use to execute unit tests?
+
+<!-- test -->
+
+1. `unit`
+2. `test`
+3. `unit-test`
+4. `utest`
+
+> What directory can you find the J-Unit coverage output documents?
+
+- `build/reports`
+- `src/main/resources/`
+- `build/generated`
+- `src/test/resources/`
