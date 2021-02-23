@@ -1,5 +1,5 @@
 ---
-title: "LANGUAGE/TOOL NAME"
+title: "LANGUAGE"
 date: {{ .Date }}
 summary: ""
 categories: ["LANGUAGE"]
