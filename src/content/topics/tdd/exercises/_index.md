@@ -7,7 +7,7 @@ weight: 3
 # TODO: remove hiding if exercises are added
 hidden: true
 # TODO: add related tags before committing
-tags: ["tdd", ""]
+tags: ["tdd"]
 ---
 
 {{% notice info %}}

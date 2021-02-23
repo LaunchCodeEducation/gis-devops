@@ -1,12 +1,28 @@
 ## Content Review
 
-> do the review in the browser
+do all reviews in the browser to see rendering
+
+> review notes
+
+- point out and discuss any issues before making sweeping changes
+- up to the original author to implement changes if agreed
+  - prevents cyclical review-rewrite-review behavior
+
+> review criteria
 
 - copyedit
 - clarity
 - alignment with objectives
 
 ## Structure
+
+### Checklist
+
+- [ ] tags and categories: lowercase
+  - separate with spaces
+- [ ] no TODOs remaining
+- [ ] unused dirs are deleted
+  - leave `hidden` in frontmatter if there are IDEAs for future work
 
 ### Learning Objectives
 
@@ -27,12 +43,6 @@
   - multiple choice: unordered list
 
 ### Slides
-
-> review notes
-
-- point out and discuss any issues before making sweeping changes
-- up to the original author to implement changes if agreed
-  - prevents cyclical review-rewrite-review behavior
 
 > **only include content that is covered in learning objectives**
 

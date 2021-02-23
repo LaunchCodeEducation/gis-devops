@@ -1,50 +1,43 @@
 ---
 title: "TDD Quiz"
-date: 
+date: 2021-02-11T22:23:20Z
 summary: ""
 categories: ["quizzes"]
 # TODO: add any other related tags before committing
-tags: ["TDD quiz", ""]
+tags: ["tdd"]
 ---
-
-<!-- you do not need to 1:1 LOs to quizzes -->
-
-<!-- 
-Terminology:
-
-- (general) match definition to term
-- (lang/tool) match purpose to syntax
-- true/false
--->
 
 > Source code includes which two of the following:
 
-<!-- test code & implementation code -->
+<!--
+- test code
+- implementation code
+-->
 
-1. environment startup scripts
-2. test
-3. implementation
-4. external configurations
+- environment startup scripts
+- test
+- implementation
+- external configurations
 
 > The process of altering existing code is known as:
 
-<!-- Refactoring -->
+<!-- 2. refactoring -->
 
-1. Regression
-2. Refactoring
-3. Implementation
+1. regression
+2. refactoring
+3. implementation
 
 > When a change to existing source code has an adverse effect, like creating a new bug it is known as:
 
-<!-- Regression -->
+<!-- 1. regression -->
 
-1. Regression
-2. Refactoring
-3. Implementation
+1. regression
+2. refactoring
+3. implementation
 
 > Which of the following is the proper order of the red-green-refactor workflow:
 
-<!-- 1. -->
+<!-- 1. write a test; write the implementation; refactor -->
 
 1. write a test; write the implementation; refactor
 2. write the implementation; refactor; write a test
@@ -52,12 +45,17 @@ Terminology:
 
 > Of the following list select at least two of the benefits of TDD:
 
-<!-- all of them -->
+<!--
+- Requires developers to have a strong understanding of stakeholder requirements
+- Increases total test coverage
+- Tests serve as living documentation for source code
+- Creates an environment of communication between developers and stakeholders
+-->
 
-1. Requires developers to have a strong understanding of stakeholder requirements
-2. Increases total test coverage
-3. Tests serve as living documentation for source code
-4. Creates an environment of communication between developers and stakeholders
+- Requires developers to have a strong understanding of stakeholder requirements
+- Increases total test coverage
+- Tests serve as living documentation for source code
+- Creates an environment of communication between developers and stakeholders
 
 <!-- 
  Concepts:
