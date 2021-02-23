@@ -21,6 +21,8 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
+<!-- IDEA: separate content from implementations -->
+
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 
 <!-- ## Learning Objectives
