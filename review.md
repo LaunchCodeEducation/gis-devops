@@ -49,6 +49,24 @@ do all reviews in the browser to see rendering
 - file name: numbered in order of delivery
 - title: prefix with file number
 - use `type: "slides"` in the frontmatter (full page slides vs. embedded)
+- define terms
+  - `**term**: definition text`
+- bullet points
+  - empty line between for readability
+
+> slide organization
+
+- horizontal: major points
+  - scrolling through provide key takeaways
+  - **every horizontal needs a header**
+- vertical: expands on a horizontal
+  - scrolling down provides greater detail
+  - not every vertical needs a header
+- suggested format per slide
+  - header: `##` keep it short
+  - quote `>` takeaway / definition
+  - extra content
+    - sentences and/or bullet points
 
 > personalizing slides
 
