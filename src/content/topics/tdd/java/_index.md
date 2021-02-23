@@ -1,5 +1,5 @@
 ---
-title: "Java/J-Unit"
+title: "Java"
 date: 2021-02-11T22:23:20Z
 summary: ""
 categories: ["java"]
@@ -16,7 +16,7 @@ tags: ["tdd", "j-unit", "unit-testing"]
 In order to learn this implementation you need to know the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [Java/J-Unit: Unit Testing]({{< ref "topics/unit-testing/java-j-unit/" >}})
+1. [Java: Unit Testing]({{< ref "topics/unit-testing/java-j-unit/" >}})
 
 ## Content
 
