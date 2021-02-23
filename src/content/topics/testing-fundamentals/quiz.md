@@ -16,7 +16,7 @@ difference between automated and manual testing
 
 > What is the purpose of testing?
 
-<!-- 2. -->
+<!-- 2. To determine if code behaves the way we expect. -->
 
 1. To make our source code more discoverable by users.
 2. To determine if code behaves the way we expect.
@@ -25,25 +25,36 @@ difference between automated and manual testing
 
 > From the following list what are two of the benefits of automated testing?
 
-<!-- 3. 4. -->
+<!-- 
+- repeatable
+- fast
+-->
 
-1. test coverage
-2. portability
-3. repeatable
-4. fast
+- test coverage
+- portability
+- repeatable
+- fast
 
 > An assertion statement is made up of which of the following two pieces:
 
-<!-- 1 & 4 -->
+<!--
+- expected value
+- actual value
+-->
 
-1. expected value
-2. manual testing
-3. test coverage
-4. actual value
+- expected value
+- manual testing
+- test coverage
+- actual value
 
-> An assertion compares two values:
+> Which of the following are automated testing techniques?
 
-<!-- True -->
+<!-- 
+- integration testing
+- unit testing
+-->
 
-1. True
-2. False
+- integration testing
+- convolution testing
+- unit testing
+- hardware testing

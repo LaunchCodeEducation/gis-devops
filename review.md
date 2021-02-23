@@ -1,0 +1,60 @@
+## Content Review
+
+> do the review in the browser
+
+- copyedit
+- clarity
+- alignment with objectives
+
+## Structure
+
+### Learning Objectives
+
+- bullet points lowercase unless proper noun
+
+### Quizzes
+
+- title:
+  - general: `<Topic> Quiz`
+  - language: `<Language> <Topic> Quiz`
+- use block quotes `>` for questions
+- use sub-headers for grouping questions
+- solution
+  - in `<!-- --!>` comment
+  - full answer with number as appropriate
+- answers
+  - single choice: ordered list
+  - multiple choice: unordered list
+
+### Slides
+
+> review notes
+
+- point out and discuss any issues before making sweeping changes
+- up to the original author to implement changes if agreed
+  - prevents cyclical review-rewrite-review behavior
+
+> **only include content that is covered in learning objectives**
+
+- file name: numbered in order of delivery
+- title: prefix with file number
+- use `type: "slides"` in the frontmatter (full page slides vs. embedded)
+
+> personalizing slides
+
+allows slides to always be available and to track changes per instructor
+
+- numbered slides are general (free for anyone to use)
+- instructor can write their own variant
+  - `#-<instructor>.md` file name
+  - **make sure one or the other is hidden during live course**
+    - add `hidden: true` to frontmatter
+
+> when to split up slide decks?
+
+- length
+  - maximum time of 30 mins
+- by topic?
+- by purpose?
+  - terms/concepts
+  - in practice

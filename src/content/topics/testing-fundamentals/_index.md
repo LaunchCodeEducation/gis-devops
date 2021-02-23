@@ -23,20 +23,21 @@ After learning this topic you are expected to reach the **Exposure** level of th
 
 > For the following list you should know the definition and have an example to relate it to:
 
-- Manual Testing
-- Assertion Statement
-- Expected value
-- Actual value
-- Test coverage
-- Testing Framework
-- Automated Testing
+- manual testing
+- assertion statement
+- expected value
+- actual value
+- test coverage
+- testing framework
+- automated testing
 
 ### Concepts
 
 > You should be able to discuss the following:
 
-- Pros and cons of automated and manual testing
-- Common automated testing techniques
+- pros and cons of automated and manual testing
+- common automated testing techniques
+- what should be tested?
 
 <!-- ### Capabilities
 
