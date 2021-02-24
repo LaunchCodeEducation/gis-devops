@@ -32,13 +32,13 @@ In addition to the learning objectives listed here you are responsible for the [
 
 > You should be able to discuss the following:
 
-- Where test files are stored in a java project
+- where test files are stored in a Java project
 
 ### Capabilities
 
 > You should be able to:
 
-- Run tests with the gradle wrapper
-- Run tests with the VSC Test Runner
-- View gradle test results
-- View VSC test results
+- run tests with the Gradle wrapper
+- run tests with the VSC test runner
+- view Gradle test results
+- view VSC test results

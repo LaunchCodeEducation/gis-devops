@@ -29,14 +29,14 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 > For the following list you should know the definition and have an example to relate it to:
 
-- Unit
+- unit
 
 ### Concepts
 
 > You should be able to discuss the following:
 
-- Benefits of unit testing
-- What code should or should not be unit tested
+- benefits of unit testing
+- what code should or should not be unit tested
 
 ### Capabilities
 

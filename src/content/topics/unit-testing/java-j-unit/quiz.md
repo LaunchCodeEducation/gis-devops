@@ -12,21 +12,21 @@ tags: ["unit-testing", "j-unit"]
 
 For each of the following questions identify whether the function/method is a good candidate for unit testing. Think about the justification for your answers.
 
-> A method, `getName()`, which acts a *simple getter* for the `name` field of a `User` class
+> A method, `getName()`, which acts a *simple getter* for the `name` field of a `User` class.
 
 <!-- false -->
 
 1. true
 2. false
 
-> A method, `setName()`, which sets the `name` field of a `User` class *after ensuring only the first letter is capitalized*
+> A method, `setName()`, which sets the `name` field of a `User` class *after ensuring only the first letter is capitalized*.
 
 <!-- true -->
 
 1. true
 2. false
 
-> A method, `getFullName()`, which combines the `name` and `lastName` fields in a `User` class
+> A method, `getFullName()`, which combines the `name` and `lastName` fields in a `User` class.
 
 <!-- true -->
 
@@ -45,6 +45,8 @@ For each of the following questions identify whether the function/method is a go
 4. `utest`
 
 > What directory can you find the J-Unit coverage output documents?
+
+<!-- `build/reports` -->
 
 - `build/reports`
 - `src/main/resources/`

@@ -12,28 +12,28 @@ tags: ["unit-testing"]
 
 For each of the following questions identify whether the function/method is a good candidate for unit testing. Think about the justification for your answers.
 
-> A function, `add()`, that sum two numbers
+> A function, `add()`, that sum two numbers.
 
 <!-- true -->
 
 1. true
 2. false
 
-> A function, `getProjectData()`, which *makes an HTTP request* to gather project data
+> A function, `getProjectData()`, which *makes an HTTP request* to gather project data.
 
 <!-- false -->
 
 1. true
 2. false
 
-> A constructor method for a `User` class that simply assigns values to their respective fields
+> A constructor method for a `User` class that assigns values to their respective fields.
 
 <!-- false -->
 
 1. true
 2. false
 
-> A constructor method for a `User` class that *validates values* before assigning them to their respective fields
+> A constructor method for a `User` class that *validates values* before assigning them to their respective fields.
 
 <!-- true -->
 
