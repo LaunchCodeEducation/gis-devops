@@ -43,13 +43,13 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 > For the following list you should know the definition and have an example to relate it to:
 
-- Integration Testing
-- System
-- Components
-- Testing State
-- Idempotency
-- Setup
-- Teardown
+- integration testing
+- system
+- components
+- testing state
+- idempotency
+- setup
+- teardown
 
 <!-- IDEA: should these go under an environment topic? -->
 <!-- - Web Testing Environment
@@ -62,7 +62,7 @@ After learning this topic you are expected to reach the **Competence** level of 
 - What are the differences between unit and integration testing?
 - Why should you write unit tests before integration tests?
 - What components are involved in web integration testing?
-- Value of maintaining a controlled testing state for each test
+- Value of maintaining a controlled testing state for each test.
 - What roles do setup and teardown play in managing testing state?
 
 <!-- 
@@ -83,10 +83,10 @@ IDEA: how to work this best practice in?
 
 > You should be able to:
 
-- Start up a pre-configured testing environment
-- Use pre-written testing utilities as necessary
-- Design and write a web integration test
+- Start up a pre-configured testing environment.
+- Use pre-written testing utilities as necessary.
+- Design and write a web integration test including:
   - setup of initial test state
   - HTTP assertions
   - database assertions
-- Use test reports to identify the component involved in a failed integration test
+- Use test reports to identify the component involved in a failed integration test.
