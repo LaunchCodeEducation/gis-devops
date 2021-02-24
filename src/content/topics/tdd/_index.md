@@ -65,3 +65,9 @@ IDEA: decouple from unit testing
 
 - Design tests based on stakeholder requirements
 - Apply TDD to unit testing
+
+{{% notice info %}}
+These capabilities will be reached after completing one of the implementation sections below
+{{% /notice %}}
+
+#### [Java]({{< ref "./java" >}})

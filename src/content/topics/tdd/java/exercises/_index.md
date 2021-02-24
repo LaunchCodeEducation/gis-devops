@@ -4,9 +4,6 @@ date: 2021-02-11T22:23:20Z
 summary: ""
 # slides (1) and walkthroughs (2) come before exercises in ToC sidebar
 weight: 3
-# tags the topic
-# TODO: add the tool-name and any other related tags before committing
-tags: ["tdd", "j-unit", "unit-testing"]
 ---
 
 {{% notice info %}}

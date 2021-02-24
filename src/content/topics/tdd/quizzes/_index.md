@@ -3,9 +3,6 @@ title: "Quizzes"
 date: 2021-02-11T22:23:20Z
 summary: ""
 weight: 2
-categories: ["quizzes"]
-# TODO: add any other related tags before committing
-tags: ["tdd"]
 ---
 
 > Source code includes which two of the following:
