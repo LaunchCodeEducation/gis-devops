@@ -56,8 +56,8 @@ TODO: if the topic uses implementations uncomment the info notice below
 add implementations with: hugo new -kind implementation topics/path/to/topic/
 
 {{% notice info %}}
-These capabilities will be reached in one of the implementation sub-sections below
+These capabilities will be reached after completing one of the implementation sections below
 {{% /notice %}}
 
-- [IMPLEMENTATION]({{< ref "" >}})
+#### [IMPLEMENTATION]({{< ref "./implementation" >}})
 -->
