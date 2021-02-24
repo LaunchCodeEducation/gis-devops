@@ -50,3 +50,14 @@ After learning this topic you are expected to reach the **Competence** level of 
 > You should be able to:
 
 -  -->
+
+<!--
+TODO: if the topic uses implementations uncomment the info notice below
+add implementations with: hugo new -kind implementation topics/path/to/topic/
+
+{{% notice info %}}
+These capabilities will be reached in one of the implementation sub-sections below
+{{% /notice %}}
+
+- [IMPLEMENTATION]({{< ref "" >}})
+-->
