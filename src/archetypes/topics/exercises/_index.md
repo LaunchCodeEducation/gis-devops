@@ -4,10 +4,6 @@ date: {{ .Date }}
 summary: ""
 # slides (1) and walkthroughs (2) come before exercises in ToC sidebar
 weight: 3
-# TODO: remove hiding if exercises are added
-hidden: true
-# TODO: add related tags before committing
-tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
 {{% notice info %}}
