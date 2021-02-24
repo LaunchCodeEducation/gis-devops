@@ -42,6 +42,18 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 > You should be able to:
 
+<!-- ALIGNMENT: after the content of just unit-testing students are not able to:
+
+- write unit tests for existing code
+- write unit tests for new code
+- execute tests
+- open and read test reports
+- identify issues in source code based on test results
+
+Maybe we should change these from capabilities to concepts? They know of these things, but not necessarily how to do them.
+
+-->
+
 - design the setup and assertions of a unit test
 - write unit tests for existing code
 - write unit tests for new code
