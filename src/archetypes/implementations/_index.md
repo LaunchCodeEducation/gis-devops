@@ -1,6 +1,6 @@
 ---
 # DISCUSS: should the format be "Topic: Implementation" for easier searching?
-title: "{{ replace .Name '-' ' ' }}"
+title: "{{ replace .Name '-' ' ' | title }}"
 date: {{ .Date }}
 summary: ""
 categories: ["{{ replace .Name '-' ' ' }}"]
