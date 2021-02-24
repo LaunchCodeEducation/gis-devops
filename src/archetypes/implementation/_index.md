@@ -4,8 +4,7 @@ title: "{{ replace .Name '-' ' ' }}"
 date: {{ .Date }}
 summary: ""
 categories: ["{{ replace .Name '-' ' ' }}"]
-# tags the topic
-# TODO: unhide if in use
+# implementations are hidden and must be directly linked (they have no context without a topic)
 hidden: true
 # TODO: add the parent topic and any other related tags before committing
 # IDEA: auto generate the tag for the parent topic
