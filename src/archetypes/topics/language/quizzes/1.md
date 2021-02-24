@@ -1,8 +1,8 @@
 ---
-title: "Quiz"
+title: "LANGUAGE Quiz"
 date: {{ .Date }}
 summary: ""
-categories: ["quizzes"]
+categories: ["quizzes", "LANGUAGE"]
 # TODO: add any other related tags before committing
 tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---

@@ -3,7 +3,7 @@ title: "Walkthroughs"
 date: {{ .Date }}
 summary: ""
 # walkthroughs come after slides (1) in ToC sidebar
-weight: 2
+weight: 4
 categories: ["walkthroughs"]
 # TODO: remove hiding if walkthroughs are added
 hidden: true

@@ -13,6 +13,30 @@
       "[$1]({{< ref \"$2\" >}}) $0"
     ]
   },
+
+  // comments
+  "comment: clarity": {
+    "prefix": "clarity",
+    "scope": "markdown",
+    "body": "\n<!-- CLARITY: $1 -->\n\n$0"
+  },
+  "comment: alignment": {
+    "prefix": "alignment",
+    "scope": "markdown",
+    "body": "\n<!-- ALIGNMENT: $1 -->\n\n$0"
+  },
+  "comment: idea": {
+    "prefix": "idea",
+    "scope": "markdown",
+    "body": "\n<!-- IDEA: $1 -->\n\n$0"
+  },
+  "comment: discuss": {
+    "prefix": "discuss",
+    "scope": "markdown",
+    "body": "\n<!-- DISCUSS: $1 -->\n\n$0"
+  },
+
+  // SLIDES
   "RevealJS Slides": {
     "prefix": "slides",
     "scope": "markdown",
@@ -26,6 +50,8 @@
       "\n{{< /slides >}}"
     ]
   },
+
+  // NOTICE BLOCKS
   "Notice": {
     "scope": "markdown",
     "prefix": "notice",
