@@ -97,4 +97,11 @@
       "{{% /notice %}}"
     ]
   },
+  "Figure": {
+    "scope": "markdown",
+    "prefix": "figure",
+    "body": [
+      "{{< figure src=\"../images/\" title=\"\" >}}",
+    ]
+  },
 }

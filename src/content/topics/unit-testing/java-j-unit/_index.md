@@ -4,7 +4,6 @@ date: 2021-02-09T20:32:36Z
 summary: ""
 categories: ["java"]
 # tags the topic
-# TODO: add the tool-name and any other related tags before committing
 tags: ["unit-testing", "j-unit"]
 ---
 
@@ -24,23 +23,24 @@ In addition to the learning objectives listed here you are responsible for the [
 
 - `@Test`
 - `@DisplayName`
-- `@Before`
-- `@After`
 - `assertEquals()`
 
-<!-- TODO: check for other annotations or assert methods that should be listed -->
+<!-- IDEA: check for other annotations or assert methods that should be listed -->
 
 ### Concepts
 
 > You should be able to discuss the following:
 
-- Where test files are stored in a java project
+- where test files are stored in a Java project
 
 ### Capabilities
 
 > You should be able to:
 
-- Run tests with the gradle wrapper
-- Run tests with the VSC Test Runner
-- View gradle test results
-- View VSC test results
+- run tests with the Gradle wrapper
+- view Gradle test results
+
+<!-- IDEA: add: 
+- run tests with the VSC test runner
+- view VSC test results
+-->
