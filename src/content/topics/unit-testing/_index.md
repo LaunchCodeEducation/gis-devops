@@ -64,3 +64,9 @@ Maybe we should change these from capabilities to concepts? They know of these t
 - identify issues in source code based on test results
 
 <!-- IDEA: top level learning objectives list implementations and then link to the actual implementations -->
+
+{{% notice info %}}
+These capabilities will be reached after completing one of the implementation sections below
+{{% /notice %}}
+
+#### [Java]({{< ref "./java" >}})

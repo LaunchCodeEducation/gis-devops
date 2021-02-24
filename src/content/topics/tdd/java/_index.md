@@ -3,6 +3,7 @@ title: "Java"
 date: 2021-02-11T22:23:20Z
 summary: ""
 categories: ["java"]
+hidden: true
 # tags the topic
 # TODO: add the tool-name and any other related tags before committing
 tags: ["tdd", "j-unit", "unit-testing"]
@@ -16,7 +17,7 @@ tags: ["tdd", "j-unit", "unit-testing"]
 In order to learn this implementation you need to know the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [Java: Unit Testing]({{< ref "topics/unit-testing/java-j-unit/" >}})
+1. [Unit Testing: Java]({{< ref "topics/unit-testing/java/" >}})
 
 ## Content
 

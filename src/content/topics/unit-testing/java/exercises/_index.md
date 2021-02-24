@@ -1,6 +1,6 @@
 ---
 title: "Exercises"
-date: {{ .Date }}
+date: 2021-02-09T21:51:10Z
 summary: ""
 # slides (1) and walkthroughs (2) come before exercises in ToC sidebar
 weight: 3

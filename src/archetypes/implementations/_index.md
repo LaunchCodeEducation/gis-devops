@@ -1,13 +1,14 @@
 ---
-title: "LANGUAGE"
+# DISCUSS: should the format be "Topic: Implementation" for easier searching?
+title: "{{ replace .Name '-' ' ' | title }}"
 date: {{ .Date }}
 summary: ""
-categories: ["LANGUAGE"]
-# tags the topic
-# TODO: unhide if in use
+categories: ["{{ replace .Name '-' ' ' }}"]
+# implementations are hidden and must be directly linked (they have no context without a topic)
 hidden: true
-# TODO: add the tool-name and any other related tags before committing
-tags: ["{{ replace .Name '-' ' ' }}", ""]
+# TODO: add the parent topic and any other related tags before committing
+# IDEA: auto generate the tag for the parent topic
+tags: [""]
 ---
 
 <!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->
@@ -15,10 +16,10 @@ tags: ["{{ replace .Name '-' ' ' }}", ""]
 <!-- ## Prerequisites
 
 {{% notice warning %}}
-In order to learn this implementation you need to know the learning objectives of the following prerequisite implementations:
+In order to learn this implementation you need to understand the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [LANGUAGE/TOOL NAME: PARENT TOPIC]({{< ref "topics/" >}}) -->
+1. [PARENT TOPIC: IMPLEMENTATION]({{< ref "topics/" >}}) -->
 
 ## Content
 

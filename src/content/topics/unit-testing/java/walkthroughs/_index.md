@@ -1,13 +1,9 @@
 ---
 title: "Walkthroughs"
-date: {{ .Date }}
+date: 2021-02-09T20:32:36Z
 summary: ""
-# walkthroughs come after slides (1) in ToC sidebar
-weight: 2
-categories: ["walkthroughs"]
-# tags the topic
-# TODO: add the tool-name and any other related tags before committing
-tags: ["{{ replace .Name '-' ' ' }}", ""]
+# walkthroughs come after slides (1) and exercises (2)
+weight: 3
 ---
 
 <!--

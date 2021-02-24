@@ -1,13 +1,8 @@
 ---
 title: "Quizzes"
-date: {{ .Date }}
+date: 2021-02-11T22:23:20Z
 summary: ""
-# slides (1) and walkthroughs (2) come before exercises in ToC sidebar
 weight: 2
-# TODO: remove hiding if exercises are added
-hidden: true
-# TODO: add related tags before committing
-tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
 {{% notice info %}}

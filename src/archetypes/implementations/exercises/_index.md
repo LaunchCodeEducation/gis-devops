@@ -4,9 +4,6 @@ date: {{ .Date }}
 summary: ""
 # slides (1) and walkthroughs (2) come before exercises in ToC sidebar
 weight: 3
-# tags the topic
-# TODO: add the tool-name and any other related tags before committing
-tags: ["{{ replace .Name '-' ' ' }}", ""]
 ---
 
 {{% notice info %}}
