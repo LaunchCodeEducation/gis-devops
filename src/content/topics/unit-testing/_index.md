@@ -33,6 +33,8 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 ### Concepts
 
+<!-- ALIGNMENT: what code should or should not be unit tested is covered generally in testing-fundamentals and specifically in the implementation -->
+
 > You should be able to discuss the following:
 
 - benefits of unit testing

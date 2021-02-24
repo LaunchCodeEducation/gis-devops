@@ -4,7 +4,6 @@ date: 2021-02-09T20:32:36Z
 summary: ""
 categories: ["java"]
 # tags the topic
-# TODO: add the tool-name and any other related tags before committing
 tags: ["unit-testing", "j-unit"]
 ---
 
@@ -26,7 +25,7 @@ In addition to the learning objectives listed here you are responsible for the [
 - `@DisplayName`
 - `assertEquals()`
 
-<!-- TODO: check for other annotations or assert methods that should be listed -->
+<!-- IDEA: check for other annotations or assert methods that should be listed -->
 
 ### Concepts
 
@@ -39,6 +38,9 @@ In addition to the learning objectives listed here you are responsible for the [
 > You should be able to:
 
 - run tests with the Gradle wrapper
-- run tests with the VSC test runner
 - view Gradle test results
+
+<!-- IDEA: add: 
+- run tests with the VSC test runner
 - view VSC test results
+-->
