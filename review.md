@@ -71,7 +71,7 @@ In the event that a consensus can't be reached. If the content meets the learnin
 
 - title:
   - general: `<Topic> Quiz`
-  - language: `<Language> <Topic> Quiz`
+  - implementation: `<Topic>: <Implementation> Quiz`
 - use block quotes `>` for questions
 - use sub-headers for grouping questions
 - solution
