@@ -1,14 +1,15 @@
 ---
-# DISCUSS: should the format be "Topic: Implementation" for easier searching?
-title: "{{ replace .Name '-' ' ' | title }}"
+# IDEA: auto gen "Topic: Implementation" for easier searching
+# TODO: set the parent topic name
+title: "TOPIC: {{ replace .Name '-' ' ' | title }}"
 date: {{ .Date }}
 summary: ""
 categories: ["{{ replace .Name '-' ' ' }}"]
 # implementations are hidden and must be directly linked (they have no context without a topic)
 hidden: true
-# TODO: add the parent topic and any other related tags before committing
 # IDEA: auto generate the tag for the parent topic
-tags: [""]
+# TODO: add the parent topic and any other related tags before committing
+tags: ["topic"]
 ---
 
 <!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->
@@ -19,7 +20,7 @@ tags: [""]
 In order to learn this implementation you need to understand the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [PARENT TOPIC: IMPLEMENTATION]({{< ref "topics/" >}}) -->
+1. [PARENT TOPIC: IMPLEMENTATION]({{< ref "topics/parent-topic/implementation/" >}}) -->
 
 ## Content
 

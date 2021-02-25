@@ -21,7 +21,11 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
-<!-- IDEA: separate content from implementations -->
+<!-- TODO: separate content from implementations -->
+
+<!-- ### Implementations
+
+#### [IMPLEMENTATION]({{< ref "./IMPLEMENTATION/" >}}) -->
 
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 
@@ -47,17 +51,14 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 <!-- ### Capabilities
 
-> You should be able to:
-
--  -->
-
 <!--
-TODO: if the topic uses implementations uncomment the info notice below
-add implementations with: hugo new -kind implementation topics/path/to/topic/
-
+TODO: uncomment if topic has implementations
 {{% notice info %}}
 These capabilities will be reached after completing one of the implementation sections below
 {{% /notice %}}
+-->
+<!--
+> You should be able to:
 
-#### [IMPLEMENTATION]({{< ref "./implementation" >}})
+-
 -->
