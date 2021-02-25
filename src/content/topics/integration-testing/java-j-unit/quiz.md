@@ -4,21 +4,20 @@ date: 2021-02-11T18:34:35Z
 summary: "Questions on integration testing with Spring and J-Unit"
 categories: ["quizzes"]
 weight: 4
-# TODO: add any other related tags before committing
 tags: ["integration-testing"]
 ---
 
 
 ## Spring Testing
 
-> The `MockMvc` object is used to simulate HTTP requests to your server
+> The `MockMvc` object is used to simulate HTTP requests to your server?
 
 <!-- true -->
 
 1. true
 2. false
 
-> When building the request you would use the `MockMvcRequestBuilder` methods to configure (select all that apply)
+> When building a test request you would use the `MockMvcRequestBuilder` methods to configure (select all that apply)?
 
 <!-- 
 - request headers
@@ -42,14 +41,14 @@ tags: ["integration-testing"]
 3. `andExpect()`
 4. `andConfirm()`
 
-> You can chain multiple assertions on a single `MockMvc` request
+> You can chain multiple assertions on a single `MockMvc` request.
 
 <!-- true -->
 
 1. true
 2. false
 
-> If multiple assertions are made on a request they will be executed in the order they are written
+> If multiple assertions are made on a request they will be executed in the order they are written.
 
 <!-- true -->
 
@@ -57,7 +56,7 @@ tags: ["integration-testing"]
 2. false
 3. you may only have a single assertion per request
 
-> All `MockMvc` request bodies must be serialized as strings
+> All `MockMvc` request bodies must be serialized as strings.
 
 <!-- true -->
 
@@ -95,7 +94,7 @@ Given the following response body:
 2. the entire object
 3. the first property of the object
 
-> What is the result of the query `$.tags[1]`
+> What is the result of the query `$.tags[1]`?
 
 <!-- holiday -->
 
@@ -132,7 +131,7 @@ Given the following response body:
 2. the entire array
 3. the first property of each object in the array
 
-> What is the result of the query `$[1]`
+> What is the result of the query `$[1]`?
 
 <!-- { "id": 2, "title": "Finish costume" } -->
 
@@ -170,7 +169,7 @@ Given the following response body:
 - `-E VARIABLE=VALUE`
 - `-E VARIABLE:VALUE`
 
-> You must include `systemProperties System.properties` within every Gradle task that relies on externally configured environment variables
+> You must include `systemProperties System.properties` within every Gradle task that relies on externally configured environment variables.
 
 <!-- true -->
 
