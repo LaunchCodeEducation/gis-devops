@@ -1,11 +1,11 @@
 ---
-title: "Java/J-Unit"
+title: "Integration Testing: Java"
 date: 2021-02-11T18:34:35Z
 summary: ""
 categories: ["java"]
+hidden: true
 # tags the topic
-# TODO: add the tool-name and any other related tags before committing
-tags: ["integration-testing", "j-unit", "mockmvc"]
+tags: ["integration-testing", "j-unit", "spring"]
 ---
 
 ## Prerequisites

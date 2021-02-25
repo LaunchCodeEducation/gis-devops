@@ -3,7 +3,6 @@ title: "Integration Testing"
 date: 2021-02-11T18:34:35Z
 summary: ""
 categories: ["topics"]
-# TODO: add any other related tags before committing
 tags: ["integration-testing"]
 ---
 
@@ -31,6 +30,10 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
+### Implementations
+
+#### [Java]({{< ref "./java/" >}})
+
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 
 ## Learning Objectives
@@ -43,15 +46,17 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 > For the following list you should know the definition and have an example to relate it to:
 
-- Integration Testing
-- System
-- Components
-- Testing State
-- Idempotency
-- Setup
-- Teardown
-- Testing Utilities
-- Web Testing Environment
+- integration testing
+- system
+- components
+- testing state
+- idempotency
+- setup
+- teardown
+
+<!-- IDEA: should these go under an environment topic? -->
+<!-- - Web Testing Environment
+- Parity -->
 
 ### Concepts
 
@@ -59,9 +64,9 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 - What are the differences between unit and integration testing?
 - Why should you write unit tests before integration tests?
-- Value of maintaining a controlled testing state for each test
-- What roles do setup and teardown play in managing testing state?
 - What components are involved in web integration testing?
+- Value of maintaining a controlled testing state for each test.
+- What roles do setup and teardown play in managing testing state?
 
 <!-- 
 IDEA: how to work this best practice in?
@@ -79,12 +84,16 @@ IDEA: how to work this best practice in?
 
 ### Capabilities
 
+{{% notice info %}}
+These capabilities will be reached after completing one of the implementation sections above
+{{% /notice %}}
+
 > You should be able to:
 
-- Start up a pre-configured testing environment
-- Use pre-written testing utilities as necessary
-- Design and write a web integration test
+- Start up a pre-configured testing environment.
+- Use pre-written testing utilities as necessary.
+- Design and write a web integration test including:
   - setup of initial test state
   - HTTP assertions
   - database assertions
-- Use test reports to identify the component involved in a failed integration test
+- Use test reports to identify the component involved in a failed integration test.

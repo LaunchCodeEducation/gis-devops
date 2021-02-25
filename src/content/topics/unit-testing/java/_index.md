@@ -1,10 +1,8 @@
 ---
-# DISCUSS: LANGUAGE: TOOL NAME?
-title: "Java"
+title: "Unit Testing: Java"
 date: 2021-02-09T20:32:36Z
 summary: ""
 categories: ["java"]
-hidden: true
 # tags the topic
 tags: ["unit-testing", "j-unit"]
 ---
