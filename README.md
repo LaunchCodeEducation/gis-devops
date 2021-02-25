@@ -8,6 +8,14 @@ git submodule init
 git submodule update
 ```
 
+> theme submodule issue resolution 
+
+```sh
+git submodule add --force https://github.com/matcornic/hugo-theme-learn.git src/themes/learn
+
+# Reactivating local git directory for submodule 'src/themes/learn'.
+```
+
 # Organization
 
 > prefer flat FS. grouping should be done in version controlled documents (course schedule, units, courses etc)
