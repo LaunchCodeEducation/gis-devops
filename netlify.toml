@@ -1,0 +1,10 @@
+# docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+# set base url (-b) to conform to config.toml baseURL field
+# https://docs.netlify.com/configure-builds/environment-variables/#deploy-urls-and-metadata
+command = "hugo -b $DEPLOY_PRIME_URL"
+# publish the build artifacts
+publish = "public/"
+
+environment = { HUGO_VERSION = "0.81.0" }
