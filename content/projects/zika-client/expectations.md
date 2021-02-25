@@ -13,12 +13,35 @@ quoted expectation summary
 
 ## Autonomy
 
--
+- HTTP
+- git
+- terminal
+
+> JavaScript
+
+- fundamentals
+- DOM fundamentals
 
 ## Competency
 
-- 
+- HTML
+
+> JavaScript
+
+- callbacks
+- DOM events
+- Promises
+- fetch
+- ESM
+
+> OpenLayers
+
+- fundamentals
+- GeoServer
 
 ## Exposure
 
-- 
+- CSS
+- NPM
+- WebPack
+- Docker

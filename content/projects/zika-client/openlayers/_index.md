@@ -22,7 +22,7 @@ This is the assigned project page with specific requirements and details for thi
 | **Framework** |  |
 | **Build Tool** | WebPack |
 | **Testing Framework** |  |
-| **Backing Services** | Zika GeoServer |
+| **Backing Services** | GeoServer API, PostgreSQL + Postgis DB |
 
 ## Instructions
 

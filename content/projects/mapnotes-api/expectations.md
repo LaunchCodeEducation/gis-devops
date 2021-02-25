@@ -4,7 +4,6 @@
 
 - HTTP
 - git
-- OOP
 - terminal
 
 ## Competency
