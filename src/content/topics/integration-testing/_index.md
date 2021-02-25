@@ -30,6 +30,10 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
+### Implementations
+
+#### [Java]({{< ref "./java/" >}})
+
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 
 ## Learning Objectives
@@ -79,6 +83,10 @@ IDEA: how to work this best practice in?
 - Understand the role environment variables play -->
 
 ### Capabilities
+
+{{% notice info %}}
+These capabilities will be reached after completing one of the implementation sections above
+{{% /notice %}}
 
 > You should be able to:
 

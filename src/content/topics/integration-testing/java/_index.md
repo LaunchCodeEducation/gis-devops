@@ -3,6 +3,7 @@ title: "Integration Testing: Java"
 date: 2021-02-11T18:34:35Z
 summary: ""
 categories: ["java"]
+hidden: true
 # tags the topic
 tags: ["integration-testing", "j-unit", "spring"]
 ---

@@ -19,6 +19,10 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
+### Implementations
+
+#### [Java]({{< ref "./java" >}})
+
 ## Learning Objectives
 
 {{% notice info %}}
@@ -42,6 +46,10 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 ### Capabilities
 
+{{% notice info %}}
+These capabilities will be reached after completing one of the implementation sections above
+{{% /notice %}}
+
 > You should be able to:
 
 <!-- ALIGNMENT: after the content of just unit-testing students are not able to:
@@ -62,11 +70,3 @@ Maybe we should change these from capabilities to concepts? They know of these t
 - execute tests
 - open and read test reports
 - identify issues in source code based on test results
-
-<!-- IDEA: top level learning objectives list implementations and then link to the actual implementations -->
-
-{{% notice info %}}
-These capabilities will be reached after completing one of the implementation sections below
-{{% /notice %}}
-
-#### [Java]({{< ref "./java" >}})
