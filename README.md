@@ -11,7 +11,8 @@ git submodule update
 > theme submodule issue resolution 
 
 ```sh
-git submodule add --force https://github.com/matcornic/hugo-theme-learn.git src/themes/learn
+rm -rf themes/learn
+git submodule add --force https://github.com/matcornic/hugo-theme-learn.git themes/learn
 
 # Reactivating local git directory for submodule 'src/themes/learn'.
 ```
