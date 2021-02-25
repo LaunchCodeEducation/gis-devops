@@ -3,26 +3,24 @@
 ## Autonomy
 
 - HTTP
-- git
+- Git
 - terminal
 
 ## Competency
 
-- geoJSON
-- REST
+- GeoJSON
+- REST development
 - external configuration
 - de/serialization
 - ORM
 - integration testing
 - unit testing
 - TDD
-- swagger
+- Swagger
 
 ## Exposure
 
 - SQL
-- docker
-- dependency management*
-- build tools*
-
-<!-- *generalize or specify (here or in implementation language) -->
+- Docker
+- build tool
+- dependency management

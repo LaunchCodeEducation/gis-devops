@@ -14,7 +14,7 @@ quoted expectation summary
 ## Autonomy
 
 - HTTP
-- git
+- Git
 - terminal
 
 > JavaScript
@@ -30,7 +30,7 @@ quoted expectation summary
 
 - callbacks
 - DOM events
-- Promises
+- promises
 - fetch
 - ESM
 
@@ -42,6 +42,6 @@ quoted expectation summary
 ## Exposure
 
 - CSS
-- NPM
-- WebPack
 - Docker
+- build tools
+- dependency management
