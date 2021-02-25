@@ -4,10 +4,6 @@ date: 2021-02-11T18:34:35Z
 summary: ""
 # walkthroughs come after slides (1) in ToC sidebar
 weight: 2
-categories: ["walkthroughs"]
-# tags the topic
-# TODO: add the tool-name and any other related tags before committing
-tags: ["integration-testing", ""]
 ---
 
 <!--
