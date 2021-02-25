@@ -22,6 +22,10 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
+### Implementations
+
+#### [Java]({{< ref "./java" >}})
+
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 
 ## Learning Objectives
@@ -55,6 +59,10 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 ### Capabilities
 
+{{% notice info %}}
+These capabilities will be reached after completing one of the implementation sections above
+{{% /notice %}}
+
 > You should be able to:
 
 <!-- IDEA: create whiteboard exercise for designing tests
@@ -65,9 +73,3 @@ IDEA: decouple from unit testing
 
 - Design tests based on stakeholder requirements
 - Apply TDD to unit testing
-
-{{% notice info %}}
-These capabilities will be reached after completing one of the implementation sections below
-{{% /notice %}}
-
-#### [Java]({{< ref "./java" >}})
