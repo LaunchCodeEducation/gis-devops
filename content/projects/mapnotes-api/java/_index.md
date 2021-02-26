@@ -20,7 +20,7 @@ This is the assigned project page with specific requirements and details for thi
 | **Framework** | Spring Boot |
 | **Build Tool** | Gradle |
 | **Testing Framework** | Junit 5 |
-| **Database** | Postgres + PostGIS |
+| **Backing Services** | PostgreSQL + PostGIS DB |
 
 {{% notice tip %}}
 Your gradle dependencies and tasks have been provided for you review them in the `build.gradle` file.

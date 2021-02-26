@@ -20,7 +20,7 @@ This is the assigned project page with specific requirements and details for thi
 | **Framework** |  |
 | **Build Tool** |  |
 | **Testing Framework** |  |
-| **Database** |  |
+| **Backing Services** |  |
 
 ## Instructions
 
