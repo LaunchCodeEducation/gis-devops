@@ -48,6 +48,22 @@ rationale for categorizing topics
 
 ## Topics
 
+### Course Edges
+
+> In the case of working on a course edge:
+
+- **course edge**: a topic we aren't going to teach, but is a pre-req
+
+#### Responsibilities for Curriculum Dev
+
+- Only learning objectives
+
+<!-- IDEA: quizzes or some form of assessment are a great way to control student admission to a specific course -->
+
+#### Responsibilities for Instructor
+
+- When developing a course the schedule should define pre-reqs to learning objective roots.
+
 ### Scoping
 
 #### Overall
