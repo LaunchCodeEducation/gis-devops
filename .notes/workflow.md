@@ -58,7 +58,11 @@ rationale for categorizing topics
 
 - Only learning objectives
 
-<!-- IDEA: quizzes or some form of assessment are a great way to control student admission to a specific course -->
+<!-- IDEA: quizzes or some form of assessment are a great way to control student admission to a specific course 
+
+IDEA: look into codewars collections assembled by course staff as assements
+
+-->
 
 #### Responsibilities for Instructor
 
