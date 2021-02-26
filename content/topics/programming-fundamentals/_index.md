@@ -57,6 +57,8 @@ After learning this topic you are expected to reach the **Competence** level of 
 - functions
 - data structures
 - scope
+- errors / exceptions
+- stack trace
 - dependencies vs standard library
 - documentation
 - paradigm
