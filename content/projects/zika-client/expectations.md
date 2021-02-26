@@ -42,6 +42,6 @@ quoted expectation summary
 ## Exposure
 
 - CSS
-- Docker
+- docker-compose usage
 - build tools
 - dependency management

@@ -21,6 +21,6 @@
 ## Exposure
 
 - SQL
-- Docker
+- docker-compose usage
 - build tool
 - dependency management
