@@ -38,43 +38,41 @@ In addition to the learning objectives listed here you are responsible for the [
 
 > For the following list you should know the purpose and have an example to relate it to:
 
-- interpreted
-- dynamically typed
-- Paradigms
-  - Object Oriented
-  - Functional
-- data types
-  - primitive
-  - non-primitive
-- variables
-  - let
-  - const
-- conditionals
-  - if
-  - else
-  - if/else
-- functions
-  - function
-  - fat arrow syntax
-  - anonymous functions
-- loops
-  - while
-  - for
-  - for of
-  - for in
-- data structures
-  - lists
-  - objects
+<!-- IDEA: general use cases, web development intro talking about APIs and languages -->
+
+- `let`
+- `const`
+- block scoping
+- arrow function syntax
+- `for...of`
+- `for...in`
+- arrays (`[]`)
+- object literals (`{}`)
+- object instances
+- `node`
+- `undefined`
+- `null`
+- type coercion
+- spread syntax (`...`)
 
 <!-- Specific best practices or conventions related to the given language/tool -->
 
-<!-- ### Concepts
+### Concepts
 
 > You should be able to discuss the following:
 
--  -->
+- Why are JS functions considered first class citizens?
+- What are the two environments you can run JavaScript in?
+- Is JS dynamically or statically typed?
+- Is JS interpreted or compiled?
+- What paradigms are used in JS?
+- What are the primitive data types?
+- What is the difference between let and const?
+- What are the difference between `undefined` and `null`?
 
 <!-- Specific usage of the language/tool -->
+
+<!-- TODO: capabilities -->
 
 <!-- ### Capabilities
 
