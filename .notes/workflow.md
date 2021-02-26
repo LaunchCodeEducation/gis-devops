@@ -9,7 +9,7 @@
 
 - generalizing topics (leave tech details to each implementation)
 
-### ACE
+### ACE Scoping
 
 rationale for categorizing topics
 
@@ -45,3 +45,61 @@ rationale for categorizing topics
 - follow ACE layout
 - use block quotes (`>`) to separate super topics
   - ex: JavaScript sub-topics in projects/zika-client
+
+## Topics
+
+### Scoping
+
+#### Overall
+
+> multipliers
+
+- familiarity with topic
+
+> considerations
+
+- incoming vs target ACE (based on learning objectives)
+  - consider complexity of student target capabilities
+    - prerequisite topics
+    - number of prerequisites needed to learn/apply the topic
+  - depth: how deep into the topic is needed to reach the target
+  - breadth: how many sub-topics are needed to reach the target
+  - amount of content: how much content is needed overall
+    - higher ACE spread requires more content
+      - dependent on the depth and breadth of the topic
+- amount of content needed to generate
+  - how much existing content aligns with the ACE target?
+
+#### Slides
+
+> multipliers
+
+- familiarity with teaching the topic
+- familiarity with writing slides
+
+#### Quizzes
+
+> multipliers
+
+- familiarity with writing quizzes
+- familiarity with teaching the topic
+
+#### Walkthroughs
+
+Walkthroughs should be written as a recipe not a guide. It should only be step by step while leaving additional context and teaching to the live presentation by the instructor.
+
+> multipliers
+
+- complexity of PoC
+- familiarity with teaching the topic
+- familiarity with writing walkthroughs
+
+#### Exercises
+
+Exercises are meant to require critical thinking and should be minimally guided.
+
+> multipliers
+
+- complexity of PoC
+- familiarity with developing exercises
+- familiarity with teaching the topic
