@@ -41,21 +41,25 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 > For the following list you should know the definition and have an example to relate it to:
 
+- interpreted language
+- compiled language
+- interpreter
+- dynamically typed
+- statically typed
+- syntax
+- data types
+- primitives
+- non primitive data types
+- standard library
 - variables
 - conditionals
 - loops
 - functions
 - data structures
-- interpreted language
-- compiled language
-- dynamically typed
-- statically typed
-- Programming Paradigm
-- interpreter
-- standard library
+- scope
 - dependencies vs standard library
 - documentation
-- syntax
+- paradigm
 - IDE
 
 <!-- IDEA: weak vs strong -->
@@ -64,7 +68,12 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 > You should be able to discuss the following:
 
-- The two most common data structures (ordered sequences (list, array) & key-value sequences (hashmap, dictionary))
+- The two most common data structures (ordered sequences (list, array) & key-value sequences (hashmap, dictionary)).
+- The difference between compiled and interpreted languages.
+- The difference between statically and dynamically typed languages.
+- The difference between primitive and non-primitive data types.
+- How conditionals, loops and functions affect control flow.
+- Difference between standard library code and dependency code.
 
 <!-- ### Capabilities
 

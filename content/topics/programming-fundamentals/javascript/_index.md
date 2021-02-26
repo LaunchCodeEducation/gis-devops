@@ -34,11 +34,37 @@ In addition to the learning objectives listed here you are responsible for the [
 
 <!-- Syntax or terms specific to the langauge/tool  -->
 
-<!-- ### Terminology
+### Terminology
 
 > For the following list you should know the purpose and have an example to relate it to:
 
--  -->
+- interpreted
+- dynamically typed
+- Paradigms
+  - Object Oriented
+  - Functional
+- data types
+  - primitive
+  - non-primitive
+- variables
+  - let
+  - const
+- conditionals
+  - if
+  - else
+  - if/else
+- functions
+  - function
+  - fat arrow syntax
+  - anonymous functions
+- loops
+  - while
+  - for
+  - for of
+  - for in
+- data structures
+  - lists
+  - objects
 
 <!-- Specific best practices or conventions related to the given language/tool -->
 
