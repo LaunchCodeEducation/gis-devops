@@ -73,7 +73,8 @@ After learning this topic you are expected to reach the **Competence** level of 
 - The two most common data structures (ordered sequences (list, array) & key-value sequences (hashmap, dictionary)).
 - The difference between compiled and interpreted languages.
 - The difference between statically and dynamically typed languages.
-- The difference between primitive and non-primitive data types.
+- The difference between primitive and reference data types.
+- The difference between mutable and immutable variables.
 - How conditionals, loops and functions affect control flow.
 - Difference between standard library code and dependency code.
 
