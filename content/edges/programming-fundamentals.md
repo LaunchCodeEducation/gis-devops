@@ -17,6 +17,9 @@ This topic edge is a prerequisite for the following topics:
 
 > For the following list you should know the definition and have an example to relate it to:
 
+<!-- IDEA: if edges will not have content (slides, quizzes etc) then they need to be explicit and detailed to clearly communicate expectations of terms / concepts / caps -->
+<!-- IDEA: make edges have a quiz / assessment to determine understanding objectively -->
+
 - interpreted language
 - compiled language
 - compiler
@@ -30,11 +33,13 @@ This topic edge is a prerequisite for the following topics:
 - assignment
 - mutable
 - immutable
-- operators
-- conditionals
+- operator
+- conditional expression
+- conditional statement
 - loops
-- functions
-- data structures
+- function
+- function signature
+- data structures (map, list)
 - scope
 - errors
 - stack trace
