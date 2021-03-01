@@ -1,6 +1,6 @@
 ---
 title: "Exercises"
-date: 2021-03-01T19:16:32Z
+date: 2021-03-01T19:31:39Z
 summary: ""
 # slides (1) and walkthroughs (2) come before exercises in ToC sidebar
 weight: 3

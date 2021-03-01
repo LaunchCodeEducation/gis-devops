@@ -8,8 +8,6 @@ hidden: true
 tags: ["callbacks", "arrays"]
 ---
 
-<!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->
-
 ## Prerequisites
 
 {{% notice warning %}}
@@ -22,32 +20,22 @@ In order to learn this implementation you need to understand the learning object
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
-<!-- ## Learning Objectives
+## Learning Objectives
 
-{{% notice note %}}
-In addition to the learning objectives listed here you are responsible for the [base learning objectives]({{< ref "../" >}}).
-{{% /notice %}} -->
-
-<!-- Syntax or terms specific to the langauge/tool  -->
-
-<!-- ### Terminology
+### Terminology
 
 > For the following list you should know the purpose and have an example to relate it to:
 
--  -->
+- 
 
-<!-- Specific best practices or conventions related to the given language/tool -->
-
-<!-- ### Concepts
+### Concepts
 
 > You should be able to discuss the following:
 
--  -->
+- 
 
-<!-- Specific usage of the language/tool -->
-
-<!-- ### Capabilities
+### Capabilities
 
 > You should be able to:
 
--  -->
+- 
