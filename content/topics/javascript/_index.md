@@ -3,7 +3,7 @@ title: "Javascript"
 date: 2021-03-01T12:38:36-06:00
 summary: ""
 categories: ["topics"]
-tags: ["javascript", ""]
+tags: ["javascript"]
 ---
 
 ## Content
@@ -14,7 +14,7 @@ tags: ["javascript", ""]
 
 <!-- ### Subtopics
 
-#### [IMPLEMENTATION]({{< ref "./IMPLEMENTATION/" >}}) -->
+#### [IMPLEMENTATION]({{< ref "" >}}) -->
 
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 

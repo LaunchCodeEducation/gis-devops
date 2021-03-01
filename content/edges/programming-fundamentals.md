@@ -2,9 +2,7 @@
 title: "Programming Fundamentals"
 date: 2021-02-26T19:44:22Z
 summary: ""
-categories: ["topics"]
-# TODO: add any other related tags before committing
-tags: ["programming-fundamentals", ""]
+categories: ["edges"] 
 ---
 
 ## Learning Objectives
