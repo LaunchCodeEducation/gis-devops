@@ -7,35 +7,7 @@ categories: ["topics"]
 tags: ["programming-fundamentals", ""]
 ---
 
-<!-- TODO: back link to any previous topics (ascending order from root to current topic) -->
-
-<!-- ## Prerequisites
-
-{{% notice warning %}}
-In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
-{{% /notice %}}
-
-1. [TOPIC]({{< ref "topics/TOPIC/" >}}) -->
-
-## Content
-
-{{% children style="h3" depth=1 sort="weight" %}}
-
-<!-- TODO: separate content from implementations -->
-
-<!-- ### Implementations
-
-#### [IMPLEMENTATION]({{< ref "./IMPLEMENTATION/" >}}) -->
-
-<!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
-
-<!-- ## Learning Objectives
-
-{{% notice info %}}
-After learning this topic you are expected to reach the **Competence** level of the following objectives.
-{{% /notice %}} -->
-
-<!-- the main terms you would use when discussing the topic in the class / on the job -->
+## Learning Objectives
 
 ### Terminology
 
