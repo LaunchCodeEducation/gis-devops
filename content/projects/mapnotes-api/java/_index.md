@@ -1,9 +1,10 @@
 ---
-title: "Java/Spring Implementation"
+title: "MapNotes API: Java/Spring"
 date: 2021-02-02T20:31:55Z
 summary: ""
+categories: ["projects", "java"]
 ## TODO: add/remove tags before committing
-tags: ["projects", "api", "java", "spring"]
+tags: ["api", "spring"]
 ---
 
 <!-- 

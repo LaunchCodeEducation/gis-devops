@@ -1,5 +1,5 @@
 ---
-title: "Student Expectations"
+title: "Minimal Expectations"
 date: 2021-02-25T19:54:28Z
 ---
 

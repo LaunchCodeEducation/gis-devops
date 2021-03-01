@@ -1,9 +1,10 @@
 ---
-title: "LANGUAGE Implementation"
+title: "Zika Client: OpenLayers"
 date: 2021-02-25T19:54:28Z
 summary: ""
+categories: ["projects", "javascript"]
 # TODO: add/remove tags before committing
-tags: ["projects", ""]
+tags: ["openlayers"]
 ---
 
 <!-- 
@@ -48,7 +49,7 @@ use a table with a standard set of rules and include it in this template directl
 
 ### TOPIC
 
- > Refer to the [TOPIC]({{< ref "topics/TOPIC/" >}}) if you need a refresher.
+<!-- > Refer to the [TOPIC]({{< ref "" >}}) if you need a refresher. -->
 
 ## Suggested Approach
 

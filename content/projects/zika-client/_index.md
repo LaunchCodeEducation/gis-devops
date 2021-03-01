@@ -2,10 +2,8 @@
 title: "Zika Client"
 date: 2021-02-25T19:54:28Z
 summary: ""
-# TODO: check if categories work for search
-
-# TODO: add/remove tags before committing
-tags: ["projects"]
+categories: ["projects", "javascript"]
+tags: ["gis"]
 ---
 
 <!-- 
@@ -22,4 +20,4 @@ language specific implementation requirements / overview
 Refer to your course schedule for which implementation to follow.
 {{% /notice %}}
 
-- [LANGUAGE/FRAMEWORK]({{< ref "LANGUAGE/" >}})
+- [OpenLayers]({{< ref "openlayers/" >}})
