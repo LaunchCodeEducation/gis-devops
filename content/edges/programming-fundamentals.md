@@ -43,23 +43,26 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 - interpreted language
 - compiled language
+- compiler
 - interpreter
 - dynamically typed
 - statically typed
 - syntax
 - data types
-- primitives
-- non primitive data types
-- standard library
 - variables
+- declaration
+- assignment
+- mutable
+- immutable
+- operators
 - conditionals
 - loops
 - functions
 - data structures
 - scope
-- errors / exceptions
+- errors
 - stack trace
-- dependencies vs standard library
+- debugging
 - documentation
 - paradigm
 - IDE
@@ -70,24 +73,25 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 > You should be able to discuss the following:
 
-- The two most common data structures (ordered sequences (list, array) & key-value sequences (hashmap, dictionary)).
+- The difference between a map and a list.
+- The difference between variable declaration and assignment.
 - The difference between compiled and interpreted languages.
 - The difference between statically and dynamically typed languages.
 - The difference between primitive and reference data types.
 - The difference between mutable and immutable variables.
 - How conditionals, loops and functions affect control flow.
-- Difference between standard library code and dependency code.
+- Understand when something is in or out of scope.
+- What is the difference between logical, run-time, and compile-time errors.
 
-<!-- ### Capabilities
+### Capabilities
 
-<!--
-TODO: uncomment if topic has implementations
-{{% notice info %}}
-These capabilities will be reached after completing one of the implementation sections below
-{{% /notice %}}
--->
-<!--
 > You should be able to:
 
--
--->
+- Write and execute programs.
+- Declare variables of all the common data types.
+- Declare and operate on lists and maps.
+- Utilize conditional expressions and statements.
+- Utilize looping statements.
+- Utilize Functions.
+- Throw and catch errors.
+- Ability to debug by using stack traces.
