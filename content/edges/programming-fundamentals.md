@@ -5,6 +5,12 @@ summary: ""
 categories: ["edges"] 
 ---
 
+{{% notice info %}}
+This topic edge is a prerequisite for the following topics:
+{{% /notice %}}
+
+### [JavaScript]({{< ref "topics/javascript/" >}})
+
 ## Learning Objectives
 
 ### Terminology
