@@ -1,3 +1,17 @@
+## Topic Edges
+
+Defined in the `content/edges` dir
+
+<!-- IDEA: see ideas in edges/programming-fundamentals  -->
+
+> topics which are not covered but are prerequisites to a course
+
+Define detailed learning objectives. This is the opportunity to clearly communicate incoming expectations.
+
+> linking
+
+Edges should link out to all related entry points of topics that rely on them. Dependent topics should link back to express the prerequisite expectations.
+
 ## Projects
 
 1. generate `hugo new projects/<project-name>`
