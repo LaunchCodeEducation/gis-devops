@@ -1,57 +1,55 @@
 ---
-# IDEA: auto gen "Topic: Implementation" for easier searching
-# TODO: set the parent topic name
-title: "TOPIC: Array-Methods"
-date: 2021-03-01T19:31:39Z
+title: "JavaScript: Array Methods"
+date: 2021-03-01T19:16:32Z
 summary: ""
-categories: ["array-methods"]
+categories: ["javascript"]
 # implementations are hidden and must be directly linked (they have no context without a topic)
 hidden: true
-# IDEA: auto generate the tag for the parent topic
-# TODO: add the parent topic and any other related tags before committing
-tags: ["topic"]
+tags: ["callbacks", "arrays"]
 ---
 
-<!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->
-
-<!-- ## Prerequisites
+## Prerequisites
 
 {{% notice warning %}}
 In order to learn this implementation you need to understand the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [PARENT TOPIC: IMPLEMENTATION]({{< ref "topics/parent-topic/implementation/" >}}) -->
+1. [JavaScript fundamentals]({{< ref "../" >}})
 
 ## Content
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
-<!-- ## Learning Objectives
+## Learning Objectives
 
-{{% notice note %}}
-In addition to the learning objectives listed here you are responsible for the [base learning objectives]({{< ref "../" >}}).
-{{% /notice %}} -->
-
-<!-- Syntax or terms specific to the langauge/tool  -->
-
-<!-- ### Terminology
+### Terminology
 
 > For the following list you should know the purpose and have an example to relate it to:
 
--  -->
+- `forEach()`
+- `filter()`
+- `map()`
+- `sort()`
 
-<!-- Specific best practices or conventions related to the given language/tool -->
+<!--
+- `reduce()`
 
-<!-- ### Concepts
+IDEA: expand to introduce reduce
+- show chaining and simplification using reduce
+-->
+
+### Concepts
 
 > You should be able to discuss the following:
 
--  -->
+- The signatures and usage of common array method callbacks
+- The output of common array methods
+- The benefits of using array methods
 
-<!-- Specific usage of the language/tool -->
-
-<!-- ### Capabilities
+### Capabilities
 
 > You should be able to:
 
--  -->
+- Use `sort()` to sort an array in forward and reverse order
+- Use `filter()` to separate the elements of an array
+- Use `map()` to transform the elements of an array

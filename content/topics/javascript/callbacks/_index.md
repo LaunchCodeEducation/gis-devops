@@ -5,7 +5,7 @@ summary: ""
 categories: ["javascript"]
 # implementations are hidden and must be directly linked (they have no context without a topic)
 hidden: true
-tags: ["callbacks", "arrays"]
+tags: ["callbacks"]
 ---
 
 ## Prerequisites
