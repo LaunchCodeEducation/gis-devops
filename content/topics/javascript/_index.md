@@ -14,8 +14,9 @@ tags: ["javascript"]
 
 ### Subtopics
 
-1. [Callbacks]({{< ref "callbacks/" >}})
-2. [Array methods]({{< ref "array-methods/" >}})
+#### [Callbacks]({{< ref "callbacks/" >}})
+
+#### [Array methods]({{< ref "array-methods/" >}})
 
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 
