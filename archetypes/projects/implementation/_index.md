@@ -1,9 +1,11 @@
 ---
-title: "LANGUAGE Implementation"
+# TODO: set the implementation name
+title: "{{ replace .Name "-" " " | title }}: IMPLEMENTATION"
 date: {{ .Date }}
 summary: ""
+categories: ["projects"]
 # TODO: add/remove tags before committing
-tags: ["projects", ""]
+tags: [""]
 ---
 
 <!-- 

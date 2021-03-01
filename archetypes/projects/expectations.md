@@ -1,5 +1,5 @@
 ---
-title: "Student Expectations"
+title: "Minimal Expectations"
 date: {{ .Date }}
 ---
 
