@@ -3,24 +3,27 @@ title: "JavaScript: Array Methods"
 date: 2021-03-01T19:16:32Z
 summary: ""
 categories: ["javascript"]
-# implementations are hidden and must be directly linked (they have no context without a topic)
-hidden: true
 tags: ["callbacks", "arrays"]
 ---
 
 ## Prerequisites
 
 {{% notice warning %}}
-In order to learn this implementation you need to understand the learning objectives of the following prerequisite implementations:
+In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-1. [JavaScript fundamentals]({{< ref "../" >}})
+1. [JavaScript: Fundamentals]({{< ref "topics/js-fundamentals/" >}})
+1. [JavaScript: Callbacks]({{< ref "topics/js-callbacks/" >}})
 
 ## Content
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
 ## Learning Objectives
+
+{{% notice info %}}
+After learning this topic you are expected to reach the **Competence** level of the following objectives.
+{{% /notice %}}
 
 ### Terminology
 
