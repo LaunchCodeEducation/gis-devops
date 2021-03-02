@@ -1,6 +1,15 @@
 ## Content Review
 
-do all reviews in the browser to see rendering
+> check everything in the browser
+
+- [ ] confirm rendering
+  - **make sure to look on a normal size screen**
+  - or use the mobile view tool to constrain the size virtually
+- [ ] check all links (especially external links)
+- [ ] check tags / frontmatter
+- [ ] check sidebar rendering
+- [ ] check title naming
+- [ ] check hidden / shown
 
 > process
 
