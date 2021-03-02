@@ -84,6 +84,38 @@ IDEA: look into codewars collections assembled by course staff as assements
 
 ### Scoping
 
+These are to be completed as a team.
+
+Use `high` and `low` for each category. This is an initial pass over the topic(s) to get an idea of scope.
+
+> breadth: number of sub-topics under a topic
+
+this is fixed
+
+> depth: how deep within a specific topic
+
+this is fixed
+
+> ACE: informs the amount of practical work (types of content) needed to reach the chosen depth
+
+this is variable
+
+- Exposure: slides, quizzes
+  - up to a walkthrough or demo slides
+- Competency: Exposure + walkthrough and exercise
+  - may use multiple walkthroughs for deeper topics
+- Autonomy: Competency + additional less-guided exercises
+
+> topic complexity: how complex is the mental model needed to absorb the topic?
+
+this is variable
+
+these are relative to the breadth, depth and ACE
+
+- how many other topics (and their own complexity) are prerequisites for learning this topic
+- more complex = more overall content
+- less complex = less overall content
+
 #### Overall
 
 > multipliers
