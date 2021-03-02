@@ -1,64 +1,46 @@
 ---
-title: "Js Callbacks"
+title: "JavaScript: Callbacks"
 date: 2021-03-02T17:48:54Z
 summary: ""
-categories: ["topics"]
-# TODO: add any other related tags before committing
-tags: ["js-callbacks", ""]
+categories: ["topics", "javascript"]
+tags: ["callbacks"]
 ---
 
 <!-- TODO: back link to any previous topics (ascending order from root to current topic) -->
 
-<!-- ## Prerequisites
+## Prerequisites
 
 {{% notice warning %}}
 In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-1. [TOPIC]({{< ref "topics/TOPIC/" >}}) -->
+1. [JavaScript: Fundamentals]({{< ref "topics/javascript-fundamentals/" >}})
 
 ## Content
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
-<!-- TODO: separate content from implementations -->
+## Learning Objectives
 
-<!-- ### Implementations
+### Terminology
 
-#### [IMPLEMENTATION]({{< ref "./IMPLEMENTATION/" >}}) -->
+> For the following list you should know the purpose and have an example to relate it to:
 
-<!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
+- callback
+- Higher Order Function (HOF)
+- procedure function
 
-<!-- ## Learning Objectives
-
-{{% notice info %}}
-After learning this topic you are expected to reach the **Competence** level of the following objectives.
-{{% /notice %}} -->
-
-<!-- the main terms you would use when discussing the topic in the class / on the job -->
-
-<!-- ### Terminology
-
-> For the following list you should know the definition and have an example to relate it to:
-
--  -->
-
-<!-- ### Concepts
+### Concepts
 
 > You should be able to discuss the following:
 
--  -->
+- The steps of designing and using a callback
+- What are you responsible for when writing a callback?
+- The aspects of a callback the procedure function is responsible for
+- Common use cases for callbacks
 
 <!-- ### Capabilities
 
-<!--
-TODO: uncomment if topic has implementations
-{{% notice info %}}
-These capabilities will be reached after completing one of the implementation sections below
-{{% /notice %}}
--->
-<!--
 > You should be able to:
 
--
--->
+-  -->
