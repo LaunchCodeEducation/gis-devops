@@ -1,6 +1,6 @@
 ---
 title: "Quizzes"
-date: 2021-03-02T17:48:49Z
+date: 2021-03-01T12:38:36-06:00
 summary: ""
 # slides (1) and walkthroughs (2) come before exercises in ToC sidebar
 weight: 2

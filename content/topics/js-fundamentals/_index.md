@@ -1,64 +1,68 @@
 ---
-title: "Js Fundamentals"
-date: 2021-03-02T17:48:49Z
+title: "Javascript: Fundamentals"
+date: 2021-03-01T12:38:36-06:00
 summary: ""
-categories: ["topics"]
-# TODO: add any other related tags before committing
-tags: ["js-fundamentals", ""]
+categories: ["topics", "javascript"]
+tags: ["fundamentals"]
 ---
-
-<!-- TODO: back link to any previous topics (ascending order from root to current topic) -->
-
-<!-- ## Prerequisites
-
-{{% notice warning %}}
-In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
-{{% /notice %}}
-
-1. [TOPIC]({{< ref "topics/TOPIC/" >}}) -->
 
 ## Content
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
-<!-- TODO: separate content from implementations -->
+## Learning Objectives
 
-<!-- ### Implementations
+{{% notice note %}}
+In addition to the learning objectives listed here you are responsible for the [base learning objectives]({{< ref "edges/programming-fundamentals" >}}).
+{{% /notice %}}
 
-#### [IMPLEMENTATION]({{< ref "./IMPLEMENTATION/" >}}) -->
+### Terminology
 
-<!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
+> For the following list you should know the purpose and have an example to relate it to:
 
-<!-- ## Learning Objectives
+<!-- IDEA: general use cases, web development intro talking about APIs and languages -->
 
-{{% notice info %}}
-After learning this topic you are expected to reach the **Competence** level of the following objectives.
-{{% /notice %}} -->
+- `let`
+- `const`
+- block scoping
+- arrow function syntax
+- `for...of`
+- `for...in`
+- arrays (`[]`)
+- non iterative array methods
+    - `.find()`
+    - `.findIndex()`
+    - `.slice()`
+- object literals (`{}`)
+- object static methods
+    - `Object.entries()`
+    - `Object.keys()`
+    - `Object.values()`
+- `node`
+- `undefined`
+- `null`
+- `NaN`
+- type coercion
+- spread syntax (`...`)
 
-<!-- the main terms you would use when discussing the topic in the class / on the job -->
-
-<!-- ### Terminology
-
-> For the following list you should know the definition and have an example to relate it to:
-
--  -->
-
-<!-- ### Concepts
+### Concepts
 
 > You should be able to discuss the following:
 
--  -->
+- Why are JS functions considered first class citizens?
+- What are the two environments you can run JavaScript in?
+- Is JS dynamically or statically typed?
+- Is JS interpreted or compiled?
+- What paradigms are used in JS?
+- What are the primitive data types?
+- What is the difference between let and const?
+- What are the difference between `undefined` and `null`?
 
-<!-- ### Capabilities
+### Capabilities
 
-<!--
-TODO: uncomment if topic has implementations
-{{% notice info %}}
-These capabilities will be reached after completing one of the implementation sections below
-{{% /notice %}}
--->
-<!--
 > You should be able to:
 
--
--->
+- Write and execute programs with NodeJS.
+- Declare variables of all the common data types (number, string, boolean, null, undefined).
+- Declare and operate on arrays and object literals.
+- Utilize arrow functions.
