@@ -26,9 +26,9 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 > For the following list you should know the purpose and have an example to relate it to:
 
-- callback
+- `callback` function
+- `procedure` function
 - Higher Order Function (HOF)
-- procedure function
 
 ### Concepts
 
