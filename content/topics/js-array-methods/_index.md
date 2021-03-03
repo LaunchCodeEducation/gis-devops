@@ -1,5 +1,5 @@
 ---
-title: "JavaScript: Array Methods"
+title: "JavaScript: Iterative Array Methods"
 date: 2021-03-01T19:16:32Z
 summary: ""
 categories: ["javascript"]
@@ -45,9 +45,9 @@ IDEA: expand to introduce reduce
 
 > You should be able to discuss the following:
 
-- The signatures and usage of common array method callbacks
-- The output of common array methods
-- The benefits of using array methods
+- The signatures of common iterative array method callbacks
+- The output of common iterative array methods
+- The benefits of using iterative array methods
 
 ### Capabilities
 
