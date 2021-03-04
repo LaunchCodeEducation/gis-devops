@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
 		<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/black.css" id="theme">
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/plugin/highlight/monokai.css" id="highlight-theme">
+    <link href="{{"css/atom-one-dark-reasonable.css" | relURL}}" rel="stylesheet" id="highlight-theme">
 
     <!-- IDEA: make independent of base path
     must come after reveal css to override
@@ -36,6 +36,13 @@
 			Reveal.initialize({
           plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
           // options: https://revealjs.com/config/
+          hash: true,
+          respondToHashChanges: true,
+          overview: true,
+          controlsTutorial: true,
+          width: "90%",
+          height: "90%",
+          margin: 0.2
       });
 		</script>
 
