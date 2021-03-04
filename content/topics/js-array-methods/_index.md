@@ -1,5 +1,5 @@
 ---
-title: "JavaScript: Iterative Array Methods"
+title: "JavaScript: Array Methods"
 date: 2021-03-01T19:16:32Z
 summary: ""
 categories: ["javascript"]
