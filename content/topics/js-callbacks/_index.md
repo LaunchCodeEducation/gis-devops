@@ -6,8 +6,6 @@ categories: ["topics", "javascript"]
 tags: ["callbacks"]
 ---
 
-<!-- TODO: back link to any previous topics (ascending order from root to current topic) -->
-
 ## Prerequisites
 
 {{% notice warning %}}
@@ -34,10 +32,10 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 > You should be able to discuss the following:
 
-- The steps of designing and using a callback
+- The steps of designing and using a callback.
 - What are you responsible for when writing a callback?
-- The aspects of a callback the procedure function is responsible for
-- Common use cases for callbacks
+- The aspects of a callback the procedure function is responsible for.
+- Common use cases for callbacks.
 
 <!-- ### Capabilities
 
