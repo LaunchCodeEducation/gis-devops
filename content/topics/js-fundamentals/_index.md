@@ -29,15 +29,9 @@ In addition to the learning objectives listed here you are responsible for the [
 - `for...of`
 - `for...in`
 - arrays (`[]`)
-- non iterative array methods
-    - `.find()`
-    - `.findIndex()`
-    - `.slice()`
+- non-iterative array methods
 - object literals (`{}`)
-- object static methods
-    - `Object.entries()`
-    - `Object.keys()`
-    - `Object.values()`
+- `Object` static methods
 - `node`
 - `undefined`
 - `null`
@@ -49,14 +43,13 @@ In addition to the learning objectives listed here you are responsible for the [
 
 > You should be able to discuss the following:
 
-- Why are JS functions considered first class citizens?
 - What are the two environments you can run JavaScript in?
-- Is JS dynamically or statically typed?
-- Is JS interpreted or compiled?
-- What paradigms are used in JS?
-- What are the primitive data types?
-- What is the difference between let and const?
+- Why are JS functions considered first class citizens?
 - What are the difference between `undefined` and `null`?
+- When to use `let` or `const`
+- How and when JavaScript uses type coercion
+
+<!-- IDEA: when to use arrow functions vs function declarations -->
 
 ### Capabilities
 
