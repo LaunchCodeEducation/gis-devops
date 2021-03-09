@@ -45,14 +45,20 @@ IDEA: expand to introduce reduce
 
 > You should be able to discuss the following:
 
-- The signatures of common iterative array method callbacks
-- The output of common iterative array methods
-- The benefits of using iterative array methods
+- The signatures of common iterative array method callbacks.
+- The output of common iterative array methods.
+- The benefits of using iterative array methods.
+
+<!-- CLARITY: for "The benefits of using iterative array methods. 
+
+Students definitely know what each one does, their syntax, and their purpose. But from the notes I think they would say the benefit is abstraction? Is that what we want them to take away from array methods? 
+
+If not I would recommend another benefits slides, or a recap slide that talks about why the array methods are beneficial. -->
 
 ### Capabilities
 
 > You should be able to:
 
-- Use `sort()` to sort an array in forward and reverse order
-- Use `filter()` to separate the elements of an array
-- Use `map()` to transform the elements of an array
+- Use `sort()` to sort an array in forward and reverse order.
+- Use `filter()` to separate the elements of an array.
+- Use `map()` to transform the elements of an array.
