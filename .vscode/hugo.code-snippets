@@ -18,22 +18,22 @@
   "comment: clarity": {
     "prefix": "clarity",
     "scope": "markdown",
-    "body": "\n<!-- CLARITY: $1 -->\n\n$0"
+    "body": "\n<!-- CLARITY: $1 -->\n$0"
   },
   "comment: alignment": {
     "prefix": "alignment",
     "scope": "markdown",
-    "body": "\n<!-- ALIGNMENT: $1 -->\n\n$0"
+    "body": "\n<!-- ALIGNMENT: $1 -->\n$0"
   },
   "comment: idea": {
     "prefix": "idea",
     "scope": "markdown",
-    "body": "\n<!-- IDEA: $1 -->\n\n$0"
+    "body": "\n<!-- IDEA: $1 -->\n$0"
   },
   "comment: discuss": {
     "prefix": "discuss",
     "scope": "markdown",
-    "body": "\n<!-- DISCUSS: $1 -->\n\n$0"
+    "body": "\n<!-- DISCUSS: $1 -->\n$0"
   },
 
   // SLIDES
