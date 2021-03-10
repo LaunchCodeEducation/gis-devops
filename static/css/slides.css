@@ -6,24 +6,28 @@
   margin: 0 !important;
 }
 
-/* .reveal .slides li {
-  margin: 1rem 0;
+.reveal .slides li {
+  margin: 1rem;  
 }
 
 .reveal .slides h1, h2 {
   margin-top: 0 !important;
 }
-*/
 
 .reveal blockquote {
-  margin: 5% auto;
-  width: 80%;
-} 
+  margin: 3% auto;
+  width: 100%;
+}
 
 .reveal blockquote > p {
-  font-size: 2rem !important;
+  font-size: 2rem;
 }
 
 .hljs {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+ }
+
+.reveal pre {
+  margin: 3% auto;
+  max-width: 80%;
 }
