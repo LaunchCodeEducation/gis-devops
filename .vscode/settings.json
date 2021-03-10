@@ -7,4 +7,8 @@
     "DISCUSS",
     "OPINION"
   ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": true,
+  },
+  "markdownlint.run": "onSave"
 }
