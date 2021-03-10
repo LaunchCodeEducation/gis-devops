@@ -116,6 +116,11 @@ In the event that a consensus can't be reached. If the content meets the learnin
   - extra content
     - sentences and/or bullet points
 
+> headers and subheaders
+
+- use quotes to highlight text/key takeaways
+  - quotes not used when the key takeaway is syntax
+
 > personalizing slides
 
 allows slides to always be available and to track changes per instructor
