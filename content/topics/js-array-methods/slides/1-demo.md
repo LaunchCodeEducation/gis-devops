@@ -1,1 +1,0 @@
-<!-- IDEA: add demo repo link to first slide -->

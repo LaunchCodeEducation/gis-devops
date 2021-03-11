@@ -45,14 +45,14 @@ IDEA: expand to introduce reduce
 
 > You should be able to discuss the following:
 
-- The signatures and usage of common array method callbacks
-- The output of common array methods
-- The benefits of using array methods
+- The signatures of common iterative array method callbacks.
+- The output of common iterative array methods.
+- The benefits of using iterative array methods.
 
 ### Capabilities
 
 > You should be able to:
 
-- Use `sort()` to sort an array in forward and reverse order
-- Use `filter()` to separate the elements of an array
-- Use `map()` to transform the elements of an array
+- Use `sort()` to sort an array in forward and reverse order.
+- Use `filter()` to separate the elements of an array.
+- Use `map()` to transform the elements of an array.
