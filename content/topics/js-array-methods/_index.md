@@ -49,20 +49,6 @@ IDEA: expand to introduce reduce
 - The output of common iterative array methods.
 - The benefits of using iterative array methods.
 
-<!-- CLARITY: for "The benefits of using iterative array methods. 
-
-Students definitely know what each one does, their syntax, and their purpose. But from the notes I think they would say the benefit is abstraction? Is that what we want them to take away from array methods? 
-
-If not I would recommend another benefits slides, or a recap slide that talks about why the array methods are beneficial. 
-
-response:
-
-great points. i think the benefits are
-- reduced verbosity (chance of error)
-- reusability (cbs are portable if defined externally)
-- immutability (following a FP principle)
--->
-
 ### Capabilities
 
 > You should be able to:
