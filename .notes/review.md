@@ -14,15 +14,18 @@
 > process
 
 1. perform a first pass of copyedit work
-  - focus on mispellings, syntax, formatting etc
-  - light rewording of phrasing is okay
-  - adding anything that is missing but you know what to add (images, diagrams, code blocks etc)
-  - **avoid rewriting whole paragraphs / sections**
-  - **avoid adding any new content or sections**
-  - **do not edit anything for clarity or alignment at this time**
-2. while doing the pass capture any thoughts for greater change (areas avoided) 
-  - use the todo tree tags in comments to capture thoughts without making edits
-  - you can put any **quick** general thoughts or phrasing but don't waste time perfecting the wording
+
+- focus on mispellings, syntax, formatting etc
+- light rewording of phrasing is okay
+- adding anything that is missing but you know what to add (images, diagrams, code blocks etc)
+- **avoid rewriting whole paragraphs / sections**
+- **avoid adding any new content or sections**
+- **do not edit anything for clarity or alignment at this time**
+
+2. while doing the pass capture any thoughts for greater change (areas avoided)
+
+- use the todo tree tags in comments to capture thoughts without making edits
+- you can put any **quick** general thoughts or phrasing but don't waste time perfecting the wording
 
 These are available as snippets by the same name in lowercase. Hit `ctrl+space` then type the name to select the snippet. Enter your message and hit tab to finish.
 
@@ -38,9 +41,10 @@ These are available as snippets by the same name in lowercase. Hit `ctrl+space` 
 
 3. push up changes and notify the author of suggested notes
 4. author reviews notes
-  - if they agree and understand the changes they implement and push for final review
-  - any comments with `DISCUSS` or `ALIGNMENT` should meet with reviewer
-  - if they disagree or do not understand they meet with reviewer for clarification
+
+- if they agree and understand the changes they implement and push for final review
+- any comments with `DISCUSS` or `ALIGNMENT` should meet with reviewer
+- if they disagree or do not understand they meet with reviewer for clarification
 
 In the event that a consensus can't be reached. If the content meets the learning objectives and has been copyedited then it should be merged. Leave the notes and add a card to the backlog to revisit the situation in the next appropriate sprint.
 
@@ -118,6 +122,15 @@ In the event that a consensus can't be reached. If the content meets the learnin
 
 > headers and subheaders
 
+- if slides are a sub-topic
+  - `## Topic` and `### Sub-Topic`
+
+```md
+## JavaScript
+
+### Callback Functions
+```
+
 - use quotes to highlight text/key takeaways
   - quotes not used when the key takeaway is syntax
 
@@ -155,4 +168,3 @@ Any references to code (classes, functions, CLI programs etc) should be syntax h
 - block: use the [fenced code block](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) with the appropriate language
   - for pseudocode prefer python
   - for JSON shapes prefer JS
-
