@@ -1,9 +1,9 @@
 ---
-title: "JavaScript: Callbacks"
+title: "JavaScript: Callback Functions"
 date: 2021-03-02T17:48:54Z
 summary: ""
 categories: ["topics", "javascript"]
-tags: ["callbacks"]
+tags: ["callback"]
 ---
 
 ## Prerequisites
