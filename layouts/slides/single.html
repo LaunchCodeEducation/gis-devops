@@ -8,12 +8,12 @@
 		<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
 		<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/black.css" id="theme">
 		<!-- Theme used for syntax highlighted code -->
-    <link href="{{"css/atom-one-dark-reasonable.css" | relURL}}" rel="stylesheet" id="highlight-theme">
-
-    <!-- IDEA: make independent of base path
-    must come after reveal css to override
-    -->
-    <link rel="stylesheet" href="/gis-devops/css/slides.css">
+    <link href="{{"css/atom-one-dark-reasonable.css" | relURL}}" rel="stylesheet">
+    <!-- use default hugo themes for consistency -->
+    <link href="{{"css/theme.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/hugo-theme.css" | relURL}}" rel="stylesheet">
+    <!-- override for slide specific theming -->
+    <link href="{{"css/slides.css" | relURL}}" rel="stylesheet">
 	</head>
 	<body>
 		<div class="reveal">
@@ -42,10 +42,8 @@
           controlsTutorial: true,
           width: "90%",
           height: "90%",
-          margin: 0.2
+          margin: 0.1
       });
 		</script>
-
-
 	</body>
 </html>

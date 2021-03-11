@@ -7,7 +7,7 @@
 }
 
 .reveal .slides li {
-  margin: 1rem 0;
+  margin: 1rem;  
 }
 
 .reveal .slides h1, h2 {
@@ -15,6 +15,19 @@
 }
 
 .reveal blockquote {
-  margin: 5% auto;
-  width: 100%
+  margin: 3% auto;
+  width: 100%;
+}
+
+.reveal blockquote > p {
+  font-size: 2rem;
+}
+
+.hljs {
+  font-size: 1.4rem;
+ }
+
+.reveal pre {
+  margin: 3% auto;
+  max-width: 80%;
 }

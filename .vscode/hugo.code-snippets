@@ -18,22 +18,52 @@
   "comment: clarity": {
     "prefix": "clarity",
     "scope": "markdown",
-    "body": "\n<!-- CLARITY: $1 -->\n\n$0"
+    "body": [
+      "",
+      "<!-- CLARITY: $1",
+      "-->",
+      "$0"
+    ]
   },
   "comment: alignment": {
     "prefix": "alignment",
     "scope": "markdown",
-    "body": "\n<!-- ALIGNMENT: $1 -->\n\n$0"
+    "body": [
+      "",
+      "<!-- ALIGNMENT: $1",
+      "-->",
+      "$0"
+    ]
   },
   "comment: idea": {
     "prefix": "idea",
     "scope": "markdown",
-    "body": "\n<!-- IDEA: $1 -->\n\n$0"
+    "body": [
+      "",
+      "<!-- IDEA: $1",
+      "-->",
+      "$0"
+    ]
   },
   "comment: discuss": {
     "prefix": "discuss",
     "scope": "markdown",
-    "body": "\n<!-- DISCUSS: $1 -->\n\n$0"
+    "body": [
+      "",
+      "<!-- DISCUSS: $1",
+      "-->",
+      "$0"
+    ]
+  },
+  "comment: opinion": {
+    "prefix": "opinion",
+    "scope": "markdown",
+    "body": [
+      "",
+      "<!-- OPINION: $1",
+      "-->",
+      "$0"
+    ]
   },
 
   // SLIDES
