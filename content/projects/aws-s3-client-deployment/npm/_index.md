@@ -1,5 +1,5 @@
 ---
-title: "S3 Client Deployment: NPM Automation"
+title: "AWS S3 Client Deployment: NPM Automation"
 date: 2021-03-11T20:31:32Z
 summary: ""
 categories: ["projects"]
