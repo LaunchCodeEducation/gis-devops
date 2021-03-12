@@ -54,7 +54,6 @@ In order to complete this project you must reach the following levels of the pre
 ### Competency
 
 - Git: Collaboration
-- GeoJSON
 - REST: Fundamentals
 - REST: Development
 - DTO
@@ -97,6 +96,8 @@ For the [Java Implementation](./java/) you will also need:
 
 ### Exposure
 
+- JSON
+- GeoJSON
 - ORM
 - Build Tool
 - SQL: Relationships
