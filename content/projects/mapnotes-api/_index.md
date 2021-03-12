@@ -6,9 +6,139 @@ categories: ["projects"]
 tags: ["api", "gis"]
 ---
 
+<!-- TODO: update archetype -->
+
+## Minimal Expectations
+
+{{% notice info %}}
+In order to complete this project you must reach the following levels of the prerequisite topics:
+{{% /notice %}}
+
+### Autonomy
+
+- HTTP
+- Terminal
+- Git: Fundamentals
+
 <!-- 
-language specific implementation requirements / overview
- -->
+- HTTP
+  - autonomy implies capability
+    - postman
+    - curl
+- Git: Fundamentals
+  - version control system
+  - repository
+  - commit
+  - branch
+  - commands
+    - add
+    - commit
+    - push
+    - pull
+    - checkout
+    - clone
+- terminal
+  - CLI
+  - profiles
+  - invoking programs
+  - commands
+    - navigation
+    - CRUD
+  - zsh
+    - build on bash
+    - set up (walkthrough)
+      - zshrc
+      - oh-my-zsh + plugins
+-->
+
+### Competency
+
+- Git: Collaboration
+- GeoJSON
+- REST: Fundamentals
+- REST: Development
+- DTO
+- Integration Testing
+- Unit Testing
+- TDD
+- Swagger
+
+{{% notice note %}}
+For the [Java Implementation](./java/) you will also need:
+{{% /notice %}}
+
+- Hibernate: Fundamentals
+- Hibernate: O2M
+
+<!-- 
+- Git Collaboration
+- JSON
+  - GeoJSON
+- REST Fundamentals
+- REST Development
+- DTO
+  - purpose
+  - validation
+  - security
+  - considerations
+  - representation
+  - implementations
+    - java DTO 
+- (FUTURE) Spring: Serialization
+  - jackson
+  - annotations
+  - general idea of custom serializers
+  - (ALTERNATE) just write it into the project writeup
+- integration testing
+- unit testing
+- TDD
+- Swagger
+-->
+
+### Exposure
+
+- ORM
+- Build Tool
+- SQL: Relationships
+- Docker Compose: Fundamentals
+- Dependency Management
+- Environment Variables
+
+<!-- 
+- SQL: Relationships
+  - back links SQL: Fundamentals
+- build tool
+- docker-compose usage
+- dependency management
+- ORM
+  - general concept
+  - behavior
+  - purpose
+  - models
+  - relationship considerations
+    - CRUD implicit behavior
+- environment variables
+  - external configuration
+  - environment parity
+  - implementations
+    - gradle: systemProperties, -D, ...
+    - webpack: env plugin, process.env ...
+    - sysd
+    - docker-compose
+- Build Tool
+  - build automation
+  - tasks (dev, test, build)
+  - implementations
+    - Gradle
+    - Webpack
+- Dependency Management
+  - purpose
+  - registries
+  - versioning
+  - implementations
+    - Gradle
+    - NPM
+-->
 
 ## Overview
 
@@ -40,8 +170,8 @@ Your implementation should adhere to the following JSON shapes:
 The following are generic JSON data types. Refer to your implementation for the data types of your language.
 {{% /notice %}}
 
-
 > `OutboundNote`:
+
 ```js
 {
   "id": number,
@@ -51,6 +181,7 @@ The following are generic JSON data types. Refer to your implementation for the 
 ```
 
 > `InboundNote`:
+
 ```js
 {
   "title": string,
@@ -59,6 +190,7 @@ The following are generic JSON data types. Refer to your implementation for the 
 ```
 
 > `Feature`:
+
 ```js
 {
   "id": number,
@@ -68,6 +200,7 @@ The following are generic JSON data types. Refer to your implementation for the 
 ```
 
 > `FeatureCollection`:
+
 ```js
 {
   "type": "FeatureCollection",

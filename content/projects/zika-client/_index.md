@@ -6,9 +6,36 @@ categories: ["projects", "javascript"]
 tags: ["gis"]
 ---
 
-<!-- 
-language specific implementation requirements / overview
- -->
+## Minimal Expectations
+
+{{% notice info %}}
+In order to complete this project you must reach the following levels of the prerequisite topics:
+{{% /notice %}}
+
+### Autonomy
+
+- HTTP
+- Git: Fundamentals
+- Terminal
+- JavaScript: DOM Fundamentals
+
+### Competency
+
+- Git: Collaboration
+- HTML
+- JavaScript: Callback Functions
+- JavaScript: DOM Events
+- JavaScript: Fetch
+- JavaScript: ESM
+- OpenLayers: Fundamentals
+- OpenLayers: GeoServer
+
+### Exposure
+
+- CSS
+- Build Tool
+- Docker Compose: Fundamentals
+- Dependency Management
 
 ## Overview
 
