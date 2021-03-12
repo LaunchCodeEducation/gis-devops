@@ -1,4 +1,4 @@
-<!-- TODO: complete the artifact glossary entry -->
+TODO: complete the artifact glossary entry
 
 > DEFINITION
 
