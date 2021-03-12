@@ -24,6 +24,8 @@ recipes/
     azure/
         _index.md (you need a VPC, and a VM)
 
+TOP LEVEL should be shown in the web console (most tangible) (introductions)
+
 ## Topics
 
 - learn in isolation
