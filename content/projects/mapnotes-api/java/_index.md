@@ -7,11 +7,9 @@ categories: ["projects", "java"]
 tags: ["api", "spring"]
 ---
 
-<!-- 
-language specific implementation requirements / overview
- -->
-
+{{% notice info %}}
 This is the assigned project page with specific requirements and details for this tech stack. Refer to the [project overview]({{< ref "../" >}}) for general information, functional requirements and any other implementations of the project.
+{{% /notice %}}
 
 ## Tech Stack
 
