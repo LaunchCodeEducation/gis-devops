@@ -20,9 +20,26 @@ Edges should link out to all related entry points of topics that rely on them. D
 
 - add any notes from discussion to the corresponding trello card
 
-> prefer
+> ACE listing
 
-- generalizing topics (leave tech details to each implementation)
+- every topic (including sub-topics) must be listed
+  - informs every topic that must be covered to reach the project
+    - taught in the course
+    - listed as an edge
+  - ex
+    - instead of: AWS CLI
+    - be specific: AWS CLI (S3)
+- implementations listed as `TOPIC (IMPLEMENTATION)`
+  - `Cloud Service Provider (AWS)`
+- for super topics group under block quote
+
+```md
+> JavaScript
+
+- DOM events
+- callbacks
+...
+```
 
 ### ACE Scoping
 
