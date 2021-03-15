@@ -62,6 +62,39 @@ In the event that a consensus can't be reached. If the content meets the learnin
 
 ## Structure
 
+> Flatter is better, avoid nested topics
+
+Composition is managed by linking to topics in version controlled documents **not** by the file system
+
+- isolates the learning objectives
+- use back linking for prerequisites
+- nesting imposes composition via file system which challenges the atomic nature
+
+Example:
+
+> prefer this (flat distinct topics)
+
+```sh
+- ORM Fundamentals
+- Hibernate Fundamentals
+- Hibernate o2m
+- Hibernate m2m
+```
+
+> rather than this (nested topics)
+
+```sh
+- ORM
+  - implementations
+    - Hibernate (links back to )
+      - 1
+        - initial configuration
+        - entities
+        - annotations
+      - 2 (o2m)
+      - 3 (m2m)
+```
+
 ### Checklist
 
 - [ ] tags and categories: lowercase

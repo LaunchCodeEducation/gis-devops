@@ -43,7 +43,13 @@ Edges should link out to all related entry points of topics that rely on them. D
 
 ### ACE Scoping
 
-rationale for categorizing topics
+- written into the root project page
+- what to list
+  - prerequisites are back linked in the listed topics (not written in ACE)
+    - exception: topics with specific expectations
+    - example
+      - listing Unit and Integration Testing (Competency for MapNotes API)
+      - instead of just Integration Testing (which backlinks to unit testing)
 
 #### Autonomy
 
