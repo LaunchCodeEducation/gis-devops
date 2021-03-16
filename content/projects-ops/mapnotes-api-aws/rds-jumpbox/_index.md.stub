@@ -25,8 +25,8 @@ For additional challenge try completing the project without opening the recipe s
 
 {{% expand "The following recipes are used in this deployment:" %}}
 
-- [Configure a Linux Java host]({{< ref "recipes/aws-ec2-host/java" >}})
-- [Configure a Linux docker-compose host]({{< ref "recipes/aws-ec2-host/docker-compose" >}})
-- [Provision a PostgreSQL RDS]({{< ref "recipes/aws-rds/postgresql" >}})
-- [Configure a PostgreSQL Jumpbox]({{< ref "recipes/aws-ec2-jumpbox/postgresql" >}})
+- [Configure a Linux Java host]({{< ref "recipes/linux-host-java" >}})
+- [Configure a Linux docker-compose host]({{< ref "recipes/linux-host-docker-compose" >}})
+- [Configure a PostGIS RDS]({{< ref "recipes/aws-rds-postgis" >}})
+- [Configure a PostgreSQL Jumpbox]({{< ref "recipes/aws-ec2-jumpbox-postgresql" >}})
 {{% /expand %}}

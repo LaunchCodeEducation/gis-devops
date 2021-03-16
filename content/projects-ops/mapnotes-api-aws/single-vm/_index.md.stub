@@ -45,3 +45,9 @@ For additional challenge try completing the project without opening the recipe s
 - [Configure a Linux SystemD startup service]({{< ref "recipes/systemd/startup-service" >}})
 - [Configure EC2 service role for S3 access]({{< ref "recipes/aws-ec2-s3-service-role" >}})
 {{% /expand %}}
+
+<!-- IDEA: split sysd and unit files
+
+sysd: fundamentals, commands (no unit files beyond usage)
+sysd-unit-files: fundamentals, directives
+-->
