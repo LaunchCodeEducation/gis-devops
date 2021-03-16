@@ -1,15 +1,16 @@
 ---
 # IDEA: auto gen "Topic: Implementation" for easier searching
 # TODO: set the parent topic name
-title: "TOPIC: {{ replace .Name '-' ' ' | title }}"
+title: "TOPIC: {{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 summary: ""
-categories: ["{{ replace .Name '-' ' ' }}"]
+# TODO: set category as dev, ops or both
+categories: ["topics", ""]
 # implementations are hidden and must be directly linked (they have no context without a topic)
 hidden: true
 # IDEA: auto generate the tag for the parent topic
 # TODO: add the parent topic and any other related tags before committing
-tags: ["topic"]
+tags: ["TOPIC"]
 ---
 
 <!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->

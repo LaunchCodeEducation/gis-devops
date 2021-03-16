@@ -2,9 +2,10 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 summary: ""
-categories: ["topics"]
+# TODO: set category as dev, ops or both
+categories: ["topics", ""]
 # TODO: add any other related tags before committing
-tags: ["{{ replace .Name '-' ' ' }}", ""]
+tags: ["{{ replace .Name "-" " " }}", ""]
 ---
 
 <!-- TODO: back link to any previous topics (ascending order from root to current topic) -->
