@@ -17,6 +17,11 @@ tags: [""]
 
 ## Scenario
 
+<!-- TODO: list anything that will be provided, cut otherwise -->
+{{% notice info %}}
+Your instructor will provide ITEMS GIVEN according to the course schedule.
+{{% /notice %}}
+
 <!-- prompt -->
 <!-- diagram -->
 
@@ -46,11 +51,11 @@ tags: [""]
 
 -
 
-## Recipes
+## Deliverables
 
-{{% notice info %}}
-The following recipes are used in this deployment. For additional challenge try completing it without opening the recipe links!
-{{% /notice %}}
+1.
+
+## Recipes
 
 <!-- TODO: add the related recipes
 
@@ -61,4 +66,11 @@ The following recipes are used in this deployment. For additional challenge try 
 - [Configure EC2 service role for S3 access]({{< ref "recipes/aws-ec2-s3-service-role" >}})
 -->
 
--
+{{% notice note %}}
+For additional challenge try completing the project without opening the recipe section below.
+{{% /notice %}}
+
+{{% expand "The following recipes are used in this deployment:" %}}
+
+- [RECIPE NAME]({{< ref "" >}})
+{{% /expand %}}
