@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 summary: ""
-categories: ["projects"]
+categories: ["projects", "dev"]
 # TODO: add/remove tags before committing
 tags: [""]
 ---
