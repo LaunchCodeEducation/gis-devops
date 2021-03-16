@@ -27,14 +27,21 @@
 - Only expose HTTP web traffic
 - Only expose SSH traffic to your home IP
 
+## Deliverables
+
+1.
+
 ## Recipes
 
-{{% notice info %}}
-The following recipes are used in this deployment. For additional challenge try completing it without opening the recipe links!
+{{% notice note %}}
+For additional challenge try completing the project without opening the recipe section below.
 {{% /notice %}}
+
+{{% expand "The following recipes are used in this deployment:" %}}
 
 - [Configure a Linux Java host]({{< ref "recipes/linux-host-java" >}}) --> abstract common /_index.md, move remainder to /java.md
 - [Configure a Linux docker-compose host]({{< ref "recipes/linux-host-docker-compose" >}})
 - [Configure Nginx reverse proxy]({{< ref "recipes/nginx-reverse-proxy" >}})
 - [Configure a Linux SystemD startup service]({{< ref "recipes/systemd/startup-service" >}})
 - [Configure EC2 service role for S3 access]({{< ref "recipes/aws-ec2-s3-service-role" >}})
+{{% /expand %}}

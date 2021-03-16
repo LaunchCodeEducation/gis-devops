@@ -11,10 +11,22 @@
 <!-- prompt -->
 <!-- diagram -->
 
+<!-- TODO: update to archetype -->
+
+## Deliverables
+
+1.
 
 ## Recipes
 
-1. [Configure a Linux Java host]({{< ref "recipes/aws-ec2-host/java" >}})
-2. [Configure a Linux docker-compose host]({{< ref "recipes/aws-ec2-host/docker-compose" >}})
-4. [Provision a PostgreSQL RDS]({{< ref "recipes/aws-rds/postgresql" >}})
-5. [Configure a PostgreSQL Jumpbox]({{< ref "recipes/aws-ec2-jumpbox/postgresql" >}})
+{{% notice note %}}
+For additional challenge try completing the project without opening the recipe section below.
+{{% /notice %}}
+
+{{% expand "The following recipes are used in this deployment:" %}}
+
+- [Configure a Linux Java host]({{< ref "recipes/aws-ec2-host/java" >}})
+- [Configure a Linux docker-compose host]({{< ref "recipes/aws-ec2-host/docker-compose" >}})
+- [Provision a PostgreSQL RDS]({{< ref "recipes/aws-rds/postgresql" >}})
+- [Configure a PostgreSQL Jumpbox]({{< ref "recipes/aws-ec2-jumpbox/postgresql" >}})
+{{% /expand %}}
