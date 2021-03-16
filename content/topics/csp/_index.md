@@ -2,9 +2,8 @@
 title: "Cloud Service Provider"
 date: 2021-03-16T21:18:47Z
 summary: ""
-categories: ["topics"]
-# TODO: add any other related tags before committing
-tags: ["csp", ""]
+categories: ["topics", "ops"]
+tags: ["csp"]
 ---
 
 <!-- TODO: back link to any previous topics (ascending order from root to current topic) -->
