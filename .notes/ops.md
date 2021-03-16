@@ -76,16 +76,61 @@ topics/
 - competency / autonomy
   - 1+ implementations
 
-## Recipe Types
+## Recipes
 
-> mental model: "list of ingredients"
+```sh
+recipes/
+  ec2-rds-jumpbox/
+  ec2-ssh-jumpbox/
+  ec2-docker-host/
+  ec2-java-host/
+  nginx-reverse-proxy/
+  nginx-tls/
+  nginx-mutual-tls/
+  s3-static-host/
+  ec2-load-balanced/
+  ecs-load-balanced
+  alb-green-blue
+  alb-canary
+```
 
-- architecture diagram
-- service list
+> project is a list of tasks (each with a recipe)
 
-> steps: "portions and order"
+- exposure
+- competency there is a given recipe for the scenario
+- autonomy there will not be an explicit recipe
 
-> complete: "step by step details"
+> recipes are specific to a task / use case **not a particular project**
+
+- **do**: recipe for deploying a java API
+- **dont**: recipe for deploying mapnotes API
+
+> recipes vs instructions
+
+- instructions are generic
+  - these are in the topic itself
+  - ex: how to provision an EC2
+recipes are specific
+  - back-link to the involved topic(s) instructions
+  - include specifics / notes
+    - considerations
+    - dependencies
+  - ex: configure a linux EC2
+    - back-link to "provision an EC2"
+    - notes
+      - package manager
+      - service management
+      - connecting
+    - implementations: java host, elasticsearch host, ...
+
+### Structure
+
+- when to use: scenario / context
+- prerequisite: assumptions or back-link to recipes / instructions
+- guide: steps to complete the recipe
+- gotchas: common areas for mistakes
+- confirmation: steps to confirm functionality
+- related: link to any relevant next steps / related recipes
 
 ## Assessing Student Capabilities
 
@@ -142,49 +187,52 @@ diagram and requirements always given
 
 #### mapnotes API deployment
 
-- multi-instance deployment
-- infra
-  - EC2 mapnotes host
-  - RDS
-  - EC2 jumpbox
-  - VPC
-    - private/public subnet
-    - SGs
-
-> exposure
-
-> competency: includes architecture diagram(s)
+> exposure: given recipes and order
 
 - what is given:
+  - recipe list and order
+  - architecture diagram
+  - specific requirements
 - what is expected:
+  - deliverable: implementation (live link etc)
+    - executing the recipes
 
-implement the architecture from the following diagram
+> competency: given recipes list
 
-requirements: specific for each component of the architecture
+- what is given:
+  - recipe list, **no order**
+  - architecture diagram
+  - component specific requirements
+- what is expected:
+  - deliverable: recipe inventory
+    - recipe list and order (**before implementing**)
+  - deliverable: implementation (live link etc)
+    - executing the recipes
 
+requirements specific for each component of the architecture:
+
+```md
 MapNotes API host requirements:
 
 - select the appropriate configuration parameters for the host EC2
 - configure the host environment dependencies
-
--
 
 RDS requirements:
 
 Jumpbox requirements:
 
 Network requirements:
+```
 
-> autonomy: only prompt and requirements
+> autonomy: given prompt
 
 - what is given:
+  - architecture diagram
+  - general requirements
 - what is expected:
-
-deploy the API with an RDS and jumpbox
-
-requirements:
-
-- run the migration script in the jumpbox to migrate the RDS
-- proper security best practices implemented
-
-## Scenarios
+  - deliverable: recipes inventory
+    - take inventory recipes (existing and needed) and order
+  - deliverable: new recipes
+    - any recipes that were not given
+  - deliverable: implementation (live link etc)
+    - executing the recipes
