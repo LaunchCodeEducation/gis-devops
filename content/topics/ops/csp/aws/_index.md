@@ -24,19 +24,34 @@ In order to learn this implementation you need to understand the learning object
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
-<!-- ## Learning Objectives
+## Learning Objectives
 
 {{% notice note %}}
 In addition to the learning objectives listed here you are responsible for the [base learning objectives]({{< ref "../" >}}).
-{{% /notice %}} -->
+{{% /notice %}}
 
 <!-- Syntax or terms specific to the langauge/tool  -->
 
-<!-- ### Terminology
+### Terminology
 
 > For the following list you should know the purpose and have an example to relate it to:
 
--  -->
+- Elastic Cloud Compute (EC2)
+- Virtual Private Cloud (VPC)
+- Security Group (SG)
+- Simple Storage Service (S3)
+- Identity Access Management (IAM)
+- IAM Role
+- IAM Policy
+- IAM Group
+- service role
+- Elastic Load Balancing (ELB)
+  - **Application Load Balancing**
+  - Network Load Balancing
+  - Gateway Load Balancing
+  - Classic Load Balancing
+- CloudFormation (CF)
+- Relational Database Service (RDS)
 
 <!-- Specific best practices or conventions related to the given language/tool -->
 
