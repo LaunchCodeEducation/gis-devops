@@ -39,6 +39,7 @@ After learning this topic you are expected to reach the **Competence** level of 
 - managed service
 - architecture
 - infrastructure
+- resource
 - availability
 - IAM
 - virtual machine
@@ -59,13 +60,15 @@ After learning this topic you are expected to reach the **Competence** level of 
 - Pros and cons of using a reserved pricing model.
 - Common interfaces for interacting with a CSP.
 - The information needed to access your CSP.
+- How resources are organized in the CSP.
 
 <!-- These should be covered in ALL implementations:
 
 - The difference between IaaS and PaaS.
 - The difference between horizontal and vertical scaling.
-- Common interfaces for interacting with a CSP.
+- The Common interfaces for interacting with a CSP.
 - The information needed to access your CSP.
+- How resources are organized in the CSP.
  
 -->
 
