@@ -32,66 +32,42 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 - IaaS
 - PaaS
-- SaaS
 - IaC
-- serverless
-- reserved
-- on-demand
-- managed
-- unmanaged
-- architecture
-- infrastructure
-- data center
-- on-premises
-- virtualization
-- availability
 - storage
 - computation
 - networking
+- managed service
+- architecture
+- infrastructure
+- availability
 - IAM
 - virtual machine
 - virtual cloud
 - virtual firewall
-- object storage
 - provisioning
 - recipe
-- horizontal scaling
-- vertical scaling
+- scaling
 
 #### Concepts
 
 > You should be able to discuss the following:
 
-<!-- IDEA: should concepts be more specific?
-
-who benefits from it being more specific
-
-- students
-- curriculum dev
-- both
-
-curriculum dev:
-
-- distinction between concepts and quiz questions
-- effect on curriculum development (when to just list a definition/example vs expanding further)
-
-ex:
-
-- The difference between horizontal and vertical scaling.
-
-vs
-
-- Why horizontal scaling is scaling out?
-- Why vertical scaling is scaling up?
-- Why is there a preference for horizontal scaling?
--->
-
 - The benefits of using a CSP.
 - The difference between on-premises and using a CSP.
 - The difference between IaaS and PaaS.
 - The difference between horizontal and vertical scaling.
-- When to use on-demand or reserved pricing models.
+- Pros and cons of using a reserved pricing model.
 - Common interfaces for interacting with a CSP.
+- The information needed to access your CSP.
+
+<!-- These should be covered in ALL implementations:
+
+- The difference between IaaS and PaaS.
+- The difference between horizontal and vertical scaling.
+- Common interfaces for interacting with a CSP.
+- The information needed to access your CSP.
+ 
+-->
 
 #### Capabilities
 
