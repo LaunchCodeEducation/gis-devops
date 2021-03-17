@@ -64,7 +64,6 @@ After learning this topic you are expected to reach the **Competence** level of 
 
 <!-- These should be covered in ALL implementations:
 
-- The difference between IaaS and PaaS.
 - The difference between horizontal and vertical scaling.
 - The Common interfaces for interacting with a CSP.
 - The information needed to access your CSP.
@@ -80,5 +79,17 @@ These capabilities will be reached after completing one of the implementation se
 
 > You should be able to:
 
-- Log in to a CSP web console using multi-factor authentication.
-- Log in to a CSP CLI tool.
+- Fundamental usage of the web console.
+- Fundamental usage of the CLI.
+- Configure multi-factor authentication for the web console.
+
+<!-- 
+
+fundamental usage:
+
+- authentication
+- navigation
+- finding help
+- provisioning
+
+-->

@@ -36,35 +36,33 @@ In addition to the learning objectives listed here you are responsible for the [
 
 > For the following list you should know the purpose and have an example to relate it to:
 
-- Elastic Cloud Compute (EC2)
 - Virtual Private Cloud (VPC)
+- Elastic Cloud Compute (EC2)
 - Security Group (SG)
 - Simple Storage Service (S3)
 - Identity Access Management (IAM)
-- IAM Role
-- IAM Policy
-- IAM Group
-- service role
-- Elastic Load Balancing (ELB)
-  - **Application Load Balancing**
-  - Network Load Balancing
-  - Gateway Load Balancing
-  - Classic Load Balancing
-- CloudFormation (CF)
 - Relational Database Service (RDS)
+- CloudFormation (CF)
+- Elastic Load Balancing (ELB)
+- resource tags
 
 <!-- Specific best practices or conventions related to the given language/tool -->
 
-<!-- ### Concepts
+### Concepts
 
 > You should be able to discuss the following:
 
--  -->
+- How horizontal and vertical scaling are handled in AWS.
+- The information needed to access the AWS web console.
+- The information needed to access the AWS CLI.
+- Common tag names for organizing resources.
+- The benefits of using MFA with user accounts.
+- The AWS interfaces available for interacting with resources.
 
 <!-- Specific usage of the language/tool -->
 
-<!-- ### Capabilities
+### Capabilities
 
 > You should be able to:
 
--  -->
+- Configure local AWS CLI profiles.
