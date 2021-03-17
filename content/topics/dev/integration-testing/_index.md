@@ -23,8 +23,8 @@ great way of demoing integration testing without getting into the code
 In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-1. [Testing Fundamentals]({{< ref "topics/testing-fundamentals" >}})
-1. [Unit Testing]({{< ref "topics/unit-testing" >}})
+1. [Testing Fundamentals]({{< ref "topics/dev/testing-fundamentals" >}})
+1. [Unit Testing]({{< ref "topics/dev/unit-testing" >}})
 
 ## Content
 
@@ -74,10 +74,8 @@ IDEA: how to work this best practice in?
 - Difference between superficial (shape, count) and granular assertions (properties)
 - Scoping the assertions of an integration test -->
 
-
 <!-- IDEA: is this worth including?
 - Exceptions to testing library code (integration between db models because of complexity and potential for error) -->
-
 
 <!-- IDEA: how to include this?
 - Understand the role environment variables play -->

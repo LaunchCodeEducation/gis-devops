@@ -12,8 +12,8 @@ tags: ["callbacks", "arrays"]
 In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-1. [JavaScript: Fundamentals]({{< ref "topics/js-fundamentals/" >}})
-1. [JavaScript: Callbacks]({{< ref "topics/js-callbacks/" >}})
+1. [JavaScript: Fundamentals]({{< ref "topics/dev/js-fundamentals/" >}})
+1. [JavaScript: Callbacks]({{< ref "topics/dev/js-callbacks/" >}})
 
 ## Content
 

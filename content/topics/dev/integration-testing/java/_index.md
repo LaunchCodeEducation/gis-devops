@@ -14,7 +14,7 @@ tags: ["integration-testing", "j-unit", "spring"]
 In order to learn this implementation you need to know the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [Unit Testing: Java]({{< ref "topics/unit-testing/java/" >}})
+1. [Unit Testing: Java]({{< ref "topics/dev/unit-testing/java/" >}})
 
 ## Content
 

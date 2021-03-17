@@ -13,7 +13,7 @@ tags: ["unit-testing"]
 In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-1. [Testing Fundamentals]({{< ref "topics/testing-fundamentals/" >}})
+1. [Testing Fundamentals]({{< ref "topics/dev/testing-fundamentals/" >}})
 
 ## Content
 

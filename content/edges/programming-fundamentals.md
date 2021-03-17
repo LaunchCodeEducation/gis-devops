@@ -9,7 +9,7 @@ categories: ["edges"]
 This topic edge is a prerequisite for the following topics:
 {{% /notice %}}
 
-### [JavaScript: Fundamentals]({{< ref "topics/js-fundamentals/" >}})
+### [JavaScript: Fundamentals]({{< ref "topics/dev/js-fundamentals/" >}})
 
 ## Learning Objectives
 

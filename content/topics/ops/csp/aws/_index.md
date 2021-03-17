@@ -10,13 +10,15 @@ tags: ["csp", "aws"]
 
 <!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->
 
+<!-- IDEA: terminal (needed for CLI setup) -->
+
 <!-- ## Prerequisites
 
 {{% notice warning %}}
 In order to learn this implementation you need to understand the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [PARENT TOPIC: IMPLEMENTATION]({{< ref "topics/parent-topic/implementation/" >}}) -->
+1. [PARENT TOPIC: IMPLEMENTATION]({{< ref "" >}}) -->
 
 ## Content
 

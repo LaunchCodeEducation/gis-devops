@@ -15,8 +15,8 @@ tags: ["tdd"]
 In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-1. [Testing Fundamentals]({{< ref "topics/testing-fundamentals/" >}})
-2. [Unit Testing]({{< ref "topics/unit-testing/" >}})
+1. [Testing Fundamentals]({{< ref "topics/dev/testing-fundamentals/" >}})
+2. [Unit Testing]({{< ref "topics/dev/unit-testing/" >}})
 
 ## Content
 
