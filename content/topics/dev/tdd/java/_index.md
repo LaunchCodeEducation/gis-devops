@@ -1,27 +1,23 @@
 ---
-# IDEA: auto gen "Topic: Implementation" for easier searching
-# TODO: set the parent topic name
-title: "TOPIC: {{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "TDD: Java"
+date: 2021-02-11T22:23:20Z
 summary: ""
-# TODO: set category as dev, ops or both
-categories: ["topics", ""]
-# implementations are hidden and must be directly linked (they have no context without a topic)
+categories: ["java"]
 hidden: true
-# IDEA: auto generate the tag for the parent topic
-# TODO: add the parent topic and any other related tags before committing
-tags: ["TOPIC"]
+# tags the topic
+# TODO: add the tool-name and any other related tags before committing
+tags: ["tdd", "j-unit", "unit-testing"]
 ---
 
 <!-- TODO: back link to any previous implementation sub-topics (ascending order from root to current topic) -->
 
-<!-- ## Prerequisites
+## Prerequisites
 
 {{% notice warning %}}
-In order to learn this implementation you need to understand the learning objectives of the following prerequisite implementations:
+In order to learn this implementation you need to know the learning objectives of the following prerequisite implementations:
 {{% /notice %}}
 
-1. [PARENT TOPIC: IMPLEMENTATION]({{< ref "topics/parent-topic/implementation/" >}}) -->
+1. [Unit Testing: Java]({{< ref "topics/dev/unit-testing/java/" >}})
 
 ## Content
 

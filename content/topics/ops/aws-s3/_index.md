@@ -1,32 +1,26 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "AWS: S3"
+date: 2021-03-16T21:35:03Z
 summary: ""
-# TODO: set category as dev, ops or both
-categories: ["topics", ""]
-# TODO: add any other related tags before committing
-tags: ["{{ replace .Name "-" " " }}", ""]
+categories: ["topics", "ops"]
+tags: ["aws s3"]
 ---
 
-<!-- TODO: back link to any previous topics (ascending order from root to current topic) -->
-
-<!-- ## Prerequisites
+## Prerequisites
 
 {{% notice warning %}}
 In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-1. [TOPIC]({{< ref "topics/TOPIC/" >}}) -->
+1. [CSP: AWS]({{< ref "topics/ops/csp/aws/" >}})
 
 ## Content
 
 {{% children style="h3" depth=1 sort="weight" %}}
 
-<!-- TODO: separate content from implementations -->
+### Implementations
 
-<!-- ### Implementations
-
-#### [IMPLEMENTATION]({{< ref "./IMPLEMENTATION/" >}}) -->
+#### [CLI]({{< ref "./cli/" >}})
 
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 
