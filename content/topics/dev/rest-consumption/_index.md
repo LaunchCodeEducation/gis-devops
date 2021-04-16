@@ -15,7 +15,7 @@ tags: ["rest-consumption", ""]
 In order to learn this topic you need to know the learning objectives of the following prerequisite topics:
 {{% /notice %}}
 
-1. [TOPIC]({{< ref "topics/TOPIC/" >}}) -->
+1. [TOPIC]({{< ref "" >}}) -->
 
 ## Content
 
@@ -25,29 +25,48 @@ In order to learn this topic you need to know the learning objectives of the fol
 
 <!-- ### Implementations
 
-#### [IMPLEMENTATION]({{< ref "./IMPLEMENTATION/" >}}) -->
+#### [IMPLEMENTATION]({{< ref "" >}}) -->
 
 <!-- If there is an associated language or tool with this topic all learning objectives should be general/agnostic. Implementation LOs go in the associated language or tool docs -->
 
-<!-- ## Learning Objectives
+## Learning Objectives
 
-{{% notice info %}}
+<!-- {{% notice info %}}
 After learning this topic you are expected to reach the **Competence** level of the following objectives.
 {{% /notice %}} -->
 
 <!-- the main terms you would use when discussing the topic in the class / on the job -->
 
-<!-- ### Terminology
+### Terminology
 
 > For the following list you should know the definition and have an example to relate it to:
 
--  -->
+- state
+- representation
+- transfer
+- resource
+- entity
+- collection
+- shape
+- endpoint
 
-<!-- ### Concepts
+<!-- 
+HTTP needs to be an edge. They will not be able to handle this workshop unless they are already familiar with:
+- HTTP request
+- HTTP request methods
+- HTTP request path
+- HTTP request path variables
+- HTTP request query string
+- HTTP request body
+- HTTP response
+- HTTP status code
+- HTTP response body -->
+  
+### Concepts
 
 > You should be able to discuss the following:
 
--  -->
+-
 
 <!-- ### Capabilities
 
